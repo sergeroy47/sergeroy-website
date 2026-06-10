@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration — Serge Roy</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre:#1c1a14; --terre:#6b5c45; --mousse:#5a6e4a;
+      --lin:#f2ead8; --parchemin:#faf6ee; --or:#b8903a;
+      --rouge:#c0392b; --vert:#27ae60;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#f0ece0; color:var(--encre); font-family:'EB Garamond',Georgia,serif; font-size:17px; }
+
+    /* BARRE DU HAUT */
+    header {
+      background:var(--encre); color:var(--lin);
+      padding:1.2rem 2rem; display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:50;
+    }
+    .admin-titre { font-family:'Cinzel',serif; font-size:0.9rem; letter-spacing:0.2em; color:var(--or); }
+    .header-actions { display:flex; gap:1rem; align-items:center; }
+    .btn { padding:0.6rem 1.4rem; font-family:'EB Garamond',serif; font-size:0.9rem; letter-spacing:0.05em; border:none; cursor:pointer; transition:all 0.2s; text-decoration:none; display:inline-block; }
+    .btn-sauv { background:var(--mousse); color:white; }
+    .btn-sauv:hover { background:#3d5233; }
+    .btn-export { background:var(--or); color:white; }
+    .btn-export:hover { background:#9a7828; }
+    .btn-retour { background:transparent; color:var(--lin); border:1px solid rgba(255,255,255,0.3); }
+    .btn-retour:hover { background:rgba(255,255,255,0.1); }
+    .btn-danger { background:var(--rouge); color:white; font-size:0.85rem; padding:0.5rem 1rem; }
+
+    /* NOTIFICATION */
+    #notif {
+      position:fixed; top:70px; right:2rem; z-index:100;
+      background:var(--vert); color:white; padding:0.8rem 1.5rem;
+      font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;
+      border-radius:2px; opacity:0; transition:opacity 0.3s; pointer-events:none;
+    }
+
+    /* MISE EN PAGE */
+    .admin-layout { display:grid; grid-template-columns:220px 1fr; min-height:calc(100vh - 60px); }
+
+    /* SIDEBAR */
+    aside {
+      background:var(--lin); border-right:1px solid rgba(107,92,69,0.2);
+      padding:1.5rem 0; position:sticky; top:60px; height:calc(100vh - 60px); overflow-y:auto;
+    }
+    .menu-titre { font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--or); padding:0.5rem 1.5rem; margin-top:0.5rem; }
+    .menu-lien {
+      display:block; padding:0.65rem 1.5rem; color:var(--encre); text-decoration:none;
+      font-size:0.95rem; border-left:3px solid transparent; transition:all 0.2s; cursor:pointer;
+    }
+    .menu-lien:hover { background:rgba(90,110,74,0.08); border-left-color:var(--mousse); }
+    .menu-lien.actif { background:rgba(90,110,74,0.12); border-left-color:var(--mousse); color:var(--mousse); font-style:italic; }
+
+    /* CONTENU PRINCIPAL */
+    main { padding:2rem 3rem; max-width:900px; }
+
+    .section-admin { display:none; }
+    .section-admin.active { display:block; }
+
+    h2 { font-family:'Cinzel',serif; font-size:1.1rem; letter-spacing:0.15em; color:var(--mousse); margin-bottom:1.5rem; padding-bottom:0.8rem; border-bottom:1px solid rgba(90,110,74,0.2); }
+
+    /* CHAMPS */
+    .champ { margin-bottom:1.5rem; }
+    label { display:block; font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--terre); margin-bottom:0.4rem; }
+    input[type=text], input[type=email], textarea {
+      width:100%; padding:0.7rem 1rem; border:1px solid rgba(107,92,69,0.3);
+      background:var(--parchemin); color:var(--encre);
+      font-family:'EB Garamond',serif; font-size:1rem; line-height:1.5;
+      transition:border-color 0.2s; outline:none;
+    }
+    input[type=text]:focus, input[type=email]:focus, textarea:focus { border-color:var(--mousse); }
+    textarea { resize:vertical; min-height:90px; }
+    .aide { font-size:0.8rem; color:var(--terre); opacity:0.7; margin-top:0.3rem; font-style:italic; }
+
+    /* CARTES (textes, photos, collages) */
+    .cartes-liste { display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem; }
+    .carte-admin {
+      background:var(--parchemin); border:1px solid rgba(107,92,69,0.2);
+      border-radius:2px;
+    }
+    .carte-header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0.8rem 1rem; cursor:pointer;
+      border-bottom:1px solid transparent; transition:border-color 0.2s;
+    }
+    .carte-header:hover { background:rgba(90,110,74,0.05); }
+    .carte-header.ouvert { border-bottom-color:rgba(107,92,69,0.15); }
+    .carte-label { font-family:'EB Garamond',serif; font-size:1rem; font-style:italic; }
+    .carte-categorie-badge {
+      font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--or); margin-right:1rem;
+    }
+    .carte-toggle { font-size:0.8rem; color:var(--terre); transition:transform 0.2s; }
+    .carte-toggle.ouvert { transform:rotate(180deg); }
+    .carte-corps { display:none; padding:1rem; }
+    .carte-corps.ouvert { display:block; }
+    .carte-actions { display:flex; gap:0.5rem; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(107,92,69,0.1); }
+
+    .btn-ajouter {
+      background:var(--lin); border:1px dashed var(--mousse); color:var(--mousse);
+      padding:0.7rem 1.5rem; cursor:pointer; font-family:'EB Garamond',serif; font-size:0.95rem;
+      width:100%; transition:all 0.2s; letter-spacing:0.05em;
+    }
+    .btn-ajouter:hover { background:rgba(90,110,74,0.1); }
+    .btn-suppr { background:#fde8e8; color:var(--rouge); border:1px solid rgba(192,57,43,0.3); padding:0.4rem 0.8rem; cursor:pointer; font-size:0.85rem; }
+    .btn-suppr:hover { background:var(--rouge); color:white; }
+    .btn-monter, .btn-descendre { background:var(--lin); border:1px solid rgba(107,92,69,0.3); padding:0.4rem 0.7rem; cursor:pointer; font-size:0.8rem; color:var(--terre); }
+    .btn-monter:hover, .btn-descendre:hover { background:var(--mousse); color:white; border-color:var(--mousse); }
+
+    /* TAGS DOMAINES */
+    .tags-wrapper { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem; }
+    .tag-item { display:flex; align-items:center; gap:0.3rem; background:var(--lin); border:1px solid rgba(107,92,69,0.3); padding:0.3rem 0.7rem; }
+    .tag-texte { font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--mousse); }
+    .tag-suppr { background:none; border:none; cursor:pointer; color:var(--rouge); font-size:1rem; line-height:1; padding:0 0.2rem; }
+    .tag-ajout { display:flex; gap:0.5rem; }
+    .tag-ajout input { flex:1; }
+
+    /* SECTION RÉINITIALISER */
+    .danger-zone { margin-top:3rem; padding:1.5rem; border:1px solid rgba(192,57,43,0.3); background:rgba(192,57,43,0.04); }
+    .danger-titre { font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--rouge); margin-bottom:1rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="admin-titre">⚙ PANNEAU D'ADMINISTRATION</span>
+  <div class="header-actions">
+    <a href="index.html" class="btn btn-retour">← Voir le site</a>
+    <button class="btn btn-sauv" onclick="sauvegarder()">💾 Sauvegarder</button>
+    <button class="btn btn-export" onclick="exporterFichier()">⬇ Exporter contenu.js</button>
+  </div>
+</header>
+
+<div id="notif">✓ Sauvegardé !</div>
+
+<div class="admin-layout">
+  <aside>
+    <div class="menu-titre">Navigation</div>
+    <div class="menu-lien actif" onclick="afficher('general', this)">🏠 Général</div>
+    <div class="menu-lien" onclick="afficher('apropos', this)">👤 À propos</div>
+    <div class="menu-lien" onclick="afficher('textes', this)">📝 Textes</div>
+    <div class="menu-lien" onclick="afficher('photos', this)">📷 Photographies</div>
+    <div class="menu-lien" onclick="afficher('collages', this)">🖼 Poésie-Secours</div>
+    <div class="menu-lien" onclick="afficher('videos', this)">🎬 Vidéos</div>
+    <div class="menu-lien" onclick="afficher('contact', this)">✉ Contact</div>
+    <div class="menu-titre" style="margin-top:1.5rem">Aide</div>
+    <div class="menu-lien" onclick="afficher('aide', this)">❓ Comment utiliser</div>
+  </aside>
+
+  <main>
+
+    <!-- GÉNÉRAL -->
+    <div id="sec-general" class="section-admin active">
+      <h2>INFORMATIONS GÉNÉRALES</h2>
+      <div class="champ"><label>Votre nom complet</label><input type="text" id="g-nom"></div>
+      <div class="champ"><label>Ville et province</label><input type="text" id="g-ville"></div>
+      <div class="champ"><label>Votre courriel (pour le bouton Contact)</label><input type="email" id="g-courriel"></div>
+      <div class="champ"><label>Sous-titre de la page d'accueil (en petites lettres dorées)</label><input type="text" id="g-surtitre"></div>
+      <div class="champ"><label>Phrase d'accueil (sous le titre principal)</label><textarea id="g-soustitre" rows="2"></textarea></div>
+      <div class="champ"><label>Guide de navigation (texte d'introduction affiché sous les boutons)</label><textarea id="g-guide" rows="4"></textarea></div>
+    </div>
+
+    <!-- À PROPOS -->
+    <div id="sec-apropos" class="section-admin">
+      <h2>À PROPOS</h2>
+      <div class="champ">
+        <label>Premier paragraphe</label>
+        <textarea id="ap-p1" rows="4"></textarea>
+      </div>
+      <div class="champ">
+        <label>Deuxième paragraphe</label>
+        <textarea id="ap-p2" rows="4"></textarea>
+      </div>
+      <div class="champ">
+        <label>Troisième paragraphe</label>
+        <textarea id="ap-p3" rows="4"></textarea>
+      </div>
+      <div class="champ">
+        <label>Domaines de vie (étiquettes)</label>
+        <div class="tags-wrapper" id="domaines-tags"></div>
+        <div class="tag-ajout">
+          <input type="text" id="new-domaine" placeholder="Ajouter un domaine…">
+          <button class="btn btn-sauv" onclick="ajouterDomaine()" style="white-space:nowrap">+ Ajouter</button>
+        </div>
+      </div>
+      <div class="champ">
+        <label>Nom du fichier de votre portrait (ex: portrait.jpg)</label>
+        <input type="text" id="ap-photo" placeholder="portrait.jpg">
+        <p class="aide">Placez le fichier image dans le même dossier que index.html</p>
+      </div>
+    </div>
+
+    <!-- TEXTES -->
+    <div id="sec-textes" class="section-admin">
+      <h2>TEXTES ET ARTICLES</h2>
+      <div class="cartes-liste" id="textes-liste"></div>
+      <button class="btn-ajouter" onclick="ajouterTexte()">+ Ajouter un texte</button>
+    </div>
+
+    <!-- PHOTOS + GALERIES (section unifiée) -->
+    <div id="sec-photos" class="section-admin">
+
+      <!-- ── Mosaïque d'accueil ── -->
+      <h2>MOSAÏQUE D'ACCUEIL</h2>
+      <p style="margin-bottom:1.5rem; color:var(--terre); font-style:italic;">Ces photos apparaissent sur la page d'accueil sous forme de mosaïque. Indiquez la légende et le nom du fichier image.</p>
+      <div class="cartes-liste" id="photos-liste"></div>
+      <button class="btn-ajouter" onclick="ajouterPhoto()">+ Ajouter une photo</button>
+
+      <!-- ── Galeries thématiques ── -->
+      <h2 style="margin-top:3rem">GALERIES THÉMATIQUES</h2>
+      <p style="margin-bottom:1.5rem; color:var(--terre); font-style:italic;">Chaque galerie est une page dédiée à un thème. Cliquez sur « Créer » pour en ajouter une nouvelle.</p>
+      <div id="galeries-liste"></div>
+      <button class="btn-ajouter" onclick="ajouterGalerie()" style="margin-bottom:1.5rem">+ Créer une nouvelle galerie</button>
+      <div style="margin-top:0.5rem">
+        <button class="btn btn-export" onclick="exporterGaleries()">⬇ Exporter galeries-contenu.js</button>
+        <p class="aide" style="margin-top:0.5rem">Remplacez le fichier <code>galeries-contenu.js</code> dans votre dossier de site.</p>
+      </div>
+
+    </div>
+
+    <!-- COLLAGES -->
+    <div id="sec-collages" class="section-admin">
+      <h2>COLLAGES POÉSIE-SECOURS</h2>
+      <div class="cartes-liste" id="collages-liste"></div>
+      <button class="btn-ajouter" onclick="ajouterCollage()">+ Ajouter un collage</button>
+    </div>
+
+    <!-- VIDÉOS -->
+    <div id="sec-videos" class="section-admin">
+      <h2>VIDÉOS</h2>
+      <p style="margin-bottom:1.5rem; color:var(--terre); font-style:italic;">Pour chaque vidéo, indiquez le titre, la description et le nom du fichier .mp4 à placer dans le même dossier que index.html.</p>
+      <div class="cartes-liste" id="videos-liste"></div>
+      <button class="btn-ajouter" onclick="ajouterVideo()">+ Ajouter une vidéo</button>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="sec-contact" class="section-admin">
+      <h2>SECTION CONTACT</h2>
+      <div class="champ">
+        <label>Texte d'invitation au contact</label>
+        <textarea id="ct-texte" rows="3"></textarea>
+      </div>
+      <div class="danger-zone">
+        <div class="danger-titre">⚠ ZONE SENSIBLE</div>
+        <p style="margin-bottom:1rem;font-size:0.9rem;color:var(--terre)">Réinitialiser efface toutes vos modifications et recharge le contenu original.</p>
+        <button class="btn btn-danger" onclick="reinitialiser()">Réinitialiser tout le contenu</button>
+      </div>
+    </div>
+
+    <!-- AIDE -->
+    <div id="sec-aide" class="section-admin">
+      <h2>COMMENT UTILISER CE PANNEAU</h2>
+      <div style="line-height:2; color:var(--terre);">
+        <p><strong>💾 Sauvegarder</strong> — Enregistre vos modifications dans le navigateur. Vos changements apparaissent immédiatement sur le site.</p><br>
+        <p><strong>⬇ Exporter contenu.js</strong> — Télécharge le fichier <code>contenu.js</code> mis à jour. Remplacez l'ancien fichier dans votre dossier de site par ce nouveau fichier. Utile si vous publiez le site en ligne.</p><br>
+        <p><strong>Modifier dans TextEdit</strong> — Ouvrez le fichier <code>contenu.js</code> dans TextEdit. Faites vos modifications entre les guillemets. Sauvegardez. Rechargez le site dans Safari.</p><br>
+        <p><strong>Ajouter une photo</strong> — Copiez votre fichier image (ex: <code>jardin.jpg</code>) dans le même dossier que <code>index.html</code>. Inscrivez le nom exact du fichier dans le champ correspondant ici.</p><br>
+        <p><strong>Demander à Claude</strong> — Vous pouvez toujours envoyer un document Word à Claude et lui demander de l'ajouter au site automatiquement.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="contenu.js"></script>
+<script src="galeries-contenu.js"></script>
+<script>
+  // ── DONNÉES ──────────────────────────────────────────────
+  function getData() {
+    try {
+      const s = localStorage.getItem('serge-roy-contenu');
+      return s ? JSON.parse(s) : JSON.parse(JSON.stringify(CONTENU));
+    } catch(e) { return JSON.parse(JSON.stringify(CONTENU)); }
+  }
+
+  let D = getData();
+
+  // ── NAVIGATION ───────────────────────────────────────────
+  function afficher(id, lien) {
+    document.querySelectorAll('.section-admin').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.menu-lien').forEach(l => l.classList.remove('actif'));
+    document.getElementById('sec-' + id).classList.add('active');
+    lien.classList.add('actif');
+    chargerSection(id);
+  }
+
+  // ── CHARGEMENT INITIAL ───────────────────────────────────
+  function chargerSection(id) {
+    if (id === 'general') chargerGeneral();
+    else if (id === 'apropos') chargerApropos();
+    else if (id === 'textes') chargerTextes();
+    else if (id === 'photos') { chargerPhotos(); chargerGaleries(); }
+    else if (id === 'collages') chargerCollages();
+    else if (id === 'videos') chargerVideos();
+    else if (id === 'contact') chargerContact();
+  }
+
+  function chargerGeneral() {
+    document.getElementById('g-nom').value = D.nom || '';
+    document.getElementById('g-ville').value = D.ville || '';
+    document.getElementById('g-courriel').value = D.courriel || '';
+    document.getElementById('g-surtitre').value = D.hero.surtitre || '';
+    document.getElementById('g-soustitre').value = D.hero.sousTitre || '';
+    document.getElementById('g-guide').value = D.hero.guide || '';
+  }
+
+  function chargerApropos() {
+    document.getElementById('ap-p1').value = D.apropos.paragraphe1 || '';
+    document.getElementById('ap-p2').value = D.apropos.paragraphe2 || '';
+    document.getElementById('ap-p3').value = D.apropos.paragraphe3 || '';
+    document.getElementById('ap-photo').value = D.apropos.photo || '';
+    renderDomaines();
+  }
+
+  function chargerContact() {
+    document.getElementById('ct-texte').value = D.contact.texte || '';
+  }
+
+  // ── DOMAINES ─────────────────────────────────────────────
+  function renderDomaines() {
+    const el = document.getElementById('domaines-tags');
+    el.innerHTML = '';
+    (D.apropos.domaines || []).forEach((d, i) => {
+      el.insertAdjacentHTML('beforeend', `
+        <div class="tag-item">
+          <span class="tag-texte">${d}</span>
+          <button class="tag-suppr" onclick="supprimerDomaine(${i})">×</button>
+        </div>`);
+    });
+  }
+
+  function ajouterDomaine() {
+    const inp = document.getElementById('new-domaine');
+    const val = inp.value.trim();
+    if (!val) return;
+    D.apropos.domaines.push(val);
+    inp.value = '';
+    renderDomaines();
+  }
+
+  function supprimerDomaine(i) {
+    D.apropos.domaines.splice(i, 1);
+    renderDomaines();
+  }
+
+  // ── TEXTES ───────────────────────────────────────────────
+  function chargerTextes() {
+    const liste = document.getElementById('textes-liste');
+    liste.innerHTML = '';
+    D.textes.forEach((t, i) => {
+      liste.insertAdjacentHTML('beforeend', carteTexteHTML(t, i));
+    });
+  }
+
+  function carteTexteHTML(t, i) {
+    return `<div class="carte-admin" id="texte-${i}">
+      <div class="carte-header" onclick="toggleCarte(this)">
+        <div><span class="carte-categorie-badge">${t.categorie}</span><span class="carte-label">${t.titre}</span></div>
+        <span class="carte-toggle">▼</span>
+      </div>
+      <div class="carte-corps">
+        <div class="champ"><label>Catégorie</label><input type="text" value="${t.categorie}" onchange="D.textes[${i}].categorie=this.value"></div>
+        <div class="champ"><label>Titre</label><input type="text" value="${t.titre}" onchange="D.textes[${i}].titre=this.value"></div>
+        <div class="champ"><label>Extrait (résumé affiché sur la carte)</label><textarea rows="3" onchange="D.textes[${i}].extrait=this.value">${t.extrait}</textarea></div>
+        <div class="champ"><label>Date ou année</label><input type="text" value="${t.date}" onchange="D.textes[${i}].date=this.value"></div>
+        <div class="champ"><label>Lien vers la page complète (ex: mon-texte.html)</label><input type="text" value="${t.lien||''}" placeholder="Laissez vide si pas de page dédiée" onchange="D.textes[${i}].lien=this.value"></div>
+        <div class="carte-actions">
+          <button class="btn-monter" onclick="deplacer('textes',${i},-1)">↑</button>
+          <button class="btn-descendre" onclick="deplacer('textes',${i},1)">↓</button>
+          <button class="btn-suppr" onclick="supprimer('textes',${i})">Supprimer</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function ajouterTexte() {
+    D.textes.push({ categorie: 'Catégorie', titre: 'Nouveau texte', extrait: '', date: new Date().getFullYear().toString(), lien: '' });
+    chargerTextes();
+    // Ouvrir la dernière carte
+    const cartes = document.querySelectorAll('#textes-liste .carte-header');
+    if (cartes.length) { const last = cartes[cartes.length-1]; toggleCarte(last); last.scrollIntoView({behavior:'smooth'}); }
+  }
+
+  // ── PHOTOS ───────────────────────────────────────────────
+  function chargerPhotos() {
+    const liste = document.getElementById('photos-liste');
+    liste.innerHTML = '';
+    D.photos.forEach((p, i) => {
+      liste.insertAdjacentHTML('beforeend', `<div class="carte-admin">
+        <div class="carte-header" onclick="toggleCarte(this)">
+          <span class="carte-label">Photo ${i+1} — ${p.legende}</span>
+          <span class="carte-toggle">▼</span>
+        </div>
+        <div class="carte-corps">
+          <div class="champ"><label>Légende</label><input type="text" value="${p.legende}" onchange="D.photos[${i}].legende=this.value"></div>
+          <div class="champ"><label>Nom du fichier image</label><input type="text" value="${p.fichier||''}" placeholder="ex: jardin-mai.jpg" onchange="D.photos[${i}].fichier=this.value">
+            <p class="aide">Placez ce fichier dans le même dossier que index.html</p></div>
+          <div class="champ"><label>Texte explicatif (s'ouvre en cliquant sur la légende)</label><textarea rows="4" onchange="D.photos[${i}].description=this.value" placeholder="Décrivez cette photo, son contexte, ce qu'elle évoque pour vous…">${(p.description||'').replace(/</g,'&lt;')}</textarea></div>
+          <div class="carte-actions">
+            <button class="btn-monter" onclick="deplacer('photos',${i},-1)">↑</button>
+            <button class="btn-descendre" onclick="deplacer('photos',${i},1)">↓</button>
+            <button class="btn-suppr" onclick="supprimer('photos',${i})">Supprimer</button>
+          </div>
+        </div>
+      </div>`);
+    });
+  }
+
+  function ajouterPhoto() {
+    D.photos.push({ legende: 'Nouvelle photo', fichier: '', description: '' });
+    chargerPhotos();
+  }
+
+  // ── COLLAGES ─────────────────────────────────────────────
+  function chargerCollages() {
+    const liste = document.getElementById('collages-liste');
+    liste.innerHTML = '';
+    D.collages.forEach((c, i) => {
+      liste.insertAdjacentHTML('beforeend', `<div class="carte-admin">
+        <div class="carte-header" onclick="toggleCarte(this)">
+          <span class="carte-label">${c.numero} — ${c.titre}</span>
+          <span class="carte-toggle">▼</span>
+        </div>
+        <div class="carte-corps">
+          <div class="champ"><label>Numéro (ex: PS — 004)</label><input type="text" value="${c.numero}" onchange="D.collages[${i}].numero=this.value"></div>
+          <div class="champ"><label>Titre du collage</label><input type="text" value="${c.titre}" onchange="D.collages[${i}].titre=this.value"></div>
+          <div class="champ"><label>Année approximative</label><input type="text" value="${c.annee}" onchange="D.collages[${i}].annee=this.value"></div>
+          <div class="champ"><label>Nom du fichier image</label><input type="text" value="${c.fichier||''}" placeholder="ex: collage-001.jpg" onchange="D.collages[${i}].fichier=this.value">
+            <p class="aide">Placez ce fichier dans le même dossier que index.html</p></div>
+          <div class="champ"><label>Texte explicatif (s'ouvre en cliquant sur le titre)</label><textarea rows="5" onchange="D.collages[${i}].description=this.value" placeholder="Décrivez ce collage — son intention, sa genèse, ce qu'il dit de vous ou du monde…">${(c.description||'').replace(/</g,'&lt;')}</textarea></div>
+          <div class="carte-actions">
+            <button class="btn-monter" onclick="deplacer('collages',${i},-1)">↑</button>
+            <button class="btn-descendre" onclick="deplacer('collages',${i},1)">↓</button>
+            <button class="btn-suppr" onclick="supprimer('collages',${i})">Supprimer</button>
+          </div>
+        </div>
+      </div>`);
+    });
+  }
+
+  function ajouterCollage() {
+    const n = D.collages.length + 1;
+    D.collages.push({ numero: `PS — 00${n}`, titre: 'Nouveau collage', annee: 'circa 19xx', fichier: '', description: '' });
+    chargerCollages();
+  }
+
+  // ── VIDÉOS ───────────────────────────────────────────────
+  function chargerVideos() {
+    if (!D.videos) D.videos = [];
+    const liste = document.getElementById('videos-liste');
+    liste.innerHTML = '';
+    D.videos.forEach((v, i) => {
+      liste.insertAdjacentHTML('beforeend', `<div class="carte-admin">
+        <div class="carte-header" onclick="toggleCarte(this)">
+          <div><span class="carte-categorie-badge">${v.categorie}</span><span class="carte-label">${v.titre}</span></div>
+          <span class="carte-toggle">▼</span>
+        </div>
+        <div class="carte-corps">
+          <div class="champ"><label>Catégorie</label><input type="text" value="${v.categorie}" onchange="D.videos[${i}].categorie=this.value"></div>
+          <div class="champ"><label>Titre</label><input type="text" value="${v.titre}" onchange="D.videos[${i}].titre=this.value"></div>
+          <div class="champ"><label>Description (affichée sous le titre)</label><textarea rows="2" onchange="D.videos[${i}].description=this.value">${v.description}</textarea></div>
+          <div class="champ"><label>Date</label><input type="text" value="${v.date}" onchange="D.videos[${i}].date=this.value"></div>
+          <div class="champ"><label>Nom du fichier vidéo (.mp4)</label>
+            <input type="text" value="${v.fichier||''}" placeholder="ex: ma-video.mp4" onchange="D.videos[${i}].fichier=this.value">
+            <p class="aide">Placez ce fichier dans le même dossier que index.html</p></div>
+          <div class="carte-actions">
+            <button class="btn-monter" onclick="deplacer('videos',${i},-1)">↑</button>
+            <button class="btn-descendre" onclick="deplacer('videos',${i},1)">↓</button>
+            <button class="btn-suppr" onclick="supprimer('videos',${i})">Supprimer</button>
+          </div>
+        </div>
+      </div>`);
+    });
+  }
+
+  function ajouterVideo() {
+    if (!D.videos) D.videos = [];
+    D.videos.push({ categorie: 'Catégorie', titre: 'Nouvelle vidéo', description: '', date: new Date().getFullYear().toString(), fichier: '' });
+    chargerVideos();
+    const cartes = document.querySelectorAll('#videos-liste .carte-header');
+    if (cartes.length) { const last = cartes[cartes.length-1]; toggleCarte(last); last.scrollIntoView({behavior:'smooth'}); }
+  }
+
+  // ── UTILITAIRES ──────────────────────────────────────────
+  function toggleCarte(header) {
+    const corps = header.nextElementSibling;
+    const tog = header.querySelector('.carte-toggle');
+    const ouvert = corps.classList.toggle('ouvert');
+    header.classList.toggle('ouvert', ouvert);
+    tog.classList.toggle('ouvert', ouvert);
+  }
+
+  function deplacer(tableau, i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= D[tableau].length) return;
+    [D[tableau][i], D[tableau][j]] = [D[tableau][j], D[tableau][i]];
+    chargerSection({ textes:'textes', photos:'photos', collages:'collages', videos:'videos' }[tableau]);
+  }
+
+  function supprimer(tableau, i) {
+    if (!confirm('Supprimer cet élément ?')) return;
+    D[tableau].splice(i, 1);
+    chargerSection({ textes:'textes', photos:'photos', collages:'collages', videos:'videos' }[tableau]);
+  }
+
+  // ── COLLECTE DES DONNÉES ─────────────────────────────────
+  function collecterDonnees() {
+    D.nom = document.getElementById('g-nom')?.value || D.nom;
+    D.ville = document.getElementById('g-ville')?.value || D.ville;
+    D.courriel = document.getElementById('g-courriel')?.value || D.courriel;
+    D.hero.surtitre = document.getElementById('g-surtitre')?.value || D.hero.surtitre;
+    D.hero.sousTitre = document.getElementById('g-soustitre')?.value || D.hero.sousTitre;
+    D.hero.guide = document.getElementById('g-guide')?.value ?? D.hero.guide;
+    D.apropos.paragraphe1 = document.getElementById('ap-p1')?.value || D.apropos.paragraphe1;
+    D.apropos.paragraphe2 = document.getElementById('ap-p2')?.value || D.apropos.paragraphe2;
+    D.apropos.paragraphe3 = document.getElementById('ap-p3')?.value || D.apropos.paragraphe3;
+    D.apropos.photo = document.getElementById('ap-photo')?.value || D.apropos.photo;
+    D.contact.texte = document.getElementById('ct-texte')?.value || D.contact.texte;
+  }
+
+  // ── SAUVEGARDER ──────────────────────────────────────────
+  function sauvegarder() {
+    collecterDonnees();
+    localStorage.setItem('serge-roy-contenu', JSON.stringify(D));
+    const notif = document.getElementById('notif');
+    notif.style.opacity = '1';
+    setTimeout(() => notif.style.opacity = '0', 2500);
+  }
+
+  // ── EXPORTER contenu.js ──────────────────────────────────
+  function exporterFichier() {
+    collecterDonnees();
+    const texte = `// ============================================================
+//  FICHIER DE CONTENU — SERGE ROY
+//  Vous pouvez modifier ce fichier dans TextEdit ou tout autre
+//  éditeur de texte. Respectez les guillemets et les virgules.
+// ============================================================
+
+const CONTENU = ${JSON.stringify(D, null, 2)};
+`;
+    const blob = new Blob([texte], { type: 'text/javascript;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'contenu.js'; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // ── RÉINITIALISER ────────────────────────────────────────
+  function reinitialiser() {
+    if (!confirm('Êtes-vous certain ? Toutes vos modifications dans le navigateur seront effacées.')) return;
+    localStorage.removeItem('serge-roy-contenu');
+    D = JSON.parse(JSON.stringify(CONTENU));
+    chargerSection('general');
+    alert('Contenu réinitialisé.');
+  }
+
+  // ── INITIALISATION ───────────────────────────────────────
+  chargerGeneral();
+
+  // ════════════════════════════════════════════════════════
+  //  GESTION DES GALERIES
+  // ════════════════════════════════════════════════════════
+
+  function getGaleries() {
+    try {
+      const s = localStorage.getItem('serge-roy-galeries');
+      return s ? JSON.parse(s) : JSON.parse(JSON.stringify(GALERIES));
+    } catch(e) { return JSON.parse(JSON.stringify(GALERIES)); }
+  }
+
+  function sauverGaleries() {
+    localStorage.setItem('serge-roy-galeries', JSON.stringify(G));
+    const notif = document.getElementById('notif');
+    notif.textContent = '✓ Galeries sauvegardées !';
+    notif.style.opacity = '1';
+    setTimeout(() => { notif.style.opacity = '0'; notif.textContent = '✓ Sauvegardé !'; }, 2500);
+  }
+
+  let G = getGaleries();
+
+  function chargerGaleries() {
+    const liste = document.getElementById('galeries-liste');
+    liste.innerHTML = '';
+    G.forEach((g, gi) => {
+      const nb = (g.photos || []).length;
+      const div = document.createElement('div');
+      div.className = 'carte-admin';
+      div.style.marginBottom = '1rem';
+      div.innerHTML = `
+        <div class="carte-header" onclick="toggleCarte(this)">
+          <div>
+            <span class="carte-categorie-badge">${g.etiquette || ''}</span>
+            <span class="carte-label">${g.titre}</span>
+            <span style="font-size:0.78rem;color:var(--terre);margin-left:0.8rem">${nb} photo${nb!==1?'s':''}</span>
+          </div>
+          <div style="display:flex;gap:0.5rem;align-items:center">
+            <a href="${g.fichier}" target="_blank" style="font-size:0.75rem;color:var(--or);text-decoration:none;border:1px solid var(--or);padding:0.2rem 0.6rem;font-family:'Cinzel',serif;letter-spacing:0.1em">↗ Voir</a>
+            <span class="carte-toggle">▼</span>
+          </div>
+        </div>
+        <div class="carte-corps">
+
+          <div class="champ"><label>Titre de la galerie</label>
+            <input type="text" value="${g.titre}" onchange="G[${gi}].titre=this.value"></div>
+
+          <div class="champ"><label>Étiquette (ex: Nature · Mémoire)</label>
+            <input type="text" value="${g.etiquette||''}" onchange="G[${gi}].etiquette=this.value"></div>
+
+          <div class="champ"><label>Sous-titre</label>
+            <input type="text" value="${g.sousTitre||''}" onchange="G[${gi}].sousTitre=this.value"></div>
+
+          <div class="champ"><label>Texte d'introduction</label>
+            <textarea rows="2" onchange="G[${gi}].intro=this.value">${g.intro||''}</textarea></div>
+
+          <div class="champ"><label>Image de couverture (nom du fichier)</label>
+            <input type="text" value="${g.vignette||''}" placeholder="ex: ma-photo.jpg" onchange="G[${gi}].vignette=this.value">
+            <p class="aide">Nom exact du fichier image à utiliser comme vignette dans la page des galeries</p></div>
+
+          <div class="champ"><label>Nom du fichier HTML</label>
+            <input type="text" value="${g.fichier}" onchange="G[${gi}].fichier=this.value">
+            <p class="aide">Ex: galerie-jardin.html — ce fichier doit exister dans votre dossier</p></div>
+
+          <div style="margin-top:1.5rem;margin-bottom:0.5rem">
+            <label>Photos de la galerie</label>
+          </div>
+          <div class="cartes-liste" id="photos-galerie-${gi}"></div>
+          <button class="btn-ajouter" onclick="ajouterPhotoGalerie(${gi})">+ Ajouter une photo</button>
+
+          <div class="carte-actions" style="margin-top:1.5rem">
+            <button class="btn-monter" onclick="deplacerGalerie(${gi},-1)">↑</button>
+            <button class="btn-descendre" onclick="deplacerGalerie(${gi},1)">↓</button>
+            <button class="btn-suppr" onclick="supprimerGalerie(${gi})">Supprimer cette galerie</button>
+          </div>
+        </div>`;
+      liste.appendChild(div);
+      renderPhotosGalerie(gi);
+    });
+  }
+
+  function renderPhotosGalerie(gi) {
+    const cont = document.getElementById('photos-galerie-' + gi);
+    if (!cont) return;
+    cont.innerHTML = '';
+    const photos = G[gi].photos || [];
+    photos.forEach((p, pi) => {
+      cont.insertAdjacentHTML('beforeend', `
+        <div class="carte-admin" style="margin-bottom:0.6rem">
+          <div class="carte-header" onclick="toggleCarte(this)">
+            <span class="carte-label" style="font-size:0.9rem">${p.legende || '(sans légende)'}</span>
+            <span class="carte-toggle">▼</span>
+          </div>
+          <div class="carte-corps">
+            <div class="champ"><label>Nom du fichier image</label>
+              <input type="text" value="${p.fichier||''}" placeholder="ex: photo.jpg"
+                onchange="G[${gi}].photos[${pi}].fichier=this.value">
+              <p class="aide">Placez ce fichier dans le même dossier que index.html</p></div>
+            <div class="champ"><label>Légende</label>
+              <input type="text" value="${p.legende||''}"
+                onchange="G[${gi}].photos[${pi}].legende=this.value"></div>
+            <div class="champ"><label>Texte associé (optionnel — s'ouvre au clic)</label>
+              <textarea rows="4" onchange="G[${gi}].photos[${pi}].description=this.value"
+                placeholder="Décrivez cette photo, son contexte, ce qu'elle évoque…">${(p.description||'').replace(/</g,'&lt;')}</textarea></div>
+            <div class="carte-actions">
+              <button class="btn-monter" onclick="deplacerPhotoG(${gi},${pi},-1)">↑</button>
+              <button class="btn-descendre" onclick="deplacerPhotoG(${gi},${pi},1)">↓</button>
+              <button class="btn-suppr" onclick="supprimerPhotoG(${gi},${pi})">Supprimer</button>
+            </div>
+          </div>
+        </div>`);
+    });
+  }
+
+  function ajouterPhotoGalerie(gi) {
+    if (!G[gi].photos) G[gi].photos = [];
+    G[gi].photos.push({ fichier: '', legende: 'Nouvelle photo', description: '' });
+    renderPhotosGalerie(gi);
+    const items = document.querySelectorAll('#photos-galerie-' + gi + ' .carte-header');
+    if (items.length) { const last = items[items.length-1]; toggleCarte(last); last.scrollIntoView({behavior:'smooth'}); }
+  }
+
+  function supprimerPhotoG(gi, pi) {
+    if (!confirm('Supprimer cette photo de la galerie ?')) return;
+    G[gi].photos.splice(pi, 1);
+    renderPhotosGalerie(gi);
+  }
+
+  function deplacerPhotoG(gi, pi, dir) {
+    const arr = G[gi].photos;
+    const j = pi + dir;
+    if (j < 0 || j >= arr.length) return;
+    [arr[pi], arr[j]] = [arr[j], arr[pi]];
+    renderPhotosGalerie(gi);
+  }
+
+  function ajouterGalerie() {
+    const titre = prompt('Titre de la nouvelle galerie :', 'Mon titre');
+    if (!titre) return;
+
+    // Générer un nom de fichier propre à partir du titre
+    const id = titre.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // retirer accents
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+    const fichier = 'galerie-' + id + '.html';
+
+    // Vérifier que le nom n'existe pas déjà
+    if (G.find(g => g.fichier === fichier)) {
+      alert('Une galerie avec ce nom existe déjà. Choisissez un autre titre.');
+      return;
+    }
+
+    // Ajouter la galerie dans les données
+    G.push({
+      id: id,
+      fichier: fichier,
+      etiquette: 'Thème',
+      titre: titre,
+      sousTitre: '',
+      intro: '',
+      vignette: '',
+      photos: []
+    });
+    sauverGaleries();
+    chargerGaleries();
+
+    // Générer et télécharger le fichier HTML automatiquement
+    const html = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${titre} — Galerie · Serge Roy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="galerie-style.css">
+</head>
+<body>
+  <script src="galeries-contenu.js"><\/script>
+  <script src="galerie-moteur.js"><\/script>
+</body>
+</html>`;
+
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fichier; a.click();
+    URL.revokeObjectURL(url);
+
+    // Ouvrir la dernière carte et défiler jusqu'à elle
+    setTimeout(() => {
+      const cartes = document.querySelectorAll('#galeries-liste .carte-header');
+      if (cartes.length) { const last = cartes[cartes.length-1]; toggleCarte(last); last.scrollIntoView({behavior:'smooth'}); }
+    }, 100);
+
+    setTimeout(() => alert(
+      '✓ Galerie "' + titre + '" créée !\n\n' +
+      'Le fichier ' + fichier + ' a été téléchargé automatiquement.\n' +
+      'Déplacez-le dans votre dossier de site (là où se trouve index.html).\n\n' +
+      'Ensuite cliquez sur "Exporter galeries-contenu.js" et remplacez ce fichier aussi.'
+    ), 200);
+  }
+
+  function supprimerGalerie(gi) {
+    if (!confirm('Supprimer la galerie "' + G[gi].titre + '" ? Le fichier HTML ne sera pas supprimé.')) return;
+    G.splice(gi, 1);
+    chargerGaleries();
+  }
+
+  function deplacerGalerie(gi, dir) {
+    const j = gi + dir;
+    if (j < 0 || j >= G.length) return;
+    [G[gi], G[j]] = [G[j], G[gi]];
+    chargerGaleries();
+  }
+
+  // Bouton Sauvegarder — étendre pour inclure les galeries
+  const _sauvegarderOriginal = window.sauvegarder;
+  window.sauvegarder = function() {
+    if (typeof _sauvegarderOriginal === 'function') _sauvegarderOriginal();
+    sauverGaleries();
+  };
+
+  function exporterGaleries() {
+    const texte = `// ============================================================
+//  FICHIER DE CONTENU — GALERIES PHOTOS — SERGE ROY
+//  Géré automatiquement par le panneau Admin.
+// ============================================================
+
+const GALERIES = ${JSON.stringify(G, null, 2)};
+`;
+    const blob = new Blob([texte], { type: 'text/javascript;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'galeries-contenu.js'; a.click();
+    URL.revokeObjectURL(url);
+  }
+</script>
+</body>
+</html>

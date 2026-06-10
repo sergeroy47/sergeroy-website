@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratique et Respiration — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    /* EN-TÊTE ARTICLE */
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    /* CORPS */
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* INTRODUCTION */
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    /* PARTIES ET SECTIONS */
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    /* CITATION EN EXERGUE */
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    /* SIGNATURE */
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    /* NAVIGATION BAS */
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    /* FOOTER */
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Vie spirituelle &amp; Santé</span>
+    <h1>Pratique et Respiration</h1>
+    <p class="article-sous-titre">Chemins vers l'intérieur</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Février 2025</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <!-- PARTIE 1 -->
+    <h2 class="partie-titre">Première partie : L'entraîneur de chacun</h2>
+
+    <p>L'entraîneur de mon beau-frère Georges n'a pas de diplôme et ne sait même pas qu'il est entraîneur.</p>
+
+    <p>Pourtant chaque jour, il entraîne mon beau-frère dehors pour qu'il bouge un peu et prenne de l'air et de la lumière. Même durant la période de froid intense que l'on connaît, ils sortent plusieurs fois par jour.</p>
+
+    <p>Le secret de son entraîneur c'est qu'il est en vie et déborde d'énergie. Son entraîneur est simplement un jeune chien plein de vitalité… Qui ne peut pas passer sa vie assis dans le fond de sa cage. Et ainsi mon beau-frère qui devrait être son entraîneur pour le dresser est celui qui est entraîné et récolte tous les beaux côtés de l'entraînement.</p>
+
+    <p>Plusieurs parents ont aussi de bons entraîneurs sans le savoir, oui tous ces petits enfants qui ont du chien et qui forcent leurs parents à bouger.</p>
+
+    <p>Aujourd'hui, j'ai vu le contre-exemple du jeune chien entraîneur. En effet j'ai croisé un homme qui promenait son chien un peu obèse. Le jeune chien vieillit et lui aussi se met à préférer la farniente aux sorties en plein air et à l'activité physique. Ou le chien a rencontré son maître.</p>
+
+    <p>Débuter à s'entraîner n'est que le premier bon pas. Il faut apprendre à continuer, poursuivre, persévérer. C'est vrai dans l'entraînement mais c'est vrai pour plusieurs autres aspects de la vie.</p>
+
+    <p>Prenons l'exemple d'un jeune qui veut jouer d'un instrument de musique. Du violon ou de la clarinette, ce type d'instrument qui permet des écarts fabuleux avec le résultat recherché. Voilà qu'au début on produit plus de couac et de quick que des sonorités mélodieuses.</p>
+
+    <p>Voilà plusieurs étés, un jeune voisin apprenait la trompette. C'est difficile d'être discret quand on apprend la trompette. Durant tout l'été, chaque jour, nous étions témoins de ses efforts pour maîtriser son instrument, pour faire de la musique. À la fin de l'été, nous n'étions pas encore en présence d'un trompettiste, mais en comparaison avec le début de l'été, nos oreilles pouvaient parfois être enchantées.</p>
+
+    <blockquote>Si l'on veut progresser vraiment dans n'importe quel domaine, on doit pratiquer chaque jour. « Chaque jour sur le métier remettez votre ouvrage. »</blockquote>
+
+    <h3 class="section-titre">Tout le monde peut être son propre entraîneur</h3>
+
+    <p>Et beaucoup d'enfants se font asseoir devant la télévision ou un jeu vidéo pour laisser leurs parents tranquilles.</p>
+
+    <p>Mais tout le monde peut aussi être son propre entraîneur. Il n'y a qu'une qualité requise, être plein d'énergie et toujours prêt à bouger. C'est certainement plus facile quand on est jeune et que l'énergie déborde. Mais c'est encore plus facile quand on est vieux et que l'on a cultivé toute sa vie le goût de bouger. Le bien-être que l'on ressent alors dépasse la bonne forme physique. Car c'est de plus en plus reconnu, l'entraînement physique n'est pas seulement bénéfique pour les muscles, elle est bénéfique pour tout le corps et l'esprit aussi.</p>
+
+    <p>Je fais du tai-chi depuis des années. Les autres qui font aussi du tai-chi avec moi m'entraînent et je les entraîne à mon tour. On s'entraîne les uns les autres. C'est vrai dans un cours et c'est encore plus vrai dans la vie… Nous entraînons aussi nos professeurs… Car si nous n'allions pas au cours, plusieurs perdraient une bonne part de leur motivation à s'améliorer.</p>
+
+    <h3 class="section-titre">La meilleure manière d'apprendre est d'enseigner</h3>
+
+    <p>Dans le stage de tai-chi et de production de sons porteurs de chi durant les fêtes, mon professeur Pierre pouvait nous démontrer des sons beaucoup plus évolués et imprégnés de chi que l'année précédente parce qu'il s'était sans doute entraîné toute l'année pour nous donner un meilleur cours.</p>
+
+    <p>C'est une des raisons pourquoi l'on dit souvent que la meilleure manière d'apprendre est d'enseigner. On apprend mieux quand on enseigne parce que l'on est plus attentif, plus concentré. Quand on suit un cours on peut facilement laisser son esprit vagabonder. Donner un cours demande une concentration plus grande, difficile de rêvasser quand des dizaines de paires de yeux vous scrutent de près.</p>
+
+    <p>On apprend en enseignant parce que l'on devient sensibles aux erreurs des autres qui débutent. Mais ces erreurs nous servent de miroir et l'on peut souvent les déceler chez soi pour mieux les corriger. Mais c'est surtout que si l'on veut continuer à enseigner aux autres on doit les précéder et pour les précéder on doit s'entraîner soi-même. Mais le problème avec le fait de dire aux autres quoi faire, c'est que l'on intériorise cette voix qui ne se tait plus quand on fait son Taïchi.</p>
+
+    <h3 class="section-titre">Persévérer au-delà de l'enthousiasme du débutant</h3>
+
+    <p>Nous n'avons jamais été invité à un concert de notre jeune voisin. Parce que débuter une activité est une chose, mais pour exceller, il faut persévérer. Au début, on accepte plus facilement les difficultés puisque l'on sait que l'on a tout à apprendre. D'ailleurs, les progrès sont souvent rapides. En plus nous sommes portés par l'enthousiasme du débutant qui s'imagine déjà premier trompettiste de l'orchestre symphonique de Montréal.</p>
+
+    <p>Mais une fois les premiers apprentissages passés les progrès sont plus lents et c'est tout le travail qui reste à faire qui nous apparaît comme une énorme montagne à gravir. Comment cultiver cet esprit du débutant tout au long de son apprentissage ?</p>
+
+    <p>Pour poursuivre, il faut trouver un certain plaisir comme le bien-être qui découle de l'entraînement physique ou simplement le plaisir de s'amuser. Le bonheur de contourner des difficultés plus subtiles et de pénétrer des territoires insoupçonnés au départ de notre entraînement. Car oui, il y a des zones secrètes accessibles qu'à ceux qui se donnent la peine de pousser plus loin la pratique de leur art ou de leur sport.</p>
+
+    <p>Par exemple, il n'y a que les coureurs qui ont une longue pratique qui peuvent découvrir leur second souffle ou l'euphorie du « high ». Les plaisirs de la découverte sont souvent entrelacés de longues périodes où l'on chemine très lentement comme un ralenti dans notre monde de vitesse.</p>
+
+    <h3 class="section-titre">L'intelligence du corps</h3>
+
+    <p>Il faut faire l'expérience.</p>
+
+    <p>Avec le corps, les explications et les bonnes paroles ne suffisent pas pour nous faire pénétrer dans l'intelligence du corps.</p>
+
+    <p>L'intelligence du corps peut se découvrir dans des pratiques très avancées, mais on la découvre aussi dans les apprentissages les plus simples. Comme apprendre à rouler à bicyclette. Ce genre d'activité dans lequel on doit tenir compte de différents paramètres, le guidon, les pédales, la vitesse pour maintenir son équilibre. Au début, on essaie de contrôler tout ça avec sa tête. Mais la tête raisonne une chose à la fois alors que l'expérience est totale et dans chaque instant.</p>
+
+    <p>Après de multiples essais infructueux, tout à coup il se passe un déclic, on ne pense plus, on est dans l'action totale et on roule à bicyclette… Voilà l'intelligence du corps qui a pris la suite de la raison. Chaque fois que l'on vit cette expérience, c'est comme Alice au pays des merveilles.</p>
+
+    <p>Quand j'ai commencé à faire du Tai-chi, mon corps était pogné en un seul morceau. Même si j'avais fait beaucoup de sports, mes membres et mes muscles étaient tous liés ensemble. En essayant d'imiter les mouvements, j'essayais tant bien que mal de reproduire ce que je voyais, je sentais d'abord les tensions. Un peu comme un bébé qui bouge tout le corps pour effectuer un mouvement.</p>
+
+    <p>Et comme au début de tout nouvel apprentissage, la tête voulait tout contrôler. Mais faire bouger le corps avec la tête, c'est mission impossible. Seule la répétition réussit tranquillement à nous défaire de cette tyrannie.</p>
+
+    <h3 class="section-titre">Les réseaux neuronaux</h3>
+
+    <p>En fait, la tête et le corps ne font qu'un. Et la tête est bien utile quand on veut écrire et lire. Mais la tête est aussi multiple, c'est à dire composée de multitudes réseaux neuronaux. On pourrait imaginer ces réseaux neuronaux comme des muscles.</p>
+
+    <p>Je vous disais que quand j'ai commencé à faire du Tai-chi, mon corps était pogné en seul morceau. Et bien c'était à cause que mes réseaux neuronaux manquaient d'entraînement, de souplesse, de force…</p>
+
+    <p>Une bonne façon d'expérimenter, c'est par des exercices d'équilibre. Vous pouvez marcher sur une corde raide ou simplement utiliser une planche spécialement conçue pour pratiquer son équilibre sans se casser le cou. Une foule de micro-sensations doivent circuler du bas du corps vers le cerveau et des milliers de micro-décisions partir du cerveau vers les différentes parties du corps. Exactement comme un enfant apprend à marcher…</p>
+
+    <p>Si vous faites l'expérience, vous constaterez rapidement que tant que c'est votre mental qui tente de régler le problème, vous créez de nouveaux problèmes.</p>
+
+    <p>Les réseaux neuronaux que nous utilisons le plus souvent sont ceux du cortex supérieur, eh oui, parce que nous sommes supérieurs aux animaux ! Mais comme c'est ceux que nous utilisons le plus souvent, ils sont devenus dominants. C'est merveilleux dans bien des situations, mais sur une corde raide ça vous aide surtout à tomber… Le cortex supérieur est ce que l'on appelle communément le mental.</p>
+
+    <h3 class="section-titre">Libération progressive des tensions</h3>
+
+    <p>Reprenons l'exemple du vélo, au début, nous avons besoin de toute notre attention pour rester en selle, et puis tranquillement le vélo devient comme une extension de nous-même.</p>
+
+    <p>Quand on débute en tai-chi, nous vivons le même phénomène. Nous sommes raides et tendus. Seule une pratique continue, nous permet tranquillement de laisser tomber les tensions. Mais surprise souvent frustrante, on découvre sous la première couche de tensions, une autre couche de tensions. Une fois le dos libéré, on s'aperçoit que c'est le ventre qui est encore tendu. Et des années passent…</p>
+
+    <p>Mais en faisant ce travail de libération, on a raffiné notre attention. On commence à sentir des choses qui n'existait pas pour nous avant. Notre perception du corps change. Et alors que l'on a été longtemps à reproduire des mouvements de l'extérieur, on commence à sentir l'intérieur bouger, réagir… Et c'est alors que le vrai travail commence. Et des années passent… mais nous sentons aussi une forme de bien-être grandir, un genre de petit bonheur que l'on avait ramassé…</p>
+
+    <h3 class="section-titre">Les neurones miroirs</h3>
+
+    <p>Comment les bébés apprennent-ils si rapidement par imitation, comment apprenons-nous si bien le tai-chi en reproduisant les gestes que l'on voit le professeur faire ou en pratiquant en groupe ?</p>
+
+    <p>Les neurones comme le corps ont besoin de répétition pour créer de nouvelles cartes mentales. Et pour créer ces cartes mentales, nos cerveaux contiennent des neurones-miroir. C'est une découverte récente et fortuite de la méthode scientifique.</p>
+
+    <p>Mais l'on n'a pas attendu une découverte scientifique pour appliquer les propriétés des neurones miroirs dans l'enseignement du tai-chi. La méthode traditionnelle chinoise n'est pas « fais ce que je te dis », mais bien « Reproduis et répète ce que je te montre ». Les grands maîtres chinois parlaient peu, les élèves devaient regarder et reproduire pendant des années ce que leurs maîtres leur montraient.</p>
+
+    <h3 class="section-titre">Le corps comme une cathédrale</h3>
+
+    <p>La structure du corps peut être imaginée comme une cathédrale. Les jambes comme des piliers nous ancrent au sol. L'abdomen, entre le haut et le bas, devient le lieu de convergence de toutes les forces présentes dans le corps. Un lieu de rassemblement énergétique. Et ici la matière n'est pas inerte, mais bien vivante et dynamique.</p>
+
+    <h3 class="section-titre">Dans le ventre du dragon</h3>
+
+    <p>Juste au centre du ventre se trouve le tantien. Le tantien n'est pas une entité anatomique, mais un lieu de convergence de lignes de force, un carrefour giratoire de l'énergie du corps. Pour ceux qui font du tai-chi depuis assez longtemps, ce lieu n'est pas un acte de foi, mais une expérience de tous les jours qui se concrétise et s'enrichit avec la pratique.</p>
+
+    <p>Les Chinois disent que le ventre est notre deuxième cerveau. Du point de vue scientifique, c'est de plus en plus vérifié parce que les principaux neurotransmetteurs sont produits dans les intestins. Mais dans le tai-chi, ce n'est pas cet aspect qui nous intéresse le plus. Mais ce petit lieu nommé tantien, hara en japonais comme dans harakiri. Ce carrefour au centre du flux du chi ou du Ki en japonais.</p>
+
+    <p>Le chi ou le ki souvent traduit par énergie vitale déborde notre corps, on le retrouve dans toute la nature. Et tous les arts internes orientaux sont basés sur cette réalité à laquelle il faut s'ouvrir. Le mental, par son activité incessante, masque sa perception.</p>
+
+    <p>Au début du tai-chi, on répète des gestes tels que l'on les voit puis peu à peu le tantien et le chi deviennent les moteurs de l'action. Dans le ventre du dragon, un feu s'allume tranquillement...</p>
+
+    <h3 class="section-titre">Trois cerveaux, un seul être</h3>
+
+    <blockquote>« Ah ! Frappe-toi le cœur, c'est là qu'est le génie. » Le génie de la création. Le génie de la compassion.</blockquote>
+
+    <p>As-tu du cœur au ventre ? Et une tête sur les épaules ?</p>
+
+    <p>Le cœur serait un troisième cerveau, des scientifiques marginaux commencent à le prétendre… L'intelligence du corps. Celle que les enfants développent en courant dehors et en grimpant aux arbres.</p>
+
+    <p>Et trois cerveaux valent mieux qu'un… mais c'est aussi trois qui font qu'un. Un peu d'équilibre entre les 3 et la vie est belle…</p>
+
+    <p>L'action naît dans le tantien. L'intention s'y alimente et jaillit sur toute la structure, sur la force musculaire. Non, pas la force musculaire rigide et voyante, mais sur cette force souple et humble qui ne fait pas de bruits sauf des rotes, des pets et autres sons porteurs de chi !</p>
+
+    <!-- PARTIE 2 -->
+    <h2 class="partie-titre">Deuxième partie : Respirez donc</h2>
+
+    <p style="font-style:italic; color:var(--terre); margin-bottom:2rem;">Récit d'une découverte : la respiration comme voie vers l'intérieur</p>
+
+    <h3 class="section-titre">1. Comment j'ai découvert la respiration</h3>
+
+    <p>Comment ai-je découvert qu'on pouvait faire attention à sa respiration ? Que la respiration avait une influence très importante sur notre vie, notre condition physique ? Je pense que c'est avec le Taïchi. En Occident, à l'époque où je vivais, ce n'était pas une préoccupation particulière, personne ne parlait de ça. Même dans le sport où c'est super important. Ceux qui s'intéressaient vraiment à la respiration, on n'en entendait pas parler : c'étaient les Orientaux.</p>
+
+    <p>J'ai dû attendre la fin de ma trentaine pour m'intéresser au Taïchi. Mais au départ, mes motivations n'avaient rien d'ésotérique ni de mystique. Je cherchais simplement une forme d'exercice qui me détendrait et améliorerait ma condition physique. Je voulais garder ma santé et, surtout, combattre une habitude que j'avais de boire.</p>
+
+    <p>Je venais d'une famille de bons buveurs. Dans ma vingtaine, j'avais mené une vie de bon vivant. Mais boire exige une tolérance extrême sur le plan physique et sur la santé. C'est ce problème qui m'a ouvert à d'autres dimensions. En essayant de trouver des façons de vivre autrement, je suis venu à m'intéresser au Taïchi.</p>
+
+    <p>Pour moi, c'était vraiment pour une connaissance du corps, pour améliorer ma condition physique et gérer ma vie. J'aimais beaucoup boire — j'aimais le feeling que ça m'apportait. Étant introverti, l'alcool facilitait ma vie sociale. J'avais beaucoup de plaisir avec les autres quand j'étais sous son effet. J'étais plutôt agréable, un peu excessif mais pas maladif. Jeune, la vie sociale est très importante et ma jeunesse a coïncidé avec un mouvement de libération presqu'universelle dont nous avons profité à fond.</p>
+
+    <h3 class="section-titre">2. Le Taïchi comme compromis</h3>
+
+    <p>Quand j'entendais parler de méditation, je me disais que ce n'était pas pour moi. Rester immobile pendant une longue période me semblait être une voie que je ne pouvais pas assumer. Le Taïchi était comme un entre-deux. Ça se faisait en silence, avec une certaine concentration, de l'attention. Ça m'attirait parce que, toute ma vie, j'avais été un être intérieur.</p>
+
+    <p>Élevé dans la religion catholique, j'avais été un bon pratiquant. J'avais cru à leur histoire. J'avais même pensé devenir prêtre — c'était peut-être aussi l'espoir de ma mère, mais je pense que j'avais intégré ça. Quand on allait à l'église et qu'on priait, c'était quelque chose qui répondait à ce qui était là en moi. Même si j'avais quitté la religion catholique et ses croyances, ce fond était resté. Donc quand on parlait de méditation, ça m'attirait. C'est par le Taïchi que je suis finalement venu à la méditation.</p>
+
+    <h3 class="section-titre">3. La découverte progressive</h3>
+
+    <p>J'ai commencé le Taïchi alors que j'étais encore à Sherbrooke, un groupe de Montréal venait nous enseigner. Le Taïchi toïste, dont Monsieur Moy, un Chinois qui avait immigré à Montréal au début des années 70 était le fondateur.</p>
+
+    <p>Il y avait toujours eu à Montréal des Chinois qui enseignaient ça dans des cours privés, mais celui que je connaissais donnait des cours tout en fumant. Paradoxal quand on parle de respiration.</p>
+
+    <p>La cigarette, j'imagine, répond à un besoin de ne pas vouloir respirer. On revient peut-être à un instinct de vie contre un instinct de mort. L'alcool et le tabac, pour moi, c'est plus l'instinct de mort — tu mets de l'avant des éléments qui détériorent ton corps, qui créent souvent des problèmes dans ta vie.</p>
+
+    <p>Mais ce que je cherchais, c'était le bien-être. Jeune, le sport était presque toute ma vie. J'ai fait aussi beaucoup de plein air. J'avais ce goût d'être bien dans la nature et je voulais trouver des façons d'améliorer ce bien-être, de me libérer des tensions. C'est ça que je voulais rééquilibrer avec le Taïchi.</p>
+
+    <p>Je ne savais pas vraiment ce que c'était. Tout ce que j'ai découvert pendant les 30 années suivantes, au départ, ce n'était pas là. C'est vrai. Quand tu commences le Taïchi, tu cherches un peu d'excitation. Au début, on a l'impression d'apprendre beaucoup de choses. Mais comme dans tout, on finit par atteindre un plateau. C'est moins excitant, moins nouveau. Et comme je le disais, au début, ça libère des tensions pour t'en faire découvrir d'autres. Il y a un côté un peu déprimant. Quand tu commences à penser que tu te libères, tu t'aperçois au fond que tu es plus pogné que tu le pensais. Il faut vraiment chercher autre chose pour continuer.</p>
+
+    <p>Je ne sais pas combien de temps ça m'a pris avant d'arriver à une autre dimension du Taïchi — où ce n'était plus juste un exercice, mais vraiment un travail qui avait une influence sur tout le corps, plus précisément sur l'intérieur. On dit que c'est un art martial interne. C'est un travail interne qu'il faut découvrir, qu'il faut laisser émerger. Parce qu'être juste dans les mouvements, dans les formes, ça peut être excitant, mais ce n'est pas le cœur du Taïchi.</p>
+
+    <h3 class="section-titre">4. L'apprentissage de la forme et l'attention</h3>
+
+    <p>Au départ, on apprend les formes. Ça exerce notre mémoire. En 30 ans, j'ai croisé beaucoup de gens qui en ont fait ou qui en font encore. Beaucoup sont restés à la surface — ils font les mouvements. Certains n'ont même pas fait l'effort de mémoriser les séquences par eux-mêmes. Pourtant, une fois que tu connais la forme, que tu l'as mémorisée, c'est une couche de moins à supporter quand tu fais ton Taïchi.</p>
+
+    <p>Quand tu es dans ton Taïchi, tu n'as plus besoin de penser à ce qui vient après. Ça finit par être une forme d'automatisme. L'important devient l'attention. L'attention sans tension. C'est ça qui permet d'accéder à une forme de recherche intérieure.</p>
+
+    <h3 class="section-titre">5. Le lien entre Taïchi, méditation et respiration</h3>
+
+    <p>Dans le Taïchi comme dans les arts martiaux en général, il y a un lien qui se fait continuellement avec la méditation — un lien que je ne connaissais pas au départ. C'est toujours la respiration qui fait ce pont. Quand tu fais du Taïchi, la respiration devient centrale. Quand tu fais de la méditation, tu t'aperçois que la respiration est tout aussi centrale, il ne reste que cela.</p>
+
+    <p>Mais qu'est-ce que c'est, la méditation ? C'est faire silence. Quand on essaie de faire silence, on s'aperçoit qu'à l'intérieur de nous, il y a une petite voix. On est toujours en dialogue. Notre mental fonctionne continuellement. Il faut commencer par s'en apercevoir, parce que je pense qu'au départ, on ne le sait même pas. Ça fait tellement partie de nous-mêmes qu'on ne se pose pas de questions sur ce mental qui est en dialogue constant avec lui-même.</p>
+
+    <p>Pour faire taire le mental dans le Taïchi, les mouvements — une fois qu'on les a mémorisés — deviennent une partie automatique. Ça laisse une autre partie de notre esprit prendre le dessus, se manifester.</p>
+
+    <h3 class="section-titre">6. Compter pour calmer le mental</h3>
+
+    <p>Quand on commence dans le Zen — je pense que ça peut être la même chose dans d'autres pratiques de méditation — pour parvenir à cette dimension un peu plus silencieuse, pour se connecter avec l'univers, on te demande de compter tes respirations. Un à l'inspire, deux à l'expire. Tu vas jusqu'à dix, puis tu recommences. Si pendant que tu comptes, tu te perds dans tes pensées, tu recommences à un.</p>
+
+    <p>Ce que ça fait, c'est que ça donne une job au mental. Pendant que le mental compte, on accède à d'autres dimensions. Je ne peux pas dire que c'est magique parce que le mental a beau compter, il continue quand même. Je ne sais pas vraiment comment le mental fonctionne — ça doit être un peu différent d'une personne à l'autre. Mais mon mental à moi était très fort. Je me contais beaucoup d'histoires et je me trouvais intéressant.</p>
+
+    <p>Pour que ça s'apaise — on ne demande même pas au mental de disparaître — il faut éviter un des pièges de la méditation : essayer de combattre le mental. Combattre le mental, c'est lui donner sa force. Ce qu'il faut faire, c'est essayer de se libérer. Tranquillement, dans le Zen, on commence par compter ses respirations. À la fin, on fait juste être présent à la respiration et laisser le mental continuer un peu en arrière-plan.</p>
+
+    <p>Mais avant d'arriver en arrière-plan, le mental, c'est toute notre vie.</p>
+
+    <h3 class="section-titre">7. La prise de conscience du mental</h3>
+
+    <p>Mon maître Zen racontait une bonne histoire. Une fois, quelqu'un était venu à un de ses ateliers pour initier les gens, pour montrer un peu ce que c'était. Ça durait trois ou quatre heures. Une journée ou deux plus tard, la personne appelle : « Monsieur Low, c'est quoi ça ? Avant, j'étais calme, je n'avais pas de problème. Puis là, vous m'avez parlé de ce mental, et depuis que vous m'en avez parlé, il prend toute la place ! »</p>
+
+    <p>Dans le fond, il prenait conscience de ce qui était déjà là. Ça n'avait pas changé. C'est juste que quelqu'un lui avait dit : « Penses-y un peu, prends un peu de recul. Tu as toujours un petit dialogue intérieur pour te conter toutes sortes d'histoires. »</p>
+
+    <p>Le mental, c'est le contrôleur. Il a toujours été là. Tout le monde dans notre vie, tout le temps, depuis qu'on est né, les gens autour de nous avaient déjà le mental en fonction. On a appris à vivre avec en voyant les autres. On ne voyait pas leur mental, mais notre mental s'est mis à fonctionner exactement en harmonie avec tout le monde autour. Quand tu ne te poses pas de question, ça devient la norme.</p>
+
+    <p>C'est comme Einstein qui sort la tête au-dessus du nuage des connaissances de son temps pour découvrir que l'univers ne fonctionne pas comme tous les savants le pensaient. Quand nous essayons de sortir la tête de notre conception, de notre esprit, le mental ne décide pas de s'en aller comme ça. C'est lui qui a contrôlé tout notre univers intérieur depuis toujours. Puis là, on voudrait le chasser ? Il n'a pas envie de se laisser chasser. C'est une habitude très profonde et très intime. On ne change pas ça comme ça.</p>
+
+    <h3 class="section-titre">8. Apprivoiser le mental plutôt que le combattre</h3>
+
+    <p>Comme je le disais, ce n'est pas de combattre le mental, c'est de ne pas lui laisser la première place tout le temps. Le mental nous permet de planifier, et dans la vie de tous les jours, c'est super important. Mais il n'a pas besoin d'être toujours la vedette de notre vie intérieure.</p>
+
+    <p>Quand on réussit à calmer un peu le mental, on a accès à des réalités qui ne sont pas miraculeuses — c'est juste qu'on voit la vie autrement, on est plus ouvert. Le mental, lui, a déjà ses histoires toutes faites. Souvent, il se répète toujours les mêmes histoires. On essaie de débrouiller notre vie, nos histoires de vie, pour ne pas être trop magané par la vie.</p>
+
+    <p>Une des choses que j'ai découvertes en prenant conscience de mon mental — ce qui n'était pas nécessairement drôle — c'est ce dialogue avec soi-même. Mettons que tu t'es chicané avec ta blonde. Tu es toujours en dialogue, mais c'est toi qui crée le scénario des deux parties. Tu te donnes une voix, mais tu te donnes aussi la voix à ta blonde. Dépendamment de la situation qui a provoqué le conflit, tu t'organises toujours pour que ce soit ta voix qui soit la gagnante. Même si l'autre semble interagir, c'est toujours toi qui interagis en prenant ta voix et celle de l'autre. C'est ce que l'on appelle un dialogue intérieur, mais au fait c'est un monologue.</p>
+
+    <p>Tout ça amplifie les choses. Quand tu es fâché, ce dialogue intérieur ne fait qu'amplifier ta colère. C'est la même chose avec l'angoisse — tu es angoissé, et le dialogue intérieur alimente cette angoisse, il ne te soulage pas. Au contraire, tu t'angoisses de plus en plus, tu tombes dans une espèce de trou sans fin.</p>
+
+    <h3 class="section-titre">9. La respiration comme outil de libération</h3>
+
+    <p>C'est une des choses que permet la méditation : gérer notre angoisse, l'anxiété. On se libère de ça tranquillement. Si on est très colérique, ça peut nous libérer aussi de notre colère. Ça la rend plus gérable, ça nous rend plus agréable à vivre, parce que l'on ne nourrit plus ces penchants naturels.</p>
+
+    <p>Et c'est ça qu'on apprend tranquillement : la respiration nous permet de calmer ces pulsions qu'on a à l'intérieur — que ce soit la colère, la jalousie, toutes ces émotions puissantes qui parfois prennent le dessus. On arrive à s'en sortir parce qu'en apprenant à respirer, on a trouvé une façon de gérer ces grosses émotions.</p>
+
+    <p>Les tensions qu'on a dans notre corps, ce sont souvent des grosses émotions qu'on n'a pas réussi à dissoudre. Ces tensions se sont intégrées dans notre corps physique, créant des points de tension qui peuvent être très douloureux. La respiration est le premier outil pour arriver à défaire ces tensions. C'est l'outil qui permet de s'ouvrir à d'autres dimensions.</p>
+
+    <h3 class="section-titre">10. La métaphore du plongeur en apnée</h3>
+
+    <p>L'autre jour, j'ai lu un texte qui parlait d'un gars qui fait de la plongée en apnée libre — ces gens qui descendent le plus profondément possible sans aucun système, juste en retenant leur souffle. C'était le champion du monde, je pense, qui expliquait sa capacité.</p>
+
+    <p>Quand tu descends dans les profondeurs en retenant ta respiration, à un certain point, le CO₂ crée une alerte chimique au niveau de ton cerveau. Là, tu penses que tu vas mourir. Si tu veux vraiment battre des records, aller le plus profondément possible, retenir ton souffle le plus longtemps, tu arrives à un point où ton corps t'envoie un signal que tu t'en vas vers la mort.</p>
+
+    <p>En général, quand on reçoit un signal de cette nature, le reste de notre corps, de notre esprit, n'est pas assez fort pour prendre du recul et dire : « Oui, le signal est là, il y a des limites que je rencontre, mais en même temps, je ne mourrai pas dans les prochaines secondes. Donc je suis capable de gérer mon angoisse, l'angoisse que mon corps crée à cause de ma situation. » C'est ça qui lui permettait d'aller un peu plus creux que les autres plongeurs, et c'est comme ça qu'il a battu les records du monde.</p>
+
+    <p>Les neurosciences découvrent que la même alerte peut se produire dans notre cerveau quand nous faisons un travail pour changer. Comme nous déconstruisons notre identité, notre cerveau réagit comme s'il y avait un danger, notre amygdale est en alerte.</p>
+
+    <h3 class="section-titre">11. Descendre au fond du puits intérieur</h3>
+
+    <p>C'est un peu cette même nature qui arrive quand on commence à travailler sur la respiration. Ce n'est pas aussi extrême, mais dans le fond, le corps nous envoie des signaux qui mettent notre vie — ou qui semblent mettre notre vie — en danger. Cette angoisse, on doit la gérer. Pas pour aller plus profond dans l'eau comme le plongeur, mais pour aller au plus profond de nous-mêmes.</p>
+
+    <p>C'est dans ce sens que je parlais de la respiration comme la corde qui nous amène au fond du puits. Le fond du puits, c'est un peu notre inconscient. C'est un fond noyé dans le noir, inconnu. On descend dans cet inconscient, et il ne faut pas prendre panique, parce que l'inconscient possède souvent des dimensions très douloureuses. Toutes les grandes dimensions douloureuses de notre vie se sont incrustées dans l'inconscient.</p>
+
+    <p>Il faut se libérer de ça. Est-ce qu'on peut se libérer complètement de notre égo ? Peut-être pas, mais c'est ce que nous propose le zen. Il faut être assez vigilant et avoir une pratique assez diligente pour finir par entrer dans nos dimensions inconscientes sans perdre la boule.</p>
+
+    <blockquote>La respiration est cette corde. Elle nous permet de descendre en sécurité, de remonter quand c'est nécessaire, et de continuer notre exploration sans nous noyer dans les profondeurs de nous-mêmes.</blockquote>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Février 2025</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
