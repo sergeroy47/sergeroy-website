@@ -246,7 +246,7 @@ const CONTENU = {
       "titre": "Jardiner avec mon père",
       "description": "Un hommage au jardin comme lieu de transmission entre générations.",
       "date": "2026",
-      "fichier": "videos/Jardiner avec Rosaire.mp4",
+      "fichier": "videos/Jardiner_avec_Rosaire.mp4",
       "vignette": "videos/thumb_jardiner_rosaire.jpg"
     },
     {
@@ -254,7 +254,7 @@ const CONTENU = {
       "titre": "Jardiner comme mon père",
       "description": "La continuité d'un geste — jardiner comme on a appris à le faire, dans les traces de ceux qui nous ont précédés.",
       "date": "2026",
-      "fichier": "videos/Jardiner_comme_mon_père.mp4",
+      "fichier": "videos/Jardiner_comme_mon_pere.mp4",
       "vignette": "videos/thumb_jardiner_pere.jpg"
     },
     {
@@ -270,7 +270,7 @@ const CONTENU = {
       "titre": "Un chêne dans le jardin",
       "description": "Le chêne comme témoin vivant de trente ans de jardinage et de contemplation à Longueuil.",
       "date": "2026",
-      "fichier": "videos/Le chène dans le jardin.mp4",
+      "fichier": "videos/Le_chene_dans_le_jardin.mp4",
       "vignette": "videos/thumb_chene.jpg"
     },
     {
@@ -286,7 +286,7 @@ const CONTENU = {
       "titre": "La Première Rébellion",
       "description": "Retour sur un moment fondateur — quand la pensée s'est mise à résister et à chercher sa propre voie.",
       "date": "2026",
-      "fichier": "videos/La_Première_Rébellion.mp4",
+      "fichier": "videos/La_Premiere_Rebellion.mp4",
       "vignette": "videos/thumb_rebellion.jpg"
     }
   ]

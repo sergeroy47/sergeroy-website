@@ -91,7 +91,7 @@ const GALERIES = [
       { "fichier": "roches/RocChinois.jpg", "legende": "Roc chinois", "description": "" },
       { "fichier": "roches/RocheTrait.jpg", "legende": "Roche trait", "description": "" },
       { "fichier": "roches/Rock.jpeg", "legende": "Roche", "description": "" },
-      { "fichier": "roches/RockRound.png", "legende": "Roche ronde", "description": "" },
+      { "fichier": "roches/RockRound.jpg", "legende": "Roche ronde", "description": "" },
       { "fichier": "roches/Shih-t'ao.jpg", "legende": "Shih-t'ao", "description": "" },
       { "fichier": "roches/Spring Melting.jpg", "legende": "Fonte du printemps", "description": "" }
     ]
