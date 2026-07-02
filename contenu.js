@@ -39,8 +39,8 @@ const CONTENU = {
     {
       "categorie": "Création artistique",
       "titre": "CONVERGENCE",
-      "extrait": "Une pièce de théâtre philosophique explorant le dialogue entre l'humain et l'intelligence artificielle.",
-      "date": "2025",
+      "extrait": "Une pièce de théâtre philosophique en six actes, explorant le dialogue entre l'humain et l'intelligence artificielle — et sa poursuite dans la vie réelle.",
+      "date": "2025–2026",
       "lien": "textes/CONVERGENCE_piece_theatre.html"
     },
     {
