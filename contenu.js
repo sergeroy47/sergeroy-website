@@ -48,7 +48,7 @@ const CONTENU = {
       "titre": "Le jardin comme méditation",
       "extrait": "Réflexions sur quarante ans de jardinage écologique, héritage de mon père et transmission à ma descendance.",
       "date": "2023",
-      "lien": ""
+      "lien": "textes/recueil.html#jardin"
     },
     {
       "categorie": "Vie spirituelle & Santé",
@@ -62,14 +62,14 @@ const CONTENU = {
       "titre": "Trente ans de silence",
       "extrait": "Ce que le Zen m'a appris sur la technologie, sur la présence, sur la convivialité des êtres.",
       "date": "2023",
-      "lien": ""
+      "lien": "textes/recueil.html#silence"
     },
     {
       "categorie": "Trajectoire intellectuelle",
       "titre": "Multimédia et réseaux pour une communication conviviale",
       "extrait": "Résumé de ma thèse de maîtrise (1996) — une vision de la technologie au service de l'épanouissement humain.",
       "date": "1996 / 2024",
-      "lien": ""
+      "lien": "textes/recueil.html#multimedia"
     }
   ],
   "photos": [
