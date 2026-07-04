@@ -6,14 +6,16 @@
 <title>Serge Roy — Espace de mémoire, de création et de contemplation</title>
 <meta name="description" content="Le site de Serge Roy : textes et réflexions sur la contemplation et la technologie, photographies de trente ans de jardinage, collages Poésie-Secours, balados et vidéos.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://sergeroy47.github.io/sergeroy-website/">
 <meta property="og:title" content="Serge Roy — Espace de mémoire, de création et de contemplation">
 <meta property="og:description" content="Textes, photographies, collages Poésie-Secours, balados et vidéos — un espace de mémoire, de création et de contemplation.">
-<meta property="og:image" content="og-image.jpg">
+<meta property="og:image" content="https://sergeroy47.github.io/sergeroy-website/og-image.jpg">
 <meta property="og:locale" content="fr_CA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Serge Roy — Espace de mémoire, de création et de contemplation">
 <meta name="twitter:description" content="Textes, photographies, collages Poésie-Secours, balados et vidéos — un espace de mémoire, de création et de contemplation.">
-<meta name="twitter:image" content="og-image.jpg">
+<meta name="twitter:image" content="https://sergeroy47.github.io/sergeroy-website/og-image.jpg">
+<link rel="canonical" href="https://sergeroy47.github.io/sergeroy-website/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -791,7 +793,7 @@
       // Autres collages en grille
       const [t1, t2] = PS_TONES[(i-1) % PS_TONES.length];
       const imageHtml = c.fichier
-        ? `<img src="${c.fichier}" alt="${c.titre}">`
+        ? `<img src="${c.fichier}" alt="${c.titre}" loading="lazy">`
         : `<div class="ps-image-ph" style="background:linear-gradient(135deg,${t1},${t2});"><span>${c.titre}</span></div>`;
       const div = document.createElement('div');
       div.className = 'ps-carte reveal';
@@ -962,8 +964,12 @@
     let W, H, t = 0, targetSpeed = 0.018, curSpeed = 0.018;
 
     function resize() {
-      W = bg.width  = window.innerWidth;
-      H = bg.height = window.innerHeight;
+      // Demi-résolution : le canvas est étiré par le CSS (inset:0),
+      // ce qui divise par 4 le travail de calcul — invisible à l'œil.
+      W = bg.width  = Math.round(window.innerWidth / 2);
+      H = bg.height = Math.round(window.innerHeight / 2);
+      bg.style.width = '100vw';
+      bg.style.height = '100vh';
     }
     resize();
     window.addEventListener('resize', resize);
@@ -1015,9 +1021,17 @@
       }
       ctx.putImageData(img, 0, 0);
       t += curSpeed;
-      requestAnimationFrame(draw);
     }
-    draw();
+    // Boucle limitée à ~30 images/seconde, en pause si l'onglet est caché
+    let derniere = 0;
+    function boucle(now) {
+      requestAnimationFrame(boucle);
+      if (document.hidden) return;
+      if (now - derniere < 33) return;
+      derniere = now;
+      draw();
+    }
+    requestAnimationFrame(boucle);
   })();
 
   // ── RÉSONANCE ───────────────────────────────────────────
@@ -1133,9 +1147,22 @@
       const g=ctx.createRadialGradient(cx,cy,0,cx,cy,8);
       g.addColorStop(0,'rgba(242,234,216,0.95)'); g.addColorStop(1,'rgba(184,144,58,0)');
       ctx.fillStyle=g; ctx.fill();
-      t+=1; requestAnimationFrame(draw);
+      t+=1;
     }
-    draw();
+    // Ne dessiner que lorsque la section Résonance est visible à l'écran
+    let visible = false;
+    new IntersectionObserver(entries => {
+      entries.forEach(e => { visible = e.isIntersecting; });
+    }, { threshold: 0.05 }).observe(cv);
+    let derniereR = 0;
+    function boucleR(now) {
+      requestAnimationFrame(boucleR);
+      if (!visible || document.hidden) return;
+      if (now - derniereR < 33) return;
+      derniereR = now;
+      draw();
+    }
+    requestAnimationFrame(boucleR);
   })();
 </script>
 </body>
