@@ -46,7 +46,7 @@
   .nav-mark{font-family:var(--italic);font-size:22px;font-style:italic;color:var(--encre);letter-spacing:-0.01em;text-decoration:none;}
   .nav-mark::before{content:"·";color:var(--or);padding-right:8px;}
   .nav-links{display:flex;gap:24px;justify-self:end;align-items:center;}
-  .nav-links a{font-family:var(--mono);font-size:10.5px;letter-spacing:0.18em;color:var(--encre);text-decoration:none;text-transform:uppercase;opacity:0.7;transition:opacity .25s,color .25s;}
+  .nav-links a{font-family:var(--mono);font-size:10.5px;letter-spacing:0.18em;color:var(--encre);text-decoration:none;text-transform:uppercase;opacity:0.7;transition:opacity .25s,color .25s;white-space:nowrap;flex-shrink:0;}
   .nav-links a:hover,.nav-links a.actif{opacity:1;color:var(--mousse);}
   .nav-admin{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--or);text-decoration:none;border:1px solid var(--or);padding:5px 12px;white-space:nowrap;flex-shrink:0;transition:all .2s;opacity:1;}
   .nav-admin:hover{background:var(--or);color:var(--parchemin);}
@@ -257,7 +257,8 @@
   @media(max-width:900px){
     nav.topnav{padding:14px 20px;grid-template-columns:1fr auto;}
     .nav-mono{display:none;}
-    .nav-links{gap:12px;}
+    .nav-links{gap:12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+    .nav-links::-webkit-scrollbar{display:none;}
     .nav-links a{font-size:9px;letter-spacing:0.12em;}
     .nav-admin{font-size:9px;padding:4px 8px;}
     section{padding:80px 22px;}
