@@ -678,8 +678,7 @@
   const D = getData();
 
   // ── NAV ────────────────────────────────────────────────
-  document.getElementById('nav-mark').textContent = '';
-  document.getElementById('nav-mark').insertAdjacentHTML('afterbegin', '· ' + D.nom);
+  document.getElementById('nav-mark').textContent = D.nom;
 
   // ── HERO ───────────────────────────────────────────────
   document.getElementById('hero-surtitre').textContent = D.hero.surtitre;
