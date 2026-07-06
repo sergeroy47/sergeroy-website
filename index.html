@@ -634,13 +634,20 @@
     if (local.collages) local.collages = local.collages.map(c =>
       Object.assign({}, c, { fichier: prefixer(c.fichier, 'collages/') }));
     if (local.videos && CONTENU.videos) {
+      // Les fichiers vidéo vivent dans le dépôt : contenu.js fait toujours foi
+      // pour leurs chemins, sinon une vieille sauvegarde localStorage pointe
+      // vers des noms renommés (404 → lecture impossible dans Safari).
       local.videos = local.videos.map(v => {
         const ref = CONTENU.videos.find(r => r.titre === v.titre);
-        const vignette = (ref && ref.vignette) ? ref.vignette : prefixer(v.vignette, 'videos/');
+        if (ref) return Object.assign({}, v, { fichier: ref.fichier, vignette: ref.vignette });
         return Object.assign({}, v, {
           fichier: prefixer(v.fichier, 'videos/'),
-          vignette: vignette
+          vignette: prefixer(v.vignette, 'videos/')
         });
+      });
+      // Ajouter les vidéos nouvelles absentes du localStorage
+      CONTENU.videos.forEach(c => {
+        if (!local.videos.find(l => l.titre === c.titre)) local.videos.push(c);
       });
     }
     // Ajouter les nouveaux collages présents dans contenu.js mais absents du localStorage
