@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!-- English edition of Multimedia_et_reseaux_conviviaux.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia and Networks for Convivial Communication — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+    .article-meta a { color: var(--mousse); }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .avertissement {
+      font-size: 0.85rem;
+      color: var(--terre);
+      opacity: 0.75;
+      border-top: 1px solid rgba(107,92,69,0.2);
+      border-bottom: 1px solid rgba(107,92,69,0.2);
+      padding: 1rem 0;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+
+    .photo-credit {
+      background: var(--lin);
+      border-left: 3px solid var(--or);
+      padding: 1rem 1.5rem;
+      margin: -0.5rem 0 2rem;
+      font-size: 0.85rem;
+      color: var(--terre);
+    }
+    .photo-credit p { margin-bottom: 0.5rem; }
+    .photo-credit p:last-child { margin-bottom: 0; }
+    .photo-credit a { color: var(--mousse); }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .sous-section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--terre);
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    em.terme {
+      font-style: italic;
+      color: var(--mousse);
+    }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.03rem;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      opacity: 0.8;
+    }
+
+    ul.liste-simple { margin: 0 0 1.4rem 1.4rem; }
+    ul.liste-simple li { margin-bottom: 0.5rem; }
+
+    sup.note-ref a {
+      color: var(--or);
+      text-decoration: none;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .notes-section, .biblio-section {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.25);
+    }
+    .notes-titre {
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--or); margin-bottom: 1.5rem;
+    }
+    ol.notes-liste {
+      list-style: none;
+      counter-reset: note;
+      font-size: 0.92rem;
+      color: var(--terre);
+    }
+    ol.notes-liste li {
+      counter-increment: note;
+      margin-bottom: 0.7rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    ol.notes-liste li::before {
+      content: counter(note) ".";
+      position: absolute;
+      left: 0;
+      color: var(--or);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+    }
+    .biblio-liste {
+      font-size: 0.88rem;
+      color: var(--terre);
+      column-count: 1;
+    }
+    .biblio-liste p {
+      margin-bottom: 0.6rem;
+    }
+    .biblio-liste .titre-ouvrage {
+      font-style: italic;
+      color: var(--encre);
+    }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="recueil.html" class="nav-retour">All texts</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Intellectual Journey</span>
+    <h1>Multimedia and Networks for Convivial Communication</h1>
+    <p class="article-sous-titre">The network as medium, the mind as network — toward a convivial ecology of technologies</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; 1996 / 2024 &nbsp;·&nbsp; <a href="Multimedia_et_reseaux_conviviaux.html">Version française</a></div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      This text takes up, summarizes and adapts for the web the main lines of a master's thesis written in 1996 — a reflection on networks, mind and conviviality, at a time when the Internet was only beginning to enter people's homes. It draws on the ideas of Gregory Bateson, Fritjof Capra, Ivan Illich, Pierre Lévy, Marshall McLuhan and several other thinkers of networks and cybernetics, gathered around a project the author then called <em class="terme">OTO</em>.
+    </div>
+
+    <p class="avertissement">Editor's note (2024): the original 1996 document used a mail-merge system to insert certain keywords and the titles in the bibliography; some of these internal links were lost over successive transfers between software and formats. The text below was carefully reread and reconstructed from what survived, but a few very short original turns of phrase could not be recovered and were lightly adjusted to preserve the flow of reading. — This English edition was translated from the French; quotations originally written in English (Capra, Bateson, McLuhan, Turoff, Kay, Kreisberg, Nachmanovitch…) have been restored in their original wording wherever they could be identified, while French-language sources are given in translation.</p>
+
+    <h2 class="partie-titre">Breathing life into networks</h2>
+
+    <p>To better grasp the role and workings of the information <em class="terme">OTOways</em> (a play on <em>autoroutes de l'information</em>, the French term for the information highways) in human communication, let us explore a few ideas that have grown up around the <em class="terme">network</em> paradigm, the self-organization of life, and the concept of <em>mind</em>.</p>
+
+    <p>These concepts, drawn from the science of complexity, support a vision of networks as a convivial medium through which everyone, in the image of life itself, will be able to exercise and share their creativity — and thus tell their many stories in multiple ways, as Sherry Turkle puts it.</p>
+
+    <h3 class="section-titre">The network as medium</h3>
+
+    <p>Thanks to the convergence of hypermedia<sup class="note-ref"><a href="#note1" id="ref1">1</a></sup> and networks, we will soon find ourselves together, fully immersed in a symbolic space. With personal media (microcomputers) and interpersonal media (microcomputers connected to networks), we will create virtual reality from scratch, organize cyberspace, inhabit and build the global village. This collective practice gives birth to <em class="terme">network culture</em>. Crossing the Sun Microsystems slogan, <em>"The network is the computer,"</em> with McLuhan, we can say: <em>"The network is the medium."</em></p>
+
+    <h3 class="section-titre">Mind and technology</h3>
+
+    <p>But all this beautiful, lifeless technology needs the bacterial life of humans to take shape.</p>
+
+    <p>For thirty years, a branch of science has been trying to formulate a unified vision of matter, life and mind. It was in the context of integrating the discoveries of cybernetics and information theory into the realm of living beings and humans that Gregory Bateson developed the concept of <em class="terme">mind</em>.</p>
+
+    <p>According to this approach, mind — this form of intelligence — is immanent in any sufficiently complex organization. These complex organizations are for the most part distributed, or composed of parts interacting in networks. A highly evolved, even intelligent, communication system supports and structures this type of organization. The new information and communication technologies (ICTs), which developed within this intellectual context, now equip human intelligence. We are thus becoming a double-helix construction whose strands intertwine: life engenders technology, technology imitates life.</p>
+
+    <p>These two great tendencies are both found in artificial intelligence. The first imitates human intelligence in order eventually to replace it, while the second aims to assist and amplify it with new tools for creation and communication — what Pierre Lévy calls intellectual technologies. Although the first approach may yield positive spin-offs, the second seems far more convivial and agreeable to our anthropocentric humanism. But their combined results will mean that more and more humans will couple themselves to these intellectual technologies to form networks of intelligence and give life to a <em class="terme">network culture</em>.</p>
+
+    <h2 class="partie-titre">Convivial networks</h2>
+
+    <p>The concept of the <em class="terme">convivial network</em> describes a gathering or a crossing of people who use these new information and communication technologies in a context where the technologies are "conductors of meaning" and leave those people the greatest autonomy of use and "the greatest power to change the world." The convivial network adds virtuality to real communities and gives life to virtual communities. The convivial network is also the physical and symbolic place where the human network interconnects with two other networks of a different but complementary nature: semantic networks and technological networks. Together they form a single digital universe that various terms name and define — cyberspace, virtual reality, the global village — whose links are woven by the OTOways, which constitute its underlying fabric, its nervous system.</p>
+
+    <p>Conviviality feeds on the philosophy that developed alongside the microcomputer — those personal computers that became interpersonal with the multiplication of electronic bulletin boards and the universalization of the Internet. In the technological context, the French word <em>convivial</em> is often used as the translation of the American expression <em>"user-friendly."</em> But beyond this technical sense, close to the user's way of doing things, the word carries a political meaning, especially since the publication of Ivan Illich's book <em>Tools for Conviviality</em>.</p>
+
+    <p>The word conviviality can be read as "with life" or "close to life," and expresses the associative principle of life. This associative life lies at the heart of the human networks that make up convivial society. A convivial society, writes Ivan Illich, is one that gives each person the possibility of the most autonomous and most creative action, by means of tools least controllable by others<sup class="note-ref"><a href="#note-illich">*</a></sup>.</p>
+
+    <p>The network thus becomes the metaphor for describing and understanding convivial communication. Networks allow Goethe's elective affinities to branch out. Goethe himself wrote that "nothing happens in living nature that is not in relation with the whole." Such is the global meaning of the network paradigm, of the living nature of networks, of their particular logic.</p>
+
+    <h3 class="section-titre">Dreaming up a dream medium to create meaning, to create mind</h3>
+
+    <p>Let us dream of what a communication society might be, and imagine the role technologies would play in the emergence of that society — without forgetting that if ICTs play a primordial role in modern communication, at the centre of communication there remains the essential play of the actors, those living beings who, in their interrelations, endlessly renew the game of communication.</p>
+
+    <p>ICTs support the cultural and social potential of the <em class="terme">network</em> paradigm. They increase the possibilities for sociocultural action offered by multimedia and networks. These technologies are entering a phase in which the living becomes the model, the universal metaphor for rethinking our world. In answer to the crisis of hierarchies, behold the advent of networks.</p>
+
+    <p>Thus the <em class="terme">network cultural movement</em> takes on its meaning at the crossroads of tools and values that link the global and the local, the solitary and the solidary, technology and the human. This culture aims, among other things, to move from a society thought out and managed by institutions to a society lived and invented by individuals, in collaboration and out of commitment to life. Life, associative by nature, finds in the associative life of humans an extension of its own mode of functioning.</p>
+
+    <p>This cultural movement is an ongoing experiment — a <em>work in progress</em> — and "in five years, we will know whether civic networks will have served as the model for a self-governed society, or whether they were simply the dream of a world we might have built<sup class="note-ref"><a href="#note2" id="ref2">2</a></sup>."</p>
+
+    <h2 class="partie-titre">Network and the ecology of life and mind</h2>
+
+    <p>While for most people the notion of network suggests technological considerations — the television network, the road network, the Internet — the notion of network is today increasingly associated with the phenomena of life.</p>
+
+    <blockquote>
+      "… scientists then realized that the network pattern is not only true of ecological communities but of every member of that community. Every organism is a network of organs, of cells, of various components; and every cell is a network of smaller components. So what you have is networks within networks. Whenever you look at life, you look at networks."
+      <cite>Fritjof Capra, "Ecology and Community" lecture</cite>
+    </blockquote>
+
+    <p>The phenomena of organization and communication, sources of intelligence at the physical, biological and social levels alike, are often described using the notion of network. This notion can serve as a guiding thread for grasping phenomena as different as cognition, the self-organization of culture, or social organization — or simply life. In an ever more complex world, networks, as the form of organization proper to life, are beginning to inspire the most diverse human constructions. The emergence of new technologies in our lives and the growing importance of media in our societies give the notion of network even greater weight, particularly for the productions of the mind.</p>
+
+    <h3 class="section-titre">A network within a network, within a network…</h3>
+
+    <blockquote>
+      "Since living systems at all levels are networks, we must visualize the web of life as living systems (networks) interacting in network fashion with other systems (networks). For example, we can picture an ecosystem schematically as a network with a few nodes. Each node represents an organism, which means that each node, when magnified, appears itself as a network."
+      <cite>Fritjof Capra, <em>The Web of Life</em>, 1996, p. 35</cite>
+    </blockquote>
+
+    <p>Let us briefly consider five aspects that define the <em class="terme">network paradigm</em> as well as the <em class="terme">network cultural movement</em> it gives rise to.</p>
+
+    <h4 class="sous-section-titre">1. The epistemological aspect: networks as metaphor</h4>
+
+    <p>Information theory, cybernetics and self-organization are the scientific approaches that gave birth to the concept of information — the concept that makes possible the multiple links of which networks are made. As one of his students wrote, it was this reticular vision of the world that Gregory Bateson professed:</p>
+
+    <blockquote>
+      "The principal skill he (Bateson) taught was: to see the world not as a collection of things or persons, but a network of relationship, that network bound together by communication. This way of seeing is not an abstraction, but a tangible experience that can be cultivated by practice. It is, in itself, one of the answers to the deep crisis of mind that bedevils our civilization."
+      <cite>Stephen Nachmanovitch, <em>Coevolution Quarterly</em> No. 35, Fall 1982<sup class="note-ref"><a href="#note3" id="ref3">3</a></sup></cite>
+    </blockquote>
+
+    <p>Bateson thus drew a link between the global phenomenon of evolution and one of the principal manifestations of intelligence: learning.</p>
+
+    <h4 class="sous-section-titre">2. The scientific aspect: networks as an explanation of the world and of life</h4>
+
+    <p>This metaphor derives largely from a scientific current that gave birth to ecology. Ecology and network become synonyms: <em>"Ecology is networks. To understand ecosystems ultimately will be to understand networks"</em> (Capra, 1996, p. 35).</p>
+
+    <p>Ecosystems, then, are networks of life. Moreover, science itself can be understood as a network of knowledge:</p>
+
+    <blockquote>
+      "In the new systems thinking, the metaphor of knowledge as a building is being replaced by that of the network. As we perceive reality as a network of relationships, our descriptions, too, form an interconnected network of concepts and models in which there are no foundations. For most scientists such a view of knowledge as a network with no firm foundations is extremely unsettling, and today it is by no means generally accepted. But as the network approach expands throughout the scientific community, the idea of knowledge as a network will undoubtedly find increasing acceptance.<br><br>
+      The notion of scientific knowledge as a network of concepts and models, in which no part is any more fundamental than the others, was formalized in physics by Geoffrey Chew in his "bootstrap philosophy" in the 1970s. The bootstrap philosophy not only abandons the idea of fundamental building blocks of matter, it accepts no fundamental entities whatsoever — no fundamental constants, laws, or equations. The material universe is seen as a dynamic web of interrelated events. None of the properties of any part of this web is fundamental; they all follow from the properties of the other parts, and the overall consistency of their interrelations determines the structure of the entire web. When this approach is applied to science as a whole, it implies that physics can no longer be seen as the most fundamental level of science. Since there are no foundations in the network, the phenomena described by physics are not any more fundamental than those described by, say, biology or psychology. They belong to different systems levels, but none of those levels is any more fundamental than the others."
+      <cite>Fritjof Capra, <em>The Web of Life</em>, p. 39</cite>
+    </blockquote>
+
+    <h4 class="sous-section-titre">3. The cultural aspect: the network as a collective process of interpretation and creation of meaning</h4>
+
+    <p>This process of creating content nodes and meaningful links is supported by ever more effective intellectual technologies, such as hypertext and hypermedia — technologies themselves founded on an organic, networked construction. The development of content on the World Wide Web gives us a convincing example of this process. At first, this anarchic creation seems disorganized, since we are culturally accustomed to consuming pre-digested, self-enclosed information. But networks help organize the chaos of creation and communication; through the feedback function exercised by each participant, content organizes itself and becomes articulated through multiple links. Umberto Eco's notion of the open work often serves as a beacon to illuminate this cultural process. But now the work is no longer merely open to its reader's interpretation of meaning: it also becomes an element in a reticular movement of the co-creation of meaning.</p>
+
+    <blockquote>
+      "Because you have feedback in networks, because an influence travels around a loop and comes back to you, you can have self-regulation — not only self-regulation, but self-organization."
+      <cite>Fritjof Capra, lecture, 1994</cite>
+    </blockquote>
+
+    <p>Human culture thus becomes a living informational-organizational complex, as Edgar Morin defines it. Semantic networks are the product of cultural processes.</p>
+
+    <h4 class="sous-section-titre">4. The psychosocial aspect: the network as a structure of communication and organization — the human network</h4>
+
+    <p>This is an already well-established field of communication research, particularly since Rogers and Kincaid's book <em>Communication Networks: Toward a New Paradigm for Research</em> (1981): the two authors, inspired by cybernetics, the concept of information and Bateson's thought, propose a convergence model of communication in which information circulates through human networks to arrive at a collective understanding — a shared cultural heritage that all cultivate together like a community garden.</p>
+
+    <p>But the psychosocial development of networks is taking two divergent directions. On the one hand, the network is proposed as a new orientation for socio-economic organizations; at the same time, it presents itself as an alternative to that very model.</p>
+
+    <blockquote>
+      "The classic Western model of the individual as an autonomous, inward-looking entity is relinquished in favour of a hybridized, networked subjectivity, within which we are forced to perceive ourselves as dynamic nodes in a social network of communication."
+      <cite>Stocker</cite>
+    </blockquote>
+
+    <h5 class="sous-section-titre">4.1 — The network seen as a social alternative</h5>
+
+    <p>Marilyn Ferguson and the cultural movement of the American West Coast saw in the network the mode of organization best suited as an alternative to the dominant social functioning of the West: "this organic mode of social organization is more biologically adaptive<sup class="note-ref"><a href="#note4" id="ref4">4</a></sup>." Following the dynamics of living beings, organization springs from the interaction of all, in a kind of associative life.</p>
+
+    <h5 class="sous-section-titre">4.2 — The network as a socio-economic model</h5>
+
+    <p>The number of books published in recent years on the notion of the network and on management shows the growing interest in this type of structure, often seen as a solution to the "big bang" of organizations. Besides, do not the great financial institutions own the most developed technological networks? With the globalization of markets, wealthy owners develop strategies of networking and connivance so that changing circumstances profit them most. Indeed, in the short term it is easier to build a small network of well-equipped, well-informed people whose objectives are clear and precise. But we may believe that once the practice of networks, and of the convivial tools that support it, has spread, networking and connivance will reach other groups whose objectives are more complex.</p>
+
+    <h4 class="sous-section-titre">5. The technological aspect, where the network is at its most concrete: radio and television networks, or the Internet</h4>
+
+    <p>Here the word network designates the physical infrastructures widely used in electronic and computer communications. In an issue of <em>Byte</em> magazine celebrating fifteen years of the microcomputer, Alan Kay, one of the master minds of personal computing, predicted that the third computer revolution, after time-sharing and graphical interfaces, would be that of networking: <em>"The third revolution that is going to come is one that is driven by networking — it's a pervasive technology — and I call it the intimate revolution."</em></p>
+
+    <p>The evolution of personal computing will amplify and equip the personal, and unite it with the interpersonal in convivial networks. Indeed, if since the arrival of the personal computer that machine has often sat isolated on an individual's desk, it will be increasingly connected with other computers — those of colleagues in local networks, those of the organization in corporate networks. It will also be connected to regional networks, then to the great national and international networks, to access and share information of every kind. One can foresee that one day all computers will be linked together, each playing the role of both client and server, for personal computers already have the capacity to play a larger part in the constitution of networks. The invention of a network computer that would be a mere receiver would suit information broadcasters very well: they would thereby consolidate their control over content while securing ever greater revenues. Even if the price of such computers might favour wider access to the networks, their perverse effects would take us back to the days of radio and television, when networks carried information in one direction only.</p>
+
+    <p>The notion of the convivial network draws on the open approach in which each participant, with his or her computer, becomes a node in the entanglement of human, semantic and technological networks, relying first and foremost on the living nature of these networks. The organizing capacities of such networks make them hypercomplex systems, whose effects Morin<sup class="note-ref"><a href="#note5" id="ref5">5</a></sup> describes:</p>
+
+    <ul class="liste-simple">
+      <li>increasing organizational aptitudes, notably the aptitude for change;</li>
+      <li>organizing diversity under increasingly disorganizing conditions.</li>
+    </ul>
+
+    <p>The network thus makes it possible to:</p>
+
+    <ul class="liste-simple">
+      <li>develop communications and communities with others;</li>
+      <li>develop relations and interactions with the environment;</li>
+      <li>develop processes that are at once complementary, competing and antagonistic;</li>
+      <li>develop intellectual qualities, notably the aptitude to learn, the aptitude to devise strategies, the aptitude to invent and to create.</li>
+    </ul>
+
+    <p>Let us now see what these different networks are — human, semantic and technological — networks that end up becoming one, and forming a mind.</p>
+
+    <h2 class="partie-titre">A network of intelligence and intelligent networks</h2>
+
+    <p>Networks of intelligence have been organizing themselves in the universe since the beginning; evolution itself can be understood as a network of intelligence. In these networks of intelligence, "cognition is no longer regarded as a mental realm, but as a pattern of behaviour that is relevant to the functioning of the person or organism in its environment<sup class="note-ref"><a href="#note6" id="ref6">6</a></sup>." Since these persons and organisms live in society, cognition becomes a collective phenomenon.</p>
+
+    <blockquote>
+      "I think the ultimate possibility of computerized conferencing is to provide a way for human groups to exercise a "collective intelligence" capability. The computer as a device to allow a human group to exhibit collective intelligence is a rather new concept. In principle, a group, if successful, would exhibit an intelligence higher than any member. Over the next decades, attempts to design computerized conferencing structures that allow a group to treat a particular complex problem with a single collective brain may well promise more benefit for mankind than all the artificial intelligence work to date."
+      <cite>Murray Turoff, 1976, p. 182<sup class="note-ref"><a href="#note7" id="ref7">7</a></sup></cite>
+    </blockquote>
+
+    <p>A forerunner of the intelligence-amplification movement, Murray Turoff, in his book <em>The Network Nation</em>, first published in 1978, put on the technological map the idea of networks equipped with computer tools to amplify human communication — that is, our collective intelligence.</p>
+
+    <p>As we wrote at the outset, intelligence has been at work in the universe since the beginning; it manifests itself, among other things, in the process of evolution, which brings forth the complex out of the simple. Just as astonishingly as inert matter, by organizing itself, can produce life, so life, by growing more complex, produces intelligence and mind. With the arrival of Homo sapiens sapiens, a conscious intelligence sets to work. Modern technologies are the fruit of a form of evolution, of an important stage in the flowering of intelligence — and above all of this new vision of the emergence of a collective intelligence. We believe, as McLuhan claims, that technologies have always been an extension of human possibilities, and that they are so more than ever today. One day, perhaps, they will become the extension of consciousness; but for the moment consciousness remains the preserve of humans, even if the computer Deep Blue has beaten the best chess player in the world.</p>
+
+    <p>And yet, "rapidly, we approach the final phase of the extensions of man — the technological simulation of consciousness, when the creative process of knowing will be collectively and corporately extended to the whole of human society<sup class="note-ref"><a href="#note8" id="ref8">8</a></sup>." Thus McLuhan, the visionary, invites us to take part in this process — not as exceptional, brilliant participants, but as ordinary members of human society.</p>
+
+    <p>To reach this utopian stage of the conscious creation of the noosphere, we must combine the formal intelligence we have managed to imitate with technology, and the other, more poetic aspects of mind. To do so, we can couple the network of intelligence with intelligent networks. The singular of the first term marks its filiation with a single principle, ever developing through the interconnection of the billions of individuals who have crossed the ages. If we are each the bearers of our own intelligence, that intelligence is woven and accumulated within a single sphere, which Teilhard de Chardin named the noosphere.</p>
+
+    <blockquote>
+      "Teilhard saw the Net coming more than half a century before it arrived. He believed this vast thinking membrane would ultimately coalesce into "the living unity of a single tissue" containing our collective thoughts and experiences. In his magnum opus, <em>The Phenomenon of Man</em>, Teilhard wrote, "Is this not like some great body which is being born — with its limbs, its nervous system, its perceptive organs, its memory — the body in fact of that great living Thing which had to come to fulfill the ambitions aroused in the reflective being by the newly acquired consciousness?" What Teilhard was saying here can easily be summed up in a few words, says John Perry Barlow: "The point of all evolution up to this stage is the creation of a collective organism of Mind.""
+      <cite>Jennifer Cobb Kreisberg, "A Globe, Clothing Itself with a Brain," <em>Wired</em> 3.06, June 1995<sup class="note-ref"><a href="#note9" id="ref9">9</a></sup></cite>
+    </blockquote>
+
+    <p>A widespread belief holds that mind is the result of the chemical and physiological reactions of the brain, and that this mind is located in one precise place and time. Yet, within the framework of integrating the principles of cybernetics and the concept of information into the domain of life and of humans, Gregory Bateson opened up the concept of <em>mind</em>.</p>
+
+    <p>Bateson's conceptions were a plea for immanent mind — that is, for the mental process that occurs within physical structures of appropriate complexity. Even when we see them as physical structures, we cannot describe what happens in organisms, societies or ecosystems without thinking in terms of communication, organization, response to differences — that is, in terms of all those phenomena Bateson described as mental<sup class="note-ref"><a href="#note10" id="ref10">10</a></sup>.</p>
+
+    <p>The physical structures within which the mental process occurs are organized in networks. Physical organization and biological organization are thus intimately linked in this mental process; they form at once a whole and a continuum.</p>
+
+    <p>The first distinguishing criterion of mental process, he explained, is that it is a system composed of interacting parts; what mattered to him was that these parts be organized — and it was this organization that he called mind<sup class="note-ref"><a href="#note11" id="ref11">11</a></sup>.</p>
+
+    <h3 class="section-titre">Which mind is doing the thinking?</h3>
+
+    <p>We think collectively, with others and with technologies<sup class="note-ref"><a href="#note12" id="ref12">12</a></sup>.</p>
+
+    <h4 class="sous-section-titre">Does Deep Blue think? or, "Do computers think?"</h4>
+
+    <blockquote>
+      "I will say at once: no. What "thinks" and engages in a process of trial and error is the man-computer-environment system as a whole. The lines drawn between man, computer and environment are entirely artificial, fictitious lines. They are lines that cut across the pathways along which information and difference are transmitted. They cannot constitute the boundaries of the thinking system."
+      <cite>Gregory Bateson<sup class="note-ref"><a href="#note13" id="ref13">13</a></sup></cite>
+    </blockquote>
+
+    <p>In this sense, mind encompasses more than the human brain, more than the human or humans: mind is the interweaving of information drawn from the environment and of its computation within biological and technological processes. The fruits of this cognition act back on the environment, which, over time, has produced the development of knowledge, and evolution.</p>
+
+    <p>This organization of interacting parts immediately brings to mind networks, in which humans and computers interconnect and interact with their environment. If their communications reach a sufficiently advanced level of complexity, they turn into mind. That is the metaphor from which we are working: mind as the self-organizing centre of knowledge and action.</p>
+
+    <p>For Bateson, mental processes are not limited to the workings of the human brain, but take on their full meaning in interconnected cybernetic systems. For, as we have seen, in Bateson's view computers do not think, but form part of a Human-Computer-Environment system — rather as a blind man's cane forms part of his cognitive system: Blind-Man-Cane-Environment.</p>
+
+    <p>It would be incorrect to say that the computer's specific work — transforming input differences into output differences — is an act of thought in itself. The computer is only an arc in a larger circuit, a circuit that always includes the human being and the environment from which the information comes and upon which the computer's outgoing messages act in return. One may legitimately conclude that this overall system, this whole, displays mental characteristics. It operates as a process, and it possesses a creative character<sup class="note-ref"><a href="#note14" id="ref14">14</a></sup>.</p>
+
+    <p>Information is a physical substrate that gives form to, and supports, the whole of human ideas, representations and knowledge. Likewise, Bateson defined difference as follows: "a difference which makes a difference is an idea, or a unit of information<sup class="note-ref"><a href="#note15" id="ref15">15</a></sup>." At the level of cognition, information emerges from the relation between living, computing beings and their environment. "If the keystone of cognition is its capacity to bring forth meaning, then information is not pre-established as an intrinsic order: it corresponds to the regularities that emerge from the cognitive activities themselves<sup class="note-ref"><a href="#note16" id="ref16">16</a></sup>."</p>
+
+    <p>We are therefore dealing with a mental process that integrates Human-Computer-Environment, and that processes information.</p>
+
+    <h2 class="partie-titre">Two ways of thinking and of organizing</h2>
+
+    <p>On the cover, a photograph published in the <em>National Geographic</em> of August 1987 perfectly illustrates two ways of organizing — two ways at work in the deployment of information networks, one planned, the other more spontaneous and reticular. The photo shows a refugee camp in the Sahel, in Africa. On the right, the camp built by humanitarian organizations. On the left, one thinks at first one is looking at a forest. But no: here too, these are humans organizing themselves. This mass of people, grafted onto the initial camp, organizes itself according to arrivals and to the spontaneity of life — or the necessities of survival.</p>
+
+    <div class="photo-credit">
+      <p><strong>Photograph reference:</strong> from the article "Africa's Sahel: The Stricken Land," by William S. Ellis, with photographs by <strong>Steve McCurry</strong> (Magnum agency), published in <em>National Geographic</em>, vol. 172, No. 2, August 1987.</p>
+      <p>As this image is protected by copyright (Steve McCurry / Magnum Photos / National Geographic), it is not reproduced here. The photographer's work can be seen on <a href="https://www.magnumphotos.com/photographer/steve-mccurry/" target="_blank" rel="noopener">the Magnum Photos website</a>.</p>
+    </div>
+
+    <p>On the right, the organized, planned structure has all the characteristics of Western constructions, which stem from what might be called Cartesian logic, or linear thinking. The other organization, teeming and spontaneous, emerges out of relationships and daily life. Through this process founded on organic development, this organization evolves by iteration and self-similarity, like a single figure repeating itself endlessly with the arrival of each individual or each family.</p>
+
+    <p>Here we stand, then, before a territory articulated according to two logics that together form a whole. If the omnipresence of technology in itself creates an effect of globality, what will bring about the effect of conviviality implied by the word village? For if there is indeed a movement of globalization, there is also a wind of personalization — of each person taking charge of the creation and diffusion of his or her own information within self-managed networks.</p>
+
+    <h3 class="section-titre">The logic of the living and classical logic</h3>
+
+    <p>The logic of the living unfolds in all its spontaneity. This logic, though it produces complex results, rests on a simple, repeated process. And yet, despite this supposed simplicity, we must admit that we barely understand the rules that govern it.</p>
+
+    <p>Cartesian logic is a work of civilization. It rests on a long tradition and is well integrated into our lives. In this sense, this type of logic may be perceived as superior. This tradition of formal classical logic, also called deductive-identitary logic, is the dominant paradigm that has underpinned the advancement of science and that inspires the organization of most of our institutions. It is also the crucible in which the computer was born and perfected.</p>
+
+    <p>Deductive-identitary logic opens not onto the understanding of complexity and of existence, but onto utilitarian intelligibility. Its intelligibility represses confusion and chaos. Deductive-identitary logic answers not our needs for understanding, but our instrumental and manipulative needs — whether the manipulation of concepts or of objects. Its osmosis with classical science enabled the development of multiple and formidable powers of manipulation. The limits of this logic appeared in the crisis of the classical conception of science, when the Einsteinian dream of a universe obeying an absolute deterministic law was confronted first by quantum mechanics, and then by the physical complexity of organizing chaos<sup class="note-ref"><a href="#note17" id="ref17">17</a></sup>.</p>
+
+    <p>This way of seeing and of thinking logically, humanity has gradually embodied in technologies such as writing, mathematics and computing.</p>
+
+    <h3 class="section-titre">What will the engineers want to build in the global village?</h3>
+
+    <p>A civil engineer looking at the photo of the village would no doubt prefer to design and install the water system on the planned side: that is what he was trained for. This image of the water service could equally apply to the circulation of information. The type of communication the engineers are preparing for us is organized around great information transport lines and large servers whose mode of operation is centred on operational efficiency. They will use the same model the mass media exploited so well. Economies of scale will guide them, for to an engineer or a manager this means less equipment to install, less complexity in implementation and in the management of operations — and, of course, better control. And as information theory demonstrates, to increase communication one must reduce information — in terms of quantity as much as of novelty or differences. As in the example of the village photo, where less information is needed to build a representation of the planned network.</p>
+
+    <h3 class="section-titre">The blur of life</h3>
+
+    <p>Indeed, if we enlarge the photo of the Sahel village with graphics software — rather as if we were rising bird-like above the village — it becomes clear that the teeming side quickly turns into an undifferentiated mass. Information about the spontaneous organization fades more rapidly as the quantity of information decreases, for its contours are blurrier, less continuous and less rigid. If we wanted to transfer the essence of the photo onto a graph or a map, we would have to represent the constructions on the left almost one by one, whereas a few straight lines would suffice to capture the essential information of the structure on the right.</p>
+
+    <p>On the planned side, clues to the structure remain visible for a long time. We may deduce that to operate within the teeming side, much more information is needed: to move about in it, one must know the organic — the process that continuously engenders the exploded structure. If on the planned side one can simply manipulate the structure, on the other side one must grasp the process. Imagine the problems a letter carrier would face when delivering mail in this teeming village, where communications are rich and heterarchical, and where landmarks are vague and shifting. A stranger could hardly carry out this communication, for here communication is invented and lived from within. Convivial, teeming communication enriches communication through the meeting of senders and receivers in a living relationship<sup class="note-ref"><a href="#note18" id="ref18">18</a></sup>.</p>
+
+    <h3 class="section-titre">The logic of the living combines complexity and suppleness</h3>
+
+    <p>What matters for the mind is to deploy two cognitive strategies: one recognizing the singular, the individual, the contingent, the improbable, disorder; the other grasping the rule, the law, order<sup class="note-ref"><a href="#note19" id="ref19">19</a></sup>.</p>
+
+    <p>Until recently, computer technology was compatible only with a somewhat rigid form of structuring. The classic example is the traditional database. Spreadsheets, too, are applications founded on two-dimensional linearity. This approach well illustrates the information-processing method founded on the data/rules relation. Thus, through their capacity to process large amounts of information quickly and through their computing power, computers are working their way into the heart of complexity — confirming the law of requisite variety stated by Ashby, one of the thinkers of cybernetics. This science of the automatic processing of information founded on calculation is quietly turning into a science of interactions:</p>
+
+    <blockquote>
+      "A science still in its infancy… computer science studies interactions in general — that is, how societies of parts can accomplish what those parts cannot achieve separately. Though computer science began with the study of serial computers, machines that could do only one thing at a time, it has developed to the point of studying the kinds of networks of interconnected processes that must exist within societies of the mind."
+      <cite>Marvin Minsky<sup class="note-ref"><a href="#note20" id="ref20">20</a></sup></cite>
+    </blockquote>
+
+    <p>This definition of computer science by Minsky, the artificial intelligence expert, puts the emphasis on the creation of relations — on a technology of the link, which enriches the data-processing approach and the paradigm of calculation. The emphasis shifts toward interconnection, interrelations and interactions.</p>
+
+    <p>Thus technology, as it grows more refined, draws ever more inspiration from the teeming model of development, from supple structures. And at the same time, it is beginning to equip this softer form of development, one that knows how to marry the contours of life and creativity. Rather as science managed to think and formalize <em class="terme">chaos</em> in physics, thinkers and technologies are beginning to unlock the secret of the soft, the blurry, the shifting and the fluid — of anthropological chaos. As with climate systems, predictions in the human environment are difficult, if not impossible, for the wingbeats — whether of desire or of intelligence — are innumerable. Their butterfly effects on strokes of genius and on culture in general are hard to measure and to predict, for they arise from millions of blurry, spontaneous links, developing in networks without end.</p>
+
+    <p>Technology has always been an ally of human capacities — for going beyond the limits inherent in our functioning, and for renewing our questioning of the dynamic and supple functioning of life. Technology, in its sophistication, has achieved greater suppleness while creating greater complexity. That complexity, in turn, demands more suppleness.</p>
+
+    <p>As in the example of the village, the brain and society must of necessity respect these two forms of functioning; otherwise it is anarchy or rigidity — the two classic problems encountered by cybernetics: either the system runs away, or it seizes up. In communication, this principle joins the more technical point of view of information theory, which holds that to increase communication one must reduce information: the more widely the code is shared, the easier communication becomes.</p>
+
+    <p>All this is tied to the definition of the notion of information, which can be understood in its dual nature: first its physical nature, which allows technical devices to process and transmit it (humans, who served as the model for the design of machines, possess such devices, compatible with the physical nature of information); and its semantic nature, which is, for now, the preserve of the human. If we wish to design networks of intelligence, we must call upon these complementary capacities, physical and intellectual. It is therefore toward persons — the true custodians of intelligence — that we turn our interest; persons who, within the instrumental thinking of computing, lose their role as actor-creators to become mere users.</p>
+
+    <p>But the double articulation between classical logic and the logic of the living can also be achieved by coupling living intelligence with technological intelligence, particularly by means of personal computers.</p>
+
+    <h2 class="partie-titre">Culture as informational, computational and communicational self-organization</h2>
+
+    <h3 class="section-titre">From activity, meaning emerges</h3>
+
+    <p>Intelligence is not a property but an activity<sup class="note-ref"><a href="#note21" id="ref21">21</a></sup>. Human organization can be viewed as a mental process, in Bateson's sense. It is in interaction itself that social organization emerges, that new information is created.</p>
+
+    <p>Communication, in this context, thus becomes primordial. Reality, like information, is not given: it is constructed; and if this reality can reach very advanced thresholds of complexity, it is through the interplay of a multitude of elements. This tendency seems to be characteristic of mental processes, of thought. From the relation of elements are born information, and organization.</p>
+
+    <p>Language and cognition are fundamentally social phenomena. Maturana, Gadamer and Heidegger all explain that our capacity to think and to give meaning to language is rooted in our participation in a society, in a tradition<sup class="note-ref"><a href="#note22" id="ref22">22</a></sup>.</p>
+
+    <p>We think with others, collectively, by communicating; we think with technologies. Human organization can be viewed as a mental process that unfolds through communication — a living process in a self-organized universe: such is culture, forever inventing itself.</p>
+
+    <h3 class="section-titre">OTO: an informational, computational and communicational organization</h3>
+
+    <p>An informational, computational and communicational organization: such are the characteristics of <em class="terme">OTO</em>, which weds living machines and cybernetic machines to give us a new form of organization — one we will be able to experiment with on a small scale while pursuing diverse objectives. Here, a creative objective among artists; there, a research objective among scholars of different disciplines; elsewhere, amateurs coming together in projects of a cultural and social character, in which facilitation could be a mode of operation. And all these currents can be interlinked with one another in a multitude of ways. Morin gives a good definition of the living machine:</p>
+
+    <blockquote>
+      "… this machine is informational, since it operates from an informational memory (the genes) [our databases] and captures information in its environment [possibly through the conventional means of information offered by the media]. It is computational, since it processes internal and external information in order to self-organize and self-reproduce [the computer being the tool of this computation — OTO not aiming to be a closed, centralized organism, but rather a tentacular or arborescent, polycephalous one, like plants that multiply by runners]. It is, finally, communicational — not only because it communicates with its environment, but also because its internal organization is founded on communication between its constituent elements."
+      <cite>Edgar Morin<sup class="note-ref"><a href="#note23" id="ref23">23</a></sup></cite>
+    </blockquote>
+
+    <p>This form of communication is facilitated by networks and hypermedia, which improve communication among the users themselves, and their self-organization.</p>
+
+    <h3 class="section-titre">Network and self-organization</h3>
+
+    <blockquote>
+      "Self-organization thus appears in the properly physical universe. But more striking still is that physical self-organization we call life, because it possesses qualities unknown to other physical organizations — informational and computational qualities, and the quality of self-reproduction."
+      <cite>Edgar Morin<sup class="note-ref"><a href="#note24" id="ref24">24</a></sup></cite>
+    </blockquote>
+
+    <h3 class="section-titre">Social networks</h3>
+
+    <p>The act of communicating does not amount to a transfer of information from a sender to a recipient, but rather to the mutual shaping of a common world through conjoined action: it is our social realization, through the act of language, that gives life to our world. There are linguistic actions we perform constantly: assertions, promises, requests, declarations. In fact, such a continuous network of conversational gestures, complete with their conditions of satisfaction, constitutes not a tool of communication, but the very fabric on which our identity is drawn<sup class="note-ref"><a href="#note25" id="ref25">25</a></sup>.</p>
+
+    <p>When we turn to living autonomous systems, their dynamics do not rest solely on the processing of pre-existing information as a representation of the real: information emerges from interaction with the milieu; it is born of interactions. The keystone of cognition is its capacity to bring forth meaning; hence information is not pre-established as an intrinsic order, but corresponds to the regularities that emerge from the cognitive activities themselves<sup class="note-ref"><a href="#note26" id="ref26">26</a></sup>.</p>
+
+    <p>In a classical strategy, everything is determined in advance, and one then acquires the means to control the course of events. This strategy succeeds better, and more easily, within a centralized structure — which is what was done with the first computers and with the management of most organizations. When we want reality and new information to emerge, we take the opposite path: we give what is dispersed, autonomous and intelligent the means to interact.</p>
+
+    <p>The ultimate objective of OTO is to propose, and to foster, the union of the power of the new information and communication technologies with this living, intelligent form of self-organization.</p>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Master's thesis, 1996 — web edition 2024 — English translation 2026</div>
+    </div>
+
+    <div class="notes-section">
+      <div class="notes-titre">Notes</div>
+      <ol class="notes-liste">
+        <li id="note1">The word hypermedia couples the more common terms "multimedia" and "hypertext."</li>
+        <li id="note2">Howard Rheingold, <em>Whole Earth Review</em>, Spring 1994, p. 27.</li>
+        <li id="note3">Stephen Nachmanovitch, in <em>Coevolution Quarterly</em>, No. 35, Fall 1982.</li>
+        <li id="note4">Marilyn Ferguson, <em>The Aquarian Conspiracy</em> (French edition: <em>Les Enfants du Verseau</em>, p. 161).</li>
+        <li id="note5">Edgar Morin, 1980, p. 434.</li>
+        <li id="note6">Winograd and Flores, 1989, p. 121.</li>
+        <li id="note7">Murray Turoff, 1976, p. 182.</li>
+        <li id="note8">Marshall McLuhan, <em>Understanding Media</em>, 1964 (French edition: <em>Pour comprendre les médias</em>, 1969).</li>
+        <li id="note9">Jennifer Cobb Kreisberg, "A Globe, Clothing Itself with a Brain," <em>Wired</em> 3.06, June 1995.</li>
+        <li id="note10">Mary Catherine Bateson, <em>With a Daughter's Eye</em> (French edition: <em>Regard sur mes parents</em> [<em>Héritage</em>], p. 29).</li>
+        <li id="note11">Mary Catherine Bateson, ibid., p. 33.</li>
+        <li id="note12">Pierre Lévy, quoted in "Techno," p. 156.</li>
+        <li id="note13">Gregory Bateson, <em>Steps to an Ecology of Mind</em> (French edition: <em>Vers une écologie de l'esprit</em>, vol. 2, p. 240).</li>
+        <li id="note14">Gregory Bateson, 1977, vol. 1, p. 233.</li>
+        <li id="note15">Gregory Bateson, <em>Steps to an Ecology of Mind</em> (French edition: <em>Vers une écologie de l'esprit</em>, vol. 1, p. 233).</li>
+        <li id="note16">Francisco Varela, <em>Connaître les sciences cognitives</em>, p. 122.</li>
+        <li id="note17">Edgar Morin, 1991, p. 191.</li>
+        <li id="note18">Gregory Bateson, 1984, p. 21.</li>
+        <li id="note19">Edgar Morin, 1982, p. 144.</li>
+        <li id="note20">Marvin Minsky, 1985, pp. 632–633.</li>
+        <li id="note21">Lucien Goldmann, 1971, p. 15.</li>
+        <li id="note22">Terry Winograd, 1988, p. 107.</li>
+        <li id="note23">Edgar Morin, 1982, p. 303.</li>
+        <li id="note24">Edgar Morin, 1982, p. 195.</li>
+        <li id="note25">Francisco Varela, 1988, pp. 114–115.</li>
+        <li id="note26">Francisco Varela, 1989, p. 122.</li>
+      </ol>
+      <p id="note-illich" style="font-size:0.85rem; color:var(--terre); margin-top:1rem;">* Ivan Illich, <em>La convivialité</em>, Seuil, 1973, p. 43 (English edition: <em>Tools for Conviviality</em>, Harper &amp; Row, 1973).</p>
+    </div>
+
+    <div class="biblio-section">
+      <div class="notes-titre">Bibliography</div>
+      <div class="biblio-liste">
+        <p>BARRETT, Edward. 1989. <span class="titre-ouvrage">The Society of Text</span>. MIT Press.</p>
+        <p>BATESON, Gregory. 1977. <span class="titre-ouvrage">Vers une écologie de l'esprit</span>, vol. 1. Seuil.</p>
+        <p>BATESON, Gregory. 1980. <span class="titre-ouvrage">Vers une écologie de l'esprit</span>, vol. 2. Seuil.</p>
+        <p>BRAND, Stewart. 1988. <span class="titre-ouvrage">The Media Lab: Inventing the Future at MIT</span>. Viking.</p>
+        <p>BRESSAND, Albert, and Catherine DISTLER. 1985. <span class="titre-ouvrage">Le Prochain Monde</span>. Seuil.</p>
+        <p>BRETON, Philippe, and Serge PROULX. 1989. <span class="titre-ouvrage">L'explosion de la communication</span>. La Découverte/Boréal.</p>
+        <p>CAPRA, Fritjof. 1988. <span class="titre-ouvrage">La Sagesse des sages</span>. L'Âge du Verseau.</p>
+        <p>CAPRA, Fritjof. 1996. <span class="titre-ouvrage">The Web of Life</span>. Anchor Books / Doubleday.</p>
+        <p>CARTIER, Michel. 1982. <span class="titre-ouvrage">La médiatique : le métier</span>. TéléUniversité.</p>
+        <p>GLEICK, James. 1991. <span class="titre-ouvrage">La théorie du chaos : vers une nouvelle science</span>. Flammarion.</p>
+        <p>GRENBERGER, Martin. 1990. <span class="titre-ouvrage">On Multimedia</span>. The Voyageur Company.</p>
+        <p>GUSDORF, Georges. 1966. <span class="titre-ouvrage">La Parole</span>. PUF.</p>
+        <p>HAMPDEN-TURNER, Charles. 1982. <span class="titre-ouvrage">Maps of the Mind</span>. Collier Books.</p>
+        <p>HEIM, Michael. 1993. <span class="titre-ouvrage">The Metaphysics of Virtual Reality</span>. Oxford University Press.</p>
+        <p>ILLICH, Ivan. 1973. <span class="titre-ouvrage">La Convivialité</span>. Seuil.</p>
+        <p>KRUEGER, Myron W. 1991. <span class="titre-ouvrage">Artificial Reality II</span>. Addison-Wesley.</p>
+        <p>LABORIT, Henri. 1989. <span class="titre-ouvrage">Dieu ne joue pas aux dés</span>. Librairie générale française.</p>
+        <p>LAUREL, Brenda (ed.). 1991. <span class="titre-ouvrage">Computers as Theatre</span>. Addison-Wesley.</p>
+        <p>LIPNACK, Jessica, and Jeffrey STAMPS. 1986. <span class="titre-ouvrage">The Networking Book</span>. Routledge &amp; Kegan Paul.</p>
+        <p>MALÉTRAS, Armand and Michèle. 1986. <span class="titre-ouvrage">Penser les médias</span>. La Découverte.</p>
+        <p>MARCHAND, Marie. 1986. <span class="titre-ouvrage">Les Paradis informationnels</span>. Masson.</p>
+        <p>MARTIN, James. 1990. <span class="titre-ouvrage">Hyperdocuments</span>. Prentice Hall.</p>
+        <p>McLUHAN, Marshall. 1969. <span class="titre-ouvrage">Pour comprendre les médias</span>. HMH.</p>
+        <p>MINSKY, Marvin. 1985. <span class="titre-ouvrage">The Society of Mind</span>. Simon &amp; Schuster.</p>
+        <p>MORIN, Edgar. 1982. <span class="titre-ouvrage">Science avec conscience</span>. Seuil.</p>
+        <p>MORIN, Edgar. 1984. <span class="titre-ouvrage">Sociologie</span>. Fayard.</p>
+        <p>NELSON, Theodor H. 1987. <span class="titre-ouvrage">Computer Lib / Dream Machines</span>. Microsoft Press.</p>
+        <p>NELSON, Theodor H. 1987. <span class="titre-ouvrage">Literary Machines</span>. Owl (Hypertext).</p>
+        <p>NIELSEN, Jakob. 1990. <span class="titre-ouvrage">Hypertext and Hypermedia</span>. Academic Press.</p>
+        <p>POSTMAN, Neil. 1986. <span class="titre-ouvrage">Se distraire à en mourir</span>. Flammarion.</p>
+        <p>RHEINGOLD, Howard. 1985. <span class="titre-ouvrage">Tools for Thought</span>. Simon &amp; Schuster.</p>
+        <p>RHEINGOLD, Howard. 1993. <span class="titre-ouvrage">The Virtual Community</span>. Addison-Wesley.</p>
+        <p>RHEINGOLD, Howard. 1993. <span class="titre-ouvrage">La Réalité virtuelle</span>. Dunod.</p>
+        <p>ROGERS, Everett M. 1988. <span class="titre-ouvrage">Research Methods and the New Media</span>. Free Press.</p>
+        <p>ROSNAY, Joël de. 1975. <span class="titre-ouvrage">Le Macroscope</span>. Seuil.</p>
+        <p>ROSNAY, Joël de. 1986. <span class="titre-ouvrage">Le Cerveau planétaire</span>. Olivier Orban.</p>
+        <p>ROSZAK, Theodore. 1986. <span class="titre-ouvrage">The Cult of Information</span>. Pantheon Books.</p>
+        <p>SERIEYX, Hervé. 1993. <span class="titre-ouvrage">Le Big Bang des organisations</span>. Calmann-Lévy.</p>
+        <p>TOGNAZZINI, Bruce. 1991. <span class="titre-ouvrage">Tog on Interface</span>. Addison-Wesley.</p>
+        <p>TUROFF, Murray, and Starr Roxanne HILTZ. 1978. <span class="titre-ouvrage">The Network Nation</span>. Addison-Wesley.</p>
+        <p>VALLEE, Jacques. 1982. <span class="titre-ouvrage">The Network Revolution</span>. And/Or Press.</p>
+        <p>VARELA, Francisco. 1989. <span class="titre-ouvrage">Connaître les sciences cognitives</span>. Seuil.</p>
+        <p>BOISSIER, Jean-Louis (ed.). 1989. <span class="titre-ouvrage">Faire Image</span>. Presses universitaires de Vincennes.</p>
+        <p>WINKIN, Yves. 1981. <span class="titre-ouvrage">La Nouvelle Communication</span>. Seuil.</p>
+      </div>
+      <p style="font-size:0.78rem; color:var(--terre); opacity:0.75; margin-top:1.5rem; font-style:italic;">This bibliography lists only those works whose titles could be reconstructed with certainty from the original 1996 document. Titles are cited in the editions used by the author.</p>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="recueil.html">← Back to the texts</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
