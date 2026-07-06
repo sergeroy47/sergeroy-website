@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- English edition of pratique-et-respiration.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice and Breathing — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    /* EN-TÊTE ARTICLE */
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+    .article-meta a { color: var(--mousse); }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    /* CORPS */
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* INTRODUCTION */
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    /* PARTIES ET SECTIONS */
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    /* CITATION EN EXERGUE */
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    /* SIGNATURE */
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    /* NAVIGATION BAS */
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    /* FOOTER */
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">All texts</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Spiritual Life &amp; Health</span>
+    <h1>Practice and Breathing</h1>
+    <p class="article-sous-titre">Pathways inward</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; February 2025 &nbsp;·&nbsp; <a href="pratique-et-respiration.html">Version française</a></div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <!-- PART 1 -->
+    <h2 class="partie-titre">Part One: Everyone Has a Trainer</h2>
+
+    <p>My brother-in-law Georges's trainer has no diploma and doesn't even know he is a trainer.</p>
+
+    <p>Yet every day, he pulls my brother-in-law outside so that he moves a little and gets some air and light. Even during the spell of intense cold we've been having, they go out several times a day.</p>
+
+    <p>His trainer's secret is that he is alive and overflowing with energy. His trainer is simply a young dog full of vitality… who cannot spend his life sitting at the back of his crate. And so my brother-in-law, who was supposed to be the trainer and teach the dog, is the one being trained — and reaping all the good sides of the training.</p>
+
+    <p>Many parents also have good trainers without knowing it: yes, all those little children full of puppy energy who force their parents to move.</p>
+
+    <p>Today I saw the counter-example of the young dog-trainer. I crossed paths with a man walking his slightly overweight dog. The young dog grows older, and he too begins to prefer lazing about to fresh air and physical activity. Or perhaps the dog has met his master.</p>
+
+    <p>Starting to train is only the first good step. You have to learn to continue, to carry on, to persevere. That's true of training, but it's true of many other aspects of life as well.</p>
+
+    <p>Take the example of a young person who wants to play a musical instrument. The violin, or the clarinet — the kind of instrument that allows fabulous gaps between what you're aiming for and what actually comes out. At the beginning, you produce more squeaks and squawks than melodious sounds.</p>
+
+    <p>Several summers ago, a young neighbour was learning the trumpet. It's hard to be discreet when you're learning the trumpet. All summer long, every day, we witnessed his efforts to master his instrument, to make music. By the end of the summer we were not yet in the presence of a trumpet player, but compared with the beginning of the summer, our ears could sometimes be enchanted.</p>
+
+    <blockquote>If you truly want to progress in any field, you must practise every day. "Each day, put your work back on the loom."</blockquote>
+
+    <h3 class="section-titre">Everyone can be their own trainer</h3>
+
+    <p>And many children get sat down in front of the television or a video game so their parents can have some peace.</p>
+
+    <p>But everyone can also be their own trainer. Only one quality is required: to be full of energy and always ready to move. It's certainly easier when you're young and energy overflows. But it's easier still when you're old and you've cultivated a taste for moving all your life. The well-being you feel then goes beyond physical fitness. For it is more and more widely recognized: physical training isn't good only for the muscles — it's good for the whole body, and for the mind as well.</p>
+
+    <p>I've been doing tai chi for years. The others who do tai chi with me train me, and I train them in turn. We train one another. It's true in a class, and even truer in life… We also train our teachers… For if we didn't come to class, many of them would lose a good part of their motivation to improve.</p>
+
+    <h3 class="section-titre">The best way to learn is to teach</h3>
+
+    <p>At the holiday workshop on tai chi and the production of chi-carrying sounds, my teacher Pierre was able to demonstrate sounds far more evolved and steeped in chi than the year before — no doubt because he had trained all year long in order to give us a better class.</p>
+
+    <p>That's one of the reasons people so often say that the best way to learn is to teach. You learn better when you teach because you are more attentive, more focused. When you take a class, you can easily let your mind wander. Giving a class demands greater concentration — it's hard to daydream when dozens of pairs of eyes are watching you closely.</p>
+
+    <p>You learn by teaching because you become sensitive to the mistakes of those who are starting out. Those mistakes serve as a mirror: you can often detect them in yourself, the better to correct them. But above all, if you want to keep teaching others you have to stay ahead of them — and to stay ahead, you have to train yourself. The trouble with telling others what to do, though, is that you internalize that voice, and it no longer keeps quiet when you're doing your own tai chi.</p>
+
+    <h3 class="section-titre">Persevering beyond beginner's enthusiasm</h3>
+
+    <p>We were never invited to one of our young neighbour's concerts. Because taking up an activity is one thing; to excel, you must persevere. At the beginning, you accept difficulties more easily, since you know you have everything to learn. Progress, moreover, is often rapid. And we are carried along by the beginner's enthusiasm — already picturing ourselves as first trumpet of the Montreal Symphony Orchestra.</p>
+
+    <p>But once the first stages of learning are behind us, progress slows, and all the work still to be done rises before us like an enormous mountain to climb. How do we cultivate that beginner's mind all along the way?</p>
+
+    <p>To keep going, you have to find a certain pleasure — the well-being that flows from physical training, or simply the fun of playing. The happiness of working around subtler difficulties and entering territories unsuspected when the training began. For yes, there are secret regions accessible only to those who take the trouble to push the practice of their art or their sport further.</p>
+
+    <p>Only runners with a long practice behind them, for example, can discover their second wind, or the euphoria of the runner's high. The pleasures of discovery are often interwoven with long stretches where you move forward very slowly — like a slow-motion sequence in our world of speed.</p>
+
+    <h3 class="section-titre">The body's intelligence</h3>
+
+    <p>You have to experience it.</p>
+
+    <p>With the body, explanations and fine words are not enough to bring us into the body's intelligence.</p>
+
+    <p>The body's intelligence can be discovered in very advanced practices, but you also discover it in the simplest kinds of learning. Like learning to ride a bicycle — the kind of activity where you have to juggle several things at once: the handlebars, the pedals, the speed, all to keep your balance. At first, you try to control it all with your head. But the head reasons about one thing at a time, while the experience is total, and in every instant.</p>
+
+    <p>After many fruitless attempts, all of a sudden something clicks: you're no longer thinking, you're wholly in the action — and you're riding a bicycle… That is the body's intelligence taking over from reason. Every time we live that experience, it's like Alice in Wonderland.</p>
+
+    <p>When I started tai chi, my body was seized up in a single block. Even though I had played a lot of sports, my limbs and muscles were all bound together. Trying to imitate the movements, doing my best to reproduce what I saw, what I felt first of all were the tensions. A bit like a baby moving its whole body to make a single movement.</p>
+
+    <p>And as at the start of any new learning, the head wanted to control everything. But moving the body with the head is mission impossible. Only repetition slowly manages to undo that tyranny.</p>
+
+    <h3 class="section-titre">Neural networks</h3>
+
+    <p>In truth, head and body are one. And the head is very useful when you want to read and write. But the head is also multiple — that is, made up of multitudes of neural networks. You might imagine these neural networks as muscles.</p>
+
+    <p>I was telling you that when I started tai chi, my body was seized up in one block. Well, it was because my neural networks lacked training, suppleness, strength…</p>
+
+    <p>A good way to experiment is with balance exercises. You can walk a tightrope, or simply use a board specially designed for practising balance without breaking your neck. A host of micro-sensations must travel from the lower body up to the brain, and thousands of micro-decisions must go out from the brain to the different parts of the body. Exactly the way a child learns to walk…</p>
+
+    <p>If you try the experiment, you will quickly see that as long as it's your thinking mind trying to solve the problem, you create new problems.</p>
+
+    <p>The neural networks we use most often are those of the higher cortex — well yes, because we are superior to the animals! But since they're the ones we use most often, they have become dominant. That's wonderful in many situations, but on a tightrope it mostly helps you fall… The higher cortex is what we commonly call the thinking mind.</p>
+
+    <h3 class="section-titre">A gradual release of tensions</h3>
+
+    <p>Take the bicycle again: at first, we need all our attention just to stay in the saddle, and then, little by little, the bicycle becomes like an extension of ourselves.</p>
+
+    <p>When you begin tai chi, the same thing happens. We are stiff and tense. Only continuous practice slowly allows us to let the tensions fall away. But — an often frustrating surprise — beneath the first layer of tensions we discover another layer of tensions. Once the back is freed, we notice that the belly is still tense. And years go by…</p>
+
+    <p>But in doing this work of release, we have refined our attention. We begin to feel things that didn't exist for us before. Our perception of the body changes. And after spending so long reproducing movements from the outside, we begin to feel the inside moving, responding… And that is when the real work begins. And years go by… but we also feel a kind of well-being growing — a sort of small happiness we've gathered along the way…</p>
+
+    <h3 class="section-titre">Mirror neurons</h3>
+
+    <p>How do babies learn so quickly by imitation? How do we learn tai chi so well by reproducing the gestures we see the teacher make, or by practising in a group?</p>
+
+    <p>Neurons, like the body, need repetition to create new mental maps. And to create those mental maps, our brains contain mirror neurons. This is a recent — and accidental — discovery of the scientific method.</p>
+
+    <p>But no one waited for a scientific discovery to apply the properties of mirror neurons to the teaching of tai chi. The traditional Chinese method is not "do as I say," but "reproduce and repeat what I show you." The great Chinese masters spoke little; for years, students had to watch and reproduce what their masters showed them.</p>
+
+    <h3 class="section-titre">The body as a cathedral</h3>
+
+    <p>The structure of the body can be imagined as a cathedral. The legs, like pillars, anchor us to the ground. The abdomen, between the upper and the lower, becomes the place where all the forces present in the body converge. A gathering place for energy. And here, matter is not inert, but alive and dynamic.</p>
+
+    <h3 class="section-titre">In the belly of the dragon</h3>
+
+    <p>Right at the centre of the belly lies the tantien. The tantien is not an anatomical entity but a convergence of lines of force, a roundabout for the body's energy. For those who have been doing tai chi long enough, this place is not an act of faith but an everyday experience, one that grows more concrete and richer with practice.</p>
+
+    <p>The Chinese say the belly is our second brain. From a scientific point of view, this is more and more borne out, since the main neurotransmitters are produced in the intestines. But in tai chi, that is not the aspect that interests us most. Rather, it is that small place called the tantien — hara in Japanese, as in harakiri. That crossroads at the centre of the flow of chi — or ki, in Japanese.</p>
+
+    <p>Chi, or ki, often translated as vital energy, overflows our body; it is found throughout nature. And all the Eastern internal arts are based on this reality, to which one must open oneself. The thinking mind, with its ceaseless activity, masks our perception of it.</p>
+
+    <p>At the beginning of tai chi, you repeat gestures just as you see them; then, little by little, the tantien and the chi become the engines of the action. In the belly of the dragon, a fire is quietly being kindled...</p>
+
+    <h3 class="section-titre">Three brains, one being</h3>
+
+    <blockquote>"Ah! Strike your heart — that is where genius lies." The genius of creation. The genius of compassion.</blockquote>
+
+    <p>Do you have heart in your belly? And a head on your shoulders?</p>
+
+    <p>The heart may be a third brain — a few scientists on the margins are beginning to say so… The body's intelligence. The one children develop by running outdoors and climbing trees.</p>
+
+    <p>And three brains are better than one… but it is also three that make one. A little balance among the three, and life is beautiful…</p>
+
+    <p>Action is born in the tantien. Intention feeds there and springs out across the whole structure, into muscular strength. No — not the rigid, showy muscular strength, but that supple, humble strength that makes no noise… except burps, farts and other chi-carrying sounds!</p>
+
+    <!-- PART 2 -->
+    <h2 class="partie-titre">Part Two: Just Breathe</h2>
+
+    <p style="font-style:italic; color:var(--terre); margin-bottom:2rem;">The story of a discovery: breathing as a way inward</p>
+
+    <h3 class="section-titre">1. How I discovered breathing</h3>
+
+    <p>How did I discover that you could pay attention to your breathing? That breathing had a very important influence on our life, on our physical condition? I think it was through tai chi. In the West, in the days I'm speaking of, it wasn't a particular concern — nobody talked about it. Even in sports, where it is tremendously important. As for the people who were genuinely interested in breathing, we never heard about them: they were in the East.</p>
+
+    <p>I had to wait until my late thirties to take an interest in tai chi. But at the start, my motivations had nothing esoteric or mystical about them. I was simply looking for a form of exercise that would relax me and improve my physical condition. I wanted to keep my health and, above all, to fight a drinking habit I had.</p>
+
+    <p>I came from a family of good drinkers. In my twenties, I had led the life of a bon vivant. But drinking demands extreme tolerance from the body and from one's health. It was this problem that opened me to other dimensions. In trying to find other ways to live, I came to take an interest in tai chi.</p>
+
+    <p>For me, it was really about getting to know the body, improving my condition, managing my life. I loved drinking — I loved the feeling it gave me. Being an introvert, alcohol made my social life easier. I had a lot of fun with others when I was under its influence. I was rather pleasant company — a bit excessive, but nothing pathological. When you're young, social life matters enormously, and my youth coincided with a movement of almost universal liberation, which we enjoyed to the full.</p>
+
+    <h3 class="section-titre">2. Tai chi as a compromise</h3>
+
+    <p>When I heard about meditation, I told myself it wasn't for me. Staying motionless for a long stretch seemed like a path I couldn't take on. Tai chi was a kind of in-between. It was done in silence, with a certain concentration, a certain attention. It attracted me because, all my life, I had been an inward being.</p>
+
+    <p>Raised in the Catholic religion, I had been a good practising believer. I had believed their story. I had even thought of becoming a priest — perhaps that was my mother's hope too, but I think I had made it my own. When we went to church and prayed, it answered something that was already there in me. Even after I left the Catholic religion and its beliefs, that ground remained. So when people spoke of meditation, it drew me. It was through tai chi that I finally came to meditation.</p>
+
+    <h3 class="section-titre">3. A gradual discovery</h3>
+
+    <p>I began tai chi while I was still living in Sherbrooke; a group from Montreal came to teach us. It was Taoist tai chi, founded by Mr. Moy, a Chinese master who had immigrated to Montreal in the early 1970s.</p>
+
+    <p>There had always been Chinese teachers in Montreal giving private lessons, but the one I knew taught his classes while smoking. Paradoxical, when the subject is breathing.</p>
+
+    <p>Cigarettes, I imagine, answer a need not to want to breathe. Perhaps it comes back to a life instinct set against a death instinct. Alcohol and tobacco, for me, belong more to the death instinct — you put forward things that deteriorate your body, that often create problems in your life.</p>
+
+    <p>But what I was looking for was well-being. When I was young, sports were almost my whole life. I also spent a great deal of time outdoors. I had that taste for feeling good in nature, and I wanted to find ways to deepen that well-being, to free myself from tensions. That is what I wanted to rebalance with tai chi.</p>
+
+    <p>I didn't really know what it was. Everything I discovered over the following thirty years — at the start, none of it was there. It's true. When you begin tai chi, you're looking for a bit of excitement. At first, you feel you're learning a great deal. But as with everything, you eventually reach a plateau. It's less exciting, less new. And as I said, at first it releases tensions only to reveal others. There is something a little depressing about it. Just when you start to think you're freeing yourself, you realize that deep down you're more stuck than you thought. You really have to look for something else in order to continue.</p>
+
+    <p>I don't know how long it took me to reach another dimension of tai chi — where it was no longer just exercise, but truly a work that had an influence on the whole body, and more precisely on the inside. It is called an internal martial art. It is an inner work that must be discovered, that must be allowed to emerge. Because staying merely in the movements, in the forms, can be exciting, but it is not the heart of tai chi.</p>
+
+    <h3 class="section-titre">4. Learning the form, and attention</h3>
+
+    <p>At the start, you learn the forms. It exercises the memory. In thirty years, I've met many people who practised or still practise. Many stayed at the surface — they do the movements. Some never even made the effort to memorize the sequences for themselves. Yet once you know the form, once you've memorized it, that's one less layer to carry when you do your tai chi.</p>
+
+    <p>When you are inside your tai chi, you no longer need to think about what comes next. It ends up becoming a kind of automatism. What matters then is attention. Attention without tension. That is what opens the way to a kind of inner search.</p>
+
+    <h3 class="section-titre">5. The link between tai chi, meditation and breathing</h3>
+
+    <p>In tai chi, as in the martial arts generally, a link is continually being made with meditation — a link I knew nothing about at the start. It is always the breath that builds this bridge. When you do tai chi, breathing becomes central. When you meditate, you realize that breathing is just as central — in the end, it is all that remains.</p>
+
+    <p>But what is meditation? It is becoming silent. When we try to be silent, we notice that inside us there is a little voice. We are always in dialogue. Our thinking mind runs continuously. The first step is to notice it, because at the start, I think, we don't even know. It is so much a part of ourselves that we never question this mind in constant dialogue with itself.</p>
+
+    <p>To quiet the thinking mind in tai chi, the movements — once memorized — become automatic. That leaves another part of our spirit free to come forward, to show itself.</p>
+
+    <h3 class="section-titre">6. Counting to calm the mind</h3>
+
+    <p>When you begin in Zen — and I think it may be the same in other meditation practices — to reach that somewhat more silent dimension, to connect with the universe, you are asked to count your breaths. One on the in-breath, two on the out-breath. You go up to ten, then start again. If you get lost in your thoughts while counting, you go back to one.</p>
+
+    <p>What that does is give the thinking mind a job. While the mind counts, we gain access to other dimensions. I can't say it's magic, because the mind may well be counting — it carries on all the same. I don't really know how the thinking mind works; it must differ a little from one person to the next. But my mind was very strong. I told myself a lot of stories, and I found myself interesting.</p>
+
+    <p>For it to settle down — we don't even ask the mind to disappear — you must avoid one of meditation's traps: trying to fight the mind. To fight the mind is to give it its strength. What you must do is try to free yourself. Gently, in Zen, you begin by counting your breaths. In the end, you simply stay present to the breath and let the mind run on a little in the background.</p>
+
+    <p>But before it moves to the background, the thinking mind is our whole life.</p>
+
+    <h3 class="section-titre">7. Becoming aware of the mind</h3>
+
+    <p>My Zen master used to tell a good story. Once, someone came to one of his workshops meant to introduce people to the practice, to show them a little of what it was. It lasted three or four hours. A day or two later, the person telephoned: "Mr. Low, what is this? Before, I was calm, I had no problem. Then you told me about this thinking mind, and ever since you told me about it, it takes up all the room!"</p>
+
+    <p>In fact, he was becoming aware of what was already there. Nothing had changed. It's just that someone had told him: "Think about it a moment, step back a little. You always have a little inner dialogue telling you all kinds of stories."</p>
+
+    <p>The thinking mind is the controller. It has always been there. Everyone in our life, all the time, from the moment we were born, the people around us already had their minds running. We learned to live with it by watching others. We couldn't see their minds, but our own mind set itself running in perfect harmony with everyone around us. When you never question it, it becomes the norm.</p>
+
+    <p>It's like Einstein poking his head above the cloud of the knowledge of his time to discover that the universe doesn't work the way all the scholars thought it did. When we try to lift our head out of our own conceptions, our own spirit, the thinking mind doesn't simply decide to leave. It is the one that has controlled our entire inner universe since forever. And now we'd like to chase it away? It has no desire to be chased away. It is a very deep and very intimate habit. You don't change that just like that.</p>
+
+    <h3 class="section-titre">8. Taming the mind rather than fighting it</h3>
+
+    <p>As I was saying, it is not about fighting the thinking mind; it is about not leaving it in first place all the time. The mind allows us to plan, and in everyday life that is tremendously important. But it doesn't need to be the star of our inner life at every moment.</p>
+
+    <p>When we manage to calm the mind a little, we gain access to realities that are not miraculous — it's just that we see life differently; we are more open. The thinking mind, for its part, already has its ready-made stories. Often, it keeps repeating the same ones. We try to untangle our life, our life stories, so as not to be too battered by life.</p>
+
+    <p>One of the things I discovered in becoming aware of my thinking mind — and it wasn't necessarily fun — is this dialogue with oneself. Say you've had a quarrel with your sweetheart. You are still in dialogue, but you are the one writing the script for both parts. You give yourself a voice, but you also give your sweetheart her voice. Depending on the situation that caused the conflict, you always arrange things so that your voice comes out the winner. Even if the other seems to be responding, it is always you responding, taking your own voice and the other's. We call it an inner dialogue, but in fact it is a monologue.</p>
+
+    <p>All of this amplifies things. When you are angry, that inner dialogue only amplifies your anger. It's the same with anguish — you are anxious, and the inner dialogue feeds that anxiety; it brings you no relief. On the contrary, you grow more and more anxious; you fall into a kind of bottomless pit.</p>
+
+    <h3 class="section-titre">9. Breathing as a tool of liberation</h3>
+
+    <p>That is one of the things meditation makes possible: managing our anguish, our anxiety. We free ourselves from it little by little. If we are quick to anger, it can free us from our anger too. It makes it more manageable; it makes us easier to live with, because we no longer feed those natural leanings.</p>
+
+    <p>And that is what we slowly learn: breathing allows us to calm the impulses we carry inside — whether anger, jealousy, all those powerful emotions that sometimes get the upper hand. We manage to come through, because in learning to breathe we have found a way to handle those big emotions.</p>
+
+    <p>The tensions we carry in our body are often big emotions we never managed to dissolve. Those tensions have embedded themselves in our physical body, creating points of tension that can be very painful. Breathing is the first tool for undoing those tensions. It is the tool that opens us to other dimensions.</p>
+
+    <h3 class="section-titre">10. The metaphor of the free diver</h3>
+
+    <p>The other day, I read a piece about a man who does free diving — those people who descend as deep as possible without any equipment, just holding their breath. It was the world champion, I believe, explaining his ability.</p>
+
+    <p>When you go down into the depths holding your breath, at a certain point the CO₂ sets off a chemical alarm in your brain. At that moment, you think you are going to die. If you really want to break records — to go as deep as possible, to hold your breath as long as possible — you reach a point where your body sends you a signal that you are heading toward death.</p>
+
+    <p>Usually, when we receive a signal of that kind, the rest of our body, of our mind, is not strong enough to step back and say: "Yes, the signal is there, I am meeting my limits — but at the same time, I am not going to die in the next few seconds. So I am able to manage my anguish, the anguish my body is creating because of my situation." That is what allowed him to go a little deeper than the other divers, and that is how he broke the world records.</p>
+
+    <p>Neuroscience is discovering that the same alarm can go off in our brain when we do the work of changing. As we deconstruct our identity, our brain reacts as though there were danger; our amygdala goes on alert.</p>
+
+    <h3 class="section-titre">11. Descending to the bottom of the inner well</h3>
+
+    <p>Something of the same nature happens when we begin to work on the breath. It is not as extreme, but at bottom, the body sends us signals that put our life — or seem to put our life — in danger. That anguish, we must manage. Not in order to go deeper into the water like the diver, but to go deeper into ourselves.</p>
+
+    <p>It is in this sense that I spoke of the breath as the rope that lowers us to the bottom of the well. The bottom of the well is, in a way, our unconscious. It is a bottom drowned in darkness, unknown. We descend into that unconscious, and we must not panic, for the unconscious often holds very painful dimensions. All the great painful dimensions of our life have lodged themselves in the unconscious.</p>
+
+    <p>We have to free ourselves from that. Can we free ourselves completely from our ego? Perhaps not, but that is what Zen proposes. We must be vigilant enough, and our practice diligent enough, to enter at last into our unconscious dimensions without losing our minds.</p>
+
+    <blockquote>The breath is that rope. It allows us to descend safely, to climb back up when necessary, and to continue our exploration without drowning in the depths of ourselves.</blockquote>
+
+    <!-- SIGNATURE -->
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">February 2025 — English translation 2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Back to the texts</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
