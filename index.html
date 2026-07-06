@@ -545,7 +545,7 @@
   <div class="video-modal" id="video-modal">
     <div class="video-modal-corps">
       <button class="video-modal-fermer" id="video-modal-fermer">✕ Fermer</button>
-      <video id="video-lecteur" controls></video>
+      <video id="video-lecteur" controls playsinline preload="auto"></video>
     </div>
   </div>
 </section>
@@ -861,11 +861,17 @@
   const gv = document.getElementById('videos-grille');
   const modal = document.getElementById('video-modal');
   const lecteur = document.getElementById('video-lecteur');
-  document.getElementById('video-modal-fermer').addEventListener('click', () => {
-    modal.classList.remove('actif'); lecteur.pause(); lecteur.src = '';
-  });
+  // Fermeture : ne pas mettre src='' (Safari entre en état d'erreur) —
+  // retirer l'attribut puis recharger l'élément le remet à neuf.
+  function fermerVideo() {
+    modal.classList.remove('actif');
+    lecteur.pause();
+    lecteur.removeAttribute('src');
+    lecteur.load();
+  }
+  document.getElementById('video-modal-fermer').addEventListener('click', fermerVideo);
   modal.addEventListener('click', e => {
-    if (e.target === modal) { modal.classList.remove('actif'); lecteur.pause(); lecteur.src = ''; }
+    if (e.target === modal) fermerVideo();
   });
   (D.videos || []).forEach((v, i) => {
     const div = document.createElement('div');
@@ -886,6 +892,7 @@
       </div>`;
     div.addEventListener('click', () => {
       lecteur.src = v.fichier;
+      lecteur.load(); // force Safari à recharger proprement la nouvelle source
       modal.classList.add('actif');
       lecteur.play().catch(() => {});
     });
