@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- English edition of Des_réseaux_dans_des_réseaux_INTEREXISTENCE_1.html — translated 2026 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networks within Networks — INTEREXISTENCE · Serge Roy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+      --ombre: rgba(28,26,20,0.08);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-retour {
+      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--terre); text-decoration: none;
+      opacity: 0.8; transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--or);
+    }
+
+    /* ── COVER ── */
+    .couverture {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      background: linear-gradient(160deg, #1c2a1c 0%, #1a1a14 45%, #2a1c0f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .couverture::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(184,144,58,0.12), transparent 70%);
+    }
+    .couverture-ornement {
+      width: 1px; height: 70px;
+      background: linear-gradient(to bottom, transparent, var(--or), transparent);
+      margin: 0 auto 2.5rem;
+    }
+    .couverture-etiquette {
+      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--or); margin-bottom: 2rem;
+      position: relative; z-index: 1;
+    }
+    .couverture-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 300; line-height: 1.08;
+      color: var(--lin); margin-bottom: 0.4em;
+      position: relative; z-index: 1;
+    }
+    .couverture-titre em { color: var(--or); font-style: italic; }
+    .couverture-sous {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.6rem);
+      font-weight: 300; font-style: italic;
+      color: rgba(242,234,216,0.6);
+      margin-bottom: 2.5rem; letter-spacing: 0.03em;
+      position: relative; z-index: 1;
+    }
+    .couverture-sep { width: 60px; height: 1px; background: var(--or); margin: 0 auto 2rem; position: relative; z-index: 1; }
+    .couverture-auteur {
+      font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: rgba(242,234,216,0.5);
+      position: relative; z-index: 1;
+    }
+    .couverture-projet {
+      font-family: 'EB Garamond', serif; font-size: 0.95rem; font-style: italic;
+      color: rgba(242,234,216,0.35); margin-top: 0.4rem;
+      position: relative; z-index: 1;
+    }
+
+    /* ── CONTAINER ── */
+    .page { position: relative; z-index: 1; }
+    .conteneur { max-width: 720px; margin: 0 auto; padding: 5rem 2.5rem; }
+
+    /* ── PARTS / HEADINGS ── */
+    .partie-entete {
+      text-align: center; padding: 4rem 0 2.5rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+      margin-top: 3rem;
+    }
+    .partie-num {
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--or); display: block; margin-bottom: 0.8rem;
+    }
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300; color: var(--encre); line-height: 1.15;
+    }
+    .partie-titre em { color: var(--mousse); font-style: italic; }
+    .separateur { width: 50px; height: 1px; background: var(--or); margin: 1.5rem auto 0; }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; font-style: italic;
+      color: var(--mousse); margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(90,110,74,0.2);
+    }
+    .section-num {
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em;
+      color: var(--or); margin-right: 0.6rem;
+    }
+
+    /* ── BODY TEXT ── */
+    p { margin-bottom: 1.2rem; color: rgba(28,26,20,0.85); }
+
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--lin);
+      border-left: 3px solid var(--or);
+      border-radius: 0 2px 2px 0;
+    }
+    blockquote p {
+      font-style: italic;
+      color: rgba(28,26,20,0.75);
+      margin-bottom: 0.8rem;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    blockquote strong { font-style: normal; color: var(--mousse); }
+
+    /* ── LISTS ── */
+    .liste-points {
+      margin: 0.8rem 0 1.2rem 0;
+      list-style: none;
+    }
+    .liste-points li {
+      padding: 0.3rem 0 0.3rem 1.6rem;
+      position: relative;
+      color: rgba(28,26,20,0.82);
+    }
+    .liste-points li::before {
+      content: '·';
+      position: absolute; left: 0.5rem;
+      color: var(--or); font-size: 1.2rem; line-height: 1;
+    }
+
+    /* ── PULL QUOTE ── */
+    .citation-forte {
+      text-align: center;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      border-top: 1px solid rgba(184,144,58,0.3);
+      border-bottom: 1px solid rgba(184,144,58,0.3);
+    }
+    .citation-forte p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 300; font-style: italic;
+      color: var(--encre); line-height: 1.5;
+      margin-bottom: 0;
+    }
+    .citation-forte .source {
+      display: block; margin-top: 1rem;
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--or);
+    }
+
+    /* ── CONCLUSION ── */
+    .conclusion {
+      background: var(--lin);
+      padding: 4rem 3rem;
+      margin: 3rem 0;
+      border: 1px solid rgba(107,92,69,0.2);
+      text-align: center;
+    }
+    .conclusion h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300; font-style: italic;
+      color: var(--encre); margin-bottom: 1.5rem;
+    }
+    .conclusion .mot-cle {
+      display: inline-block;
+      font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 0.2em;
+      color: var(--or); margin-top: 2rem;
+    }
+
+    /* ── REFERENCES ── */
+    .references { background: #f0ece0; padding: 3rem 2.5rem; margin-top: 3rem; }
+    .references h3 {
+      font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--or); margin-bottom: 2rem;
+      border: none; padding: 0;
+    }
+    .ref-groupe { margin-bottom: 2rem; }
+    .ref-groupe-titre {
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--terre); margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem; border-bottom: 1px solid rgba(107,92,69,0.2);
+    }
+    .ref-auteur { font-weight: 500; color: var(--encre); }
+    .ref-annee { color: var(--or); font-size: 0.9rem; }
+    .ref-titre { font-style: italic; color: var(--terre); }
+    .ref-item { margin-bottom: 0.4rem; font-size: 0.95rem; }
+    .ref-contexte { color: var(--terre); font-size: 0.9rem; font-style: italic; }
+
+    /* ── FOOTER ── */
+    .pied-page {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+    }
+    .pied-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.2em; color: var(--or);
+      margin-bottom: 0.5rem;
+    }
+    .pied-sous { font-size: 0.85rem; opacity: 0.4; font-style: italic; }
+    .pied-lien {
+      display: inline-block; margin-top: 1.5rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--or); text-decoration: none;
+      border: 1px solid var(--or); padding: 0.5rem 1.2rem;
+      transition: all 0.2s;
+    }
+    .pied-lien:hover { background: var(--or); color: var(--encre); }
+
+    /* ── REVEAL ── */
+    .apparaitre { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .apparaitre.visible { opacity: 1; transform: translateY(0); }
+
+    @media(max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .conteneur { padding: 4rem 1.5rem; }
+      blockquote { padding: 1.2rem 1.4rem; }
+      .conclusion { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="../index.html" class="nav-retour">← Serge Roy</a>
+  <span class="nav-categorie">Intellectual Journey</span>
+</nav>
+
+<!-- COVER -->
+<div class="couverture">
+  <div class="couverture-ornement"></div>
+  <p class="couverture-etiquette">Intellectual Journey · 2024</p>
+  <h1 class="couverture-titre">Networks<br>within networks<br><em>INTEREXISTENCE</em></h1>
+  <p class="couverture-sous">From cybernetics to contemplation</p>
+  <div class="couverture-sep"></div>
+  <p class="couverture-auteur">Serge Roy</p>
+  <p class="couverture-projet">The "Who am I?" project</p>
+  <p style="margin-top:1.5rem; position:relative; z-index:1;"><a href="Des_réseaux_dans_des_réseaux_INTEREXISTENCE_1.html" style="color:var(--or); font-size:0.85rem; letter-spacing:0.1em; font-family:'EB Garamond',serif;">Version française</a></p>
+</div>
+
+<div class="page">
+
+  <!-- INTRODUCTION -->
+  <div class="conteneur">
+
+    <div class="citation-forte apparaitre">
+      <p>"What pattern connects the crab to the lobster and the orchid to the primrose and all the four of them to me? And me to you? And all the six of us to the amoeba in one direction and to the backward schizophrenic in another?"</p>
+      <span class="source">Gregory Bateson — Mind and Nature: A Necessary Unity</span>
+    </div>
+
+    <p class="apparaitre">This <em>pattern that connects</em> is not a poetic metaphor. It is a biological, ecological, cybernetic reality. It is the structure of structures, the network of networks, the organizing principle that runs through every level of the living world.</p>
+
+    <p class="apparaitre">Bateson was searching for the thread that links all forms of life, from the simplest to the most complex. His answer: that thread is the <strong>network</strong>. Not the network as metaphor, but as a fundamental principle of organization. Networks are the fundamental pattern of organization of all living systems.</p>
+
+    <p class="apparaitre">This vision profoundly shaped my beginnings as an educational technologist in the 1980s. We were exploring telematic networks, educational multimedia, the possibilities of a convivial computing. We were trying to create tools that would not dominate the human being, but would foster connection, sharing, mutual learning — like the networks of the living world. In those days, people spoke of the personal computer as "a bicycle for the mind."</p>
+
+    <p class="apparaitre">What I did not yet know was that this quest for the <em>pattern that connects</em> would lead me far beyond technology, toward a contemplative understanding that Zen Buddhism calls <em>interbeing</em>.</p>
+
+    <p class="apparaitre">This document retraces that trajectory — from Bateson's <em>pattern that connects</em> to Thich Nhat Hanh's <em>interbeing</em>, from technological networks to the networks of the living, from cybernetics to contemplation.</p>
+
+  </div>
+
+  <!-- PART I -->
+  <div class="conteneur">
+    <div class="partie-entete apparaitre">
+      <span class="partie-num">Part I</span>
+      <h2 class="partie-titre">The systems view<br>and <em>complex thought</em></h2>
+      <div class="separateur"></div>
+    </div>
+
+    <h3><span class="section-num">1.</span> Networks as a universal pattern</h3>
+    <p class="apparaitre">At every level of complexity, we find this network structure: at the cellular level (metabolism), at the organic level (nervous and circulatory systems), at the ecological level (food webs), at the social level (human communities), at the technological level (the Internet).</p>
+    <p class="apparaitre">Cellular metabolism: a ceaseless flow of energy and matter through a network of chemical reactions that allows a living organism to continually generate, repair and perpetuate itself. What the poets call "the breath of life."</p>
+
+    <h3><span class="section-num">2.</span> Self-organization and emergence</h3>
+    <blockquote class="apparaitre">
+      <p>Biological life is a self-generating network within a boundary of its own making.</p>
+      <p><em>The purpose of a living system is to continually create and recreate its identity.</em></p>
+    </blockquote>
+    <p class="apparaitre">This principle of self-creation (autopoiesis) distinguishes the living from the non-living. An organism is not an assembly of parts, but a dynamic process that keeps itself in existence through its own activity.</p>
+    <p class="apparaitre">Emergence names the appearance of new properties at higher levels of organization. Consciousness emerges from the complex organization of the nervous system without being reducible to individual neurons.</p>
+
+    <h3><span class="section-num">3.</span> Gregory Bateson: immanent mind</h3>
+    <p class="apparaitre">Gregory Bateson (1904–1980) is a central figure in my intellectual formation. An anthropologist, cybernetician and systems thinker, he developed a revolutionary vision of mind.</p>
+    <blockquote class="apparaitre">
+      <p>"Mind, this form of intelligence, is immanent in any sufficiently complex organization."</p>
+    </blockquote>
+    <p class="apparaitre">This claim radically transforms our understanding of consciousness. Mind is not a mysterious substance housed in the brain, but an emergent property of complex systems organized as networks.</p>
+    <p class="apparaitre">This vision resonates deeply with the Buddhist notion of universal Buddha-nature: the capacity for awakening is not reserved for humans but immanent in all existence.</p>
+  </div>
+
+  <!-- PART II -->
+  <div class="conteneur">
+    <div class="partie-entete apparaitre">
+      <span class="partie-num">Part II</span>
+      <h2 class="partie-titre">Breathing life<br>into <em>the networks</em></h2>
+      <div class="separateur"></div>
+    </div>
+
+    <h3><span class="section-num">4.</span> The network as a convivial medium</h3>
+    <p class="apparaitre">In order to better grasp the role and workings of the "information highways" in human communication, I explored concepts drawn from the science of complexity. These concepts support a vision of networks as a convivial medium through which each person could, in the image of life itself, exercise and share their creativity.</p>
+    <p class="apparaitre">The concept of "conviviality" comes from Ivan Illich (1926–2002), who distinguished convivial tools (those that increase autonomy) from manipulative tools (those that create dependency). A convivial network would allow each person to create, to learn, to communicate on their own terms. That was an optimistic vision — naive, perhaps, in hindsight — of the promises of the Internet in the 1990s.</p>
+
+    <h3><span class="section-num">5.</span> Technology and bacterial life</h3>
+    <blockquote class="apparaitre">
+      <p>"But all this beautiful, lifeless technology needs the bacterial life of humans to take shape."</p>
+    </blockquote>
+    <p class="apparaitre">This sentence captures an essential paradox: technological networks, however sophisticated, remain inert without the human presence that animates them. The image of "bacterial life" is especially evocative. Bacteria are microscopic, seemingly insignificant, yet essential to all life on Earth.</p>
+    <p class="apparaitre">In the same way, humans "breathe life" into technological networks. We are not mere users, but the living cells of an emerging technological organism.</p>
+
+    <h3><span class="section-num">6.</span> From cyberspace to the global village</h3>
+    <p class="apparaitre">Thanks to the convergence of hypermedia and networks, we will soon find ourselves together, fully immersed in a symbolic space. With personal and interpersonal media, we will create virtual reality from scratch, organize cyberspace, inhabit and build the global village.</p>
+    <p class="apparaitre">This collective practice gives birth to a new form of community. Crossing the Sun Microsystems slogan with McLuhan: "The network is the computer" becomes <strong>"The network is the mind."</strong></p>
+
+    <div class="citation-forte apparaitre">
+      <p>Influences of this period: McLuhan, Bateson, Illich, Turkle, Rheingold.</p>
+      <span class="source">The global village · The ecology of mind · Conviviality · Virtual communities</span>
+    </div>
+  </div>
+
+  <!-- PART III -->
+  <div class="conteneur">
+    <div class="partie-entete apparaitre">
+      <span class="partie-num">Part III</span>
+      <h2 class="partie-titre">Networks<br><em>within networks</em></h2>
+      <div class="separateur"></div>
+    </div>
+
+    <h3><span class="section-num">7.</span> A fractal perspective</h3>
+    <p class="apparaitre">The title of this document reveals a fractal vision of reality. At every scale of observation, we discover the same network structure, nested within networks of a higher order.</p>
+    <p class="apparaitre">I am myself a network:</p>
+    <ul class="liste-points apparaitre">
+      <li>Of cells organized into tissues</li>
+      <li>Of tissues organized into organs</li>
+      <li>Of organs organized into systems</li>
+      <li>Of systems integrated into an organism</li>
+    </ul>
+    <p class="apparaitre">And this organism belongs to vaster networks: the family network, the ecological network, the planetary network, the cosmic network — down to the atoms of my body, forged in the stars.</p>
+    <p class="apparaitre">There is no clear boundary where "I" begin and where "I" end. I am a temporary node in a vast fabric of interdependencies.</p>
+
+    <h3><span class="section-num">8.</span> Metabolism and flow</h3>
+    <blockquote class="apparaitre">
+      <p>Metabolism has two aspects: a <strong>network aspect</strong> (the structure of chemical reactions and their interconnections) and a <strong>flow aspect</strong> (the constant movement of matter and energy through these reactions).</p>
+      <p>"Living organisms combine stability of structure with fluidity of change" — the same overall structure is maintained despite continual flow and change.</p>
+    </blockquote>
+    <p class="apparaitre">This dialectic of stability and flow fascinated me throughout my professional career in communication networks. A network is never static: it is a flow of messages, of data, of interactions that maintains its coherence while constantly transforming itself.</p>
+
+    <h3><span class="section-num">9.</span> The organization of the living</h3>
+    <blockquote class="apparaitre">
+      <p><em>All living systems are learning systems.</em></p>
+    </blockquote>
+    <p class="apparaitre">This statement captures an essential characteristic: life is learning. Every organism, every ecosystem continually learns from its environment and adapts.</p>
+    <p class="apparaitre">The organization of the living is characterized by self-generation (autopoiesis), continual adaptation and learning, the maintenance of identity through change — and this crucial duality: openness to flows of energy and organizational closure (self-determination). An organism exchanges with its environment while maintaining its autonomy.</p>
+  </div>
+
+  <!-- PART IV -->
+  <div class="conteneur">
+    <div class="partie-entete apparaitre">
+      <span class="partie-num">Part IV</span>
+      <h2 class="partie-titre">Spiritual<br><em>convergence</em></h2>
+      <div class="separateur"></div>
+    </div>
+
+    <h3><span class="section-num">10.</span> Systems thinking and Zen: two paths, one vision</h3>
+    <p class="apparaitre">For decades, I explored systems thinking from an intellectual and professional standpoint. Then, in the 2000s, I began the practice of Zen. What struck me immediately was the extraordinary convergence between these two approaches.</p>
+
+    <div class="citation-forte apparaitre">
+      <p>Systems thinking says: <em>Everything is connected. Nothing exists in isolation.</em><br>
+      Zen says: <em>Everything is interdependent. The separation between self and world is an illusion.</em></p>
+    </div>
+
+    <p class="apparaitre">These are not two different descriptions of reality, but two paths toward the same understanding: the fundamental unity of all existence.</p>
+
+    <h3><span class="section-num">11.</span> Interdependence and impermanence</h3>
+    <p class="apparaitre">Buddhism teaches <em>pratītyasamutpāda</em> (dependent origination): every phenomenon arises in dependence on causes and conditions. Nothing exists autonomously or permanently.</p>
+    <p class="apparaitre">Systems science reaches the same conclusion by a different route: every system exists in a context, sustained by flows, emerging from relationships. My body is not a solid object but a process: every cell is regularly replaced, atoms circulate, metabolism exchanges matter and energy with the environment, consciousness emerges from neuronal patterns in constant flux.</p>
+    <p class="apparaitre">Impermanence is not an abstract philosophical doctrine; it is the observable reality of every living system. The practice of zazen allows one to experience this fluidity directly, beyond the concept.</p>
+
+    <h3><span class="section-num">12.</span> Consciousness as network</h3>
+    <p class="apparaitre">If mind is immanent in complex systems (Bateson), and if I am myself a complex system nested within other systems, then my consciousness is not "my" exclusive property.</p>
+    <p class="apparaitre">Consciousness emerges from the neuronal network, which emerges from the cellular network, which emerges from the molecular network, which emerges from quantum patterns. And this neuronal network is itself connected to the world through the senses, language, culture.</p>
+    <blockquote class="apparaitre">
+      <p>The Zen answer: consciousness is nowhere and everywhere. It is not a locatable thing but a process emerging from the universal network of relationships.</p>
+      <p>When I practise zazen, I am not cultivating "my" individual consciousness. I am opening myself to the vaster network of which I am a part. The small self dissolves into the great Self, which is nothing other than universal interdependence.</p>
+    </blockquote>
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="conteneur">
+    <div class="conclusion apparaitre">
+      <h2>Conclusion — Interbeing</h2>
+      <div class="separateur" style="margin:0 auto 2rem;"></div>
+
+      <p>At the end of this forty-year journey, from the technological to the contemplative, a deep understanding emerges: what Gregory Bateson called the <em>pattern that connects</em> finds its most radical expression in the concept of <em>interbeing</em> developed by Thich Nhat Hanh.</p>
+    </div>
+
+    <blockquote class="apparaitre" style="margin-top:2rem; background:var(--parchemin);">
+      <p>"If you are a poet, you will see clearly that there is a cloud floating in this sheet of paper. Without a cloud, there will be no rain; without rain, the trees cannot grow; and without trees, we cannot make paper. The cloud is essential for the paper to exist."</p>
+      <p>"In this sheet there is also the logger, the wheat that fed the logger, his parents, the whole chain of the living, the ocean the rain comes from. Interbeing means that everything inter-is — everything is woven together, everything co-creates everything else, moment after moment."</p>
+      <p style="margin-top:0.8rem; font-style:normal; font-size:0.85rem; color:var(--or); font-family:'Cinzel',serif; letter-spacing:0.15em;">Thich Nhat Hanh</p>
+    </blockquote>
+
+    <p class="apparaitre" style="margin-top:2rem;">My trajectory — from the telematic networks of the 1970s to the practice of Zen — may look like a detour. But it reveals a deep continuity. Technological networks taught me the structure of interdependence. Contemplation revealed its essence.</p>
+
+    <p class="apparaitre">Today, facing the ecological crisis, technological dehumanization and social fragmentation, the concept of interbeing is not merely a spiritual wisdom — it is a vital necessity, a matter of survival. We must relearn what Indigenous peoples have always known, what Bateson formulated scientifically, what Zen expresses through practice: <strong>everything is connected</strong>.</p>
+
+    <div class="citation-forte apparaitre">
+      <p><strong>We are not part of a network.<br>We are the network.<br>We inter-are.</strong></p>
+      <span class="source">INTEREXISTENCE · Serge Roy · Montreal, January 2025</span>
+    </div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="references">
+    <div class="conteneur" style="padding-top:0; padding-bottom:0;">
+      <h3>References and influences</h3>
+
+      <div class="ref-groupe">
+        <div class="ref-groupe-titre">Key authors and thinkers</div>
+        <p class="ref-item"><span class="ref-auteur">Gregory Bateson</span> <span class="ref-annee">(1904–1980)</span> — <span class="ref-titre">Steps to an Ecology of Mind</span> (1972) · <span class="ref-titre">Mind and Nature: A Necessary Unity</span> (1979)</p>
+        <p class="ref-item"><span class="ref-auteur">Fritjof Capra</span> — <span class="ref-titre">The Web of Life</span> (1996) · <span class="ref-titre">The Systems View of Life</span> (2014)</p>
+        <p class="ref-item"><span class="ref-auteur">Humberto Maturana &amp; Francisco Varela</span> — <span class="ref-titre">Autopoiesis and Cognition</span> (1980) · <span class="ref-titre">The Tree of Knowledge</span> (1987)</p>
+        <p class="ref-item"><span class="ref-auteur">Marshall McLuhan</span> <span class="ref-annee">(1911–1980)</span> — <span class="ref-titre">Understanding Media</span> (1964) · <span class="ref-titre">The Global Village</span> (1989)</p>
+        <p class="ref-item"><span class="ref-auteur">Ivan Illich</span> <span class="ref-annee">(1926–2002)</span> — <span class="ref-titre">Tools for Conviviality</span> (1973) · <span class="ref-titre">Deschooling Society</span> (1971)</p>
+        <p class="ref-item"><span class="ref-auteur">Sherry Turkle</span> — <span class="ref-titre">Life on the Screen</span> (1995) · <span class="ref-titre">Alone Together</span> (2011)</p>
+        <p class="ref-item"><span class="ref-auteur">Howard Rheingold</span> — <span class="ref-titre">The Virtual Community</span> (1993)</p>
+        <p class="ref-item"><span class="ref-auteur">Ian Stewart</span> — <span class="ref-titre">Does God Play Dice?</span> (1989)</p>
+      </div>
+
+      <div class="ref-groupe">
+        <div class="ref-groupe-titre">Zen masters and contemplative philosophy</div>
+        <p class="ref-item">Albert Low — Montreal Zen Center</p>
+        <p class="ref-item">Thich Nhat Hanh — <span class="ref-contexte">interbeing, pratītyasamutpāda</span></p>
+        <p class="ref-item">Shunryu Suzuki — <span class="ref-contexte">Zen mind, beginner's mind</span></p>
+      </div>
+
+      <div class="ref-groupe">
+        <div class="ref-groupe-titre">Professional context</div>
+        <p class="ref-item ref-contexte">Communication research, UQAM (1976–1997)</p>
+        <p class="ref-item ref-contexte">Téléuniversité, distance education (1980–1990)</p>
+        <p class="ref-item ref-contexte">CEGEPs, educational technologies (1990–2010)</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<!-- FOOTER -->
+<footer class="pied-page">
+  <div class="pied-marque">SERGE ROY</div>
+  <div class="pied-sous">A space of memory, creation and contemplation.</div>
+  <a href="../index.html" class="pied-lien">← Back to the site</a>
+</footer>
+
+<script>
+  // Reveal-on-scroll animation
+  const observateur = new IntersectionObserver((entrees) => {
+    entrees.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observateur.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.apparaitre').forEach(el => observateur.observe(el));
+</script>
+</body>
+</html>
