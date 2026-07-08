@@ -114,6 +114,7 @@
       if (p.description) {
         const leg = bloc.querySelector('.photo-legende-texte');
         leg.style.cursor = 'pointer';
+        leg.style.pointerEvents = 'auto'; // le voile parent bloque les clics ; la légende doit les recevoir
         leg.addEventListener('click', e => { e.stopPropagation(); ouvrirDescription(p.legende, p.description); });
       }
       mosaique.appendChild(bloc);
