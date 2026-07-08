@@ -52,8 +52,54 @@ const GALERIES = [
     "titre": "La famille",
     "sousTitre": "Les visages et les moments qui traversent une vie.",
     "intro": "Portraits, instants partagés, liens tissés au fil des années et des générations.",
-    "vignette": "",
-    "photos": []
+    "vignette": "Famille/RosaireYvonnePatin.jpg",
+    "photos": [
+      {
+        "fichier": "Famille/Yvonne1.jpg",
+        "legende": "Yvonne",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/YvonnePoteau.jpg",
+        "legende": "Yvonne au poteau",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/RosaireYvonnePatin.jpg",
+        "legende": "Rosaire et Yvonne en patins",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/RosaireGardienDebut.jpg",
+        "legende": "Rosaire, gardien de but",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/RosaireGymnaste.jpg",
+        "legende": "Rosaire, gymnaste",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/FamilleGroupe.jpg",
+        "legende": "Portrait de famille",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/FamilleEnfants1.jpg",
+        "legende": "Les enfants",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/FamilleEnfants2.jpg",
+        "legende": "Les enfants en hiver",
+        "description": ""
+      },
+      {
+        "fichier": "Famille/RoyDesjardinsKamouraska.png",
+        "legende": "Les Roy et Desjardins de Kamouraska",
+        "description": ""
+      }
+    ]
   },
   {
     "id": "arbres-roches",
