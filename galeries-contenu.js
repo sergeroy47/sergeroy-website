@@ -52,8 +52,13 @@ const GALERIES = [
     "titre": "La famille",
     "sousTitre": "Les visages et les moments qui traversent une vie.",
     "intro": "Portraits, instants partagés, liens tissés au fil des années et des générations.",
-    "vignette": "Famille/RosaireYvonnePatin.jpg",
+    "vignette": "Famille/FamilleYvonneRosaire.jpg",
     "photos": [
+      {
+        "fichier": "Famille/FamilleYvonneRosaire.jpg",
+        "legende": "Yvonne, Rosaire et les enfants",
+        "description": ""
+      },
       {
         "fichier": "Famille/Yvonne1.jpg",
         "legende": "Yvonne",
