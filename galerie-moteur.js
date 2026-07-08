@@ -102,7 +102,7 @@
       const bloc = document.createElement('div');
       bloc.className = 'photo-bloc apparaitre' + (p.description ? ' avec-desc' : '');
       const indice = p.description
-        ? '<div class="photo-legende-indice">🔍 Cliquez sur la photo pour agrandir<br>✦ Cliquez sur la légende pour lire l’histoire</div>'
+        ? '<div class="photo-legende-indice">🔍 Cliquez sur la photo pour agrandir<br><span class="lire-histoire">✦ Lire l’histoire</span></div>'
         : '<div class="photo-legende-indice">🔍 Cliquez pour agrandir</div>';
       bloc.innerHTML = `
         <img src="${p.fichier}" alt="${p.legende || ''}" loading="lazy">
@@ -112,10 +112,12 @@
         </div>`;
       bloc.querySelector('img').addEventListener('click', e => { e.stopPropagation(); ouvrirLightbox(i); });
       if (p.description) {
-        const leg = bloc.querySelector('.photo-legende-texte');
-        leg.style.cursor = 'pointer';
-        leg.style.pointerEvents = 'auto'; // le voile parent bloque les clics ; la légende doit les recevoir
-        leg.addEventListener('click', e => { e.stopPropagation(); ouvrirDescription(p.legende, p.description); });
+        // le voile parent bloque les clics ; la légende et « Lire l'histoire » doivent les recevoir
+        [bloc.querySelector('.photo-legende-texte'), bloc.querySelector('.lire-histoire')].forEach(el => {
+          el.style.cursor = 'pointer';
+          el.style.pointerEvents = 'auto';
+          el.addEventListener('click', e => { e.stopPropagation(); ouvrirDescription(p.legende, p.description); });
+        });
       }
       mosaique.appendChild(bloc);
     });

@@ -86,8 +86,12 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify
   line-height: 1.7;
 }
 .photo-bloc.avec-desc { cursor: pointer; }
-/* La légende doit recevoir les clics malgré le pointer-events:none du voile */
-.photo-bloc.avec-desc .photo-legende-texte { pointer-events: auto; }
+/* La légende et « Lire l'histoire » doivent recevoir les clics malgré le pointer-events:none du voile */
+.photo-bloc.avec-desc .photo-legende-texte,
+.lire-histoire { pointer-events: auto; cursor: pointer; }
+.photo-bloc.avec-desc .photo-legende-texte { text-decoration: underline dotted rgba(242,234,216,0.5); text-underline-offset: 3px; }
+.lire-histoire { color: var(--or, #b8903a); }
+.lire-histoire:hover { text-decoration: underline; }
 
 /* Message galerie vide */
 .galerie-vide {
