@@ -87,7 +87,7 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleGroupe.jpg",
         "legende": "Portrait de famille",
-        "description": ""
+        "description": "Photo prise sur le balcon de notre maison de la rue Lemay, à Acton Vale. Nous étions 9 enfants, mais on n'en voit que 6 sur la photo : il manque ma plus jeune sœur Denise, ma sœur la plus vieille Gyslaine et l'aîné de la famille, mon frère Jean-Luc. Je suis au premier plan, entouré de mes jeunes frères Jean-Noël et Marcel."
       },
       {
         "fichier": "Famille/FamilleEnfants1.jpg",
