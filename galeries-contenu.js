@@ -102,7 +102,7 @@ const GALERIES = [
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
         "legende": "Les Roy et Desjardins de Kamouraska",
-        "description": ""
+        "description": "Ce texte est tiré du livre Kamouraska (1674-1948), édité à Kamouraska en 1984. Il raconte comment notre premier ancêtre, Antoine Roy, est arrivé en Nouvelle-France comme soldat du régiment de Carignan. Il épouse Marie Major, une Fille du Roy."
       }
     ]
   },
