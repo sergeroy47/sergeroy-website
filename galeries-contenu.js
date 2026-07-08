@@ -62,7 +62,7 @@ const GALERIES = [
       {
         "fichier": "Famille/Yvonne1.jpg",
         "legende": "Yvonne",
-        "description": ""
+        "description": "Une photo prise chez le photographe, possiblement avant son mariage. Un demi-sourire, ses plus beaux atours."
       },
       {
         "fichier": "Famille/YvonnePoteau.jpg",
