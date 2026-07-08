@@ -82,7 +82,7 @@ const GALERIES = [
       {
         "fichier": "Famille/RosaireGymnaste.jpg",
         "legende": "Rosaire, gymnaste",
-        "description": ""
+        "description": "La gymnastique faisait partie des activités de jeunesse de Rosaire. Comme il s'est marié à 29 ans, il a eu beaucoup de temps libre dans la vingtaine. Il aimait raconter qu'il avait couru avec Gérard Côté, le premier Canadien à avoir gagné le marathon de Boston."
       },
       {
         "fichier": "Famille/FamilleGroupe.jpg",
