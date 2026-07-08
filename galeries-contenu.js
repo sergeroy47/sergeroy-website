@@ -92,12 +92,12 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleEnfants1.jpg",
         "legende": "Excursion à la cabane à sucre",
-        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement."
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nJe suis le plus jeune, celui qui pointe du doigt. En haut à gauche, mon frère Jean-Luc ; à sa gauche, ma sœur Mariette ; à sa gauche, Gyslaine. Devant, les yeux fermés, Suzanne."
       },
       {
         "fichier": "Famille/FamilleEnfants2.jpg",
         "legende": "En chemin vers la cabane à sucre",
-        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement."
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nÀ gauche, ma sœur Gyslaine ; devant elle, moi ; ensuite Suzanne, Perle et Mariette."
       },
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
