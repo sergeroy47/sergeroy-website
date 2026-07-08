@@ -77,7 +77,7 @@ const GALERIES = [
       {
         "fichier": "Famille/RosaireGardienDebut.jpg",
         "legende": "Rosaire, gardien de but",
-        "description": ""
+        "description": "Rosaire était un sportif, dans un village très sportif. On le voit ici comme hockeyeur, et sur une autre photo comme gymnaste, mais il était surtout un joueur de baseball. C'est d'ailleurs comme ça que ma mère l'a connu : lui comme joueur de baseball au deuxième but, elle comme simple spectatrice au stade local. C'est le début de notre histoire familiale.\n\nMais un jour, après deux ou trois enfants, Yvonne a demandé à Rosaire de laisser le baseball, qui occupait toutes ses fins de semaine d'été, pour s'occuper de sa famille — et peut-être commencer son jardin."
       },
       {
         "fichier": "Famille/RosaireGymnaste.jpg",
