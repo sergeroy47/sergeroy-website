@@ -57,7 +57,7 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleYvonneRosaire.jpg",
         "legende": "Yvonne, Rosaire et les enfants",
-        "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale."
+        "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale.\n\nPremière rangée, à partir de la gauche : Denise, Jean-Noël, Yvonne, Rosaire et Marcel. Deuxième rangée, à partir de la gauche : Serge, Perle, Suzanne, Mariette, Gyslaine et Jean-Luc. Les enfants sont placés dans l'ordre de leur arrivée dans la famille, de Jean-Luc, l'aîné, jusqu'à Marcel, le benjamin."
       },
       {
         "fichier": "Famille/Yvonne1.jpg",
