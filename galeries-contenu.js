@@ -67,7 +67,7 @@ const GALERIES = [
       {
         "fichier": "Famille/YvonnePoteau.jpg",
         "legende": "Yvonne au poteau",
-        "description": ""
+        "description": "Cette photo a sans doute été prise le même jour que la sortie à la cabane à sucre. Yvonne est heureuse de sortir avec toute sa famille, et Rosaire avait l'œil d'un photographe."
       },
       {
         "fichier": "Famille/RosaireYvonnePatin.jpg",
