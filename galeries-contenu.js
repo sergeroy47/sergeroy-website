@@ -57,7 +57,7 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleYvonneRosaire.jpg",
         "legende": "Yvonne, Rosaire et les enfants",
-        "description": ""
+        "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale."
       },
       {
         "fichier": "Famille/Yvonne1.jpg",
