@@ -91,13 +91,13 @@ const GALERIES = [
       },
       {
         "fichier": "Famille/FamilleEnfants1.jpg",
-        "legende": "Les enfants",
-        "description": ""
+        "legende": "Excursion à la cabane à sucre",
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement."
       },
       {
         "fichier": "Famille/FamilleEnfants2.jpg",
-        "legende": "Les enfants en hiver",
-        "description": ""
+        "legende": "En chemin vers la cabane à sucre",
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement."
       },
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
