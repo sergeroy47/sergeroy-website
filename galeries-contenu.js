@@ -67,7 +67,7 @@ const GALERIES = [
       {
         "fichier": "Famille/RosaireYvonnePatin.jpg",
         "legende": "Rosaire et Yvonne en patins",
-        "description": ""
+        "description": "Pendant plusieurs années, mon père faisait une patinoire dans la cour arrière, soit dans son jardin. On voit ici Yvonne et Rosaire et derrière eux la maison de nos voisins, notre oncle Conrad Fournier et sa femme Léa Roy, la sœur de mon père. C'est sur cette patinoire que j'ai appris à patiner."
       },
       {
         "fichier": "Famille/RosaireGardienDebut.jpg",
