@@ -102,7 +102,7 @@
       const bloc = document.createElement('div');
       bloc.className = 'photo-bloc apparaitre' + (p.description ? ' avec-desc' : '');
       const indice = p.description
-        ? '<div class="photo-legende-indice">🔍 Cliquez pour agrandir &nbsp;·&nbsp; Cliquez sur la légende pour lire</div>'
+        ? '<div class="photo-legende-indice">🔍 Cliquez sur la photo pour agrandir<br>✦ Cliquez sur la légende pour lire l’histoire</div>'
         : '<div class="photo-legende-indice">🔍 Cliquez pour agrandir</div>';
       bloc.innerHTML = `
         <img src="${p.fichier}" alt="${p.legende || ''}" loading="lazy">
