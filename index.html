@@ -657,6 +657,13 @@
         if (!existe) local.collages.push(c);
       });
     }
+    // Ajouter les nouveaux textes présents dans contenu.js mais absents du localStorage
+    if (local.textes && CONTENU.textes) {
+      CONTENU.textes.forEach(t => {
+        const existe = local.textes.find(l => l.titre === t.titre);
+        if (!existe) local.textes.push(t);
+      });
+    }
     // Toujours prendre les balados depuis contenu.js (champ nouveau)
     if (!local.balados && CONTENU.balados) {
       local.balados = CONTENU.balados;

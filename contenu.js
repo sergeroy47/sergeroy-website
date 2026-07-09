@@ -30,6 +30,20 @@ const CONTENU = {
   },
   "textes": [
     {
+      "categorie": "Mémoire familiale",
+      "titre": "Cultivez la vie, apprivoiser la mort",
+      "extrait": "Famille Rosaire Roy — Yvonne Dépeault. L'histoire de mes parents et de leur famille de neuf enfants, écrite pour l'album souvenir des familles d'Acton Vale.",
+      "date": "2009",
+      "lien": "textes/famille-rosaire-yvonne.html"
+    },
+    {
+      "categorie": "Mémoire familiale",
+      "titre": "Ma petite histoire de la rue Lemay",
+      "extrait": "Un texte de mon cousin André Fournier sur notre rue et nos jeux d'enfance à Acton Vale, publié dans le bulletin de la Société d'histoire de la région d'Acton.",
+      "date": "2020",
+      "lien": "textes/rue-lemay-andre-fournier.html"
+    },
+    {
       "categorie": "Trajectoire intellectuelle",
       "titre": "Des réseaux dans des réseaux INTEREXISTENCE",
       "extrait": "De la cybernétique à la contemplation — comment la technologie m'a conduit vers le silence...",
