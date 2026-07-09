@@ -120,19 +120,9 @@ const GALERIES = [
         "description": "Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds. Dans son jardin, Rosaire troquait son rôle d'ouvrier obéissant pour celui de poète — ami de la nature, prêt à refaire le monde en cultivant le jardin le mieux entretenu du village.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
       },
       {
-        "fichier": "Famille/CultivezLaVie/YvonneEnfantsRosaire.jpg",
-        "legende": "Yvonne, Rosaire et leurs premiers enfants",
-        "description": "Yvonne tenant Suzanne dans ses bras, avec Ghislaine, Mariette, Jean-Luc et Rosaire.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
-      },
-      {
         "fichier": "Famille/CultivezLaVie/FamilleRosaireYvonne1975.jpg",
         "legende": "La famille au grand complet",
         "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
-      },
-      {
-        "fichier": "Famille/CultivezLaVie/PoemeLaVieManuscrit.jpg",
-        "legende": "« La vie », poème manuscrit",
-        "description": "Le manuscrit original, de ma main, d'un poème intitulé « La vie », inséré dans l'album souvenir des familles d'Acton Vale à la suite de mon texte sur mes parents Rosaire et Yvonne.\n\n« Nous sommes tous attachés à la vie / mais savons-nous ce que c'est la vie ?... » Le texte complet se trouve dans la section Mes textes du site."
       }
     ]
   },
