@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma petite histoire de la rue Lemay — André Fournier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    .legende {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.8;
+      font-style: italic; margin: -0.6rem 0 1.8rem;
+      border-left: 2px solid rgba(184,144,58,0.5);
+      padding-left: 0.9rem;
+    }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .encadre {
+      background: var(--lin);
+      padding: 1.6rem 2rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+    .encadre-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 600;
+      color: var(--terre); margin-bottom: 0.8rem; font-size: 1.1rem;
+    }
+
+    .coupure {
+      background: #fff;
+      border: 1px solid rgba(28,26,20,0.15);
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      box-shadow: 2px 3px 0 rgba(28,26,20,0.06);
+    }
+    .coupure-titre {
+      font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;
+    }
+    .coupure-source {
+      font-style: italic; color: var(--terre); font-size: 0.85rem; margin-top: 0.5rem;
+    }
+
+    .genealogie ul { list-style: none; margin-bottom: 1rem; }
+    .genealogie li { margin-bottom: 0.6rem; font-size: 0.95rem; }
+    .genealogie li:last-child { margin-bottom: 0; }
+
+    .lacune {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--terre);
+      opacity: 0.75;
+      font-style: italic;
+      margin: 2.5rem 0;
+      padding: 0.8rem;
+      border-top: 1px dashed rgba(107,92,69,0.3);
+      border-bottom: 1px dashed rgba(107,92,69,0.3);
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire familiale</span>
+    <h1>Ma petite histoire de la rue Lemay à Acton Vale</h1>
+    <p class="article-sous-titre">par André Fournier, mon cousin et voisin d'enfance</p>
+    <div class="article-meta">Les Six Cantons &nbsp;·&nbsp; Bulletin de la Société d'histoire de la région d'Acton &nbsp;·&nbsp; vol. 22, n<sup>os</sup> 1 et 2, décembre 2020</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Ce texte n'est pas de moi : il est écrit par mon cousin André Fournier, qui a grandi avec moi sur la rue Lemay à Acton Vale — nos deux maisons étaient voisines. Je le reproduis ici, avec sa publication d'origine, parce qu'il raconte notre rue, nos jeux d'enfance et plusieurs membres de notre famille, photos à l'appui. André est le fils de Conrad Fournier et de Léa Roy — sœur de mon père Rosaire. J'apparais moi-même à quelques reprises dans son récit.
+    </div>
+
+    <p class="legende">En 1955, un groupe de cousins photographiés au beau milieu de la rue Lemay, qui servait de terrain de jeu hiver comme été. En avant : André Fournier, Jean-Pierre Roy et Serge Roy. En arrière : Jean-Luc Roy, Maurice Roy, Michel Savoie et Yves Roy. Photo André Fournier.</p>
+
+    <p>Habiter dans la rue Lemay, au milieu du siècle dernier, c'était vivre dans un microcosme presque parfait de la société québécoise de l'époque.</p>
+
+    <p>Nulle part ailleurs ne pouvait-on trouver une variété aussi représentative de toutes les facettes de la vie quotidienne des années 1950.</p>
+
+    <p>Sur la rue Lemay s'alignaient des exploitations agricoles, des industries, des commerces et de nombreuses résidences privées. Le notable de la rue, l'entrepreneur ou le professionnel pouvait être le voisin immédiat de l'humble travailleur d'usine.</p>
+
+    <h3 class="section-titre">L'appellation</h3>
+
+    <p>Ouverte dès les tout débuts du village d'Acton Vale, la rue Lemay fut d'abord nommée rue Water. En décembre 1909, le conseil municipal la renomme rue Laurier, en souvenir du passage à Acton Vale, le 9 octobre 1900, de Sir Wilfrid Laurier, alors premier ministre du Canada.</p>
+
+    <p>Le procès-verbal de la réunion des membres du conseil municipal de la Ville d'Acton Vale, en date du 21 janvier 1944, indique qu'on la désignera dorénavant sous le nom de rue Lemay, en l'honneur de David Lemay, un industriel qui participa, dès 1904, à y ériger la fabrique de chaussures <em>The Acton Shoe Co. Limited</em>. David Lemay fut également conseiller municipal de janvier 1905 à juin 1914 et maire du 26 juin 1914 au 6 mai 1915.</p>
+
+    <h3 class="section-titre">La situation géographique</h3>
+
+    <p>La rue Lemay prend naissance à la sortie du chemin privé de la propriété du 1440 Lemay, communément appelée Château LaBrèque, à l'angle de ce qui est aujourd'hui la rue Gagnon.</p>
+
+    <p>Elle s'étire alors vers l'est sur un peu moins d'un kilomètre, jusqu'à l'intersection de la rue Saint-André.</p>
+
+    <p>Toutes les propriétés situées du côté nord de la rue étaient alors adossées au parcours de la rivière Le Renne, en ces temps appelée rivière Moose ou Original.</p>
+
+    <div class="encadre">
+      <div class="encadre-titre">À propos de l'auteur</div>
+      <p>Fils de Conrad Fournier et de Léa Roy, je suis né le samedi 23 juin 1945 à 2 heures 45 de la nuit, au deuxième étage de la maison qui était alors celle de mon grand-père maternel, David Roy, maison qui se trouve toujours au 1119-1121 rue Lemay à Acton Vale.</p>
+      <p>J'ai commencé l'école en septembre 1951 et j'ai été, au printemps 1962, de la première cohorte de ceux qui n'ont pas fait leur onzième année à l'école Saint-André.</p>
+      <p>Après une 12<sup>e</sup> année à l'école secondaire Casavant, à Saint-Hyacinthe, j'ai débuté mon premier emploi le 26 avril 1964 à la Banque Canadienne Nationale de la rue Saint-André à Acton Vale. À peine 5 semaines plus tard, j'avais déjà une promotion à l'interne et, au printemps de 1965, on me confia la responsabilité de l'agence de la BCN à South Durham. Le 3 août 1965, j'ai été victime d'un hold-up par deux cagoulards.</p>
+      <p>À la fin de 1965, la BCN me transféra à sa succursale de Chibougamau et je quittai définitivement Acton Vale le 1<sup>er</sup> décembre 1965. À la BCN de Verdun, de 1967 à 1973, je devins en 1969, avec à peine quatre ans et demi d'expérience, le plus jeune à être nommé comptable d'une importante succursale et responsable de 17 employés.</p>
+      <p>De 1973 à 1975, j'étais comptable à la Caisse Populaire Notre-Dame du Sacré-Cœur, à ville LaSalle. De 1975 à 1979, j'ai été à l'emploi, à titre de comptable, des Coopérants, Compagnie d'Assurance Générale à Montréal.</p>
+      <p>Le 29 janvier 1979, j'ai débuté ce qui allait être mon dernier emploi à La Nationale Compagnie de Réassurance. En 1991, La Nationale fut acquise par une compagnie américaine et changea de nom pour RGA Compagnie de Réassurance-vie du Canada, pour laquelle je travaillai jusqu'à ma retraite le 10 juillet 2003.</p>
+      <p>Je suis demeuré dans le secteur Verdun–Ville Émard–Côte St-Paul de Montréal de 1967 à 1973 avant de déménager sur la Rive-Sud de Montréal et d'acheter ma première maison à Saint-Hubert en 1975. Je suis établi à Saint-Hyacinthe depuis 1999.</p>
+      <p style="margin-bottom:0;">Le plus beau cadeau que la vie m'ait fait c'est certainement mes deux enfants qui sont devenus, aujourd'hui, de beaux adultes autonomes et responsables. Ceux-ci m'ont comblé de bonheur en me donnant six merveilleux petits-enfants et me voilà maintenant arrière-grand-père depuis le 5 novembre 2019.</p>
+    </div>
+
+    <h3 class="section-titre">Les industries</h3>
+
+    <p>Pour tous les habitants des quartiers Centre et Sud, la rue Lemay et les ponts de la rue du Marché et de la rue Saint-André étaient l'accès principal pour l'église, pour l'école Saint-André, sous la direction des Frères du Sacré-Cœur et réservée aux garçons, pour le couvent Notre-Dame-de-Lourdes, sous la houlette des religieuses de la Présentation de Marie et réservé aux filles, sans oublier l'école Ange-Gardien.</p>
+
+    <p>C'est pourquoi plusieurs fois par jour, matin, midi et soir, la rue Lemay était envahie par une marée humaine de travailleurs et d'écoliers se rendant ou revenant du travail ou de l'école. <em>The Acton Shoe Co. Ltd</em>, et ses centaines d'employés, était située côté nord-est au coin de la rue Dalpé.</p>
+
+    <p>Il fut un temps où la rue Lemay était celle qui comptait le plus d'emplois en usine d'Acton Vale. Seuls un petit nombre d'employés et quelques patrons possédaient alors une automobile. Il n'y avait aucun transport de travailleurs ou d'écoliers par autobus ou quelque autre moyen mécanique ; la marche et le vélo étaient de mise, beau temps, mauvais temps.</p>
+
+    <p>Elle avait comme voisin, toujours du côté nord de la rue, un autre gros employeur, la <em>Acton Vale Silk Mills Co.</em>, communément appelée « la Soie ». Un peu plus vers l'est, côté sud, à l'angle de la rue Marcil, il y avait la fabrique de meubles de monsieur Laurent Dumont avec son imposant édifice — devenue la propriété de monsieur Paul Lamoureux avant d'être complètement rasée par les flammes en juillet 1954. Le feu aurait pris naissance dans l'entreprise du nettoyeur, monsieur J.-E. Therrien, qui occupait l'extrémité est du bâtiment.</p>
+
+    <p>Enfin, à l'extrémité est de la rue, à l'intersection Lemay et Saint-André, se trouvait l'usine de la Société Linière, devenue en 1954 la Peerless Rug Co. Ltd.</p>
+
+    <h2 class="partie-titre">À travers les yeux d'un enfant</h2>
+
+    <p>Les bébés-boumeurs sont identifiés comme étant les enfants de l'après-guerre. Je n'ai jamais su où exactement me situer car lors de ma naissance, la guerre contre l'Allemagne en Europe était terminée mais la guerre du Pacifique contre le Japon allait durer encore quelques semaines.</p>
+
+    <p>Peu importe mon statut, je me suis retrouvé quelques années plus tard au beau milieu d'une multitude d'enfants dont le principal terrain de jeu était la rue Lemay elle-même.</p>
+
+    <p>La rue Lemay, face à notre maison, était comme un aimant pour tous les enfants du coin en quête de jeux. Était-ce la proximité des neuf enfants d'oncle Rosaire Roy, notre voisin immédiat, et des neuf autres de la famille de Nazaire Gagnon, notre deuxième voisin ? Sans compter les enfants des familles Daragon, Dupuis, Thivierge, Fournier, Boisvert, Landry et autres. Cette masse critique d'enfants et ce plaisir assuré attiraient également des enfants habitant d'autres segments de la rue Lemay, comme les Boulay, Ledoux, Joly et Lalancette, ou des rues voisines. Les filles et les garçons se mêlaient habituellement pour les divers jeux de course, de cachette, de canne-canouche, etc., etc.</p>
+
+    <p class="legende">Conrad Fournier et son épouse, Léa Roy. Derrière eux, la maison située au 1135 rue Lemay à Acton Vale et appartenant à Rosaire Roy. Photo André Fournier.</p>
+
+    <h3 class="section-titre">Le hockey-balle</h3>
+
+    <p>En tout temps, été comme hiver, pouvait s'organiser spontanément une partie de hockey à laquelle seuls les garçons participaient. Quatre bûches d'érable pour délimiter les buts dans la rue, une balle de tennis ou une balle bleu-blanc-rouge et c'était parti pour l'après-midi.</p>
+
+    <p>Habituellement, les parties débutaient avec les trois frères Thivierge, Jules et Serge d'un côté puis Michel Thivierge et moi de l'autre côté. Rapidement plusieurs autres joueurs venaient se greffer au groupe et il n'était pas rare que la partie s'arrête quand la sirène des pompiers se faisait entendre pour signaler qu'il était 9 heures du soir, l'heure du couvre-feu, l'heure pour les enfants de rentrer à la maison.</p>
+
+    <p>À certaines occasions les parties étaient prises un peu plus au sérieux et on disait que là, on jouait pour la Coupe — Stanley ou Lemay ? Le jeu devenait alors un peu plus robuste et c'est là que naquit l'expression des frères Thivierge, « On va varger ! »</p>
+
+    <h3 class="section-titre">Le hockey mineur</h3>
+
+    <p>L'aréna n'était pas encore construit. Dans mon souvenir, il n'existait aucune organisation du hockey mineur à cette époque à part quelques parties organisées par les Frères sur l'heure du midi à l'école Saint-André. Étant sujettes aux aléas de la météo, les parties étaient rares et les conditions de jeu parfois chaotiques.</p>
+
+    <p>Je pense n'avoir compté que deux buts dans toute ma carrière mais le plus important avait procuré une victoire de 1-0 à mon équipe en grande finale.</p>
+
+    <p>Après l'incendie de l'usine de meubles de monsieur Paul Lamoureux, il y eut une patinoire aménagée sur ce terrain durant quelques hivers, face à la maison de madame Annette Dupuis.</p>
+
+    <p class="legende">En avant, Serge Roy, André Fournier, Michel Savoie et Huguette Fournier ; à l'arrière un trio de cousines. Photo André Fournier.</p>
+
+    <h3 class="section-titre">Le baseball mineur</h3>
+
+    <p>Les lieux physiques de la rue Lemay n'étaient pas propices aux joutes de baseball. Je n'ai pas de souvenirs de ligue de baseball organisée pour les jeunes avant que j'aie eu 15 ans, sinon plus.</p>
+
+    <p>Trois équipes, les Pirates, dont l'entraîneur était Jean-Pierre Jetté et le capitaine Roger Bourgeois, le Mont-Clair, dont le coach était Lucien Dulmaine et le capitaine Jean-Louis Beaunoyer, et les Braves, dirigés par Claude « Lou » Jetté assisté de Denis Asselin, regroupaient des joueurs d'âge bantam.</p>
+
+    <p>Les règlements étaient les mêmes que dans les ligues majeures ; si tu ne faisais pas partie des neuf joueurs sur le terrain, tu n'allais pas au bâton. C'est ainsi que j'ai passé deux étés sur le banc à regarder jouer les autres, ayant été au bâton deux ou trois fois tout au plus. Par contre, je me souviens d'une partie où j'ai joué quelques manches au champ droit et que, après une longue course à ma gauche, j'ai volé un coup de circuit à cousin Léo Roy.</p>
+
+    <h3 class="section-titre">Le baseball des Castors</h3>
+
+    <p>Ma passion pour le baseball naquit dès ma première visite au terrain de l'Acton Rubber en compagnie de mon père, un beau dimanche après-midi pour voir jouer les Gaby Meunier et autres. J'ai encore en mémoire les marches militaires que faisait jouer l'annonceur Camille Bernard et la forte odeur des cigares des frères « Punch » et « Buck » Bouthillette.</p>
+
+    <p>Le nombre de places dans les estrades de ce stade était limité et, s'ils n'étaient pas accompagnés d'un adulte, les enfants étaient refoulés debout sur les lignes de côté du premier but.</p>
+
+    <p>Mon père était souvent absent à cause de son travail et je n'avais pas le 0,25 $ qu'il fallait débourser pour entrer voir les parties. Très jeune j'avais appris à être débrouillard pour obtenir les choses que je voulais, dont celle d'assister aux parties de baseball des Castors.</p>
+
+    <p>Je devais certainement déjà démontrer beaucoup de sérieux et d'application car j'avais à peine une douzaine d'années quand on me confia officiellement la responsabilité du tableau indicateur pour les balles, les prises, les retraits ainsi que le pointage de la partie. Quelques années plus tard, j'ai été marqueur officiel aux matchs locaux des Castors.</p>
+
+    <p>Un jour, Denis Asselin avait frappé un coup de circuit au champ droit. Comme j'étais bien placé pour voir le jeu près du tableau indicateur, Denis était venu me demander si le voltigeur de l'équipe adverse aurait eu la possibilité d'attraper la balle. Mais non, la balle avait bien franchi la clôture pour un vrai coup de circuit. Il était d'usage à cette époque de passer le chapeau dans les estrades quand un joueur de l'équipe locale frappait un coup de circuit.</p>
+
+    <h3 class="section-titre">Le football</h3>
+
+    <p>Les parties de football ont été plutôt exceptionnelles mais j'ai un souvenir glaçant de l'une d'entre elles, disputée sur le gazon de notre terrain. Y participaient des visiteurs inhabituels tels Côme Pion, Yves Lamoureux et plusieurs autres. À un moment donné, Côme Pion fut plaqué et on s'aperçut avec horreur qu'il était tombé à plat ventre tout juste à côté d'un tuyau de fer de neuf pouces qui sortait du sol, caché dans la haie. Qu'il tombât quelques pouces plus à gauche et c'en aurait été fait de Côme. Inutile de dire que la partie s'est terminée immédiatement et que nous n'avons plus jamais joué au football à cet endroit.</p>
+
+    <h3 class="section-titre">La lutte</h3>
+
+    <p>Il fut un temps où le champion montréalais de la lutte, Yvon Robert, était presque aussi populaire que Maurice Richard, la célèbre idole du Canadien de Montréal. La lutte, l'émission télévisée du mercredi soir en provenance du Forum de Montréal, était regardée par des centaines de milliers de téléspectateurs.</p>
+
+    <p>La popularité de ce sport atteignit la rue Lemay sous la forme d'une arène de lutte installée dans un hangar à l'arrière de la maison de monsieur Henri Thivierge. C'est monsieur Alain Thivierge qui agissait comme gérant de l'arène et comme promoteur des combats. C'est là que nous essayions d'imiter les prises de Yvon Robert, de Johnny Rougeau ou des méchants frères Tosh et Kasuo Togo. Celui qui était capable de maîtriser la prise nommée « clé de bras japonaise » était assuré de devenir le champion local.</p>
+
+    <h2 class="partie-titre">La rivière Le Renne</h2>
+
+    <p>En 1950, la rivière Le Renne était un égout à ciel ouvert où les eaux usées, pluviales, sanitaires et industrielles étaient rejetées directement, sans aucun traitement.</p>
+
+    <p>La baignade y était évidemment formellement interdite. Mais comme n'importe quelle flaque d'eau, la rivière avait le don d'attirer les enfants.</p>
+
+    <p>C'est avec un bout de branche et de la corde d'épicerie que je m'étais confectionné ma première canne à pêche. Mon endroit favori pour pêcher était à l'arrière de la maison d'Henri Thivierge mais il ne fallait pas aspirer à attraper autre chose que du crapet-soleil, de la barbotte ou quelques ménés.</p>
+
+    <p>À certains endroits, les berges de la rivière étaient très abruptes et pouvaient être traîtres pour des enfants non avisés. Partout, une profondeur de plusieurs pieds d'eau pouvait être comptée dès le rivage. <strong>Oncle Rosaire Roy y gagna son titre de héros, sauvant, à trois reprises, des enfants de la noyade dans la rivière</strong> à l'arrière de la maison Thivierge.</p>
+
+    <p>Certains hivers, quelques-uns s'aventurèrent à y aménager une patinoire. Les écoliers les plus téméraires traversaient sur la glace de la rivière près de la maison d'Annette Dupuis ; ce raccourci les menait directement à la rue Roy, près de l'école Saint-André. J'ai souvenir de quelques-uns qui prirent un bain glacial, courtoisie d'une glace trop mince mais pas de noyade.</p>
+
+    <p>La seule embarcation que j'ai vue sur la rivière est une vieille chaloupe verchère appartenant à Florent Dupuis.</p>
+
+    <h3 class="section-titre">La bibliothèque</h3>
+
+    <p>Ne cherchez pas de bibliothèque à Acton Vale dans les années 1950, il n'y en avait pas. Ne cherchez pas une librairie, il n'y en avait pas non plus.</p>
+
+    <p>Mes premiers souvenirs de lecture datent de 1951. Je suis chez moi, assis sur les genoux de ma cousine Ghislaine Roy qui me fait la lecture d'une page de bande dessinée publiée dans le journal hebdomadaire <em>Le Petit Journal</em>. Ma passion pour la bande dessinée était née.</p>
+
+    <p>Un jour, je ne me souviens plus comment, je me suis retrouvé avec quelques amis dans le salon de madame Léa Guilbert. Et là, coup de foudre ; on me met dans les mains, pour la première fois, un album de Tintin, une édition qui aujourd'hui doit valoir une fortune.</p>
+
+    <p>Cette passion pour la BD ne s'est jamais démentie au point d'écrire, à la retraite, une encyclopédie de plus de 3 275 pages sur la Bande Dessinée de Journal au Québec au 20<sup>e</sup> siècle.</p>
+
+    <h2 class="partie-titre">L'instruction</h2>
+
+    <p>Mes études, au primaire, furent pour moi une chose facile. J'avais une sœur de 18 mois plus âgée que moi. Quand elle commença sa première année, ma mère m'enseigna à la maison tout ce qu'elle apprenait en classe. C'est pourquoi, dès mon premier jour d'école, je savais déjà lire, écrire et compter. Je faisais partie d'une classe de 52 élèves dont sept André.</p>
+
+    <p>Le pauvre Frère Bruno, notre titulaire qui en était à sa première année d'enseignement, dut prendre congé pour cause d'épuisement avant même Noël. J'ai eu des notes de 100 % à plusieurs reprises durant l'année. Au primaire, je partageais souvent le premier rang de la classe avec Gaétan Chevanelle et Yves Lamoureux. De la première à la sixième année, j'ai toujours fini premier de ma classe au bulletin de fin d'année.</p>
+
+    <p>Il était coutume à l'époque de faire doubler ou tripler des classes aux élèves en difficulté. On retrouvait ainsi dans la classe des élèves ayant un, deux et parfois trois ans de plus que les autres. C'était souvent eux qui distrayaient la classe et les plus jeunes, influençables, essayaient de les imiter.</p>
+
+    <p>Une anecdote me vient d'un de mes cousins, Michel Savoie. J'étais en 3<sup>e</sup> année et Michel en 5<sup>e</sup> année. Un bon matin, le titulaire de la classe de Michel cogne à la porte de ma classe et chuchote quelques mots à l'oreille du Frère Yvon. S'ensuit qu'on m'amène dans la classe de 5<sup>e</sup>. L'histoire veut que le professeur de 5<sup>e</sup> avait posé des questions et qu'aucun de ses élèves n'avait pu y répondre correctement. Et le prof de leur dire : « Je suis certain que le p'tit Fournier, en 3<sup>e</sup> année, sait la réponse. » D'où mon petit voyage en 5<sup>e</sup>. Et j'avais répondu correctement…</p>
+
+    <p>Le secondaire, de la 8<sup>e</sup> à la 12<sup>e</sup> année, fut toute une autre histoire. N'étant pas habitué à fournir les efforts requis par un contenu académique plus exigeant, mes notes dégringolèrent tout au long de ces années. Il faut dire que les matières, telles qu'elles étaient enseignées, donnaient peu de chance de susciter notre intérêt. Il fallait assister à un cours de religion ou d'anglais du Frère Louis-René pour comprendre pourquoi je considérais l'école comme une prison.</p>
+
+    <h3 class="section-titre">Les activités parascolaires</h3>
+
+    <p class="legende">1<sup>re</sup> année à l'école Saint-André en 1951. Le directeur, à gauche, était le Frère Bérard et le titulaire, à droite, était le Frère Bruno. Photo André Fournier.</p>
+
+    <p>Tout n'était pas parfait mais les religieux avaient le mérite d'organiser des activités que la société civile du temps ne prenait pas en charge. Le seul inconvénient c'est qu'on ne nous demandait pas de participer à une telle activité, on nous disait : <em>Toi, tu fais ceci ou cela.</em></p>
+
+    <p>C'est probablement à cause de mes résultats académiques que j'étais toujours choisi pour participer à ces activités.</p>
+
+    <p>J'étais en 2<sup>e</sup> année quand on me demanda d'apprendre un monologue originaire du Congo belge que je devais réciter sur la scène de la grande salle devant tous les élèves de l'école : « Le Coq. C'est moi le Coq. Cocorico ! Ma crête sur mon bec se dresse rouge comme un coquelicot », disais-je avec un semblant de crête attaché dans le toupet. Ç'avait dû impressionner fortement mon grand ami Denis Lalancette car, même rendu à l'âge adulte, il me surnommait encore Coquelicot.</p>
+
+    <p>Un autre souvenir concerne la chorale de l'école. On était à préparer le chant pour la messe de minuit. À un moment donné, le directeur de la chorale, Jean-Côme Gauthier, me désigna pour le solo du <em>Minuit Chrétien</em>. J'étais terrifié. Finalement, je m'étais arrangé pour fausser et on en avait choisi un autre pour le solo. Fiou ! Marie-Paule Boulay, qui était professeure de piano et de chant, a dit que je gaspillais un beau talent.</p>
+
+    <p>J'étais aussi toujours automatiquement choisi pour les fameuses pièces de théâtre de l'école, qu'on appelait des séances, sans même qu'on ne me demande mon avis. Et que dire du trac qui me figeait sur scène !</p>
+
+    <p>Une autre fois, vers la fin du secondaire, on m'appela au bureau du directeur vers 9 heures le matin. On me remit un texte de plus d'une page que je devais apprendre par cœur. C'était la fête du curé Albert Renaud et je devais réciter cet hommage prévu pour 11 heures, le matin même, sur la scène de la grande salle devant tous les élèves de l'école. J'aurais bien aimé avoir été avisé la veille…</p>
+
+    <p>À l'adolescence, j'étais peu intéressé par les activités religieuses comme les Croisés, la J.E.C. et autres. L'adhésion aux Scouts étant hors de la portée monétaire de mes parents, j'ai donc passé la plus grande partie de mon temps à jouer dans les machines à boules du Coq d'Or, des Deux Copains ou de la Salle Charlebois. Étant fort habile au jeu, il n'était pas rare que j'obtienne plusieurs parties gratuites, des <em>free games</em>, et que je les revende à un joueur qui attendait patiemment sa place à la machine.</p>
+
+    <h2 class="partie-titre">L'éducation</h2>
+
+    <p>Si l'instruction fut facile, il en fut tout autrement pour l'éducation. En fait, l'éducation était à peu près inexistante. Les pères, souvent absents ou désintéressés lorsque présents, et les mères, absorbées à la cuisine et à l'entretien, laissaient les enfants à eux-mêmes.</p>
+
+    <p>C'est dans la rue que l'éducation se faisait et, bien souvent, pas de la bonne façon. C'est fréquemment entre nous, ou selon l'interprétation d'un compagnon plus âgé, que nous tentions de saisir la notion du Bien et du Mal.</p>
+
+    <p>Le savoir-vivre et les bonnes manières étaient des concepts peu appliqués et notre manque de compassion était flagrant. Il nous arrivait de nous moquer des personnes avec un handicap physique ou mental. Nous ne réalisions pas que notre méchanceté pouvait affecter la victime pour toute sa vie. Boucs émissaires des plus forts, nous étions les bourreaux des plus vulnérables que nous. Que Dieu nous pardonne quand même tous.</p>
+
+    <p>Nos imperfections nous empêchant d'obéir continuellement à tous les commandements de Dieu et de l'Église, nous avons donc passé une bonne partie de notre adolescence en état de péché mortel. Quand venait le temps de confesser nos fautes, le rouge de la honte nous montait au front et nous étions nombreux à choisir d'aller les avouer dans la pénombre du confessionnal du curé Albert Renaud qui, de toute façon, était dur d'oreille et nous donnait toujours la même pénitence, peu importe le nombre et la gravité de nos fautes.</p>
+
+    <p>Si les connaissances d'aujourd'hui pouvaient être transposées à l'époque de mon enfance, j'aurais peut-être été diagnostiqué d'une certaine forme d'autisme, très probablement celle du syndrome d'Asperger. Très performant dans des créneaux d'intérêts très pointus et d'un autre côté complètement sans ressource dans les relations interpersonnelles ou en société.</p>
+
+    <h3 class="section-titre">Les surnoms</h3>
+
+    <p>Les surnoms donnés à chacun étaient représentatifs de l'époque : Ti-Mousse, Ti-Père, Ti-Beu, Ti-Clouk, Ti-Bi, Ti-Caye, Ti-Coune, Ti-Zoune, Ti-Doune, etc. Chacun avait son surnom et souvent il était transmis de père en fils. Qui ne se souvient pas de Ti-Bi père et des Ti-Bi fils. Idem pour les Ti-Caye, père et fils. D'autres avaient des surnoms plus étranges : Kârosse, Baloutte, Le-ton, Spike, Piton, Fardine, Snuff, etc., etc.</p>
+
+    <p>Ces surnoms étaient tellement ancrés dans la coutume qu'il nous arrivait fréquemment de ne pas connaître le vrai nom de la personne cachée sous son surnom. Fournier, Picard, Landry, Boisvert, etc. Personne ne nous avait appris la magie d'appeler une personne par son vrai prénom. Même les Frères nous appelaient par notre nom de famille.</p>
+
+    <h3 class="section-titre">Mais, tout n'était pas toujours rose…</h3>
+
+    <p>La nature humaine dans les années 1950 n'était pas différente de celle d'aujourd'hui. Si la plupart des gens étaient plutôt sympathiques et cordiaux, d'autres prenaient un malin plaisir à être déplaisants et vous cherchaient noise à la moindre occasion. Les plus forts abusaient parfois des plus faibles. C'est ainsi que, dès mon premier jour d'école, je me souviens de m'être battu avec un nouveau compagnon de classe à l'entrée nord du pont de la rue du Marché.</p>
+
+    <p>Le sentiment qui a le plus marqué mon enfance est certainement celui de la peur de l'agression physique. Il était courant, en 1950, de donner des volées aux enfants turbulents. J'étais en première ou 2<sup>e</sup> année quand un compagnon de classe particulièrement dissipé en avait reçu toute une, du frère directeur, devant toute la classe. Ç'avait été d'autant plus traumatisant que l'élève se défendait avec acharnement.</p>
+
+    <p>Tous les lundis, le frère directeur faisait la tournée de toutes les classes et remettait à chacun des élèves son <em>Carnet gris</em> dans lequel le professeur avait consigné les résultats scolaires et le rapport de conduite. Quand ce bulletin hebdomadaire était jugé insatisfaisant, le frère directeur donnait la strappe au jeune. Les coups de strappe et les pleurs des enfants s'entendaient alors dans toute l'école.</p>
+
+    <p>Les mêmes menaces revenaient aussi constamment à la maison. J'entends encore ma mère me dire « attends que ton père arrive en fin de semaine » ou encore « on va t'envoyer à l'école de réforme et tu vas avoir la volée tous les soirs même si t'as pas été tannant ». Ce sentiment a perduré jusqu'à l'âge adulte.</p>
+
+    <h2 class="partie-titre">Le meilleur spectacle en ville n'était pas sur la rue Lemay</h2>
+
+    <p>Quand votre père travaillait au Canadien National comme télégraphiste et agent de gare, vous croyiez bien naïvement que tous les trains lui appartenaient ; d'où l'appellation « les gros chars à mon père » à laquelle j'ai longtemps cru dur comme fer.</p>
+
+    <p>Avoir 5 ans et être sur le quai d'une gare pour voir passer un convoi ferroviaire tiré par une locomotive à vapeur est un spectacle qui vous restera gravé dans la mémoire pour le reste de votre vie. C'est là que les expressions « à toute vapeur » et « à un train d'enfer » prennent tout leur sens.</p>
+
+    <p>Avec ses trois passages à niveau rapprochés au centre-ville, Acton Vale était un endroit privilégié pour ce spectacle. Déjà, nous étions prévenus de l'approche d'un convoi par le sifflet de la locomotive au 4<sup>e</sup> rang ou à la traverse de la route Tétreault, selon sa direction. Nous apercevions ensuite la lumière de la locomotive qui amorçait la courbe vers la gare. Une épaisse fumée sortait de la cheminée ainsi que des jets de vapeur de chaque côté des roues avant. Le premier coup de sifflet se faisait entendre. Le grondement et le bruit caractéristique du « tchou-tchou » s'amplifiaient. Le sifflet reprenait, presque sans arrêt, la terre se mettait à trembler. Et, dans un tourbillon indescriptible, les gigantesques roues de la locomotive soulevaient un nuage de vent et de poussière qui semblait nous emporter à son passage.</p>
+
+    <p>Le même spectacle, mais à la nuit tombée, éveillait des sentiments encore plus mystérieux de voyages et de contrées lointaines.</p>
+
+    <p>De ma cour de la rue Lemay, on ne pouvait pas voir la voie ferrée. Mais ma passion pour les trains ne se démentait pas. À chaque fois que j'entendais le sifflet du train, une course folle s'engageait alors vers le coin de la rue du Marché, afin d'apercevoir furtivement le passage d'une des belles locomotives.</p>
+
+    <h3 class="section-titre">La fin du terrain de jeu</h3>
+
+    <p>Au début des années 1950, il devait y avoir à peine quatre ou cinq personnes possédant une automobile sur la rue Lemay. On pouvait y jouer des heures sans se faire déloger. Mais, tout au long de la décennie, le parc automobile ne cessa de s'accroître si bien qu'au début des années 1960, les parents interdirent aux enfants de jouer dans la rue et qu'ils durent se réfugier dans les cours.</p>
+
+    <p>Aujourd'hui, il n'est pas rare de voir quatre ou cinq véhicules dans une même entrée, repoussant définitivement l'aire de jeu des enfants à l'intérieur des maisons.</p>
+
+    <div class="lacune">Deux pages du bulletin original (16 et 17) n'ont pas été photographiées et manquent à cette transcription.</div>
+
+    <h2 class="partie-titre">Les personnages de la rue</h2>
+
+    <h3 class="section-titre">Les notables</h3>
+
+    <p>Monsieur <strong>Roger LaBrèque</strong>, ingénieur de formation, fut impliqué à tous les niveaux de la vie active de la municipalité. Il fut conseiller municipal de janvier 1942 à février 1946 et maire d'Acton Vale de février 1948 à février 1962 puis de novembre 1974 à novembre 1986. Sa résidence, que nous appelions le « Château LaBrèque », est demeurée longtemps une énigme de notre enfance. Les légendes urbaines de l'époque nous en interdisaient l'accès, le château étant soi-disant défendu par toutes sortes de gardiens inquiétants.</p>
+
+    <p>Monsieur <strong>Claude Roy</strong>, échevin de 1986 à 2005 et bénévole pour une multitude de causes et d'activités sociales.</p>
+
+    <p>Monsieur <strong>Henri L'Écuyer</strong>, laitier pendant 20 ans et, de février 1958 à février 1964, échevin responsable du département des incendies.</p>
+
+    <p>Monsieur <strong>Philippe Landry</strong> a commencé à travailler pour la ville dans les années 1940 et a résidé près de la maison d'Annette Dupuis et a été pompier pour la ville d'Acton Vale. Il a été longtemps le chauffeur attitré du camion de pompier.</p>
+
+    <p>Le bureau du notaire <strong>Robert Fagnan</strong> était situé au bout de la rue Lemay, sur la rue Saint-André. Le notaire Robert Fagnan a été secrétaire-trésorier de la corporation municipale de la Ville d'Acton Vale pendant 26 ans, du 11 janvier 1927 au 1<sup>er</sup> avril 1953. Il a aussi occupé le poste de secrétaire de la Commission scolaire d'Acton Vale pendant une trentaine d'années.</p>
+
+    <h3 class="section-titre">Un héros sur notre rue</h3>
+
+    <p>On ne le savait pas dans le temps. <strong>Michel Daragon</strong> était un grand gars sympathique, toujours de bonne humeur et toujours prêt à rendre service. Mais nous n'aurions jamais imaginé qu'un jour il nous quitterait en héros, à titre de chef des pompiers, lors d'un tragique incendie en 1998.</p>
+
+    <h2 class="partie-titre">Les commerces de la rue</h2>
+
+    <p>Dans les années cinquante, l'activité commerciale était surtout concentrée autour du « carré » du centre-ville délimité par les rues Dubois, Saint-André, Beaugrand et du Marché. Mais l'effervescence économique de l'époque faisait en sorte que, faute d'espace, les commerçants devaient ouvrir boutique dans le prolongement des rues du carré ou dans les rues adjacentes. C'était le cas pour la rue Lemay entre les rues du Marché et Saint-André.</p>
+
+    <p>Le plus important de ces commerces fut certainement l'épicerie IGA de monsieur <strong>Ernest Joly</strong>.</p>
+
+    <p>J'ai un beau souvenir de ce commerce mais aussi un autre qui aurait pu être catastrophique. Dans le temps, les épiceries n'étaient ouvertes le soir que le vendredi. Et c'est ce jour-là que la plupart des ménagères faisaient leur épicerie pour la semaine. Ma mère achetait souvent du jambon cuit à cette occasion. Et souvenez-vous aussi, péché mortel, qu'il était interdit de manger de la viande le vendredi. Le fruit défendu étant toujours plus attrayant que ce qui est permis, jamais jambon cuit ne nous paraissait aussi bon que le vendredi soir.</p>
+
+    <p>Le très mauvais souvenir est survenu un beau dimanche après-midi de printemps alors que l'IGA était fermé. Afin de nous dégourdir les bras pour la saison de baseball à venir, mon ami Gilbert Boulay et moi avons sorti nos gants de baseball et nous sommes allés nous lancer des balles dans le terrain vague face à l'IGA, à l'arrière de l'Hôtel Manoir. La prudence la plus élémentaire nous aurait dicté de nous placer parallèlement avec la rue Lemay. Mais, étourderie de jeunesse, nous nous sommes plutôt placés perpendiculairement à la rue.</p>
+
+    <p>Et ce qui devait arriver arriva ; un lancer un peu plus fort et mal dirigé. La balle échappa à Gilbert, fit un bond dans la rue et arriva en plein milieu d'une des grandes vitrines de l'épicerie qui éclata en mille morceaux. Nous avons instantanément réalisé l'ampleur du dégât et imaginé le temps qu'il nous faudrait pour rembourser ce bris.</p>
+
+    <p>Mademoiselle <strong>Éva Joly</strong>, qui était par hasard tout près des fenêtres au rez-de-chaussée, faillit en mourir d'une crise cardiaque. Monsieur <strong>Ernest Joly</strong>, qui demeurait en haut de l'épicerie, était dans la douche. Il arriva précipitamment, une serviette de bain autour de la taille. Nous nous attendions à un sermon bien mérité de sa part. Mais nos deux familles étaient des clients de longue date de son commerce ; aussi monsieur Joly nous enjoignit de ne pas dire un mot et de nous en aller chacun chez nous sans tarder. Comme c'était un accident et que monsieur Joly était couvert par une assurance accident, cette aventure se termina sans coût monétaire pour nous deux. Merci monsieur Ernest.</p>
+
+    <p>L'épicerie-boucherie de messieurs <strong>Marcel Durand</strong> et <strong>Fernand Deslandes</strong>, voisine immédiate du docteur Laliberté, opéra quelque temps avant d'être détruite par les flammes fin décembre 1961.</p>
+
+    <p>Voisin de la maison de monsieur Alcide Lalancette se trouvait, dans un édifice appartenant au notaire Georges-Amable Deslandes, le commerce de chaussures de monsieur Arthur Beaudoin. La bâtisse logeait aussi les familles de monsieur Camille Beaudoin, de monsieur Léopold Champagne et de monsieur Philippe Laflamme. Elle a été complètement détruite par un feu de feuilles mortes allumé par des enfants en octobre 1955.</p>
+
+    <div class="coupure">
+      <div class="coupure-titre">Le feu cause à Acton Vale des dommages évalués à $18,000</div>
+      <p>Acton Vale, 18, (Spéciale) — Un incendie a causé la semaine dernière des pertes de $18,000 à Acton Vale, détruisant le fonds en combles la propriété de M. Georges-A. Deslandes, rue Lemay. Trois familles furent jetées sur le pavé, celles de MM. Camille Beaudoin, Léopold Champagne et Philippe Laflamme. Un enfant de M. Champagne, un fils, fut sauvé des flammes, grâce à l'intervention de M. le D<sup>r</sup> P.-E. Le Bourdais. L'immeuble comportait aussi le magasin de chaussures de M. Arthur Beaudoin. Le garage de M. le D<sup>r</sup> P.-E. Le Bourdais, à 1165, rue S. André, fut détruit en même temps qu'il subit quelques dommages. L'incendie aurait été causé par des enfants qui s'amusaient à brûler des feuilles mortes qui se communiquèrent à un escalier extérieur pour gagner rapidement l'immeuble Deslandes.</p>
+      <p class="coupure-source">Le Courrier de Saint-Hyacinthe, 21 octobre 1955</p>
+    </div>
+
+    <h3 class="section-titre">Les petits entrepreneurs ou artisans</h3>
+
+    <p>En plus des commerces et des grandes industries, plusieurs petits entrepreneurs exerçaient leurs activités sur la rue Lemay.</p>
+
+    <p>À l'extrémité nord-ouest de la rue, monsieur Henri L'Écuyer profitait d'un vaste pâturage pour y faire paître son troupeau de vaches. Au début, il récoltait quelques pintes de lait pour de proches clients. Au fil des ans, son troupeau s'agrandit et donna naissance à la Laiterie Ouvrière qui desservait la ville et ses environs.</p>
+
+    <p>Au coin de la rue Dalpé, la maison de la famille d'Albany Touchette faisait directement face à l'Acton Shoe. Jules, un des fils, devint un entrepreneur en construction renommé.</p>
+
+    <p>Si l'étiquette de « pouce vert » devait être appliquée à une personne de l'époque, ce serait certainement à monsieur Gérard Bernier, dit « le vieux garçon Bernier ». La résidence de monsieur Bernier était située sur la rue Dubois mais sa propriété s'étendait, à l'arrière, jusqu'à la rue Lemay, en face de la « Soie ». De là, un petit sentier nous donnait accès à un superbe potager et à un incomparable jardin de fleurs. Combien de fois l'été, tante Aline Roy me donnait 5 sous de commission pour aller chercher 2,00 $ de fleurs à cet endroit.</p>
+
+    <p>Juste en face de chez moi se trouvait la résidence de monsieur Henri Thivierge. Profitant de l'espace dans le hangar de son arrière-cour, monsieur Thivierge y confectionnait, de façon artisanale, des matelas de toutes les grandeurs. Son expertise devait être certainement reconnue car on y voyait régulièrement défiler des clients venus de toute la région.</p>
+
+    <p>La résidence de monsieur Charles Boisvert était située au coin sud-ouest des rues Lemay et du Marché. Monsieur Boisvert était propriétaire d'une petite épicerie-boucherie adjacente à sa maison mais ayant pignon sur la rue du Marché. Par contre, son arrière-boutique, constituée de hangars, donnait sur la rue Lemay et se prolongeait jusqu'à la limite de notre cour. Dans ses hangars, monsieur Boisvert exploitait un petit abattoir. Les animaux y étaient transportés par camion. Il arrivait fréquemment qu'un animal s'échappe entre la sortie du camion et la porte de l'abattoir. Commençait alors une « chasse à l'homme » rocambolesque qui se prolongeait parfois jusqu'aux terrains de l'Acton Shoe.</p>
+
+    <p>Le lundi était la journée du cochon. Plus de 100 têtes y étaient abattues chaque semaine. Les autres jours de la semaine étaient réservés pour le bœuf et le veau. On ne peut pas dire que la discrétion était de mise pour ce travail. Les deux grandes portes doubles du hangar étaient librement accessibles par la rue Lemay. En tout temps de nombreux écoliers, sur le chemin ou au retour de l'école, s'agglutinaient devant ces portes pour assister au « spectacle ». Imaginez, en pleine ville, les cris interminables des animaux qui, d'instinct, savaient qu'ils allaient vers la mort, les odeurs pestilentielles, les mouches, etc.</p>
+
+    <p>L'épicerie-boucherie et la résidence furent vendues à monsieur Antonio Landry qui habita un des deux loyers de la maison. L'abattoir dut cesser ses opérations et c'est alors que les locaux qu'il occupait et la maison cédèrent leur place à une épicerie plus vaste et plus moderne.</p>
+
+    <div class="encadre genealogie">
+      <div class="encadre-titre">Conrad Fournier et la Plage Fournier</div>
+      <p>Mon père était un homme discret et peu communicatif, caractéristiques dont j'ai certainement hérité. Il a été membre fondateur de la Caisse Populaire d'Acton en 1942. Il a travaillé vingt-cinq ans comme agent de gare à l'emploi du Canadien National, dont neuf ans à Coaticook, de 1951 à 1960.</p>
+      <p>Combien de fois j'ai dû rectifier quand quelqu'un me demandait mon nom et aussitôt on me répondait « Ha, tu es le gars à Béric ! » du nom du barbier Albéric Fournier, bien connu à Acton.</p>
+      <p>Mes premiers souvenirs de la Rivière Blanche se situent au chalet de monsieur Albert Dumont, unique chalet, dans le temps, au sud-ouest du pont Provost, aujourd'hui le 1168 Chemin Fournier.</p>
+      <p style="margin-bottom:0;">Dans les années cinquante, monsieur Dumont, mon parrain oncle Albert Fournier et mon père eurent l'idée de donner un meilleur accès à cette magnifique rivière en achetant les terrains boisés au fond des terres, donnant sur les rives de la rivière. Le but était d'y aménager un chemin et de diviser les terrains en lots de 60 pieds par 100 pieds. Mon père a passé des centaines d'heures à bûcher le chemin actuel à la hache avec l'aide d'un monsieur Boulard. Les premiers terrains furent vendus 100,00 $. Ces travaux donnèrent naissance à tout le développement connu aujourd'hui comme étant le Chemin Fournier.</p>
+    </div>
+
+    <h3 class="section-titre">La Salle Charlebois</h3>
+
+    <p>La Salle de Quilles Charlebois et sa salle de réception, au deuxième étage, avaient également façade sur la rue du Marché mais, comme les hangars de la boucherie Boisvert, le bâtiment s'étirait à l'arrière jusqu'à notre cour. C'est à cet endroit que j'ai gagné mes premiers sous comme planteur de quilles. Une partie de quilles coûtait 0,25 $ et on donnait 0,05 $ au planteur. Parfois, quelque généreux joueur nous laissait un petit pourboire.</p>
+
+    <p>Le côté sud-est de l'intersection de la rue Lemay et de la rue du Marché était occupé par le Salon Funéraire Marcel Boisvert. Les jours de funérailles, la rue Lemay devenait un passage obligé vers le Repos éternel, les cortèges funèbres devant y passer pour se rendre à l'église Saint-André puis au cimetière.</p>
+
+    <p>La maison Boulay, située au coin nord-est de l'intersection des rues Lemay et du Marché, était considérée comme le pôle culturel incontesté de la ville. Marie-Paule Boulay, Laure Boulay et Thérèse Boulay Ledoux étaient des musiciennes de grand talent. Marie-Paule y enseigna le chant et le piano durant plusieurs années. La maison était fréquentée, entre autres, par messieurs Yves Michaud, Jacques Labrecque et Daniel Johnson. À l'étage de cette maison vivait leur frère, Jean-Noël Boulay, dont les enfants, Michel, Gilbert, Pierre, Chantal et Jean, sont tous des musiciens de talent.</p>
+
+    <p>Mais mes plus vifs souvenirs de la Salle Charlebois sont les réceptions de mariages qui animaient tous nos samedis d'été. Les fenêtres de la salle ouvraient sur notre cour arrière ; des groupes de musique traditionnelle animaient chacune des noces avec leurs reels, rigodons et danses carrées. C'est là que j'ai appris à apprécier le rythme et l'entrain du Reel de l'Oiseau Moqueur et du Quadrille de Rivière-du-Loup.</p>
+
+    <h3 class="section-titre">Les commerçants ambulants</h3>
+
+    <p>De nombreux vendeurs ambulants sillonnaient aussi nos rues et sollicitaient les ménagères directement à la maison.</p>
+
+    <p>Le laitier et le boulanger passaient tous les jours avec leurs voitures à traction animale. Le docile cheval connaissait le trajet par cœur et s'arrêtait à chaque maison sans l'intervention du conducteur.</p>
+
+    <p>Ce n'était pas tous les ménages qui possédaient un réfrigérateur électrique. Les glacières étaient encore chose courante. L'été, le vendeur de glace passait de temps en temps et vendait des blocs de glace de plus de 1 pied cube. Les blocs avaient été découpés l'hiver précédent, sur la rivière, en amont de l'aqueduc municipal de la rue du Moulin ; ils étaient conservés dans le bran de scie et dans des toiles imperméables jusqu'à l'été.</p>
+
+    <p>D'autres vendeurs, qui passaient moins souvent, proposaient des articles d'entretien ménagers et d'autres objets divers. C'était la fête à la maison quand nous voyions arriver monsieur Valérien Léveillé et ses produits Familex ainsi que monsieur Marcel Beauchemin et ses produits Fuller Brush.</p>
+
+    <h2 class="partie-titre">Des citoyens engagés</h2>
+
+    <p>De nombreuses personnes qui, à un moment ou un autre, ont résidé sur la rue Lemay se sont plus tard illustrées dans différents domaines.</p>
+
+    <p><strong>Yvan Lécuyer</strong> a été mon premier partenaire de golf en 1964. Sa carrière fut cependant beaucoup plus fructueuse que la mienne car il occupa le poste de professionnel au Club de Golf Château Bromont pendant une trentaine d'années.</p>
+
+    <p>La maison Asselin était située à l'angle sud-ouest des rues Lemay et Marcil. <strong>Denis Asselin</strong> fut une vedette de l'équipe des Castors de la Ligue Provinciale. Son plus bel exploit fut un dramatique circuit en 9<sup>e</sup> manche à Waterloo, en 1959, pour donner aux Castors le premier de leurs cinq championnats consécutifs. Denis Asselin a aussi été policier suppléant de la ville ; il a tenu un magasin d'articles de sports au centre-ville et une boutique au centre sportif.</p>
+
+    <p>Monsieur <strong>Jean-Paul Daragon</strong> et plus tard ses fils, Michel Daragon et Jean-Guy Daragon, tous pompiers et membres du Cercle Musical.</p>
+
+    <p>Monsieur <strong>Jules Gagnon</strong> a été propriétaire du restaurant Aux Deux Copains et tenait aussi le restaurant au stade de baseball municipal. Un chariot, avec lequel il faisait le tour des départements, lui servait de cantine mobile à l'intérieur de l'usine de l'Acton Shoe. Son frère, monsieur <strong>Roger Gagnon</strong>, fut policier à Acton Vale durant de nombreuses années.</p>
+
+    <p>Sans lien de parenté avec les précédents, monsieur <strong>Omer Gagnon</strong> a résidé près de la maison d'Annette Dupuis et a été pompier pour la ville d'Acton Vale.</p>
+
+    <h2 class="partie-titre">Notre famille sur la rue Lemay</h2>
+
+    <p>Notre voisin immédiat était la famille d'oncle Rosaire Roy et de mes neuf cousins et cousines. Oncle Rosaire a fait carrière durant plusieurs décennies à l'Acton Shoe. Homme discret et travaillant, il s'occupait, l'été, d'un magnifique jardin à l'arrière de sa maison. Sportif accompli, il a joué quelques saisons avec l'équipe de baseball locale. Par contre, tous les enfants de la rue savaient qu'il fallait s'éloigner de sa demeure un peu avant sept heures le soir sinon oncle Rosaire nous réquisitionnait tous pour passer une demi-heure à genoux à écouter l'émission radio « Le Chapelet en Famille ».</p>
+
+    <p class="legende">La famille de tante Yvonne Dépeault et d'oncle Rosaire Roy habitait au 1135 rue Lemay. En avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel. Debout : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Photo prise au début des années 1960. Source : Album Nos familles.</p>
+
+    <p>Dans la maison familiale de grand-père David Roy vivait oncle Jean Roy, qui tint une épicerie-boucherie sur la rue Saint-André. Il était le père du célèbre astrophysicien Jean-René Roy et le grand-père du champion de motocross Jean-Sébastien Roy.</p>
+
+    <p>En 1954, au décès de mon parrain, oncle Albert Fournier, c'est tante Aline Roy qui fit l'acquisition de son magasin de coupons et d'accessoires de couture, situé dans l'ancien local de la Eastern Township Bank, au coin nord-est des rues Saint-André et Landry. Quelques années plus tard, elle relocalisa son commerce au centre-ville, au 1069 rue Beaugrand, et le renomma « Aline Roy Nouveautés ».</p>
+
+    <p>Sa sœur, tante Agnès Roy, fit don de sa vie aux pauvres, aux malades et aux orphelins en prononçant ses vœux chez les Sœurs de la charité, les Sœurs grises, à Saint-Hyacinthe en 1950. « Tante Agnès a été une des personnes les plus importantes et les plus significatives dans ma vie », a écrit André à son sujet.</p>
+
+    <p>Oncle Patrice Roy fut plombier de son métier mais aussi pompier un certain temps. Oncle Louis Roy fut propriétaire-gérant de la Salle Charlebois en plus d'être impliqué au niveau des loisirs et de la politique.</p>
+
+    <p>Les parents de l'abbé Jean-Guy Laflamme, Arthur Laflamme et Eva Casavant, étaient locataires d'un loyer dans la maison de Charles Boisvert qui a plus tard appartenu à Antonio Landry, coin sud-ouest des rues Lemay et du Marché. Les beaux jours d'été, en visite chez ses parents, l'abbé Laflamme avait l'habitude de lire son bréviaire tout en arpentant la longue galerie qui ceinturait la maison. L'abbé Laflamme a fêté, en 2020, son 90<sup>e</sup> anniversaire et même s'il a pris sa retraite à Acton Vale il continue, à l'occasion, d'y exercer son ministère.</p>
+
+    <p>On ne peut pas faire une histoire de la rue Lemay sans mentionner que, de toutes les personnes qui demeuraient sur notre rue dans les années 1950 et 1960, seules Huguette et Jeanne-d'Arc Lalancette habitent toujours la maison familiale.</p>
+
+    <div class="encadre">
+      <div class="encadre-titre">Premiers de classe au Collège St-André d'Acton Vale</div>
+      <p style="margin-bottom:0; font-size:0.9rem;">10<sup>e</sup> année, Roger Chevalier, 81.7 et Denis Lécuyer, 80 ; 9<sup>e</sup> année, Raymond Daviau, 82.8 et Jacques Labonté, 76.7 ; 8<sup>e</sup> année, André Chagnon, 78.4 et Guy Charlebois, 71.1 ; 7<sup>e</sup> année, Pierre Labonté, 79 et Jean-Claude Chagnon, 80.6 et Yves Lamoureux, 79.1 ; 6<sup>e</sup> A, Alain Berthiaume, 88.1 et Gaétan Chevanelle, 88 ; 5<sup>e</sup> A, Luc Fagnan, 80.8 et Raoul Charbonneau, 88.1 ; 5<sup>e</sup> B, Réal Paré, 88.5 et Alain Delorme, 84.1 ; 5<sup>e</sup> C, Jean Bond, 88.1 et Yvon Roy, 80.2 ; 4<sup>e</sup> année, Denis Roy, 91 et André Côté, 90 ; 3<sup>e</sup> année, Yvan Lécuyer, 98.1 et Edgar Joly, 97.1 ; 2<sup>e</sup> année, Gérald Bergeron, 97.4 et Claude Beaugrand, 97.</p>
+      <p class="coupure-source">Le Clairon maskoutain, 24 janvier 1957</p>
+    </div>
+
+    <div class="lien-galerie">
+      <a href="../galerie-famille.html">Voir les photos de la famille →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">André Fournier</div>
+      <div class="signature-date">Les Six Cantons, vol. 22, décembre 2020</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
