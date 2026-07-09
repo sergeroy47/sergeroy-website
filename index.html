@@ -315,7 +315,7 @@
   .portrait-modal-corps p{font-size:16px;line-height:1.85;color:rgba(28,26,20,0.82);margin-bottom:1em;}
   .portrait-modal-fermer{position:absolute;top:1rem;right:1rem;background:none;border:1px solid rgba(107,92,69,0.3);color:var(--terre);font-family:var(--mono);font-size:10px;letter-spacing:0.15em;cursor:pointer;padding:0.3rem 0.7rem;transition:all .2s;z-index:1;}
   .portrait-modal-fermer:hover{background:var(--terre);color:var(--parchemin);}
-  @media(max-width:600px){.portrait-modal-corps{grid-template-columns:1fr;}.portrait-modal-img{height:220px;}}
+  @media(max-width:600px){.portrait-modal-corps{grid-template-columns:1fr;grid-template-rows:220px minmax(0,1fr);}.portrait-modal-img{height:220px;}.portrait-modal-texte{max-height:calc(88vh - 220px);}}
 
   /* ── RÉSONANCE GLOBALE ── */
   #resonance-bg{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:0.45;mix-blend-mode:screen;transition:opacity 1.5s;}
