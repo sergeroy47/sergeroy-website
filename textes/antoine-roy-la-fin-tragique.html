@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La fin tragique d'Antoine Roy — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .genealogie {
+      background: var(--lin);
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+    }
+    .genealogie h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 600;
+      color: var(--terre); margin-bottom: 0.8rem; font-size: 1.1rem;
+    }
+    .genealogie ul { list-style: none; margin-bottom: 0; }
+    .genealogie li { margin-bottom: 0.6rem; font-size: 0.95rem; }
+    .genealogie li:last-child { margin-bottom: 0; }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire familiale</span>
+    <h1>La fin tragique d'Antoine Roy</h1>
+    <p class="article-sous-titre">Premier ancêtre en Nouvelle-France — et l'histoire d'un nom</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Raconté de vive voix, juillet 2026</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Ce récit a été dicté de vive voix le 9 juillet 2026 — la veille, sans l'avoir cherché, du 342<sup>e</sup> anniversaire de la mort d'Antoine Roy, assassiné à Lachine le 10 juillet 1684. Le hasard aime décidément notre famille.
+    </div>
+
+    <h2 class="partie-titre">Le soldat qui ne voulait pas défricher</h2>
+
+    <p>Mon premier ancêtre en Amérique s'appelait Antoine Roy dit Desjardins. Il est arrivé en Nouvelle-France — notre Québec d'aujourd'hui — en 1665, comme soldat du régiment de Carignan, envoyé par le roi de France pour combattre les Iroquois. Sa mission accomplie, on l'encouragea, comme bien des soldats, à rester au pays : il épousa Marie Major, une Fille du Roy, et le couple reçut une concession à Batiscan, sur la rive nord du Saint-Laurent, plus près de Trois-Rivières que de Québec. Leur tâche : mettre la terre en valeur.</p>
+
+    <p>Mais il s'avéra que notre ami Antoine n'était pas enclin à devenir cultivateur, encore moins défricheur : sa concession était une forêt qu'il aurait fallu bûcher avant d'y semer quoi que ce soit, et ce n'était pas du tout dans ses plans. Il partit donc chercher du travail du côté de Montréal, à Lachine, où il exerça le métier de ses ancêtres : tonnelier — son père, resté en France, était maître tonnelier. Pour se loger, par je ne sais quel destin, il trouva chambre chez le sacristain de la paroisse, un certain Julien Talua dit Vendamont.</p>
+
+    <h2 class="partie-titre">Le coup de fusil</h2>
+
+    <p>À vivre sous le même toit, Antoine et la femme du sacristain, Anne Godeby, se rapprochèrent… Un jour de juillet 1684, le mari rentra chez lui et les découvrit ensemble. Comme en ce temps-là chacun avait son fusil — pour se défendre ou pour aller à la chasse — il tira sur Antoine, qui mourut sur le coup.</p>
+
+    <p>S'ensuivit un procès. Antoine étant mort, on l'enterra. Le meurtrier, qui appartenait à la bonne catégorie des bons catholiques qui contrôlaient la colonie, s'en tira avec une sentence plutôt clémente : il n'a jamais vraiment fait de prison — ça s'est réglé en catimini. Marie Major, elle, perdit tout : son mari, ses droits, sa concession. Elle dut refaire sa vie.</p>
+
+    <p>Plus de trois siècles plus tard, une parente de notre branche, Sergine Desjardins, lui a rendu justice à sa façon : partant de ce fait divers, elle a écrit un roman sur Marie Major et lui a inventé la belle vie qu'elle aurait méritée, comme on le ferait pour sa propre grand-mère.</p>
+
+    <h2 class="partie-titre">Pierre, la souche de Kamouraska</h2>
+
+    <p>Avant de mourir, Antoine et Marie avaient eu le temps de concevoir un seul enfant : Pierre. Ce fils unique obtint un jour une concession au bord du fleuve, à Kamouraska, dont il fut l'un des premiers colons. Et lui, le seul de sa filiation, eut une descendance immense — Kamouraska d'abord, puis le Bas-du-Fleuve, puis la Gaspésie.</p>
+
+    <h2 class="partie-titre">Roy ou Desjardins ?</h2>
+
+    <p>Restait le nom. Du temps de mon grand-père, au début des années 1900, le gouvernement demanda aux familles au nom double de choisir : Roy ou Desjardins ? Mon grand-père choisit Roy — c'est pourquoi je m'appelle Roy. D'autres choisirent Desjardins : c'est de cette branche que vient Alphonse Desjardins, le fondateur des Caisses Desjardins. Ses frères aînés portaient encore « Roy dit Desjardins » sur leur baptistaire ; lui fut le premier à ne porter que le nom de Desjardins.</p>
+
+    <p>D'un même coup de fusil, tiré un soir de jalousie à Lachine, descendent donc les Roy et les Desjardins d'Amérique — dont je suis.</p>
+
+    <div class="genealogie">
+      <h4>Repères vérifiés dans les registres</h4>
+      <ul>
+        <li>Antoine Roy dit Desjardins, né le 23 mars 1635 à Saint-Jean de Joigny (France), fils d'Olivier, maître tonnelier.</li>
+        <li>Débarqué à Québec le 19 juin 1665, soldat de la compagnie de Froment, régiment de Carignan.</li>
+        <li>Marié à Marie Major, Fille du Roy, le 11 septembre 1668 à Notre-Dame de Québec.</li>
+        <li>Recensement de 1681 : tonnelier, 45 ans.</li>
+        <li>Assassiné le 10 juillet 1684 à Lachine par Julien Talua dit Vendamont.</li>
+      </ul>
+    </div>
+
+    <div class="lien-galerie">
+      <a href="../galerie-famille.html">Voir les photos de la famille →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Raconté de vive voix, le 9 juillet 2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>

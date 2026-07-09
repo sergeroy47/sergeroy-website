@@ -102,7 +102,7 @@ const GALERIES = [
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
         "legende": "Les Roy et Desjardins de Kamouraska",
-        "description": "Ce texte est tiré du livre Kamouraska (1674-1948), édité à Kamouraska en 1984. Il raconte comment notre premier ancêtre, Antoine Roy, est arrivé en Nouvelle-France comme soldat du régiment de Carignan. Il épouse Marie Major, une Fille du Roy."
+        "description": "Ce texte est tiré du livre Kamouraska (1674-1948), édité à Kamouraska en 1984. Il raconte comment notre premier ancêtre, Antoine Roy, est arrivé en Nouvelle-France comme soldat du régiment de Carignan. Il épouse Marie Major, une Fille du Roy. Antoine mourra assassiné à Lachine en 1684, surpris par un mari jaloux ; leur fils unique, Pierre, deviendra l'un des premiers colons de Kamouraska, d'où descendent les Roy et les Desjardins d'Amérique. L'histoire complète — le coup de fusil, Marie Major dépouillée de ses droits, et le partage du nom entre Roy et Desjardins — est racontée dans la section Textes du site : « La fin tragique d'Antoine Roy »."
       },
       {
         "fichier": "Famille/CultivezLaVie/MariageRosaireYvonne1939.jpg",
