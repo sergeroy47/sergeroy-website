@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultivez la vie, apprivoiser la mort — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .poeme {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+    .poeme p { margin-bottom: 0.2em; }
+    .poeme-note {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.75;
+      margin-top: 1rem; font-style: normal;
+    }
+
+    .genealogie {
+      background: var(--lin);
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+    }
+    .genealogie h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 600;
+      color: var(--terre); margin-bottom: 0.8rem; font-size: 1.1rem;
+    }
+    .genealogie ul { list-style: none; margin-bottom: 1.2rem; }
+    .genealogie li { margin-bottom: 0.6rem; font-size: 0.95rem; }
+    .genealogie li:last-child { margin-bottom: 0; }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire familiale</span>
+    <h1>Cultivez la vie, apprivoiser la mort</h1>
+    <p class="article-sous-titre">Famille Rosaire Roy — Yvonne Dépeault</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Album souvenir d'Acton Vale, 1859–2009</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Ce texte a été écrit pour l'album souvenir des familles d'Acton Vale, publié pour le 150<sup>e</sup> anniversaire du village (1859–2009). J'y raconte l'histoire de mes parents, Rosaire Roy et Yvonne Dépeault, mariés en 1939, et de leur famille de neuf enfants.
+    </div>
+
+    <h2 class="partie-titre">Cultivez la vie</h2>
+
+    <p>Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants.</p>
+
+    <p><em>Ainsi commence notre histoire familiale. Elle est extraordinaire puisque c'est la nôtre, mais bien ordinaire : nous étions une famille de neuf enfants au milieu d'autres familles nombreuses.</em></p>
+
+    <p>Tous les parents de cette époque sortaient du champ ; la grande majorité était filles ou fils de cultivateurs. Suite à la Seconde Guerre mondiale, le monde avait changé et nous vivions maintenant dans une petite ville manufacturière. Nos parents pour la plupart travaillaient à l'usine ; mon père Rosaire travaillait à l'Acton Shoe, à deux minutes de notre maison située au 1135 rue Lemay. Les mères s'occupaient de leurs nombreux enfants, comme disait l'autre : « Maman travaille pas, a' trop d'ouvrage. »</p>
+
+    <p>Le cœur de leur existence battait dans la famille. Des familles nombreuses qui avaient engendré des familles nombreuses. Malgré ces nombreux Roy dispersés aux quatre coins du village, nos voisins partageaient nos jeux et nos aventures de jeunesse. Notre vie n'était pas organisée, on s'organisait avec.</p>
+
+    <p>Comme nous étions une maudite gang, il y avait toujours foule pour organiser la vie trépidante au centre-ville. Ville, village, qui sait ? En tout cas, c'était bien petit tout autour du clocher… Mais dans ce temps, ce monde merveilleux qui était le nôtre ne souffrait d'aucune comparaison, car on ne connaissait rien d'autre.</p>
+
+    <p>Si nous traversions la rivière, nous nous retrouvions dans un territoire libre à l'abri des parents. Nous devenions <em>cowboys ou sauvages</em> pour mener des combats sanguinaires. La plupart du temps, c'était pour rire, mais quelquefois, le sang coulait pour vrai à cause d'une flèche trop bien lancée ou d'un coup d'épée qui glissait sur la chair trop fraîche. Si chaque partie finissait souvent par des pleurs, c'était trop excitant pour ne pas recommencer le lendemain. Et combien de combats héroïques ont eu lieu sur la rivière Moose, entre la chaloupe du grand-père Dupuis et les radeaux construits par les Boulay et compagnie ? C'est de cette rivière meurtrière que Rosaire sauva au moins trois enfants de la noyade.</p>
+
+    <p>Le dimanche après-midi, nous allions à la partie de baseball, Acton ayant toujours eu des clubs de haut calibre. C'est d'ailleurs à une de ces parties de baseball que Rosaire, le petit blond, qui jouait au deuxième but pour Acton, est tombé dans l'œil d'Yvonne.</p>
+
+    <p>Et les dimanches soir de l'été, tout le village se rencontrait au parc du centre-ville pour écouter la grosse fanfare. Les plus vieux écoutaient paresseusement assis dans leurs chars stationnés tout autour du carré, pendant que les plus jeunes mêlaient leurs jeux à la musique.</p>
+
+    <p>Quant à eux, les gars et les filles d'un certain âge couraient les uns après les autres, se tournaient autour en sifflotant des airs d'amour. Mais comme Acton ne fait jamais les choses à moitié, il y avait aussi la petite fanfare, celle du collège. Avec autant de fanfares, les parades ne manquaient pas pour célébrer tous les événements glorieux de notre quotidien. C'était notre culture à nous, nos beaux dimanches !</p>
+
+    <p>Le lundi matin était journée du lavage, mais comme nous habitions à deux maisons de l'abattoir Boisvert, c'était aussi journée d'aventure et de mort. Car arrivaient tous les cochons du coin pour finir en boudin, en jambon ou en bacon. Souvent ça devenait l'occasion de tester nos talents au rodéo…</p>
+
+    <p>Et si la mort nous hantait un peu plus, nous n'avions qu'à traverser la rue du Marché pour arriver chez d'autres Boisvert qui, eux, exposaient dans leurs plus beaux habits ceux qui en avaient fini avec la vie.</p>
+
+    <p>Mais cette vie ne finissait jamais puisqu'il y avait toujours des voisines en train de planter un nouveau petit dans le décor. Au fond, nos parents étaient restés cultivateurs, ils cultivaient la vie.</p>
+
+    <p>D'ailleurs, Rosaire se transformait quand il travaillait dans son jardin. Le jardinage lui permettait avant tout de nourrir sa famille. Et oui, dans ce temps-là, nourrir onze personnes avec un salaire d'ouvrier demandait du travail et de la débrouillardise. Mais dans son jardin, Rosaire troquait son rôle d'ouvrier obéissant pour celui de poète. Ami de la nature, il retrouvait son âme d'enfant, prêt à refaire le monde en cultivant le jardin le mieux entretenu du village.</p>
+
+    <p>En fait, son jardin était un immense potager rempli de légumes frais du jour qu'Yvonne cuisinait avec amour et talent. Par exemple, Rosaire mettait l'eau à bouillir avant d'aller cueillir son blé d'Inde, pour en garder tous les arômes subtils qui font que manger nourrit le corps, mais aussi l'esprit. Par la suite, des expériences scientifiques ont montré que les sucres du maïs se transforment rapidement en amidon et que le maïs perd ainsi le meilleur de son goût. Par instinct, Rosaire avait su reconnaître cette vérité cachée à ceux qui ne font pas attention aux petites choses qui rendent la vie plus agréable.</p>
+
+    <p>Eh oui, mes parents possédaient l'intelligence du quotidien, cette forme d'intelligence que l'on n'apprend pas dans les livres, mais en vivant consciemment en faisant face aux exigences de la vie.</p>
+
+    <p>C'est cette forme d'intelligence que nos parents nous ont laissée en héritage. Et le pouvoir de la savourer en toute simplicité.</p>
+
+    <div class="poeme">
+      <p><strong>La vie</strong></p>
+      <p>Nous sommes tous attachés à la vie.<br>
+      Mais savons-nous ce que c'est la vie ?<br>
+      Nous sommes une parcelle de la vie.<br>
+      La vie, c'est un instant d'un sentiment.<br>
+      C'est le sentiment d'un instant.<br>
+      C'est la goutte d'eau d'un torrent.<br>
+      C'est le reflet d'une clarté.<br>
+      L'ombre d'une lueur.<br>
+      La vie c'est l'espérance d'un événement.<br>
+      C'est un événement qui n'a jamais de lendemain.<br>
+      La vie c'est l'éternité.<br>
+      La vie, c'est d'essayer de mettre en nombres ou en chiffres<br>
+      Un instant de cette éternité.<br>
+      La vie c'est le pas d'un chemin sans fin<br>
+      Qui de loin semble donner un reflet de bonheur.<br>
+      La vie, c'est ce reflet<br>
+      Que tu vois dans le désert.<br>
+      C'est la source d'eau qui est imaginaire<br>
+      Dans ton œil, dans ton cerveau.<br>
+      Mon Dieu dis-moi<br>
+      Ce que c'est la vie.</p>
+      <p class="poeme-note">Ce poème accompagnait, dans l'album, la photo de Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds. Le manuscrit original, de ma main, est inséré plus loin dans le livre — signé Serge Roy.</p>
+    </div>
+
+    <div class="genealogie">
+      <h4>Famille de Rosaire et Yvonne</h4>
+      <p style="font-size:0.95rem; margin-bottom:1rem;">Yvonne est décédée à soixante et un ans en 1973 ; Rosaire est décédé à soixante-dix-neuf ans en 1989.</p>
+      <p style="font-size:0.9rem; font-style:italic; color:var(--terre); margin-bottom:0.5rem;">Les filles, les petites Yvonne comme on les appelait :</p>
+      <ul>
+        <li>Ghislaine, décédée à soixante-six ans en 2008 — ses enfants Josée, Lucie et Éric Goulet, père Yves Goulet, et cinq petits-enfants.</li>
+        <li>Mariette et Raynald Dorais — retraités à Acton Vale — leurs enfants Sophie, Chantal et Vincent et sept petits-enfants.</li>
+        <li>Suzanne et Barrie Lax — retraités à Ottawa.</li>
+        <li>Perle et Réjean Picard — semi-retraités à Sherbrooke — leurs enfants Francis, Audrey et Maxime et six petits-enfants.</li>
+        <li>Denise et Guy Laviolette — semi-retraités à Saint-Hyacinthe — ses enfants Annie, père Serge Legendre, et Jonathan, père Guy Alain, et quatre petits-enfants.</li>
+      </ul>
+      <p style="font-size:0.9rem; font-style:italic; color:var(--terre); margin-bottom:0.5rem;">Les fils :</p>
+      <ul>
+        <li>Jean-Luc, décédé à 38 ans en 1978, et Jocelyne Girard, décédée à cinquante-cinq ans en 2000 — leurs enfants Jocelyn et Claudia et trois petits-enfants.</li>
+        <li>Serge, travaille au cégep Édouard-Montpetit, et Colette Betit, retraitée — sa fille Noémie, mère Diane Lamothe, un petit-enfant.</li>
+        <li>Jean-Noël et Ghislaine Touchette — travaillent sur la base de l'Armée à Saint-Jean-sur-Richelieu — leurs enfants Mijanou et Pierre-Olivier et un petit-enfant.</li>
+        <li>Marcel Roy, décédé à quarante et un ans en 1996.</li>
+      </ul>
+    </div>
+
+    <h2 class="partie-titre">Apprivoiser la mort</h2>
+
+    <p>Yvonne était le cœur de notre famille. Elle organisait la maisonnée en gérant le salaire que Rosaire lui remettait tous les vendredis. Par sa virtuosité et son amour, elle rendait notre vie confortable et heureuse.</p>
+
+    <p>À cause de l'importance qu'elle prenait dans nos vies, c'est beaucoup sa mort qui marqua notre famille. Elle a confronté une gang de jeunes avec l'avenir devant eux et un mari qui avait peur de la mort.</p>
+
+    <p>Sa longue agonie nous a permis de passer à travers les différentes étapes de la maladie. D'abord, nous avions cru avec notre mère que ce n'était qu'un mauvais moment à passer et qu'elle quitterait bientôt l'hôpital pour retrouver sa maison et cultiver son jardin.</p>
+
+    <p>Puis avec l'idée de la mort annoncée, nous ne savions que faire. Il fallait cacher la vérité à Yvonne, si attachée à la vie, à sa famille, à son petit dernier qui ne vole pas encore tout à fait de ses propres ailes. Les longues séances à l'hôpital pour soutenir la mère dans ses moments difficiles solidifiaient les liens entre nous. Mais la tension s'exprimait souvent par des éclats de rire communicatifs, souvent encouragés par Marie Ange, la sœur préférée de ma mère.</p>
+
+    <p><em>Les Roy sont des sans-cœurs, rigolant comme des fous pendant que leur mère agonise.</em> Ma mère avait un grand cœur solide, ce qui est un atout dans la vie, mais un atroce avantage dans la mort. Tant que le cœur dure, la souffrance se prolonge. À la fin, Yvonne s'était transformée en un squelette traversé par un petit souffle. Mais elle ne lâchait pas, elle voulait rester avec nous, ne sachant pas ce que nous allions devenir sans elle.</p>
+
+    <p>Cette résistance de notre mère nous permettait d'expérimenter toutes les subtilités de la vie et de la mort. Finir, c'est pas un cadeau. Le présent, on veut le conserver à jamais. Au bout de six mois, à bout de force, Yvonne s'est laissée glisser dans la mort, désorganisant notre vie de famille. Pourtant, cette mort a permis à Rosaire de prendre la place de centre et de nous livrer son jardin secret.</p>
+
+    <p>Ainsi lors des funérailles, il a rendu un hommage à notre mère en tenant tête à l'Église qui avait façonné nos croyances. En effet, en 1973, comme notre mère avait été incinérée, l'Évêché avait refusé que les cendres de notre mère rentrent dans l'église pendant l'enterrement.</p>
+
+    <p>Ainsi pendant toute la cérémonie, notre père était resté dans le vestibule de l'église avec les cendres d'Yvonne dans ses mains. Mais à la fin du service, comme il fallait qu'il signe les registres officiels, Rosaire monta la grande allée avec les cendres, permettant à Yvonne de faire un dernier séjour dans cette église où elle avait si souvent prié pour que sa famille connaisse le meilleur. Voilà que Rosaire exauçait ses prières en redonnant à toute la famille sa cohésion. Dans ce moment de détresse, la famille renaissait de ses cendres.</p>
+
+    <p>Nous étions déjà assez forts pour faire face à la musique et à ceux qui voulaient nous imposer leur volonté. Yvonne en allée, Rosaire manifestait sa nature de père et de mari fidèle. Voilà, nous n'avons que quelques années pour apprendre à cultiver la vie et à apprivoiser la mort… Quelle expérience merveilleuse !</p>
+
+    <blockquote>La vie / nous sommes tous attachés à la vie / mais savons-nous vraiment ce que c'est la vie ?<br>— manuscrit inséré à la suite de ce texte, signé Serge Roy</blockquote>
+
+    <div class="lien-galerie">
+      <a href="../galerie-famille.html">Voir les photos de la famille →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Album souvenir d'Acton Vale, 1859–2009</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
