@@ -107,7 +107,12 @@ const GALERIES = [
       {
         "fichier": "Famille/CultivezLaVie/MariageRosaireYvonne1939.jpg",
         "legende": "Le mariage de Rosaire et Yvonne, 1939",
-        "description": "Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants. Ainsi commence notre histoire familiale.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », écrit pour l'album souvenir des familles d'Acton Vale (1859-2009). Le texte complet se trouve dans la section Mes textes du site."
+        "description": "Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants. Ainsi commence notre histoire familiale.\n\nL'acte de mariage original, conservé dans nos archives familiales, se trouve juste à côté dans cette galerie.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », écrit pour l'album souvenir des familles d'Acton Vale (1859-2009). Le texte complet se trouve dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/ActeMariageRosaireYvonne1939.jpg",
+        "legende": "Acte de mariage de Rosaire et Yvonne, 12 août 1939",
+        "description": "Registre de la Cathédrale Saint-Michel de Sherbrooke, le 12 août 1939.\n\nRosaire Roy, de St-André d'Acton Vale, fils majeur de David Roy et d'Athala Gamache, épouse Yvonne Dépeault (inscrite « Depot » par le prêtre, orthographe phonétique de l'époque — Dépeault est le nom véritable), de cette paroisse, fille majeure d'Élie Dépeault et d'Anna Tétreault, domiciliés à Waterbury, Connecticut.\n\nOnt signé : Yvonne Dépeault, Rosaire Roy, David Roy (témoin) et Élie Dépeault (témoin). Le mariage a été célébré par R. Williams, prêtre.\n\nDavid Roy et Athala Gamache sont aussi les grands-parents de mon cousin André Fournier, dont le texte sur la rue Lemay se trouve dans la section Mes textes du site."
       },
       {
         "fichier": "Famille/CultivezLaVie/RosaireEscabeauMais.jpg",
