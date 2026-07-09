@@ -103,6 +103,31 @@ const GALERIES = [
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
         "legende": "Les Roy et Desjardins de Kamouraska",
         "description": "Ce texte est tiré du livre Kamouraska (1674-1948), édité à Kamouraska en 1984. Il raconte comment notre premier ancêtre, Antoine Roy, est arrivé en Nouvelle-France comme soldat du régiment de Carignan. Il épouse Marie Major, une Fille du Roy."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/MariageRosaireYvonne1939.jpg",
+        "legende": "Le mariage de Rosaire et Yvonne, 1939",
+        "description": "Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants. Ainsi commence notre histoire familiale.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », écrit pour l'album souvenir des familles d'Acton Vale (1859-2009). Le texte complet se trouve dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/RosaireEscabeauMais.jpg",
+        "legende": "Rosaire monté sur son plant de maïs",
+        "description": "Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds. Dans son jardin, Rosaire troquait son rôle d'ouvrier obéissant pour celui de poète — ami de la nature, prêt à refaire le monde en cultivant le jardin le mieux entretenu du village.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/YvonneEnfantsRosaire.jpg",
+        "legende": "Yvonne, Rosaire et leurs premiers enfants",
+        "description": "Yvonne tenant Suzanne dans ses bras, avec Ghislaine, Mariette, Jean-Luc et Rosaire.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/FamilleRosaireYvonne1975.jpg",
+        "legende": "La famille au grand complet",
+        "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/CultivezLaVie/PoemeLaVieManuscrit.jpg",
+        "legende": "« La vie », poème manuscrit",
+        "description": "Le manuscrit original, de ma main, d'un poème intitulé « La vie », inséré dans l'album souvenir des familles d'Acton Vale à la suite de mon texte sur mes parents Rosaire et Yvonne.\n\n« Nous sommes tous attachés à la vie / mais savons-nous ce que c'est la vie ?... » Le texte complet se trouve dans la section Mes textes du site."
       }
     ]
   },
