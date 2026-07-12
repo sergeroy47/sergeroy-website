@@ -65,18 +65,25 @@ const CONTENU = {
       "lien": "textes/ma-vie-numerique.html"
     },
     {
-      "categorie": "Trajectoire intellectuelle",
-      "titre": "Des réseaux dans des réseaux INTEREXISTENCE",
-      "extrait": "De la cybernétique à la contemplation — comment la technologie m'a conduit vers le silence...",
-      "date": "2024",
-      "lien": "textes/Des_réseaux_dans_des_réseaux_INTEREXISTENCE_1.html"
-    },
-    {
       "categorie": "Création artistique",
       "titre": "CONVERGENCE",
       "extrait": "Une pièce de théâtre philosophique en six actes, explorant le dialogue entre l'humain et l'intelligence artificielle — et sa poursuite dans la vie réelle.",
       "date": "2025–2026",
       "lien": "textes/CONVERGENCE_piece_theatre.html"
+    },
+    {
+      "categorie": "Trajectoire intellectuelle",
+      "titre": "Multimédia et réseaux pour une communication conviviale",
+      "extrait": "Résumé de ma thèse de maîtrise (1996) — une vision de la technologie au service de l'épanouissement humain.",
+      "date": "1996 / 2024",
+      "lien": "textes/recueil.html#multimedia"
+    },
+    {
+      "categorie": "Trajectoire intellectuelle",
+      "titre": "Des réseaux dans des réseaux INTEREXISTENCE",
+      "extrait": "De la cybernétique à la contemplation — comment la technologie m'a conduit vers le silence...",
+      "date": "2024",
+      "lien": "textes/Des_réseaux_dans_des_réseaux_INTEREXISTENCE_1.html"
     },
     {
       "categorie": "Nature",
@@ -98,13 +105,6 @@ const CONTENU = {
       "extrait": "Ce que le Zen m'a appris sur la technologie, sur la présence, sur la convivialité des êtres.",
       "date": "2023",
       "lien": "textes/recueil.html#silence"
-    },
-    {
-      "categorie": "Trajectoire intellectuelle",
-      "titre": "Multimédia et réseaux pour une communication conviviale",
-      "extrait": "Résumé de ma thèse de maîtrise (1996) — une vision de la technologie au service de l'épanouissement humain.",
-      "date": "1996 / 2024",
-      "lien": "textes/recueil.html#multimedia"
     }
   ],
   "photos": [
