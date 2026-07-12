@@ -59,6 +59,13 @@ const CONTENU = {
     },
     {
       "categorie": "Trajectoire intellectuelle",
+      "titre": "Ma vie numérique",
+      "extrait": "« Moi aussi, je me souviens du futur. » Du Portapak de 1972 au Whole Earth Catalog, du manifeste OTO aux « micro-ordinateurs à pédales », jusqu'à l'IA devenue gérante de mes graines — cinquante ans à garder la main sur mes outils.",
+      "date": "1972–2026",
+      "lien": "textes/ma-vie-numerique.html"
+    },
+    {
+      "categorie": "Trajectoire intellectuelle",
       "titre": "Des réseaux dans des réseaux INTEREXISTENCE",
       "extrait": "De la cybernétique à la contemplation — comment la technologie m'a conduit vers le silence...",
       "date": "2024",

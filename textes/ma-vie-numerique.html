@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma vie numérique — Serge Roy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Trajectoire intellectuelle</span>
+    <h1>Ma vie numérique</h1>
+    <p class="article-sous-titre">Moi aussi, je me souviens du futur</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Dicté de vive voix, juillet 2026</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      En juillet 2026, le chroniqueur Patrick Lagacé (La Presse+) demandait à ses lecteurs : « Vous, vos vies numériques, comment ça se passe ? Et l'IA, vous la subissez comment ? Ou alors, vous en tirez avantage comment ? » Ce texte est ma réponse — la longue ; la courte est partie par courriel le jour même.
+    </div>
+
+    <h2 class="partie-titre">Moi aussi, je me souviens du futur</h2>
+
+    <p>Un chroniqueur de La Presse+, qui a la moitié de mon âge, se souvenait récemment du futur numérique de 1993 : le magazine Wired qui décrivait, sur des arbres morts, ce futur si proche ; le premier courriel envoyé à un prof en guise de devoir. Sa chronique se terminait par une question à ses lecteurs : et l'IA, vous la subissez ou vous en tirez avantage ? Est-elle devenue votre psy, votre coach, votre ami ?</p>
+
+    <p>Moi aussi, je me souviens du futur. J'y étais un peu plus tôt que lui.</p>
+
+    <h2 class="partie-titre">La grosse valise</h2>
+
+    <p>En 1972, j'étais animateur socioculturel au cégep Édouard-Montpetit. Cette année-là, une drôle de machine est arrivée dans nos vies : le Portapak de Sony, la première caméra vidéo portable — une caméra à l'épaule, reliée à une grosse valise qui contenait le ruban. Pour la première fois, on pouvait filmer et voir tout de suite le résultat. Mon travail, c'était de la mettre dans les mains des étudiants : le vidéo, le cinéma, la radio, la photo — pour qu'ils soient responsables de leur information, pour que le cégep soit à eux.</p>
+
+    <p>Déjà, l'outil ne m'intéressait que s'il rendait les gens plus libres.</p>
+
+    <h2 class="partie-titre">San Francisco, 1977</h2>
+
+    <p>À 30 ans, je suis parti seul, un peu comme un voyage initiatique, et je me suis retrouvé à San Francisco — au moment précis où la micro-informatique prenait naissance. L'informatique ne m'intéressait pas du tout ; mais je fréquentais son berceau sans le savoir. J'étais venu améliorer mon anglais par la lecture, et mon filon, c'était ce développement technologique associé à une vision d'un monde meilleur. Un jour, dans une librairie, je tombe sur le Whole Earth Catalog de Stewart Brand — sous-titré « Access to Tools », l'accès aux outils. Je l'achète. Quelque chose venait de s'éveiller.</p>
+
+    <h2 class="partie-titre">OTO, le réseau avant le réseau</h2>
+
+    <p>Au cégep, j'avais plusieurs amis artistes ; on touchait à un peu de tout — écriture, peinture, musique. Du goût de travailler avec ces personnes, et de la vision du Whole Earth Catalog, est né en 1981 le manifeste OTO : une fiction prospective qui imaginait un réseau d'ordinateurs reliant les créateurs entre eux. On n'appelait pas encore ça Internet.</p>
+
+    <h2 class="partie-titre">Le virage</h2>
+
+    <p>Puis tout s'est enchaîné. Un cours accéléré de programmeur-analyste au Cégep de Sherbrooke, où j'ai découvert que le côté analyste m'allumait — mais pas les petits détails de la programmation, ni les emplois en gestion qu'on m'offrait. Un retour à l'UQAM en 1983, où le bac en communication intégrait la « médiatique » et la « télématique » : je m'inscris à tous les cours à connotation technologique et je participe aux travaux du laboratoire de Michel Cartier. Puis un poste de conseiller pédagogique au Cégep Ahuntsic — le remplacement d'un conseiller en audiovisuel qu'on voulait transformer en conseiller en applications pédagogiques de l'ordinateur, l'APO. Un emploi qui n'existait nulle part ailleurs. J'aimais arriver dans les terrains vierges.</p>
+
+    <p>Ma patronne, qui ne connaissait rien à la technologie, m'a dit un jour : « Je ne savais pas que des personnes comme toi existaient » — un mélange de technicien et de formation humaniste.</p>
+
+    <h2 class="partie-titre">Les timbres-poste animés</h2>
+
+    <p>Pendant que je travaillais à Ahuntsic, l'UQAM est passée à l'action : un volet techno à la maîtrise en communication, piloté par Zénon Maheu — un ancien prof d'histoire des sciences, esprit libre, qui avait quitté l'université pour initier les gens aux possibilités de l'informatique. Son projet : un laboratoire de recherche en communication informatique. Par un hasard extraordinaire, Zénon était le fils du trésorier de J.A. DeSève, la maison mère de Télé-Métropole, qui voulait s'ouvrir à ce monde mystérieux : le laboratoire fut financé pour cinq ans.</p>
+
+    <p>Me voilà de retour à l'UQAM, assistant de recherche — le plus vieux de la gang, entouré de jeunes de dix ans de moins, beaucoup plus allumés que moi, même sur l'international. Nous fondons Aleph, un groupe de recherche-création, mené par Alain Mongeau — qui fondera plus tard le festival MUTEK. Nous avions les ordinateurs dernier cri, et en ce temps-là, quand on disait multimédia, le nom d'Apple venait en premier. Mais c'était les balbutiements : nous créions des petits films grands comme des timbres-poste, qui prenaient toutes les capacités de nos machines. Le vidéodisque, l'interactivité — le mot de l'heure.</p>
+
+    <h2 class="partie-titre">Les micro-ordinateurs à pédales</h2>
+
+    <p>Il faut dire la hauteur avec laquelle les tenants de l'ordre établi voyaient nos tentatives d'innover. Au Cégep Ahuntsic, les professeurs du département d'informatique riaient joyeusement de nous, avec nos « micro-ordinateurs à pédales ». À l'UQAM, les professeurs des médias traditionnels regardaient de haut nos productions minimalistes et cahotantes. Mais ces mêmes personnes, quand elles ont constaté que le monde changeait plus vite qu'elles, ont fait des pieds et des mains pour nous remplacer.</p>
+
+    <p>C'est aussi lors de cette maîtrise que j'ai commencé à m'intéresser à l'intelligence artificielle et à la cognition — notamment dans les cours de Pierre Lévy, avec ses livres <em>La Machine Univers</em> et <em>Les technologies de l'intelligence</em>. Et en 1996, j'ai déposé mon <a href="Multimedia_et_reseaux_conviviaux.html">mémoire de maîtrise sur les « réseaux conviviaux »</a>, inspiré d'Ivan Illich — ce penseur qui appelait « convivial » un outil qui augmente l'autonomie d'une personne au lieu de la remplacer.</p>
+
+    <h2 class="partie-titre">Le gérant des graines</h2>
+
+    <p>Aujourd'hui, j'ai 80 ans, et je dicte mon autobiographie à une intelligence artificielle — celle-là même que Pierre Lévy nous faisait entrevoir est entrée dans ma maison.</p>
+
+    <p>Je raconte ; elle transcrit, range, retrouve mes vieux documents — elle a même retracé, dans les archives de la Cinémathèque québécoise, un film que j'avais tourné en 1972 avec les patients d'un hôpital psychiatrique. Elle met en ligne, sur mon site, les textes que je décide de publier. Elle tient le carnet pendant que je me souviens.</p>
+
+    <p>Est-elle mon psy, mon styliste, mon coach de vie, mon ami ? Ni l'un ni l'autre. Je suis le jardinier ; elle est le gérant des graines. C'est moi qui décide ce qui pousse. À 80 ans, je vis exactement ce que je théorisais à 50.</p>
+
+    <h2 class="partie-titre">Ni ébloui, ni horrifié</h2>
+
+    <p>Ce qui ne m'empêche pas de partager les effrois du chroniqueur : les écrans qui refaçonnent les cerveaux des enfants, les deepfakes qui rongent notre perception du réel, la propagande qui avale les faits avec l'assentiment des barons de la technologie. Ces inquiétudes sont fondées. Illich nous avait prévenus : tout outil peut basculer et se mettre à posséder son maître.</p>
+
+    <p>C'est pourquoi je ne suis ni ébloui ni horrifié : je suis outillé. La différence date, dans mon cas, d'une grosse valise Sony portée à l'épaule il y a cinquante-quatre ans.</p>
+
+    <p>J'ai lu récemment, dans Wired justement, que Stewart Brand est toujours vivant — et qu'il adapte sa maison pour agrémenter sa fin de vie. L'homme de « l'accès aux outils » reste fidèle à son credo : les outils, jusqu'au bout, au service de la vie. À ma façon, c'est ce que je fais aussi. Le futur qui s'en vient, je compte bien le vivre comme les précédents : en gardant la main sur mes outils.</p>
+
+    <div class="lien-galerie">
+      <a href="Multimedia_et_reseaux_conviviaux.html">Lire le mémoire : Multimédia et réseaux conviviaux →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Dicté de vive voix, le 12 juillet 2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+</body>
+</html>
