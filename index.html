@@ -657,12 +657,15 @@
         if (!existe) local.collages.push(c);
       });
     }
-    // Ajouter les nouveaux textes présents dans contenu.js mais absents du localStorage
+    // Textes : l'ordre de contenu.js fait toujours foi. On reconstruit la liste
+    // dans cet ordre en conservant les éditions locales (match par titre), puis
+    // on garde en fin de liste les textes créés localement absents de contenu.js.
     if (local.textes && CONTENU.textes) {
-      CONTENU.textes.forEach(t => {
-        const existe = local.textes.find(l => l.titre === t.titre);
-        if (!existe) local.textes.push(t);
-      });
+      const locauxSeuls = local.textes.filter(l =>
+        !CONTENU.textes.find(c => c.titre === l.titre));
+      local.textes = CONTENU.textes.map(c =>
+        local.textes.find(l => l.titre === c.titre) || c
+      ).concat(locauxSeuls);
     }
     // Toujours prendre les balados depuis contenu.js (champ nouveau)
     if (!local.balados && CONTENU.balados) {
