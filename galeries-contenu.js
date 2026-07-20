@@ -57,7 +57,7 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleYvonneRosaire.jpg",
         "legende": "Yvonne, Rosaire et les enfants",
-        "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale.\n\nPremière rangée, à partir de la gauche : Denise, Jean-Noël, Yvonne, Rosaire et Marcel. Deuxième rangée, à partir de la gauche : Serge, Perle, Suzanne, Mariette, Gyslaine et Jean-Luc. Les enfants sont placés dans l'ordre de leur arrivée dans la famille, de Jean-Luc, l'aîné, jusqu'à Marcel, le benjamin."
+        "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale.\n\nPremière rangée, à partir de la gauche : Denise, Jean-Noël, Yvonne, Rosaire et Marcel. Deuxième rangée, à partir de la gauche : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Les enfants sont placés dans l'ordre de leur arrivée dans la famille, de Jean-Luc, l'aîné, jusqu'à Marcel, le benjamin."
       },
       {
         "fichier": "Famille/Yvonne1.jpg",
@@ -87,17 +87,17 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleGroupe.jpg",
         "legende": "Portrait de famille",
-        "description": "Photo prise sur le balcon de notre maison de la rue Lemay, à Acton Vale. Nous étions 9 enfants, mais on n'en voit que 6 sur la photo : il manque ma plus jeune sœur Denise, ma sœur la plus vieille Gyslaine et l'aîné de la famille, mon frère Jean-Luc. Je suis au premier plan, entouré de mes jeunes frères Jean-Noël et Marcel."
+        "description": "Photo prise sur le balcon de notre maison de la rue Lemay, à Acton Vale. Nous étions 9 enfants, mais on n'en voit que 6 sur la photo : il manque ma plus jeune sœur Denise, ma sœur la plus vieille Ghislaine et l'aîné de la famille, mon frère Jean-Luc. Je suis au premier plan, entouré de mes jeunes frères Jean-Noël et Marcel."
       },
       {
         "fichier": "Famille/FamilleEnfants1.jpg",
         "legende": "Excursion à la cabane à sucre",
-        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nJe suis le plus jeune, celui qui pointe du doigt. En haut à gauche, mon frère Jean-Luc ; à sa gauche, ma sœur Mariette ; à sa gauche, Gyslaine. Devant, les yeux fermés, Suzanne."
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nJe suis le plus jeune, celui qui pointe du doigt. En haut à gauche, mon frère Jean-Luc ; à sa gauche, ma sœur Mariette ; à sa gauche, Ghislaine. Devant, les yeux fermés, Suzanne."
       },
       {
         "fichier": "Famille/FamilleEnfants2.jpg",
         "legende": "En chemin vers la cabane à sucre",
-        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nÀ gauche, ma sœur Gyslaine ; devant elle, moi ; ensuite Suzanne, Perle et Mariette."
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nÀ gauche, ma sœur Ghislaine ; devant elle, moi ; ensuite Suzanne, Perle et Mariette."
       },
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
@@ -107,7 +107,7 @@ const GALERIES = [
       {
         "fichier": "Famille/CultivezLaVie/MariageRosaireYvonne1939.jpg",
         "legende": "Le mariage de Rosaire et Yvonne, 1939",
-        "description": "Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants. Ainsi commence notre histoire familiale.\n\nL'acte de mariage original, conservé dans nos archives familiales, se trouve juste à côté dans cette galerie.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », écrit pour l'album souvenir des familles d'Acton Vale (1859-2009). Le texte complet se trouve dans la section Mes textes du site."
+        "description": "Rosaire d'Acton et Yvonne d'Upton se marièrent le 12 août 1939 à Sherbrooke et eurent de nombreux enfants. Ainsi commence notre histoire familiale.\n\nL'acte de mariage original, conservé dans nos archives familiales, se trouve juste à côté dans cette galerie.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », écrit pour l'album souvenir des familles d'Acton Vale (1859-2009). Le texte complet se trouve dans la section Mes textes du site."
       },
       {
         "fichier": "Famille/CultivezLaVie/ActeMariageRosaireYvonne1939.jpg",
@@ -117,12 +117,12 @@ const GALERIES = [
       {
         "fichier": "Famille/CultivezLaVie/RosaireEscabeauMais.jpg",
         "legende": "Rosaire monté sur son plant de maïs",
-        "description": "Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds. Dans son jardin, Rosaire troquait son rôle d'ouvrier obéissant pour celui de poète — ami de la nature, prêt à refaire le monde en cultivant le jardin le mieux entretenu du village.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
+        "description": "Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds. Dans son jardin, Rosaire troquait son rôle d'ouvrier obéissant pour celui de poète — ami de la nature, prêt à refaire le monde en cultivant le jardin le mieux entretenu du village.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
       },
       {
         "fichier": "Famille/CultivezLaVie/FamilleRosaireYvonne1975.jpg",
         "legende": "La famille au grand complet",
-        "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultivez la vie, apprivoiser la mort », dans la section Mes textes du site."
+        "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
       }
     ]
   },

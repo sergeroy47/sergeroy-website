@@ -620,7 +620,7 @@
   </div>
 </div>
 
-<script src="contenu.js?v=20260719a"></script>
+<script src="contenu.js?v=20260719b"></script>
 <script>
   // ── DONNÉES ────────────────────────────────────────────
   // Mise à jour automatique des chemins après réorganisation du dossier
@@ -654,20 +654,29 @@
     // (match par titre OU par fichier, pour qu'une simple correction de titre
     // dans contenu.js ne crée pas de doublon face à une vieille sauvegarde)
     if (local.collages && CONTENU.collages) {
+      // Le titre vient de contenu.js quand le fichier correspond (corrections de coquilles)
+      local.collages = local.collages.map(l => {
+        const ref = CONTENU.collages.find(c => c.fichier && c.fichier === l.fichier);
+        return ref ? Object.assign({}, l, { titre: ref.titre }) : l;
+      });
       CONTENU.collages.forEach(c => {
         const existe = local.collages.find(l => l.titre === c.titre || (l.fichier && l.fichier === c.fichier));
         if (!existe) local.collages.push(c);
       });
     }
     // Textes : l'ordre de contenu.js fait toujours foi. On reconstruit la liste
-    // dans cet ordre en conservant les éditions locales (match par titre), puis
-    // on garde en fin de liste les textes créés localement absents de contenu.js.
+    // dans cet ordre en conservant les éditions locales (match par titre OU par
+    // lien, pour qu'une correction de titre dans contenu.js remplace l'ancien
+    // au lieu de créer un doublon), puis on garde en fin de liste les textes
+    // créés localement absents de contenu.js. Le titre vient de contenu.js.
     if (local.textes && CONTENU.textes) {
+      const correspond = (l, c) => l.titre === c.titre || (l.lien && c.lien && l.lien === c.lien);
       const locauxSeuls = local.textes.filter(l =>
-        !CONTENU.textes.find(c => c.titre === l.titre));
-      local.textes = CONTENU.textes.map(c =>
-        local.textes.find(l => l.titre === c.titre) || c
-      ).concat(locauxSeuls);
+        !CONTENU.textes.find(c => correspond(l, c)));
+      local.textes = CONTENU.textes.map(c => {
+        const l = local.textes.find(l => correspond(l, c));
+        return l ? Object.assign({}, l, { titre: c.titre }) : c;
+      }).concat(locauxSeuls);
     }
     // Toujours prendre les balados depuis contenu.js (champ nouveau)
     if (!local.balados && CONTENU.balados) {

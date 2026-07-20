@@ -45,7 +45,7 @@ const CONTENU = {
     },
     {
       "categorie": "Mémoire familiale",
-      "titre": "Cultivez la vie, apprivoiser la mort",
+      "titre": "Cultiver la vie, apprivoiser la mort",
       "extrait": "Famille Rosaire Roy — Yvonne Dépeault. L'histoire de mes parents et de leur famille de neuf enfants, écrite pour l'album souvenir des familles d'Acton Vale.",
       "date": "2009",
       "lien": "textes/famille-rosaire-yvonne.html"
