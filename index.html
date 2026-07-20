@@ -620,7 +620,7 @@
   </div>
 </div>
 
-<script src="contenu.js?v=20260712b"></script>
+<script src="contenu.js?v=20260719a"></script>
 <script>
   // ── DONNÉES ────────────────────────────────────────────
   // Mise à jour automatique des chemins après réorganisation du dossier
@@ -651,9 +651,11 @@
       });
     }
     // Ajouter les nouveaux collages présents dans contenu.js mais absents du localStorage
+    // (match par titre OU par fichier, pour qu'une simple correction de titre
+    // dans contenu.js ne crée pas de doublon face à une vieille sauvegarde)
     if (local.collages && CONTENU.collages) {
       CONTENU.collages.forEach(c => {
-        const existe = local.collages.find(l => l.titre === c.titre);
+        const existe = local.collages.find(l => l.titre === c.titre || (l.fichier && l.fichier === c.fichier));
         if (!existe) local.collages.push(c);
       });
     }

@@ -68,7 +68,7 @@ const CONTENU = {
       "categorie": "Création artistique",
       "titre": "CONVERGENCE",
       "extrait": "Une pièce de théâtre philosophique en six actes, explorant le dialogue entre l'humain et l'intelligence artificielle — et sa poursuite dans la vie réelle.",
-      "date": "2025–2026",
+      "date": "2024–2026",
       "lien": "textes/CONVERGENCE_piece_theatre.html"
     },
     {
@@ -111,7 +111,7 @@ const CONTENU = {
     {
       "legende": "Jardin printemps 1993",
       "fichier": "photos/jardinPrint93.jpg",
-      "description": "Arrivée à l'automne 1992, nous découvrons que notre terrain est la terre de Cain. Impossible de planter quoi que ce soit. Le fond du terrain est de la glaise excavée pour construire les maisons. La cour a été nivelé environ 1 pied à 2 pieds au dessus du terrain original. Le tout recouvert de beau gazon vert. Un chêne est étranglé dans une petite boite de bois, il souffre asphyxie. Au printemps 1993, nous le libérons de son carcan et changeons une bonne partie de la terre. C'est le début du jardin."
+      "description": "Arrivée à l'automne 1992, nous découvrons que notre terrain est la terre de Caïn. Impossible de planter quoi que ce soit. Le fond du terrain est de la glaise excavée pour construire les maisons. La cour a été nivelée environ 1 pied à 2 pieds au-dessus du terrain original. Le tout recouvert de beau gazon vert. Un chêne est étranglé dans une petite boîte de bois, il souffre d'asphyxie. Au printemps 1993, nous le libérons de son carcan et changeons une bonne partie de la terre. C'est le début du jardin."
     },
     {
       "legende": "Chêne Printemps 93",
@@ -126,12 +126,12 @@ const CONTENU = {
     {
       "legende": "Le chêne dans le jardin",
       "fichier": "photos/Chene.jpg",
-      "description": "Le chêne a pris  de plus en plus de place avec les années. Il est devenu le symbole de l'écosystème qui prédominait avant la construction de notre quartier. On le voit ici par un beau soir de printemps."
+      "description": "Le chêne a pris de plus en plus de place avec les années. Il est devenu le symbole de l'écosystème qui prédominait avant la construction de notre quartier. On le voit ici par un beau soir de printemps."
     },
     {
       "legende": "Jardin automne 97",
       "fichier": "photos/Jardin97.jpg",
-      "description": "Au début, il y avait un potager au centre du jardin. Au fil des années, il s'est dissipé parce que les arbres font beaucoup d'ombre et que les légumes aiment le soleil.\nJ'ai créé un lieu dont je ne connaissais pas l'existence. Quand je regarde mon jardin, je vois la croissance de plantes dont j'ai favorisé l'existence, d'autres que j'ai planté moi même. Mais ce que je regarde dépasse de loin ma vision de départ. Laissez la vie s'occuper du reste…"
+      "description": "Au début, il y avait un potager au centre du jardin. Au fil des années, il s'est dissipé parce que les arbres font beaucoup d'ombre et que les légumes aiment le soleil.\nJ'ai créé un lieu dont je ne connaissais pas l'existence. Quand je regarde mon jardin, je vois la croissance de plantes dont j'ai favorisé l'existence, d'autres que j'ai plantées moi-même. Mais ce que je regarde dépasse de loin ma vision de départ. Laissez la vie s'occuper du reste…"
     },
     {
       "legende": "Espace de méditation et de création",
@@ -142,7 +142,7 @@ const CONTENU = {
   "collages": [
     {
       "numero": "PS — 0013",
-      "titre": "Poésie -secours",
+      "titre": "Poésie-Secours",
       "annee": "circa 19xx",
       "fichier": "collages/PoesieSecours.jpeg",
       "description": "Poésie-Secours : ce titre n'est pas anodin. Il évoque une bouée de sauvetage, un geste de résistance face au tumulte du monde. Ces collages sont nés d'un besoin viscéral de maintenir l'équilibre entre le chaos qui nous entoure et la sérénité que la pratique spirituelle nous enseigne à cultiver. Ces œuvres sont des méditations visuelles où les fonds rouge-orangé incandescents — métaphores de l'impermanence, du Big Bang cosmique, des incendies écologiques..."
@@ -193,7 +193,7 @@ const CONTENU = {
       "titre": "Au grand jeu de la vie.",
       "annee": "circa 19xx",
       "fichier": "collages/Grand jeu de la vie.jpg",
-      "description": "Au grand jeu de le vie, seuls les enfants jouent, les autres travaillent."
+      "description": "Au grand jeu de la vie, seuls les enfants jouent, les autres travaillent."
     },
     {
       "numero": "PS — 008",
@@ -214,7 +214,7 @@ const CONTENU = {
       "titre": "Je m'amuse est-ce moi-même",
       "annee": "circa 19xx",
       "fichier": "collages/Je amuse est-ce moi-meme.jpeg",
-      "description": "Vivre c'est s'amuser un peu..beaucoup..passionnement!"
+      "description": "Vivre c'est s'amuser un peu… beaucoup… passionnément !"
     },
     {
       "numero": "PS — 0011",
@@ -235,7 +235,7 @@ const CONTENU = {
       "titre": "L'artiste comme roi boiteux",
       "annee": "circa 19xx",
       "fichier": "collages/Artiste roi boiteux.jpg",
-      "description": "Une seule question grammaticale intéresse le poète,: Doit-on dire \"je me tais?\" ou \"je me tue?\"\nJe se tue.\nJe se tais.\nJe se tue, la mort.\nJe se tais, l'illumination.\n\n\n\n"
+      "description": "Une seule question grammaticale intéresse le poète : Doit-on dire \"je me tais?\" ou \"je me tue?\"\nJe se tue.\nJe se tais.\nJe se tue, la mort.\nJe se tais, l'illumination.\n\n\n\n"
     },
     {
       "numero": "Dogen",
