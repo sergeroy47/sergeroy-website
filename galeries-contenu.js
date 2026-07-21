@@ -97,7 +97,7 @@ const GALERIES = [
       {
         "fichier": "Famille/FamilleEnfants2.jpg",
         "legende": "En chemin vers la cabane à sucre",
-        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nÀ gauche, ma sœur Ghislaine ; devant elle, moi ; ensuite Suzanne, Perle et Mariette."
+        "description": "Ces deux photos ont été prises le même jour, au printemps — on reconnaît les enfants aux mêmes vêtements. Ce n'était pas l'hiver, mais une excursion à la cabane à sucre, à pied le long du chemin de fer qui traversait Acton Vale. Mon père avait emprunté l'appareil photo de mon oncle pour immortaliser l'événement.\n\nCette version-ci montre aussi ma mère Yvonne, à l'arrière, et mon frère Jean-Luc, devant. À partir d'Yvonne : Ghislaine, moi, Suzanne, Perle et Mariette."
       },
       {
         "fichier": "Famille/RoyDesjardinsKamouraska.png",
