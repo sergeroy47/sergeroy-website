@@ -75,6 +75,11 @@ const GALERIES = [
         "description": "Pendant plusieurs années, mon père faisait une patinoire dans la cour arrière, soit dans son jardin. On voit ici Yvonne et Rosaire et derrière eux la maison de nos voisins, notre oncle Conrad Fournier et sa femme Léa Roy, la sœur de mon père. C'est sur cette patinoire que j'ai appris à patiner."
       },
       {
+        "fichier": "Famille/PatinoireSergeJeanLuc.jpg",
+        "legende": "Sur la patinoire derrière chez nous",
+        "description": "La même patinoire que mon père Rosaire faisait chaque hiver dans la cour arrière. À gauche, mon cousin Michel Savoie ; au centre, moi, avec les vieux patins de gardien de but de mon père ; à droite, mon frère Jean-Luc, sérieux avec son bâton de hockey."
+      },
+      {
         "fichier": "Famille/RosaireGardienDebut.jpg",
         "legende": "Rosaire, gardien de but",
         "description": "Rosaire était un sportif, dans un village très sportif. On le voit ici comme hockeyeur, et sur une autre photo comme gymnaste, mais il était surtout un joueur de baseball. C'est d'ailleurs comme ça que ma mère l'a connu : lui comme joueur de baseball au deuxième but, elle comme simple spectatrice au stade local. C'est le début de notre histoire familiale.\n\nMais un jour, après deux ou trois enfants, Yvonne a demandé à Rosaire de laisser le baseball, qui occupait toutes ses fins de semaine d'été, pour s'occuper de sa famille — et peut-être commencer son jardin."
