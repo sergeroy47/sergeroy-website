@@ -119,6 +119,11 @@ const CONTENU = {
       "description": "Le chêne est libéré du carcan de bois. Le sol est ramené au niveau original. On peut voir sur le chêne de longues cicatrices, symptômes de sa mort lente."
     },
     {
+      "legende": "Chêne 2026 — les cicatrices guéries",
+      "fichier": "photos/CheneCicatrices2026.jpg",
+      "description": "Trente-trois ans plus tard. Les longues cicatrices que l'on voyait au printemps 1993 — qu'on croyait les symptômes de sa mort lente — se sont refermées : l'écorce a cicatrisé. Libéré de son carcan et rendu au niveau original du sol, le chêne a survécu, puis prospéré. En écho à « Chêne Printemps 93 »."
+    },
+    {
       "legende": "Tracteur pour enlever le gazon",
       "fichier": "photos/jardintravauxPrint93.jpg",
       "description": "Les grands travaux du printemps 1993 : un tracteur jaune Case vient retirer le gazon et excaver la mauvaise terre qui étouffait tout. On aperçoit à droite le jeune chêne, et à gauche les premières pierres disposées pour délimiter le jardin à venir. De la désolation naîtra le jardin."
