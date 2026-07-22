@@ -249,6 +249,14 @@ const CONTENU = {
       "fichier": "collages/dogen-pecheur.jpg",
       "description": "« Ceux qui se pêchent eux-mêmes, ceux qui pêchent l'hameçon, ceux qui sont pêchés par l'hameçon, et ceux qui sont pêchés par la Voie. »\n\n— Dogen, le pêcheur",
       "pleineLargeur": true
+    },
+    {
+      "numero": "PS — 0015",
+      "titre": "Les multiples voies de la réalité",
+      "annee": "2026",
+      "fichier": "collages/verdir_sa_vie.jpg",
+      "description": "Verdir sa vie... c'est l'apaiser...",
+      "pleineLargeur": true
     }
   ],
   "contact": {
