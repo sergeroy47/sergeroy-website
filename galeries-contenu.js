@@ -190,7 +190,25 @@ const GALERIES = [
       { "fichier": "vie/serge-spa.jpg", "legende": "Détente", "description": "" },
       { "fichier": "vie/serge-60-ans.jpg", "legende": "60 ans", "description": "" },
       { "fichier": "vie/serge-70-ans.jpg", "legende": "70 ans, rêveur", "description": "" },
-      { "fichier": "vie/serge-aujourdhui.jpg", "legende": "Aujourd'hui", "description": "" }
+      { "fichier": "vie/serge-aujourdhui.jpg", "legende": "Aujourd'hui", "description": "" },
+      { "fichier": "vie/serge-freres.jpg", "legende": "Avec ses frères Jean-Noël et Marcel", "description": "" },
+      { "fichier": "vie/serge-4e-annee.jpg", "legende": "4e année", "description": "" },
+      { "fichier": "vie/serge-bebe-neige.jpg", "legende": "Bébé, en hiver", "description": "" },
+      { "fichier": "vie/serge-gaspesie.jpg", "legende": "En Gaspésie", "description": "" },
+      { "fichier": "vie/serge-yvonne-mariette.jpg", "legende": "Avec sa mère Yvonne et sa sœur Mariette", "description": "" },
+      { "fichier": "vie/serge-colette-3.jpg", "legende": "Avec Colette", "description": "" },
+      { "fichier": "vie/serge-jean-francois.jpg", "legende": "Avec Jean-François", "description": "" },
+      { "fichier": "vie/serge-liam.jpg", "legende": "Avec Liam", "description": "" },
+      { "fichier": "vie/serge-noemie.jpg", "legende": "Avec Noémie", "description": "" },
+      { "fichier": "vie/serge-bureau.jpg", "legende": "À son bureau", "description": "" },
+      { "fichier": "vie/serge-brome-2.jpg", "legende": "Au lac Brome", "description": "" },
+      { "fichier": "vie/serge-bord-de-mer.jpg", "legende": "Au bord de la mer", "description": "" },
+      { "fichier": "vie/serge-foulard.jpg", "legende": "Portrait au foulard", "description": "" },
+      { "fichier": "vie/serge-chapeau.jpg", "legende": "Au chapeau de paille", "description": "" },
+      { "fichier": "vie/serge-barbe.jpg", "legende": "Portrait, barbe au vent", "description": "" },
+      { "fichier": "vie/serge-portrait-hiver.jpg", "legende": "Portrait d'hiver", "description": "" },
+      { "fichier": "vie/serge-sourire.jpg", "legende": "Sourire", "description": "" },
+      { "fichier": "vie/serge-pere-noel.jpg", "legende": "En père Noël", "description": "" }
     ]
   },
   {
