@@ -175,7 +175,7 @@ const GALERIES = [
       { "fichier": "vie/serge-colette.jpg", "legende": "Avec Colette", "description": "" },
       { "fichier": "vie/serge-colette-2.jpg", "legende": "Avec Colette", "description": "" },
       { "fichier": "vie/serge-famille-amis.jpg", "legende": "Kiriki avec Colette et WillJohn", "description": "" },
-      { "fichier": "vie/serge-sangha.jpg", "legende": "Avec la sangha", "description": "" },
+      { "fichier": "vie/serge-sangha.jpg", "legende": "Avec la sangha au Centre Zen de Montréal", "description": "" },
       { "fichier": "vie/serge-taichi-groupe.jpg", "legende": "Groupe de tai-chi", "description": "" },
       { "fichier": "vie/serge-meditation-jardin.jpg", "legende": "Méditation au jardin", "description": "" },
       { "fichier": "vie/serge-jardinier.jpg", "legende": "Le jardinier", "description": "" },
