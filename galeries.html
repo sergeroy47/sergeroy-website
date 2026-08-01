@@ -77,15 +77,13 @@
         let loc = local.find(g => g.id === ref.id);
         // Nouvelle galerie absente de la copie locale : l'ajouter
         if (!loc) { local.push(JSON.parse(JSON.stringify(ref))); return; }
-        if (loc && ref.photos && ref.photos.length > 0) {
-          if (!loc.photos) loc.photos = [];
-          // Remplacer complètement par les photos du fichier source (plus fiable)
-          loc.photos = ref.photos;
-          loc.vignette = loc.vignette || ref.vignette;
-          loc.sousTitre = loc.sousTitre || ref.sousTitre;
-          loc.intro = loc.intro || ref.intro;
-          loc.etiquette = loc.etiquette || ref.etiquette;
-        }
+        // Le fichier galeries-contenu.js fait foi
+        if (ref.photos && ref.photos.length > 0) loc.photos = ref.photos;
+        loc.vignette = ref.vignette || loc.vignette;
+        loc.titre = ref.titre || loc.titre;
+        loc.sousTitre = ref.sousTitre || loc.sousTitre;
+        loc.intro = ref.intro || loc.intro;
+        loc.etiquette = ref.etiquette || loc.etiquette;
       });
       return local;
     } catch(e) { return GALERIES; }
