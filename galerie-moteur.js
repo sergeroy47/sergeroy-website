@@ -23,6 +23,8 @@
       if (typeof GALERIES !== 'undefined') {
         GALERIES.forEach(ref => {
           const loc = local.find(g => g.id === ref.id);
+          // Nouvelle galerie absente de la copie locale : l'ajouter
+          if (!loc) { local.push(JSON.parse(JSON.stringify(ref))); return; }
           if (loc && ref.photos && ref.photos.length > 0) {
             if (!loc.photos) loc.photos = [];
             // Remplacer complètement par les photos du fichier source (plus fiable)
