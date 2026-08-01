@@ -91,6 +91,7 @@
       <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8249;</button>
       <img class="lightbox-img" id="lb-img" src="" alt="">
       <div class="lightbox-legende" id="lb-legende"></div>
+      <div class="lightbox-description" id="lb-description"></div>
       <button class="lightbox-nav lightbox-next" id="lb-next">&#8250;</button>
     </div>
   `;
@@ -128,16 +129,22 @@
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lb-img');
   const lbLeg = document.getElementById('lb-legende');
+  const lbDesc = document.getElementById('lb-description');
 
   function ouvrirLightbox(i) {
     idx = i; lbImg.src = photos[i].fichier; lbImg.alt = photos[i].legende || '';
-    lbLeg.textContent = photos[i].legende || ''; lightbox.classList.add('actif');
+    lbLeg.textContent = photos[i].legende || '';
+    lbDesc.textContent = photos[i].description || '';
+    lbDesc.style.display = photos[i].description ? 'block' : 'none';
+    lightbox.classList.add('actif');
     document.body.style.overflow = 'hidden';
   }
   function naviguer(dir) {
     idx = (idx + dir + photos.length) % photos.length;
     lbImg.src = photos[idx].fichier; lbImg.alt = photos[idx].legende || '';
     lbLeg.textContent = photos[idx].legende || '';
+    lbDesc.textContent = photos[idx].description || '';
+    lbDesc.style.display = photos[idx].description ? 'block' : 'none';
   }
   function fermerLB() { lightbox.classList.remove('actif'); lbImg.src = ''; document.body.style.overflow = ''; }
 
