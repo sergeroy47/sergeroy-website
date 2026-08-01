@@ -169,6 +169,7 @@ const GALERIES = [
       { "fichier": "vie/serge-bebe.jpg", "legende": "Bébé", "description": "" },
       { "fichier": "vie/serge-classe-primaire.jpg", "legende": "École primaire", "description": "" },
       { "fichier": "vie/serge-cheval.jpg", "legende": "À cheval", "description": "" },
+      { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "" },
       { "fichier": "vie/serge-finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
       { "fichier": "vie/serge-deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" },
       { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
