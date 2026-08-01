@@ -626,11 +626,23 @@
   // Mise à jour automatique des chemins après réorganisation du dossier
   function migrerChemins(local) {
     const prefixer = (fichier, dossier) => {
-      if (!fichier || fichier.startsWith(dossier) || fichier.startsWith('http')) return fichier;
+      // Ne rien préfixer si le chemin contient déjà un sous-dossier (Famille/, vie/, roches/…)
+      if (!fichier || fichier.includes('/') || fichier.startsWith('http')) return fichier;
       return dossier + fichier;
     };
     if (local.photos) local.photos = local.photos.map(p =>
       Object.assign({}, p, { fichier: prefixer(p.fichier, 'photos/') }));
+    // Photos : l'ordre et les légendes de contenu.js font foi. On reconstruit la
+    // liste dans cet ordre (match par fichier) et on garde en fin de liste les
+    // photos ajoutées localement, absentes de contenu.js.
+    if (local.photos && CONTENU.photos) {
+      const locauxSeuls = local.photos.filter(l =>
+        !CONTENU.photos.find(c => c.fichier === l.fichier));
+      local.photos = CONTENU.photos.map(c => {
+        const l = local.photos.find(l => l.fichier === c.fichier);
+        return l ? Object.assign({}, l, { legende: c.legende, description: c.description }) : c;
+      }).concat(locauxSeuls);
+    }
     if (local.collages) local.collages = local.collages.map(c =>
       Object.assign({}, c, { fichier: prefixer(c.fichier, 'collages/') }));
     if (local.videos && CONTENU.videos) {
