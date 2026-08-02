@@ -109,24 +109,9 @@ const CONTENU = {
   ],
   "photos": [
     {
-      "legende": "Jardin printemps 1993",
-      "fichier": "photos/jardinPrint93.jpg",
-      "description": "Arrivée à l'automne 1992, nous découvrons que notre terrain est la terre de Caïn. Impossible de planter quoi que ce soit. Le fond du terrain est de la glaise excavée pour construire les maisons. La cour a été nivelée environ 1 pied à 2 pieds au-dessus du terrain original. Le tout recouvert de beau gazon vert. Un chêne est étranglé dans une petite boîte de bois, il souffre d'asphyxie. Au printemps 1993, nous le libérons de son carcan et changeons une bonne partie de la terre. C'est le début du jardin."
-    },
-    {
-      "legende": "Chêne Printemps 93",
-      "fichier": "photos/ChênePrint93.jpg",
-      "description": "Le chêne est libéré du carcan de bois. Le sol est ramené au niveau original. On peut voir sur le chêne de longues cicatrices, symptômes de sa mort lente."
-    },
-    {
-      "legende": "Chêne 2026 — les cicatrices guéries",
-      "fichier": "photos/CheneCicatrices2026.jpg",
-      "description": "Trente-trois ans plus tard. Les longues cicatrices que l'on voyait au printemps 1993 — qu'on croyait les symptômes de sa mort lente — se sont refermées : l'écorce a cicatrisé. Libéré de son carcan et rendu au niveau original du sol, le chêne a survécu, puis prospéré. En écho à « Chêne Printemps 93 »."
-    },
-    {
-      "legende": "Tracteur pour enlever le gazon",
-      "fichier": "photos/jardintravauxPrint93.jpg",
-      "description": "Les grands travaux du printemps 1993 : un tracteur jaune Case vient retirer le gazon et excaver la mauvaise terre qui étouffait tout. On aperçoit à droite le jeune chêne, et à gauche les premières pierres disposées pour délimiter le jardin à venir. De la désolation naîtra le jardin."
+      "legende": "Espace de méditation et de création",
+      "fichier": "photos/Colettejardin.jpg",
+      "description": "Colette écrit, peint à la table du jardin. Les iris violets en fleur, les arbres matures qui dessinent un écrin de verdure — le jardin est devenu un véritable espace de vie créatrice."
     },
     {
       "legende": "Le chêne dans le jardin",
@@ -134,14 +119,39 @@ const CONTENU = {
       "description": "Le chêne a pris de plus en plus de place avec les années. Il est devenu le symbole de l'écosystème qui prédominait avant la construction de notre quartier. On le voit ici par un beau soir de printemps."
     },
     {
-      "legende": "Jardin automne 97",
-      "fichier": "photos/Jardin97.jpg",
-      "description": "Au début, il y avait un potager au centre du jardin. Au fil des années, il s'est dissipé parce que les arbres font beaucoup d'ombre et que les légumes aiment le soleil.\nJ'ai créé un lieu dont je ne connaissais pas l'existence. Quand je regarde mon jardin, je vois la croissance de plantes dont j'ai favorisé l'existence, d'autres que j'ai plantées moi-même. Mais ce que je regarde dépasse de loin ma vision de départ. Laissez la vie s'occuper du reste…"
+      "legende": "Chêne 2026 — les cicatrices guéries",
+      "fichier": "photos/CheneCicatrices2026.jpg",
+      "description": "Trente-trois ans plus tard. Les longues cicatrices que l'on voyait au printemps 1993 — qu'on croyait les symptômes de sa mort lente — se sont refermées : l'écorce a cicatrisé. Libéré de son carcan et rendu au niveau original du sol, le chêne a survécu, puis prospéré."
     },
     {
-      "legende": "Espace de méditation et de création",
-      "fichier": "photos/Colettejardin.jpg",
-      "description": "Colette écrit, peint à la table du jardin. Les iris violets en fleur, les arbres matures qui dessinent un écrin de verdure — le jardin est devenu un véritable espace de vie créatrice."
+      "legende": "Yvonne, Rosaire et les enfants",
+      "fichier": "Famille/FamilleYvonneRosaire.jpg",
+      "description": "Pour les 25 ans de mariage de mes parents, nous avons fait une photo de famille dans notre salon. La photo est d'Ivanhoë Fortier, photographe officiel de notre village, Acton Vale."
+    },
+    {
+      "legende": "Rosaire et Yvonne en patins",
+      "fichier": "Famille/RosaireYvonnePatin.jpg",
+      "description": "Pendant plusieurs années, mon père faisait une patinoire dans la cour arrière, soit dans son jardin. C'est sur cette patinoire que j'ai appris à patiner."
+    },
+    {
+      "legende": "Méditation au jardin",
+      "fichier": "vie/serge-meditation-jardin.jpg",
+      "description": ""
+    },
+    {
+      "legende": "JAL à cheval dans le Témiscouata",
+      "fichier": "vie/jal-cheval.jpg",
+      "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata."
+    },
+    {
+      "legende": "Ensō serpent",
+      "fichier": "roches/EnsoSerpent1.jpg",
+      "description": ""
+    },
+    {
+      "legende": "Fonte du printemps",
+      "fichier": "roches/Spring Melting.jpg",
+      "description": ""
     }
   ],
   "collages": [
