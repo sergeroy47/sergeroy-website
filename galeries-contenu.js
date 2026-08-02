@@ -184,7 +184,7 @@ const GALERIES = [
       { "fichier": "vie/serge-jardinier.jpg", "legende": "Le jardinier", "description": "" },
       { "fichier": "vie/serge-ete-jardin.jpg", "legende": "Un été au jardin", "description": "" },
       { "fichier": "vie/serge-jardin-communautaire.jpg", "legende": "Au jardin communautaire", "description": "" },
-      { "fichier": "vie/serge-taureau-encre.jpg", "legende": "Taureau à l'encre", "description": "" },
+      { "fichier": "vie/serge-taureau-encre.jpg", "legende": "Taureau à l'encre", "description": "Je suis un taureau\nEt tant que la Terre tournera\nJe tournerai avec elle\nJe ne cours pas les arènes\nOù chaque jour\nQuelques taureaux imbéciles\nSe laissent tuer\nPour le plaisir des sots\nEt la gloire d'un faiseur de miracles\nMa race broute les champs\nAvec ce regard mystérieux\nBienheureux peut-être\nSurpris de vous voir là\nPendant que vous pourriez\nÊtre ailleurs\nIl rumine des jours durant\nPour atteindre l'inaccessible\nEt de temps à autre\nIl raffole de la joie des femelles\nDe l'amour des femmes" },
       { "fichier": "vie/serge-art.jpg", "legende": "Création", "description": "" },
       { "fichier": "vie/serge-brome.jpg", "legende": "Au lac Brome", "description": "" },
       { "fichier": "vie/serge-kamouraska.jpg", "legende": "À Kamouraska", "description": "" },
