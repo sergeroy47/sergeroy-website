@@ -173,6 +173,17 @@
   .ps-hero-titre{font-family:var(--italic);font-style:italic;font-size:clamp(56px,6vw,88px);color:var(--encre);line-height:0.95;letter-spacing:-0.02em;margin-bottom:32px;}
   .ps-hero-desc{font-family:var(--serif);font-size:19px;line-height:1.65;color:rgba(28,26,20,0.75);}
   .ps-grille{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;row-gap:64px;}
+  #creations{background:var(--lin);padding:140px 48px;}
+  .creations-grille{display:grid;grid-template-columns:1fr;gap:72px;}
+  .creation-carte{cursor:zoom-in;}
+  .creation-image{overflow:hidden;background:var(--parchemin);border:1px solid rgba(107,92,69,0.18);transition:border-color 0.3s,box-shadow 0.3s;}
+  .creation-image img{width:100%;height:auto;display:block;transition:transform 0.5s;}
+  .creation-carte:hover .creation-image{border-color:rgba(184,144,58,0.5);box-shadow:0 16px 50px rgba(28,26,20,0.10);}
+  .creation-carte:hover .creation-image img{transform:scale(1.015);}
+  .creation-info{padding-top:22px;}
+  .creation-annee{font-family:var(--mono);font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--or);margin-bottom:10px;}
+  .creation-titre{font-family:var(--italic);font-style:italic;font-size:clamp(28px,3.2vw,40px);color:var(--encre);line-height:1.1;margin-bottom:14px;}
+  .creation-desc{font-family:var(--serif);font-size:17px;line-height:1.7;color:rgba(28,26,20,0.72);white-space:pre-line;max-width:640px;}
   .ps-carte{cursor:pointer;}
   .ps-image{aspect-ratio:4/5;background:var(--lin);overflow:hidden;position:relative;border:1px solid rgba(107,92,69,0.15);}
   .ps-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
@@ -337,6 +348,7 @@
     <a href="#textes">Textes</a>
     <a href="#galerie">Photos</a>
     <a href="#collages">Poésie-Secours</a>
+    <a href="#creations">Créations</a>
     <a href="#balados">Balados</a>
     <a href="#videos">Vidéos</a>
     <a href="#contact">Écrire</a>
@@ -472,6 +484,18 @@
     <div class="ps-hero reveal" id="ps-hero"></div>
     <div class="ps-grille" id="ps-grille"></div>
 
+  </div>
+</section>
+
+<!-- ══ CRÉATIONS ══ -->
+<section id="creations">
+  <div class="wrap">
+    <div class="entete reveal">
+      <div class="etiquette">§ V · Autres créations</div>
+      <h2>Créations</h2>
+      <p class="lede">Dessins, mosaïques, calligraphies — des images qui ne relèvent pas de la série Poésie-Secours.</p>
+    </div>
+    <div class="creations-grille" id="creations-grille"></div>
   </div>
 </section>
 
@@ -694,6 +718,15 @@
     if (!local.balados && CONTENU.balados) {
       local.balados = CONTENU.balados;
     }
+    // Créations : rubrique nouvelle — contenu.js fait toujours foi
+    if (CONTENU.creations) {
+      local.creations = CONTENU.creations;
+    }
+    // Retirer des collages ceux qui ont été déplacés vers les créations
+    if (local.collages && CONTENU.collages) {
+      local.collages = local.collages.filter(l =>
+        CONTENU.collages.find(c => c.fichier === l.fichier || c.titre === l.titre));
+    }
     // Toujours appliquer le guide depuis contenu.js si absent du localStorage
     if (!local.hero.guide && CONTENU.hero.guide) {
       local.hero.guide = CONTENU.hero.guide;
@@ -855,6 +888,26 @@
       gc.appendChild(div);
     }
   });
+
+  // ── CRÉATIONS ──────────────────────────────────────────
+  const grCrea = document.getElementById('creations-grille');
+  if (grCrea) {
+    (D.creations || []).forEach(c => {
+      if (!c.fichier) return;
+      const div = document.createElement('div');
+      div.className = 'creation-carte reveal';
+      div.innerHTML = `
+        <div class="creation-image"><img src="${c.fichier}" alt="${c.titre}" loading="lazy"></div>
+        <div class="creation-info">
+          <div class="creation-annee">${c.annee || ''}</div>
+          <div class="creation-titre">${c.titre}</div>
+          ${c.description ? `<div class="creation-desc">${c.description}</div>` : ''}
+        </div>`;
+      div.addEventListener('click', () =>
+        ouvrirLightbox(c.fichier, c.titre, '', c.description || '', c.annee || ''));
+      grCrea.appendChild(div);
+    });
+  }
 
 
   // ── PORTRAIT ───────────────────────────────────────────

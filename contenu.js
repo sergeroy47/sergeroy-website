@@ -258,22 +258,20 @@ const CONTENU = {
       "annee": "circa 19xx",
       "fichier": "collages/Artiste roi boiteux.jpg",
       "description": "Une seule question grammaticale intéresse le poète : Doit-on dire \"je me tais?\" ou \"je me tue?\"\nJe se tue.\nJe se tais.\nJe se tue, la mort.\nJe se tais, l'illumination.\n\n\n\n"
-    },
+    }
+  ],
+  "creations": [
     {
-      "numero": "Dogen",
       "titre": "Ceux qui se pêchent eux-mêmes",
-      "annee": "Le pêcheur",
-      "fichier": "collages/dogen-pecheur.jpg",
-      "description": "« Ceux qui se pêchent eux-mêmes, ceux qui pêchent l'hameçon, ceux qui sont pêchés par l'hameçon, et ceux qui sont pêchés par la Voie. »\n\n— Dogen, le pêcheur",
-      "pleineLargeur": true
+      "annee": "Dogen — le pêcheur",
+      "fichier": "creations/dogen-pecheur.jpg",
+      "description": "« Ceux qui se pêchent eux-mêmes, ceux qui pêchent l'hameçon, ceux qui sont pêchés par l'hameçon, et ceux qui sont pêchés par la Voie. »\n\n— Dogen, le pêcheur"
     },
     {
-      "numero": "PS — 0015",
       "titre": "Les multiples voies de la réalité",
       "annee": "2026",
-      "fichier": "collages/verdir_sa_vie.jpg",
-      "description": "Verdir sa vie... c'est l'apaiser...",
-      "pleineLargeur": true
+      "fichier": "creations/verdir_sa_vie.jpg",
+      "description": "Verdir sa vie... c'est l'apaiser..."
     }
   ],
   "contact": {
