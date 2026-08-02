@@ -199,7 +199,7 @@ const GALERIES = [
       { "fichier": "vie/serge-gaspesie.jpg", "legende": "En Gaspésie", "description": "" },
       { "fichier": "vie/serge-yvonne-mariette.jpg", "legende": "Avec sa mère Yvonne et sa sœur Mariette", "description": "" },
       { "fichier": "vie/serge-colette-3.jpg", "legende": "Avec Colette", "description": "" },
-      { "fichier": "vie/serge-jean-francois.jpg", "legende": "Avec Jean-François", "description": "" },
+      { "fichier": "vie/serge-jean-francois.jpg", "legende": "Avec Jean-François", "description": "Quand notre ami Jean-François nous a appris qu'il avait un cancer des poumons incurable et intraitable, nous avons organisé une rencontre d'adieu. C'est à cette occasion qu'il m'a offert un vieux jean jacket qu'il avait usé à la corde et qu'il avait rapiécé avec les morceaux des robes de sa femme Monique et de sa fille Alice." },
       { "fichier": "vie/serge-liam.jpg", "legende": "Avec Liam", "description": "" },
       { "fichier": "vie/serge-noemie.jpg", "legende": "Avec Noémie", "description": "" },
       { "fichier": "vie/serge-bureau.jpg", "legende": "À son bureau", "description": "" },
