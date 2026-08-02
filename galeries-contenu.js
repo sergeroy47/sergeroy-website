@@ -135,6 +135,11 @@ const GALERIES = [
         "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
       },
       {
+        "fichier": "Famille/SuzanneOuestAmericain.jpg",
+        "legende": "Suzanne — « J'ai marché sous une pluie de beauté »",
+        "description": "Ma sœur Suzanne dans l'Ouest américain — les hoodoos enneigés de Bryce Canyon et les parois ondulées d'un canyon en fente. Une randonneuse jusqu'au bout.\n\nLe titre est d'elle : « J'ai marché sous une pluie de beauté. »"
+      },
+      {
         "fichier": "Famille/Ghislaine.jpg",
         "legende": "Ghislaine",
         "description": "Ma sœur Ghislaine, l'aînée des filles, décédée à soixante-six ans en 2008.\n\nC'est elle qui a écrit le plus long des textes pour mes quarante ans, celui qui remonte le plus loin : « Un Gus qui a su trouvé tout seul la valeur personnelle de chacun d'entre nous. » Elle terminait ainsi : « N'oublie pas que dans la gang des 40 je suis encore la plus vieille. » Sa lettre se trouve dans le texte « Ti-Gus », dans la section Mes textes du site."
