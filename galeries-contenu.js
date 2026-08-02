@@ -188,6 +188,21 @@ const GALERIES = [
     ]
   },
   {
+    "id": "ecole",
+    "fichier": "galerie-ecole.html",
+    "etiquette": "Mémoire · Jeunesse",
+    "titre": "Mes années d'école",
+    "sousTitre": "Du primaire au séminaire, puis au cégep.",
+    "intro": "Photos de classe, pensionnat, huit années au séminaire — les années de formation.",
+    "vignette": "ecole/classe-primaire.jpg",
+    "photos": [
+      { "fichier": "ecole/classe-primaire.jpg", "legende": "Classe du primaire", "description": "" },
+      { "fichier": "ecole/4e-annee.jpg", "legende": "4e année", "description": "" },
+      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
+      { "fichier": "ecole/deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" }
+    ]
+  },
+  {
     "id": "vie",
     "fichier": "galerie-vie.html",
     "etiquette": "Portraits · Mémoire",
@@ -199,11 +214,8 @@ const GALERIES = [
       { "fichier": "vie/serge-bebe.jpg", "legende": "Bébé", "description": "" },
       { "fichier": "vie/serge-bebe-2.jpg", "legende": "Bébé, dans la voiturette", "description": "" },
       { "fichier": "vie/serge-enfant-portrait.jpg", "legende": "Portrait d'enfant", "description": "" },
-      { "fichier": "vie/serge-classe-primaire.jpg", "legende": "École primaire", "description": "" },
       { "fichier": "vie/serge-cheval.jpg", "legende": "À cheval", "description": "J'ai fait de l'équitation pendant cinq ans, durant les années 1980. Cette photo a été prise lors d'une randonnée avec le capitaine Janusz Wiazowski, au lac Brome." },
       { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages." },
-      { "fichier": "vie/serge-finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
-      { "fichier": "vie/serge-deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" },
       { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
       { "fichier": "vie/serge-hippie-plantes.jpg", "legende": "Mes années hippie", "description": "" },
       { "fichier": "vie/serge-hippie-sourire.jpg", "legende": "Mes années hippie", "description": "" },
@@ -227,7 +239,6 @@ const GALERIES = [
       { "fichier": "vie/serge-70-ans.jpg", "legende": "70 ans, rêveur", "description": "" },
       { "fichier": "vie/serge-aujourdhui.jpg", "legende": "Aujourd'hui", "description": "" },
       { "fichier": "vie/serge-freres.jpg", "legende": "Avec ses frères Jean-Noël et Marcel", "description": "" },
-      { "fichier": "vie/serge-4e-annee.jpg", "legende": "4e année", "description": "" },
       { "fichier": "vie/serge-bebe-neige.jpg", "legende": "Bébé, en hiver", "description": "" },
       { "fichier": "vie/serge-gaspesie.jpg", "legende": "En Gaspésie", "description": "" },
       { "fichier": "vie/serge-yvonne-mariette.jpg", "legende": "Avec sa mère Yvonne et sa sœur Mariette", "description": "" },
