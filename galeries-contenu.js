@@ -135,6 +135,11 @@ const GALERIES = [
         "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
       },
       {
+        "fichier": "Famille/NoelYvonneEnfants.jpg",
+        "legende": "Noël — Yvonne, la mère Noël",
+        "description": "Un Noël à la maison, devant l'arbre. Marcel est debout derrière, Jean-Noël fait le clown au premier plan, et Denise se tient à gauche. À droite, Yvonne — la mère Noël — les regarde depuis son fauteuil."
+      },
+      {
         "fichier": "Famille/SuzanneOuestAmericain.jpg",
         "legende": "Suzanne — « J'ai marché sous une pluie de beauté »",
         "description": "Ma sœur Suzanne dans l'Ouest américain — les hoodoos enneigés de Bryce Canyon et les parois ondulées d'un canyon en fente. Une randonneuse jusqu'au bout.\n\nLe titre est d'elle : « J'ai marché sous une pluie de beauté. »"
