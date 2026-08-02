@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ti-Gus — Mes sœurs pour mes 40 ans — Serge Roy</title>
+  <meta name="description" content="Les lettres écrites par mes cinq sœurs — Denise, Perle, Suzanne, Mariette et Ghislaine — pour mes quarante ans.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    .section-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--terre); font-style: italic;
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    .refrain {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--or);
+      margin: 2.5rem 0 0.8rem;
+    }
+    .refrain em {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; letter-spacing: 0;
+      text-transform: none; color: var(--terre);
+      font-style: italic; margin-left: 0.6rem;
+    }
+
+    .litanie {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+    .litanie p { margin-bottom: 0.2em; }
+
+    .capitales {
+      font-variant: small-caps;
+      letter-spacing: 0.04em;
+      color: var(--encre);
+      font-style: normal;
+    }
+
+    .signature-lettre {
+      text-align: right;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-style: italic;
+      color: var(--encre);
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire familiale</span>
+    <h1>Ti-Gus</h1>
+    <p class="article-sous-titre">Ce que mes sœurs m'ont écrit pour mes quarante ans</p>
+    <div class="article-meta">Denise &nbsp;·&nbsp; Perle &nbsp;·&nbsp; Suzanne &nbsp;·&nbsp; Mariette &nbsp;·&nbsp; Ghislaine</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Nous étions neuf enfants. Pour mes quarante ans, mes cinq sœurs se sont donné le mot et chacune m'a écrit. Elles m'appelaient Gus, ou Ti-Gus — ce nom d'enfance que ma mère n'a jamais employé, elle qui disait Serge. Je garde ces pages depuis. Les voici.
+    </div>
+
+    <h2 class="partie-titre">Denise</h2>
+
+    <p>Cher Gus,</p>
+
+    <p>Étant la plus jeune des sœurs, je ne peux me vanter d'avoir joué à la cachette sous les lits avec toi, d'avoir été ta confidente ou toi le mien, mais je peux quand même dire qu'on a bien couru ensemble toi devant et moi derrière, parce que même si on ne se voyait pas souvent tu avais le don de me faire enrager.</p>
+
+    <p>Puis on a vieilli, est venu le temps de Claude Léveillé et Claude Gauthier, que j'allais écouter quand tu n'y étais pas, puis le temps des poèmes que je trouvais si beaux mais qui étaient si difficiles à avoir ; quand j'ai réussi en recevoir une fois pour moi, je me suis trouvé très chanceuse.</p>
+
+    <p>Tu es beau être mon grand frère, j'ai été bien des fois te voir au séminaire et longtemps tu as réussi à apparaître devant nous sans que l'on ait vu un seul de tes cheveux à travers la cloison vitrée. Je ne te trouvais pas bien grand mais assez beau pour mon frère. Mais il faut dire que je n'y allais pas pour jaser avec toi, tu n'étais pas tellement jasant et moi non plus, il y avait tellement de belles « Choses » à voir dans ces séminaires.</p>
+
+    <p>Puis tu pars pour Montréal, on se perd de vue pendant des années ; quand on se retrouve après ce temps tu es devenu beaucoup plus jasant, moi pas ; je remarque un changement énorme qui me fait un peu peur, tu sembles devenu un peu trop psychologue et fin limier pour ma petite nature cachée.</p>
+
+    <p>Tout ça pour te dire que malgré nos différences, pas d'âge mais de caractère, je t'aime beaucoup.</p>
+
+    <p class="signature-lettre">Denise</p>
+
+    <h2 class="partie-titre">Perle</h2>
+
+    <div class="refrain">Ti-Gus &nbsp; Ti-Gus <em>« L'ami d'enfance »</em></div>
+
+    <p>Avec seulement un an de différence, on peut presque tout partager : les amis, le lit, l'espace, la colonie de vacances et le sexe un peu ; mes meilleurs souvenirs d'enfance sont avec toi.</p>
+
+    <div class="refrain">Ti-Gus &nbsp; Ti-Gus <em>« Le frère »</em></div>
+
+    <p>Pensionnaire très jeune, un frère que je ne vois jamais. Un bout de tête que l'on visitait au collège. Un sportif que l'on allait voir en action, un frère invisible à la maison, donc un frère que toute jeune fille devrait avoir.</p>
+
+    <div class="refrain">Ti-Gus &nbsp; Ti-Gus <em>« L'étranger »</em></div>
+
+    <p>Celui qui a dévié de la ligne de conduite qui lui était tracée. Celui qui a tout laissé pour faire ce qui semblait le mieux pour lui. J'ai pas compris et encore aujourd'hui j'ai de la misère à comprendre mais je sais qu'il a eu raison. C'est une des rares personnes que je connaisse qui n'est pas frustré par la vie. J'approuve en silence et je l'aime mon Gus.</p>
+
+    <div class="refrain">Ti-Gus &nbsp; Ti-Gus <em>« La sixième sœur »</em></div>
+
+    <div class="litanie">
+      <p>Celle qui regarde les autres vivre</p>
+      <p>Celle qui a l'oreille attentive</p>
+      <p>Celle qui donne des idées et non des conseils</p>
+      <p>Celle à qui l'on se confie parce qu'elle parle peu</p>
+      <p>Celle qui nous fait peur parce qu'elle comprend peut-être trop, plus que nous-mêmes</p>
+      <p>Celle qui ne dérange pas et que l'on recherche.</p>
+    </div>
+
+    <div class="refrain">Ti-Gus &nbsp; Ti-Gus <em>« Serge »</em></div>
+
+    <div class="litanie">
+      <p>L'enfant invisible</p>
+      <p>L'adolescent sportif et studieux</p>
+      <p>L'adulte révolté, soumis, accompli</p>
+    </div>
+
+    <p>Serge tu auras quarante ans bientôt et je peux te dire que tu es un de ceux qui peut regarder en arrière sans regret mais que l'avenir est encore plus beau. Je ne te comprends pas toujours, mais je peux te dire que je t'aime à ma manière.</p>
+
+    <p><span class="capitales">Bonne fête &nbsp; Bonne fête &nbsp; Bonne fête &nbsp; Bonne fête</span></p>
+
+    <p class="signature-lettre">Perle</p>
+
+    <h2 class="partie-titre">Suzanne</h2>
+
+    <p class="section-titre">L'histoire d'un frère par sa sœur</p>
+
+    <p>Savez-vous où est passé Gus ? Il est au séminaire St-Laurent, on va le voir peux-tu venir ? Il a seulement deux ans de moins que moi ce petit garçon, perdu dans son costume d'étudiant, mais en le regardant s'en aller tristement dans le long corridor du collège après notre visite, où il n'a pratiquement rien dit, je ressentais pour lui tellement d'amour. J'aurais voulu le prendre dans mes bras et lui dire que je l'aimais. <span class="capitales">Dans un autre monde j'aurais aimé être sa mère.</span></p>
+
+    <p>Savez-vous où est passé Gus ? À l'université du Québec et en passant on va aux noces bientôt, Serge se marie ; avec Diane je suppose !</p>
+
+    <p>Quelques années de mariage, un enfant et je m'implique dans son quotidien pour la première fois. Il y a des problèmes graves dans le ménage. Moi si j'avais été sa femme j'aurais mieux compris et je lui aurais évité toutes ces douleurs. <span class="capitales">Dans un autre monde j'aurais aimé être sa femme.</span></p>
+
+    <p>Après le divorce nous avons partagé une grande intimité, des moments intenses où on se prenaient la main au restaurant, où on se regardaient dans les yeux. Pour avoir connu le vrai amour avec un autre homme je sais que <span class="capitales">dans un autre monde nous aurions pu être amants.</span></p>
+
+    <p>Savez-vous où est passé Serge ? J'ai des problèmes, j'ai besoin de quelqu'un qui peut comprendre. Il arrive chez moi, je lui raconte mes peurs et il écoute sans juger, je lui demande conseil il me répond que chacun doit vivre sa vie pleinement. Je lui raconte mes problèmes et il me prend dans ses bras pour me consoler. Pour avoir connu l'amour sans condition d'un autre homme, mon père, je sais que <span class="capitales">dans un autre monde tu aurais pu être mon père.</span></p>
+
+    <p>Suzanne, je vis des moments difficiles. J'aimerais que tu viennes chez moi pour que l'on parle. J'arrive et nous nous rappelons notre enfance, nos parents, un peu notre vie. Nous sommes deux amis qui s'écoutent, qui se comprennent, qui s'aiment. <span class="capitales">Dans ce monde je ne te cherche plus, je me sens très secure dans notre amitié.</span></p>
+
+    <p><span class="capitales">Mon enfant, mon mari, mon amant, mon père, mon ami, mon frère.</span></p>
+
+    <p>Tes sœurs et moi on se glorifie quelquefois en disant de toi que tu es notre sixième sœur. Moi je me glorifie quand je dis je vous présente : « <span class="capitales">Mon frère</span> ».</p>
+
+    <p class="signature-lettre">Suzanne</p>
+
+    <h2 class="partie-titre">Mariette</h2>
+
+    <p><span class="capitales">Bienvenue Serge</span> dans notre « consœurie ».</p>
+
+    <p><span class="capitales">Serge</span>, tu es celui qui me donne espoir dans la libération de l'homme, qui j'espère feront comme toi dans l'avenir. Remettront en question leurs rôles, décideront d'avancer, de s'améliorer ; qu'ils admettront qu'ils ont de la sensibilité, ce qui t'as permis à toi d'inventer un comportement nouveau.</p>
+
+    <p>Je veux te dire merci, car c'est ton exemple qui m'a donné le goût de me réaliser, de réapprendre à vivre, à vibrer.</p>
+
+    <p>À ton insu, tu joues un rôle important dans ma vie. Je te parle souvent (dans ma tête), je t'explique beaucoup de choses et m'aide à comprendre.</p>
+
+    <p>Et pour finir, j'espère pouvoir un jour posséder ta plus grande qualité : « Ton écoute des autres ».</p>
+
+    <p>Assez de fleurs avant que tu nous montres ton orgueil d'homme.</p>
+
+    <p class="signature-lettre">Ta sœur Mariette</p>
+
+    <p style="font-size:0.95rem; font-style:italic; color:var(--terre);">P.-S. Garde toujours ta jeunesse de cœur, cela oblige le corps à suivre, tu en es un bon exemple.</p>
+
+    <h2 class="partie-titre">Ghislaine</h2>
+
+    <p>Lorsque mes sœurs m'ont demandé de composer quelque chose, une adresse comme on disait dans le temps, pour Serge, je me suis dit comme autrefois Serge ! Serge ! qui est-il ? C'est qui Serge ! Je ne pourrai pas dire grand-chose.</p>
+
+    <p>Yvonne qui ne l'a jamais appelé autrement que Serge dans sa jeunesse, quand elle disait Serge pour nous c'était Serge Thivierge, notre frère à nous c'était Gus.</p>
+
+    <p>Je me suis fermé les yeux pour revenir en arrière, ce que j'y ai vu m'a rappelé un paquet de souvenirs.</p>
+
+    <p>Deux enfants un peu plus grands et souvent de connivence, un qui parlait fort et qui criait souvent, une fille tannante et agitée qui donnait beaucoup de fil à retordre à Rosaire parce que les gars commençaient à la travailler ; deux complices toujours à se parler en secret et souvent par signes, cherchant des trucs pour découvrir ce que les grands cherchaient à cacher ; un bijou dans son écrin qui ne parlait pas beaucoup et que l'on avait tendance à oublier, la toute petite dernière qui était si belle avec ses grands cheveux bouclés qu'on aurait dit une poupée. Et au bout de la table un ange, un Jésus, mon frère Gus avec son auréole et ses mains jointes comme pour la prière.</p>
+
+    <p>Lui on ne savait pas comment l'aborder car c'était le prêtre futur qu'Yvonne et Rosaire avait toujours rêvé, lui le sage, l'enfant béni des Dieux. Ils avaient manqué leur coup avec le plus vieux, il était plus porté sur les filles que sur la religion, avec Serge on aurait gagé à 100 contre 1 et on aurait gagné. Je le voyais déjà bénir mon mariage, baptiser mes enfants. À mon mariage, il était présent mais comme enfant de chœur assistant le prêtre, et regarder sa figure n'a-t-il pas l'air d'un ange ?</p>
+
+    <p>Le Gus avec ses grands yeux foncés, brillants qui écoutait et ne parlait pas beaucoup et quand ça lui arrivait de parler, on était tellement surpris qu'on faisait silence pour l'écouter. Ce qu'il disait, je ne comprend rien là-dedans, c'était toujours sensé, posé, des choses que nous n'avions même pas pensé, nous les grands. On voyait tout de suite que ça travaillait beaucoup dans cette petite tête là. Nous on parlait souvent pour le plaisir et pour s'entendre, lui jamais.</p>
+
+    <p>Quand quelque chose nous tracassait et qu'on voulait garder secret c'est à Gus qu'il fallait le dire et se confier. Mais on l'a perdu très jeune car il est parti pour les études, cette partie de sa vie qu'il nous a gardé secrète, car il fallait qu'il se prépare pour être prêtre. Une chance que l'on l'a retrouvé pour ne plus le perdre, j'espère.</p>
+
+    <p>À Montréal ou St-Hyacinthe, alors que j'y suis déménagé, j'allais lui rendre visite au séminaire. Quand il faisait beau, on s'assoyait dans le gazon, je laissais courir les deux filles, je lui demandais « comment ça va ? », « Bien », « Manges-tu bien ? », « Oui », « Tes études sont pas trop difficiles ? », « Non », « Aimes-tu ton collège ? », « Oui », c'est à peu près la conversation qu'on avait. Jamais il ne s'est plaint, s'il n'aimait pas on ne l'a jamais su.</p>
+
+    <p>Plus tard, dans un vieux logement dans le bas de la ville à St-Hyacinthe, moi j'y allais avec crainte à cause de la mauvaise réputation du marché à foin, mais lui fonctionnait très bien, on sait bien, l'esprit d'obéissance et de sacrifice lui avait tout ça déjà.</p>
+
+    <p>J'allais le voir jouer au hockey, la seule place où je le voyais sortir son agressivité, un autre Gus qui jusqu'à ce qu'on lui fasse avaler une rondelle. Résultat : nez fracturé, dentier cassé, amygdale perforé, une opération d'urgence exigée. Je signe, j'appelle Yvonne qui s'est empressée de venir à St-Hyacinthe pour se rassurer que son petit prêtre n'est pas mourant, que Dieu ne lui a pas joué ce tour là.</p>
+
+    <p>Un feu éclate, un soir, au séminaire, de Gus pas de nouvelles. Yvonne et Rosaire font les cent pas. Téléphone, radio, on veut aller à St-Hyacinthe mais comment ? Gus qui ne s'inquiétait jamais de rien a appelé le lendemain matin seulement, pas grave il avait trouvé refuge chez des copains, il n'avait pas brûlé. Encore une fois Dieu avait aimé Yvonne et Rosaire.</p>
+
+    <p>Lorsqu'il venait passer les congés chez moi, les enfants ne comprenaient pas pourquoi, il ne parlait pas plus souvent mais ils l'aimaient beaucoup car il s'occupait de leur apprendre des choses.</p>
+
+    <p>Du Gus de mon enfance, rien n'a changé dans ma vie d'adulte, il est resté le même. Pas un mot plus haut que l'autre, un Gus qui écoute, un Gus à qui on peut tout dire, un Gus qui sait encore garder un secret, un Gus qui dit encore des choses savantes, St-Liboire on dirait qu'il est intelligent et aujourd'hui encore on se tait quand il parle. Un Gus qui a su trouvé tout seul la valeur personnelle de chacun d'entre nous.</p>
+
+    <p>À ce frère qui, s'il n'avait pas été inventé, je m'y mettrais toute suite, car on en a besoin, je dis je t'aime, reste comme tu es, bonne fête et reste avec nous même si tu n'es pas prêtre car aujourd'hui je sais que l'on a pas besoin de l'être pour se donner soi-même. Et comme je disais à Perle, n'oublie pas que dans la gang des 40 je suis encore la plus vieille.</p>
+
+    <p class="signature-lettre">Ghislaine</p>
+
+    <div class="lien-galerie">
+      <a href="../galerie-famille.html">Voir les photos de la famille →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Denise, Perle, Suzanne, Mariette et Ghislaine</div>
+      <div class="signature-date">Pour les quarante ans de Serge — 1987</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>

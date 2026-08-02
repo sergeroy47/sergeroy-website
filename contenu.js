@@ -52,6 +52,13 @@ const CONTENU = {
     },
     {
       "categorie": "Mémoire familiale",
+      "titre": "Ti-Gus",
+      "extrait": "Ce que mes cinq sœurs — Denise, Perle, Suzanne, Mariette et Ghislaine — m'ont écrit pour mes quarante ans. Cinq regards sur le même frère.",
+      "date": "1987",
+      "lien": "textes/mes-soeurs-40-ans.html"
+    },
+    {
+      "categorie": "Mémoire familiale",
       "titre": "Ma petite histoire de la rue Lemay",
       "extrait": "Un texte de mon cousin André Fournier sur notre rue et nos jeux d'enfance à Acton Vale, publié dans le bulletin de la Société d'histoire de la région d'Acton.",
       "date": "2020",
