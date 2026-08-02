@@ -133,6 +133,31 @@ const GALERIES = [
         "fichier": "Famille/CultivezLaVie/FamilleRosaireYvonne1975.jpg",
         "legende": "La famille au grand complet",
         "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/Ghislaine.jpg",
+        "legende": "Ghislaine",
+        "description": "Ma sœur Ghislaine, l'aînée des filles, décédée à soixante-six ans en 2008.\n\nC'est elle qui a écrit le plus long des textes pour mes quarante ans, celui qui remonte le plus loin : « Un Gus qui a su trouvé tout seul la valeur personnelle de chacun d'entre nous. » Elle terminait ainsi : « N'oublie pas que dans la gang des 40 je suis encore la plus vieille. » Sa lettre se trouve dans le texte « Ti-Gus », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/Mariette.jpg",
+        "legende": "Mariette — montage",
+        "description": "Un montage réalisé pour ma sœur Mariette : trois visages d'un même âge de la vie, dans les mauves et les roses.\n\nElle m'a écrit pour mes quarante ans : « J'espère pouvoir un jour posséder ta plus grande qualité : ton écoute des autres. » Sa lettre se trouve dans le texte « Ti-Gus », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/Suzanne60ans.jpg",
+        "legende": "Suzanne — montage pour ses 60 ans",
+        "description": "Un montage que j'ai réalisé pour ma sœur Suzanne à ses soixante ans : l'enfant en manteau d'hiver, la jeune femme, la randonneuse — plusieurs âges d'une même vie réunis sur un même fond.\n\nC'est elle qui a écrit, pour mes quarante ans : « Mon enfant, mon mari, mon amant, mon père, mon ami, mon frère. » Sa lettre se trouve dans le texte « Ti-Gus », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/SergePerleConfirmation1953.jpg",
+        "legende": "Perle et moi, confirmation 1953",
+        "description": "Ma sœur Perle et moi le jour de notre confirmation, en 1953. Nous n'avions qu'un an de différence. Elle l'a écrit pour mes quarante ans : « Avec seulement un an de différence, on peut presque tout partager : les amis, le lit, l'espace, la colonie de vacances… mes meilleurs souvenirs d'enfance sont avec toi. » Sa lettre se trouve dans le texte « Ti-Gus », dans la section Mes textes du site."
+      },
+      {
+        "fichier": "Famille/Denise.jpg",
+        "legende": "Denise",
+        "description": "Ma sœur Denise, la plus jeune des filles. Elle m'a écrit pour mes quarante ans : « Tout ça pour te dire que malgré nos différences, pas d'âge mais de caractère, je t'aime beaucoup. » Sa lettre, et celles de mes quatre autres sœurs, se trouvent dans le texte « Ti-Gus », dans la section Mes textes du site."
       }
     ]
   },
