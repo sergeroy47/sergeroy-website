@@ -198,6 +198,8 @@ const GALERIES = [
     "photos": [
       { "fichier": "ecole/classe-primaire.jpg", "legende": "Classe du primaire", "description": "" },
       { "fichier": "ecole/4e-annee.jpg", "legende": "4e année", "description": "" },
+      { "fichier": "ecole/corps-musical-2.jpg", "legende": "Le Corps musical d'Acton Vale", "description": "Au primaire, je participais au corps musical de mon école, avec mon ami Réal Laflamme. Nous étions participants avec d'autres jeunes, avec qui nous partagions un trophée — on le voit ici au centre, devant les tambours.\n\nJe suis à droite, à genoux, la main sur le trophée.\n\nCette expérience a eu des suites : plusieurs années plus tard, au séminaire, on m'a demandé de devenir tambour-major de l'harmonie lors d'un concours entre les collèges de la région. J'avoue que l'aventure avait été un peu traumatisante — je n'aimais pas être au premier plan." },
+      { "fichier": "ecole/corps-musical-1.jpg", "legende": "Avec Réal Laflamme et le trophée", "description": "Mon ami Réal Laflamme et moi en uniforme du corps musical, de chaque côté du trophée que nous avions remporté. Je suis à gauche." },
       { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
       { "fichier": "ecole/deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" }
     ]
@@ -217,6 +219,7 @@ const GALERIES = [
       { "fichier": "vie/serge-cheval.jpg", "legende": "À cheval", "description": "J'ai fait de l'équitation pendant cinq ans, durant les années 1980. Cette photo a été prise lors d'une randonnée avec le capitaine Janusz Wiazowski, au lac Brome." },
       { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages." },
       { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
+      { "fichier": "vie/serge-ski-de-fond.jpg", "legende": "Ski de fond", "description": "" },
       { "fichier": "vie/serge-hippie-plantes.jpg", "legende": "Mes années hippie", "description": "" },
       { "fichier": "vie/serge-hippie-sourire.jpg", "legende": "Mes années hippie", "description": "" },
       { "fichier": "vie/serge-colette.jpg", "legende": "Avec Colette", "description": "" },
