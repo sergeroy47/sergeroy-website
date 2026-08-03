@@ -201,8 +201,10 @@ const GALERIES = [
     "intro": "Photos de classe, pensionnat, huit années au séminaire — les années de formation.",
     "vignette": "ecole/classe-primaire.jpg",
     "photos": [
-      { "fichier": "ecole/classe-primaire.jpg", "legende": "Classe du primaire", "description": "" },
+      { "fichier": "ecole/2e-annee.jpg", "legende": "2e année", "description": "Je suis dans la deuxième rangée, au milieu, avec le veston foncé." },
+      { "fichier": "ecole/classe-primaire.jpg", "legende": "3e année", "description": "" },
       { "fichier": "ecole/4e-annee.jpg", "legende": "4e année", "description": "" },
+      { "fichier": "ecole/5e-annee-essa-1957.jpg", "legende": "5e année B — École secondaire Saint-André, 1957-58", "description": "Le tableau de la 5e année B à l'ESSA — l'École secondaire Saint-André d'Acton Vale — en 1957-58. Au centre, le professeur E. Guillaume et le directeur F. Gabriel, avec l'école elle-même en dessous. Mon portrait est identifié « S. Roy », dans la partie gauche." },
       { "fichier": "ecole/corps-musical-2.jpg", "legende": "Le Corps musical d'Acton Vale", "description": "Au primaire, je participais au corps musical de mon école, avec mon ami Réal Laflamme. Nous étions participants avec d'autres jeunes, avec qui nous partagions un trophée — on le voit ici au centre, devant les tambours.\n\nJe suis à droite, à genoux, la main sur le trophée.\n\nCette expérience a eu des suites : plusieurs années plus tard, au séminaire, on m'a demandé de devenir tambour-major de l'harmonie lors d'un concours entre les collèges de la région. J'avoue que l'aventure avait été un peu traumatisante — je n'aimais pas être au premier plan." },
       { "fichier": "ecole/corps-musical-1.jpg", "legende": "Avec Réal Laflamme et le trophée", "description": "Mon ami Réal Laflamme et moi en uniforme du corps musical, de chaque côté du trophée que nous avions remporté. Je suis à gauche." },
       { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
