@@ -207,7 +207,13 @@ const GALERIES = [
       { "fichier": "ecole/5e-annee-essa-1957.jpg", "legende": "5e année B — École secondaire Saint-André, 1957-58", "description": "Le tableau de la 5e année B à l'ESSA — l'École secondaire Saint-André d'Acton Vale — en 1957-58. Au centre, le professeur E. Guillaume et le directeur F. Gabriel, avec l'école elle-même en dessous. Mon portrait est identifié « S. Roy », dans la partie gauche." },
       { "fichier": "ecole/corps-musical-2.jpg", "legende": "Le Corps musical d'Acton Vale", "description": "Au primaire, je participais au corps musical de mon école, avec mon ami Réal Laflamme. Nous étions participants avec d'autres jeunes, avec qui nous partagions un trophée — on le voit ici au centre, devant les tambours.\n\nJe suis à droite, à genoux, la main sur le trophée.\n\nCette expérience a eu des suites : plusieurs années plus tard, au séminaire, on m'a demandé de devenir tambour-major de l'harmonie lors d'un concours entre les collèges de la région. J'avoue que l'aventure avait été un peu traumatisante — je n'aimais pas être au premier plan." },
       { "fichier": "ecole/corps-musical-1.jpg", "legende": "Avec Réal Laflamme et le trophée", "description": "Mon ami Réal Laflamme et moi en uniforme du corps musical, de chaque côté du trophée que nous avions remporté. Je suis à gauche." },
-      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "" },
+      { "fichier": "ecole/elements-latins.jpg", "legende": "Éléments latins", "description": "Première année du cours classique au séminaire. Éléments latins, Syntaxe, Méthode, Versification, Belles-Lettres, Rhétorique, puis les deux années de Philosophie — c'était la nomenclature du collège classique." },
+      { "fichier": "ecole/syntaxe.jpg", "legende": "Syntaxe", "description": "" },
+      { "fichier": "ecole/methode.jpg", "legende": "Méthode", "description": "" },
+      { "fichier": "ecole/versification.jpg", "legende": "Versification", "description": "" },
+      { "fichier": "ecole/belles-lettres.jpg", "legende": "Belles-lettres", "description": "Au centre, à l'arrière, le prêtre Jean-Paul Morin — le meilleur professeur de toutes mes études." },
+      { "fichier": "ecole/rhetorique.jpg", "legende": "Rhétorique", "description": "Le titulaire de ma classe, debout à l'arrière, était le premier homme noir qui entrait dans ma vie." },
+      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "Baccalauréat ès arts de l'Université de Montréal. Je n'ai pas de photos de mes deux années de Philosophie — celle-ci en tient lieu." },
       { "fichier": "ecole/deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" }
     ]
   },
