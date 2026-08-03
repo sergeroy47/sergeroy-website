@@ -108,9 +108,9 @@ const CONTENU = {
     },
     {
       "categorie": "Vie spirituelle",
-      "titre": "Trente ans de silence",
-      "extrait": "Ce que le Zen m'a appris sur la technologie, sur la présence, sur la convivialité des êtres.",
-      "date": "2023",
+      "titre": "80 ans de silence",
+      "extrait": "« Je longe les murs et préfère passer inaperçu. Mais après toutes ces années, je désire me révéler. » Pourquoi un silencieux se raconte — et ce qu'il espère offrir en le faisant.",
+      "date": "2026",
       "lien": "textes/recueil.html#silence"
     }
   ],
