@@ -647,7 +647,7 @@
   </div>
 </div>
 
-<script src="contenu.js?v=20260719b"></script>
+<script src="contenu.js?v=20260802a"></script>
 <script>
   // ── DONNÉES ────────────────────────────────────────────
   // Mise à jour automatique des chemins après réorganisation du dossier
@@ -714,7 +714,10 @@
         !CONTENU.textes.find(c => correspond(l, c)));
       local.textes = CONTENU.textes.map(c => {
         const l = local.textes.find(l => correspond(l, c));
-        return l ? Object.assign({}, l, { titre: c.titre }) : c;
+        // Le fichier contenu.js fait foi pour titre, résumé, date et catégorie
+        return l ? Object.assign({}, l, {
+          titre: c.titre, extrait: c.extrait, date: c.date, categorie: c.categorie
+        }) : c;
       }).concat(locauxSeuls);
     }
     // Toujours prendre les balados depuis contenu.js (champ nouveau)
