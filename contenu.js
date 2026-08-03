@@ -262,6 +262,18 @@ const CONTENU = {
   ],
   "creations": [
     {
+      "titre": "Port de Montréal",
+      "annee": "2021",
+      "fichier": "creations/port-montreal-riopelle.jpg",
+      "description": "Le port de Montréal et la silhouette du centre-ville, traités en touches d'aquarelle — un clin d'œil à Riopelle."
+    },
+    {
+      "titre": "Hiver coloré",
+      "annee": "2020",
+      "fichier": "creations/hiver-colore.jpg",
+      "description": "Un sentier d'hiver traité en couleurs : les branches bleues, les ors et les orangés d'un automne rêvé sur la neige."
+    },
+    {
       "titre": "Ceux qui se pêchent eux-mêmes",
       "annee": "Dogen — le pêcheur",
       "fichier": "creations/dogen-pecheur.jpg",
