@@ -30,6 +30,13 @@ const CONTENU = {
   },
   "textes": [
     {
+      "categorie": "Vie spirituelle",
+      "titre": "80 ans de silence",
+      "extrait": "« Je longe les murs et préfère passer inaperçu. Mais après toutes ces années, je désire me révéler. » Pourquoi un silencieux se raconte — et ce qu'il espère offrir en le faisant.",
+      "date": "2026",
+      "lien": "textes/recueil.html#silence"
+    },
+    {
       "categorie": "Mémoire familiale",
       "titre": "La fin tragique d'Antoine Roy",
       "extrait": "Notre premier ancêtre en Amérique : soldat du régiment de Carignan, tonnelier plutôt que défricheur, assassiné à Lachine par un mari jaloux. De son fils unique descendent les Roy et les Desjardins d'Amérique.",
@@ -105,13 +112,6 @@ const CONTENU = {
       "extrait": "La respiration est cette corde qui nous amène au fond du puits intérieur… Une méditation en deux parties sur le Taïchi, la respiration et l'intelligence du corps.",
       "date": "Février 2025",
       "lien": "textes/pratique-et-respiration.html"
-    },
-    {
-      "categorie": "Vie spirituelle",
-      "titre": "80 ans de silence",
-      "extrait": "« Je longe les murs et préfère passer inaperçu. Mais après toutes ces années, je désire me révéler. » Pourquoi un silencieux se raconte — et ce qu'il espère offrir en le faisant.",
-      "date": "2026",
-      "lien": "textes/recueil.html#silence"
     }
   ],
   "photos": [
