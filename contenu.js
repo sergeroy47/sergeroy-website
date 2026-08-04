@@ -262,6 +262,12 @@ const CONTENU = {
   ],
   "creations": [
     {
+      "titre": "Le visage",
+      "annee": "Années 1970",
+      "fichier": "creations/peinture-1970.jpg",
+      "description": "Une peinture des années 1970, dont j'avais complètement oublié l'existence.\n\nAu mariage de Noémie, une de ses cousines me demande si je me rappelle de cette peinture, dont elle me décrit le contenu. Pas du tout. Quelques jours plus tard, elle m'envoie une photo. Et là, oui, je me rappelle."
+    },
+    {
       "titre": "Port de Montréal",
       "annee": "2021",
       "fichier": "creations/port-montreal-riopelle.jpg",
