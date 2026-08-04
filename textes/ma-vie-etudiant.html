@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma vie d'étudiant — Serge Roy</title>
+  <meta name="description" content="De l'école l'Ange-Gardien d'Acton Vale aux huit années du cours classique au séminaire de Saint-Hyacinthe — récit d'une vocation, d'un renvoi et d'une culpabilité.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire</span>
+    <h1>Ma vie d'étudiant</h1>
+    <p class="article-sous-titre">De l'Ange-Gardien d'Acton Vale au séminaire de Saint-Hyacinthe</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; 1953–1969</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Premier d'une série de récits : ma vie d'étudiant. Suivront ma vie d'ado, ma vie sportive, ma vie amoureuse et ma vie professionnelle.
+    </div>
+
+    <h2 class="partie-titre">Les premières maîtresses</h2>
+
+    <p>Ma vie d'étudiant a commencé en première année, parce qu'il n'y avait pas encore de maternelle et que les mères étaient nos premières éducatrices — et très maternelles.</p>
+
+    <p>En première année, j'allais à l'école l'Ange-Gardien, juste à côté de l'église à Acton. C'était la première école d'Acton Vale ; mon père y avait fait ses études. Mon premier professeur — on disait dans le temps <em>ma première maîtresse</em> — s'appelait madame Bisaillon, avec laquelle je m'entendais très bien. Mais au milieu de l'année, elle a annoncé qu'elle était enceinte et qu'elle devait quitter pour accoucher. On l'a remplacée par une autre madame qui s'appelait bizarrement madame Roy, mais qui n'avait aucun lien de parenté avec moi. Cette madame-là n'avait pas la bienveillance de madame Bisaillon, et comme son fils était dans ma classe, elle avait une préférence pour un certain petit Roy. Autre particularité : ma classe était mixte.</p>
+
+    <p>L'année suivante, en deuxième année, j'ai changé d'école : je suis allé à l'école secondaire de Saint-André d'Acton, dirigée par les frères du Sacré-Cœur. Ma nouvelle maîtresse — c'était toujours de jeunes femmes — s'appelait madame Lompré, reconnue pour être une très bonne professeure, mais très exigeante.</p>
+
+    <p>La troisième année, toujours au même collège, j'avais une vieille madame comme professeure, un peu sourde, ce qui créait souvent de drôles d'histoires. Une fois, le directeur, qui communiquait par un système d'interphone, annonçait le vendredi les choses pour la fin de semaine. La prof demande ensuite : « Qu'est-ce qu'il a dit, le directeur ? » Je ne sais pas par quel stratagème, mais tous les élèves ont répondu : « Congé de devoirs et de leçons pour la fin de semaine » — ce qui n'était pas du tout vrai. C'était une pauvre madame bien gentille.</p>
+
+    <p>Ensuite j'ai fait ma quatrième, ma cinquième, ma sixième et ma septième année à cette école-là.</p>
+
+    <h2 class="partie-titre">La vocation</h2>
+
+    <p>Arrivé à la fin du primaire, j'aurais pu continuer mon secondaire au même collège comme la plupart des autres élèves. Mais j'avais manifesté le désir de devenir prêtre — ce qui était un peu aussi l'idée de ma mère.</p>
+
+    <p>Mon père connaissait un homme qui avait été, je pense, à l'école avec lui à Acton Vale. Il s'appelait père Lafond, supérieur de la congrégation des pères de Sainte-Croix. J'ai rencontré ce père chez nous ; il m'a parlé de ce que je voulais faire. J'ai dit que je voulais devenir prêtre. Il m'a inscrit au séminaire de Sainte-Croix à Saint-Laurent, un bâtiment toujours là derrière le cégep de Saint-Laurent à Montréal.</p>
+
+    <p>Me voilà parachuté à des kilomètres de chez moi, dans un endroit où je ne connais personne. Le premier soir, au dortoir, j'entendais d'autres garçons pleurer ; mais moi, stoïque, je poursuivais ma vocation.</p>
+
+    <p>Au milieu de l'année, je tombe malade et je me retrouve à l'infirmerie avec mon meilleur ami. Un soir, alors qu'on se croyait seuls, on s'est mis à parler des filles. J'avais douze ans ; mon expérience des filles n'était pas très grande. Outre ma curiosité et celle de mon ami, ça devait être assez innocent. Mais l'infirmier, un père, n'était pas loin, à écouter notre conversation — qu'il rapporta au père supérieur.</p>
+
+    <blockquote>« Votre vocation n'est pas aussi forte que vous nous l'aviez dit. »</blockquote>
+
+    <p>En fin de compte, j'ai fini mon année, mais je n'ai pas été invité à revenir l'année suivante.</p>
+
+    <h2 class="partie-titre">Les tests</h2>
+
+    <p>Et là, ma mère, qui voulait toujours que je sois prêtre et que je continue mes études, a trouvé un nouvel allié : l'abbé Laflamme, l'oncle de mon ami de longue date Réal Laflamme. C'est par lui que j'ai été admis au collège de Saint-Hyacinthe.</p>
+
+    <p>Mais avant d'être admis, je devais aller chez un orienteur passer des tests, pour savoir si je méritais ce privilège. Je vais à Saint-Hyacinthe passer mes tests — tests d'intelligence, tests de personnalité. Une semaine après, l'orienteur appelle mon père : il voulait le voir, de façon confidentielle.</p>
+
+    <p>Après plusieurs petites questions, il demande à mon père : « Est-ce que vous avez battu votre fils quand il était jeune ? » Oh, mon père insulté : qu'est-ce que c'est que cette idée que j'aurais battu mon fils ?</p>
+
+    <p>L'orienteur s'était aperçu que mes résultats scolaires ne correspondaient pas du tout à mes résultats de tests. Il essayait donc de trouver la raison de ce décalage. Mais ce n'était pas du tout mon père qui était en cause : c'était plutôt mon frère, qui ne m'avait pas battu, mais avec qui j'avais eu mes premières expériences sexuelles.</p>
+
+    <p>Pour moi qui voulais devenir prêtre, qui allais à la messe tous les matins et menais une espèce de vie pieuse, je vivais un dilemme insoutenable. Comme je n'avais jamais avoué mes péchés à la confession et que je communiais chaque matin, c'était comme un état de grâce qui s'était perdu, remplacé par un esprit de culpabilité qui s'était ancré dans mon for intérieur. Ce qui me grugeait le cerveau et mangeait mon énergie.</p>
+
+    <h2 class="partie-titre">Huit ans au séminaire</h2>
+
+    <p>J'ai commencé en Éléments latins et j'ai fait mes huit ans au séminaire de Saint-Hyacinthe — le cours classique : ensuite la Syntaxe, la Méthode, la Versification, les Belles-Lettres, la Rhétorique.</p>
+
+    <p>Puis, après, dans le collège, on changeait : on s'en allait du côté des philosophes, et on faisait deux ans de Philosophie. Quand on faisait nos philosophies, on quittait la majeure partie des élèves pour aller dans une autre partie du collège, où on avait nos airs un peu plus libres. En plus, j'étais devenu externe : j'habitais un logement dans un quartier populaire de Saint-Hyacinthe avec deux autres amis.</p>
+
+    <p>Donc c'est ça, toute ma vie au collège : on était en étude, toujours en étude, sauf quand on avait congé le mardi après-midi et le jeudi après-midi — parce qu'on avait des cours tout le samedi. Ce qui faisait que mes journées d'activité, c'est là que je faisais le plus de sport. Mais on faisait aussi beaucoup de sport lors des récréations, après les repas.</p>
+
+    <p>Dans l'étude, on était peut-être deux ou trois cents élèves à étudier, un peu cordés, mais chacun à notre bureau. Et là il se passait beaucoup de choses, parce que c'était silencieux — évidemment, tout se passait en silence. Mais le silence, des fois, amène l'envie de faire quelques pitreries ; il y avait toujours du bon monde pour nous faire rire.</p>
+
+    <p>Une fois entre autres — je ne sais pas en quelle année, j'étais peut-être en Méthode — le père qui surveillait l'étude dit très gravement : « Ne vous énervez pas. Il y a un feu pris dans l'aile centrale. On va tous sortir, mais sans panique. » Et au lieu de créer un effet de panique, spontanément, tout le monde applaudit. Le père a perdu la face complètement : il nous annonçait une nouvelle tragique et nous voyait heureux, avec deux semaines de congé à la maison.</p>
+
+    <div class="lien-galerie">
+      <a href="../galerie-ecole.html">Voir les photos de mes années d'école →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>

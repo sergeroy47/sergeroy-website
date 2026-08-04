@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma vie en récits — Serge Roy</title>
+  <meta name="description" content="Une série de récits autobiographiques : ma vie d'étudiant, d'ado, sportive, amoureuse, professionnelle et numérique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+      --ombre: rgba(28,26,20,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .entete {
+      max-width: 760px; margin: 0 auto;
+      padding: 9rem 2rem 3rem;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+
+    .entete-ornement {
+      width: 1px; height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--or), transparent);
+      margin: 0 auto 2.5rem;
+    }
+
+    .entete-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--encre); margin-bottom: 0.3em;
+    }
+    h1 em { color: var(--mousse); font-style: italic; }
+
+    .separateur { width: 60px; height: 1px; background: var(--or); margin: 1.8rem auto; }
+
+    .entete-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic;
+      color: var(--terre); max-width: 540px; margin: 0 auto;
+    }
+
+    .conteneur {
+      max-width: 760px; margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+      position: relative; z-index: 1;
+    }
+
+    .recit {
+      display: block; text-decoration: none; color: inherit;
+      border-top: 1px solid rgba(107,92,69,0.2);
+      padding: 2.2rem 0;
+      transition: padding-left 0.3s;
+    }
+    .recit:last-of-type { border-bottom: 1px solid rgba(107,92,69,0.2); }
+    .recit-lien:hover { padding-left: 0.8rem; }
+
+    .recit-numero {
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.22em; color: var(--or);
+      display: block; margin-bottom: 0.6rem;
+    }
+
+    .recit-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--encre); margin-bottom: 0.6rem;
+    }
+    .recit-titre em { font-style: italic; color: var(--mousse); }
+
+    .recit-extrait {
+      font-size: 1rem; line-height: 1.7;
+      color: rgba(28,26,20,0.72);
+      margin-bottom: 0.9rem;
+    }
+
+    .recit-lire {
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--mousse);
+      border-bottom: 1px solid rgba(90,110,74,0.3);
+      padding-bottom: 0.15rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .recit-lien:hover .recit-lire { color: var(--or); border-color: var(--or); }
+
+    .recit-avenir { opacity: 0.5; }
+    .recit-avenir .recit-titre { color: var(--terre); }
+    .recit-attente {
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+      position: relative; z-index: 1;
+    }
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .entete { padding: 7rem 1.2rem 2rem; }
+      .conteneur { padding: 1.5rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="entete">
+    <div class="entete-ornement"></div>
+    <span class="entete-categorie">Récits autobiographiques</span>
+    <h1>Ma <em>vie</em></h1>
+    <div class="separateur"></div>
+    <p class="entete-intro">Une vie racontée par ses versants — l'école, l'adolescence, le sport, l'amour, le métier, les machines.</p>
+  </header>
+
+  <div class="conteneur">
+
+    <a href="ma-vie-etudiant.html" class="recit recit-lien">
+      <span class="recit-numero">I · 1953–1969</span>
+      <div class="recit-titre">Ma vie <em>d'étudiant</em></div>
+      <p class="recit-extrait">De l'école l'Ange-Gardien d'Acton Vale aux huit années du cours classique à Saint-Hyacinthe : une vocation de prêtre, un renvoi pour avoir parlé des filles, et une culpabilité qui « grugeait le cerveau ».</p>
+      <span class="recit-lire">Lire →</span>
+    </a>
+
+    <div class="recit recit-avenir">
+      <span class="recit-numero">II</span>
+      <div class="recit-titre">Ma vie <em>d'ado</em></div>
+      <span class="recit-attente">À venir</span>
+    </div>
+
+    <div class="recit recit-avenir">
+      <span class="recit-numero">III</span>
+      <div class="recit-titre">Ma vie <em>sportive</em></div>
+      <span class="recit-attente">À venir</span>
+    </div>
+
+    <div class="recit recit-avenir">
+      <span class="recit-numero">IV</span>
+      <div class="recit-titre">Ma vie <em>amoureuse</em></div>
+      <span class="recit-attente">À venir</span>
+    </div>
+
+    <div class="recit recit-avenir">
+      <span class="recit-numero">V</span>
+      <div class="recit-titre">Ma vie <em>professionnelle</em></div>
+      <span class="recit-attente">À venir</span>
+    </div>
+
+    <a href="ma-vie-numerique.html" class="recit recit-lien">
+      <span class="recit-numero">VI · 1972–2026</span>
+      <div class="recit-titre">Ma vie <em>numérique</em></div>
+      <p class="recit-extrait">« Moi aussi, je me souviens du futur. » Du Portapak de 1972 au Whole Earth Catalog, du manifeste OTO aux « micro-ordinateurs à pédales », jusqu'à l'IA devenue gérante de mes graines — cinquante ans à garder la main sur mes outils.</p>
+      <span class="recit-lire">Lire →</span>
+    </a>
+
+  </div>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>

@@ -37,6 +37,13 @@ const CONTENU = {
       "lien": "textes/recueil.html#silence"
     },
     {
+      "categorie": "Récits autobiographiques",
+      "titre": "Ma vie",
+      "extrait": "Une vie racontée par ses versants : ma vie d'étudiant, d'ado, sportive, amoureuse, professionnelle et numérique. Une série de récits en cours d'écriture.",
+      "date": "1947–2026",
+      "lien": "textes/ma-vie.html"
+    },
+    {
       "categorie": "Mémoire familiale",
       "titre": "La fin tragique d'Antoine Roy",
       "extrait": "Notre premier ancêtre en Amérique : soldat du régiment de Carignan, tonnelier plutôt que défricheur, assassiné à Lachine par un mari jaloux. De son fils unique descendent les Roy et les Desjardins d'Amérique.",
@@ -70,13 +77,6 @@ const CONTENU = {
       "extrait": "Un texte de mon cousin André Fournier sur notre rue et nos jeux d'enfance à Acton Vale, publié dans le bulletin de la Société d'histoire de la région d'Acton.",
       "date": "2020",
       "lien": "textes/rue-lemay-andre-fournier.html"
-    },
-    {
-      "categorie": "Trajectoire intellectuelle",
-      "titre": "Ma vie numérique",
-      "extrait": "« Moi aussi, je me souviens du futur. » Du Portapak de 1972 au Whole Earth Catalog, du manifeste OTO aux « micro-ordinateurs à pédales », jusqu'à l'IA devenue gérante de mes graines — cinquante ans à garder la main sur mes outils.",
-      "date": "1972–2026",
-      "lien": "textes/ma-vie-numerique.html"
     },
     {
       "categorie": "Création artistique",
