@@ -105,13 +105,23 @@
       const indice = p.description
         ? '<div class="photo-legende-indice">🔍 Cliquez sur la photo pour agrandir<br><span class="lire-histoire">✦ Lire l’histoire</span></div>'
         : '<div class="photo-legende-indice">🔍 Cliquez pour agrandir</div>';
+      // Le chargement différé dans une mosaïque en colonnes laisse parfois
+      // une case vide (Safari surtout) : on charge d'emblée les premières,
+      // et on réessaie une fois si une image échoue.
+      const differe = i >= 16 ? ' loading="lazy"' : '';
       bloc.innerHTML = `
-        <img src="${p.fichier}" alt="${p.legende || ''}" loading="lazy">
+        <img src="${p.fichier}" alt="${p.legende || ''}"${differe}>
         <div class="photo-legende-voile">
           <div class="photo-legende-texte">${p.legende || ''}</div>
           ${indice}
         </div>`;
-      bloc.querySelector('img').addEventListener('click', e => { e.stopPropagation(); ouvrirLightbox(i); });
+      const img = bloc.querySelector('img');
+      img.addEventListener('error', function reessayer() {
+        img.removeEventListener('error', reessayer);
+        img.removeAttribute('loading');
+        img.src = p.fichier + (p.fichier.includes('?') ? '&' : '?') + 'r=1';
+      });
+      img.addEventListener('click', e => { e.stopPropagation(); ouvrirLightbox(i); });
       if (p.description) {
         // le voile parent bloque les clics ; la légende et « Lire l'histoire » doivent les recevoir
         [bloc.querySelector('.photo-legende-texte'), bloc.querySelector('.lire-histoire')].forEach(el => {
