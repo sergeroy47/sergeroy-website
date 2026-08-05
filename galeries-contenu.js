@@ -6,6 +6,7 @@
 const GALERIES = [
   {
     "id": "jardin",
+    "type": "photo",
     "fichier": "galerie-jardin.html",
     "etiquette": "Nature · Mémoire",
     "titre": "Le jardin",
@@ -52,6 +53,7 @@ const GALERIES = [
   },
   {
     "id": "famille",
+    "type": "photo",
     "fichier": "galerie-famille.html",
     "etiquette": "Famille · Portraits",
     "titre": "La famille",
@@ -183,6 +185,7 @@ const GALERIES = [
   },
   {
     "id": "arbres-roches",
+    "type": "creation",
     "fichier": "galerie-arbres-roches.html",
     "etiquette": "Nature · Contemplation",
     "titre": "Arbres & roches",
@@ -204,6 +207,7 @@ const GALERIES = [
   },
   {
     "id": "album70",
+    "type": "photo",
     "fichier": "galerie-album70.html",
     "etiquette": "Colette · Cadeau",
     "titre": "70 ans à fleurir sa vie",
@@ -231,12 +235,12 @@ const GALERIES = [
       { "fichier": "album70/page-18.jpg", "legende": "À cheval", "description": "" },
       { "fichier": "album70/page-19.jpg", "legende": "La montagne", "description": "" },
       { "fichier": "album70/page-20.jpg", "legende": "Bienvenue au jardin", "description": "" },
-      { "fichier": "album70/page-21.jpg", "legende": "Organiser", "description": "" },
+      { "fichier": "album70/page-21.jpg", "legende": "L'œil organise", "description": "" },
       { "fichier": "album70/page-22.jpg", "legende": "Le comédien", "description": "" },
       { "fichier": "album70/page-23.jpg", "legende": "Jouer", "description": "" },
-      { "fichier": "album70/page-24.jpg", "legende": "Le félin", "description": "" },
+      { "fichier": "album70/page-24.jpg", "legende": "Le vainqueur", "description": "" },
       { "fichier": "album70/page-25.jpg", "legende": "Former l'enfant", "description": "" },
-      { "fichier": "album70/page-26.jpg", "legende": "Le bâton de Roy", "description": "" },
+      { "fichier": "album70/page-26.jpg", "legende": "La bean du Roy", "description": "Chaque année, le 6 janvier, pour la fête des Rois — en mémoire des Rois mages." },
       { "fichier": "album70/page-27.jpg", "legende": "Le bonheur, c'est les autres", "description": "Inspiration, exploration." },
       { "fichier": "album70/page-28.jpg", "legende": "L'ami de la science et de l'intuition", "description": "" },
       { "fichier": "album70/page-29.jpg", "legende": "Pour un jardin écologique", "description": "" },
@@ -248,7 +252,7 @@ const GALERIES = [
       { "fichier": "album70/page-35.jpg", "legende": "Noémie", "description": "" },
       { "fichier": "album70/page-36.jpg", "legende": "En famille", "description": "" },
       { "fichier": "album70/page-37.jpg", "legende": "Surprendre sa blonde", "description": "" },
-      { "fichier": "album70/page-38.jpg", "legende": "Comme un boulanger !", "description": "" },
+      { "fichier": "album70/page-38.jpg", "legende": "Comme un écureuil enjoué !", "description": "Écureuil enjoué était mon totem chez les scouts." },
       { "fichier": "album70/page-39.jpg", "legende": "Chez les anciens, 1978", "description": "" },
       { "fichier": "album70/page-40.jpg", "legende": "L'ancien, 2017", "description": "" },
       { "fichier": "album70/page-41.jpg", "legende": "Quand la sève monte", "description": "" }
@@ -256,6 +260,7 @@ const GALERIES = [
   },
   {
     "id": "ecole",
+    "type": "photo",
     "fichier": "galerie-ecole.html",
     "etiquette": "Mémoire · Jeunesse",
     "titre": "Mes années d'école",
@@ -281,6 +286,7 @@ const GALERIES = [
   },
   {
     "id": "vie",
+    "type": "photo",
     "fichier": "galerie-vie.html",
     "etiquette": "Portraits · Mémoire",
     "titre": "Une vie en images",
@@ -337,6 +343,7 @@ const GALERIES = [
   },
   {
     "id": "roches",
+    "type": "creation",
     "fichier": "galerie-roches.html",
     "etiquette": "Nature · Contemplation",
     "titre": "Roches",

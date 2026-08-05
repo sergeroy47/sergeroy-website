@@ -162,6 +162,7 @@
   .photo-cell-ph{width:100%;height:100%;display:flex;align-items:flex-end;padding:16px;font-family:var(--italic);font-style:italic;font-size:14px;color:rgba(255,255,255,0.65);}
   .galerie-lien{text-align:center;margin-top:56px;display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(239,230,208,0.15);}
   .galerie-lien-texte{font-family:var(--italic);font-style:italic;font-size:20px;color:rgba(239,230,208,0.7);}
+  .galerie-lien-boutons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
   .btn-or{padding:14px 24px;border:1px solid var(--or);color:var(--or);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all .25s;background:transparent;display:inline-block;}
   .btn-or:hover{background:var(--or);color:var(--encre);}
 
@@ -470,7 +471,10 @@
     <div class="galerie-grille reveal" id="galerie-grille"></div>
     <div class="galerie-lien">
       <div class="galerie-lien-texte">Une sélection parmi les galeries thématiques.</div>
-      <a href="galeries.html" class="btn-or">Voir toutes les galeries →</a>
+      <div class="galerie-lien-boutons">
+        <a href="galeries.html" class="btn-or">Galeries photos →</a>
+        <a href="galeries-creations.html" class="btn-or">Galeries de créations →</a>
+      </div>
     </div>
   </div>
 </section>

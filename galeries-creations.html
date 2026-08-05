@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeries photos — Serge Roy</title>
+  <title>Galeries de créations — Serge Roy</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root { --encre:#1c1a14; --terre:#6b5c45; --mousse:#5a6e4a; --lin:#f2ead8; --parchemin:#faf6ee; --or:#b8903a; --ombre:rgba(28,26,20,0.08); }
@@ -52,18 +52,18 @@
 <body>
 <nav>
   <a href="index.html" class="nav-retour">← Serge Roy</a>
-  <span class="nav-titre">Photographies</span>
+  <span class="nav-titre">Créations</span>
 </nav>
 <div class="entete">
   <div class="entete-ornement"></div>
-  <span class="entete-etiquette">Collection photographique</span>
-  <h1>Mes <em>galeries</em></h1>
+  <span class="entete-etiquette">Collection d'œuvres</span>
+  <h1>Mes <em>créations</em></h1>
   <div class="separateur"></div>
-  <p class="entete-intro">Des images organisées par thème — fragments de vie, de nature et de mémoire.</p>
+  <p class="entete-intro">Regards sur la matière, collages et images travaillées — ce que l'œil compose.</p>
 </div>
 <div class="conteneur">
   <div class="galeries-grille" id="galeries-grille"></div>
-  <div class="lien-autre"><a href="galeries-creations.html">Voir mes créations →</a></div>
+  <div class="lien-autre"><a href="galeries.html">Voir mes galeries photos →</a></div>
 </div>
 <footer>
   <div class="footer-marque">SERGE ROY</div>
@@ -94,7 +94,7 @@
     } catch(e) { return GALERIES; }
   }
   const grille = document.getElementById('galeries-grille');
-  getGaleries().filter(g => (g.type || 'photo') === 'photo').forEach(g => {
+  getGaleries().filter(g => g.type === 'creation').forEach(g => {
     const nb = (g.photos || []).filter(p => p.fichier).length;
     const compte = nb > 0 ? `${nb} photo${nb > 1 ? 's' : ''}` : 'à venir';
     const vignette = g.vignette
@@ -110,6 +110,27 @@
         <div class="galerie-titre">${g.titre}</div>
         <div class="galerie-desc">${g.sousTitre || ''}</div>
         <span class="galerie-lien">Voir la galerie →</span>
+      </div>`;
+    grille.appendChild(a);
+  });
+
+  // Deux sections vivent sur la page d'accueil : on y renvoie
+  [
+    { href:'index.html#collages', etiquette:'Collection 1980 — aujourd\u0027hui', titre:'Poésie-Secours',
+      sous:'Photographie, texte manuscrit, fond peint.', vignette:'collages/PoesieSecours.jpeg', compte:'14 collages' },
+    { href:'index.html#creations', etiquette:'Dessins · Collages · Calligraphies', titre:'Créations',
+      sous:'Ce qui ne relève pas de la série Poésie-Secours.', vignette:'creations/peinture-1970.jpg', compte:'5 œuvres' }
+  ].forEach(c => {
+    const a = document.createElement('a');
+    a.href = c.href;
+    a.className = 'galerie-carte apparaitre';
+    a.innerHTML = `
+      <div class="galerie-vignette"><img src="${c.vignette}" alt="${c.titre}"><div class="galerie-voile"></div><span class="galerie-compte">${c.compte}</span></div>
+      <div class="galerie-info">
+        <div class="galerie-etiquette">${c.etiquette}</div>
+        <div class="galerie-titre">${c.titre}</div>
+        <div class="galerie-desc">${c.sous}</div>
+        <span class="galerie-lien">Voir →</span>
       </div>`;
     grille.appendChild(a);
   });
