@@ -135,6 +135,16 @@ const GALERIES = [
         "description": "En arrière, de gauche à droite : Serge, Perle, Suzanne, Mariette, Ghislaine et Jean-Luc. Assis à l'avant : Denise, Jean-Noël, Yvonne, Rosaire et Marcel.\n\nCette photo accompagnait mon texte « Cultiver la vie, apprivoiser la mort », dans la section Mes textes du site."
       },
       {
+        "fichier": "Famille/SergeGenouxYvonne.jpg",
+        "legende": "Bébé, sur les genoux de ma mère",
+        "description": "Je suis bébé, dans les bras d'Yvonne, avec mes frères et sœurs alignés sur le banc en manteaux et chapeaux.\n\nLa photo a été prise sur le terrain de l'Acton Shoe, l'usine où travaillait mon père."
+      },
+      {
+        "fichier": "Famille/SergeEpaulesRosaire.jpg",
+        "legende": "Sur les épaules de mon père",
+        "description": "Un autre jour, deux ou trois ans plus tard — je suis juché sur les épaules de Rosaire, au-dessus de toute la famille. On reconnaît le même mur de brique de l'Acton Shoe derrière nous."
+      },
+      {
         "fichier": "Famille/NoelYvonneEnfants.jpg",
         "legende": "Noël — Yvonne, la mère Noël",
         "description": "Un Noël à la maison, devant l'arbre. Marcel est debout derrière, Jean-Noël fait le clown au premier plan, et Denise se tient à gauche. À droite, Yvonne — la mère Noël — les regarde depuis son fauteuil."
