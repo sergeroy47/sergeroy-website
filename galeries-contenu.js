@@ -142,7 +142,7 @@ const GALERIES = [
       {
         "fichier": "Famille/SergeEpaulesRosaire.jpg",
         "legende": "Sur les épaules de mon père",
-        "description": "Un autre jour, deux ou trois ans plus tard — je suis juché sur les épaules de Rosaire, au-dessus de toute la famille. On reconnaît le même mur de brique de l'Acton Shoe derrière nous."
+        "description": "J'ai environ trois ans, juché sur les épaules de Rosaire — sans doute de retour de la cabane à sucre. On reconnaît le même mur de brique de l'Acton Shoe derrière nous."
       },
       {
         "fichier": "Famille/NoelYvonneEnfants.jpg",
@@ -200,6 +200,58 @@ const GALERIES = [
         "legende": "Arbre au soleil",
         "description": ""
       }
+    ]
+  },
+  {
+    "id": "album70",
+    "fichier": "galerie-album70.html",
+    "etiquette": "Colette · Cadeau",
+    "titre": "70 ans à fleurir sa vie",
+    "sousTitre": "L'album que Colette m'a offert pour mes soixante-dix ans.",
+    "intro": "Quarante et une pages de collages faits main, une par facette de ma vie — le poète, le jardinier, le pêcheur, le patineur, le comédien, l'ami de la science et de l'intuition.",
+    "vignette": "album70/page-01.jpg",
+    "photos": [
+      { "fichier": "album70/page-01.jpg", "legende": "70 ans à fleurir sa vie !", "description": "La page de titre de l'album que Colette, ma conjointe, m'a offert pour mes soixante-dix ans. Chaque page qui suit est un collage fait main, consacré à une facette de ma vie." },
+      { "fichier": "album70/page-02.jpg", "legende": "Le poète — rêver de créer", "description": "" },
+      { "fichier": "album70/page-03.jpg", "legende": "Au jardin", "description": "" },
+      { "fichier": "album70/page-04.jpg", "legende": "Son jardin", "description": "" },
+      { "fichier": "album70/page-05.jpg", "legende": "Taï-chi — l'énergie qui marche", "description": "" },
+      { "fichier": "album70/page-06.jpg", "legende": "Samouraï", "description": "" },
+      { "fichier": "album70/page-07.jpg", "legende": "Le chef cuisinier", "description": "" },
+      { "fichier": "album70/page-08.jpg", "legende": "Le pêcheur", "description": "" },
+      { "fichier": "album70/page-09.jpg", "legende": "La musique à l'oreille", "description": "L'artiste qui voit le monde autrement." },
+      { "fichier": "album70/page-10.jpg", "legende": "Le boulanger", "description": "" },
+      { "fichier": "album70/page-11.jpg", "legende": "Chaque jour sa pomme", "description": "" },
+      { "fichier": "album70/page-12.jpg", "legende": "Vélo, pas de char", "description": "" },
+      { "fichier": "album70/page-13.jpg", "legende": "Une forêt en soi", "description": "" },
+      { "fichier": "album70/page-14.jpg", "legende": "Garder l'équilibre", "description": "" },
+      { "fichier": "album70/page-15.jpg", "legende": "La glisse", "description": "" },
+      { "fichier": "album70/page-16.jpg", "legende": "Le patineur", "description": "" },
+      { "fichier": "album70/page-17.jpg", "legende": "Le cavalier et la bête", "description": "" },
+      { "fichier": "album70/page-18.jpg", "legende": "À cheval", "description": "" },
+      { "fichier": "album70/page-19.jpg", "legende": "La montagne", "description": "" },
+      { "fichier": "album70/page-20.jpg", "legende": "Bienvenue au jardin", "description": "" },
+      { "fichier": "album70/page-21.jpg", "legende": "Organiser", "description": "" },
+      { "fichier": "album70/page-22.jpg", "legende": "Le comédien", "description": "" },
+      { "fichier": "album70/page-23.jpg", "legende": "Jouer", "description": "" },
+      { "fichier": "album70/page-24.jpg", "legende": "Le félin", "description": "" },
+      { "fichier": "album70/page-25.jpg", "legende": "Former l'enfant", "description": "" },
+      { "fichier": "album70/page-26.jpg", "legende": "Le bâton de Roy", "description": "" },
+      { "fichier": "album70/page-27.jpg", "legende": "Le bonheur, c'est les autres", "description": "Inspiration, exploration." },
+      { "fichier": "album70/page-28.jpg", "legende": "L'ami de la science et de l'intuition", "description": "" },
+      { "fichier": "album70/page-29.jpg", "legende": "Pour un jardin écologique", "description": "" },
+      { "fichier": "album70/page-30.jpg", "legende": "Jardin école", "description": "" },
+      { "fichier": "album70/page-31.jpg", "legende": "Le visionnaire — les réseaux", "description": "" },
+      { "fichier": "album70/page-32.jpg", "legende": "Oui, pour la suite du monde", "description": "" },
+      { "fichier": "album70/page-33.jpg", "legende": "Unir la vie à la vie", "description": "" },
+      { "fichier": "album70/page-34.jpg", "legende": "Kamouraska dit Desjardins", "description": "" },
+      { "fichier": "album70/page-35.jpg", "legende": "Noémie", "description": "" },
+      { "fichier": "album70/page-36.jpg", "legende": "En famille", "description": "" },
+      { "fichier": "album70/page-37.jpg", "legende": "Surprendre sa blonde", "description": "" },
+      { "fichier": "album70/page-38.jpg", "legende": "Comme un boulanger !", "description": "" },
+      { "fichier": "album70/page-39.jpg", "legende": "Chez les anciens, 1978", "description": "" },
+      { "fichier": "album70/page-40.jpg", "legende": "L'ancien, 2017", "description": "" },
+      { "fichier": "album70/page-41.jpg", "legende": "Quand la sève monte", "description": "" }
     ]
   },
   {
