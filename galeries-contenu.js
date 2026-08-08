@@ -280,8 +280,7 @@ const GALERIES = [
       { "fichier": "ecole/versification.jpg", "legende": "Versification", "description": "" },
       { "fichier": "ecole/belles-lettres.jpg", "legende": "Belles-lettres", "description": "Au centre, à l'arrière, le prêtre Jean-Paul Morin — le meilleur professeur de toutes mes études." },
       { "fichier": "ecole/rhetorique.jpg", "legende": "Rhétorique", "description": "Le titulaire de ma classe, debout à l'arrière, était le premier homme noir qui entrait dans ma vie." },
-      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "Baccalauréat ès arts de l'Université de Montréal. Je n'ai pas de photos de mes deux années de Philosophie — celle-ci en tient lieu." },
-      { "fichier": "ecole/deguise-cegep.jpg", "legende": "Déguisement, années cégep", "description": "" }
+      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "Baccalauréat ès arts de l'Université de Montréal. Je n'ai pas de photos de mes deux années de Philosophie — celle-ci en tient lieu." }
     ]
   },
   {
@@ -301,6 +300,7 @@ const GALERIES = [
       { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages." },
       { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
       { "fichier": "vie/serge-ski-de-fond.jpg", "legende": "Ski de fond", "description": "" },
+      { "fichier": "vie/serge-animateur-cegep.jpg", "legende": "Animateur socioculturel au cégep Édouard-Montpetit", "description": "Mes années comme animateur socioculturel au cégep Édouard-Montpetit, à Longueuil." },
       { "fichier": "vie/serge-hippie-plantes.jpg", "legende": "Mes années hippie", "description": "" },
       { "fichier": "vie/serge-hippie-sourire.jpg", "legende": "Mes années hippie", "description": "" },
       { "fichier": "vie/serge-colette.jpg", "legende": "Avec Colette", "description": "" },
