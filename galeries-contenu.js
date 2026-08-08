@@ -295,7 +295,7 @@ const GALERIES = [
     "photos": [
       { "fichier": "vie/serge-bebe.jpg", "legende": "Bébé", "description": "" },
       { "fichier": "vie/serge-bebe-2.jpg", "legende": "Bébé, dans la voiturette", "description": "" },
-      { "fichier": "vie/serge-enfant-portrait.jpg", "legende": "Portrait d'enfant", "description": "" },
+      { "fichier": "vie/serge-enfant-portrait.jpg", "legende": "Portrait d'enfant", "description": "J'aime particulièrement cette photo de ma jeunesse. Ma mère devait être malade, car elle ne m'aurait jamais laissé aller à l'école pour prendre une photo avec cette allure. Mais c'est moi au naturel." },
       { "fichier": "vie/serge-cheval.jpg", "legende": "À cheval", "description": "J'ai fait de l'équitation pendant cinq ans, durant les années 1980. Cette photo a été prise lors d'une randonnée avec le capitaine Janusz Wiazowski, au lac Brome." },
       { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages." },
       { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
