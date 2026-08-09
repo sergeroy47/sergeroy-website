@@ -206,6 +206,28 @@ const GALERIES = [
     ]
   },
   {
+    "id": "amis",
+    "type": "photo",
+    "fichier": "galerie-amis.html",
+    "etiquette": "Amitiés · Compagnons",
+    "titre": "Mes amis",
+    "sousTitre": "Ceux qui ont marché à mes côtés.",
+    "intro": "Les compagnons de route — du tai-chi, du jardin, de la table et du silence.",
+    "vignette": "amis/willjohn-taichi.jpg",
+    "photos": [
+      {
+        "fichier": "amis/willjohn-taichi.jpg",
+        "legende": "WillJohn",
+        "description": "« Tout le poids à droite. »\n\nCes quelques mots suffisent à WillJohn pour nous lancer dans la pratique des 11, des 24 ou des 128 mouvements.\n\nWillJohn, « un gars ben ordinaire ». Ordinaire, mais à couette. Anglophone parmi des francophones.\n\nAlors que la plupart d'entre nous travaillons pour mémoriser les formes, WillJohn les connaît depuis longtemps. Il pourrait les enseigner, mais WillJohn enseigne sans enseigner. Aucun discours : WillJohn est un manuel — pas comme ceux qu'on utilise pour étudier à l'université ; non, manuel comme les mains qui frétillent dans le tai-chi, ou qu'il utilise pour gagner sa vie.\n\nFidèle guide de nos pratiques, WillJohn est toujours le premier arrivé, bien qu'il doive faire plus de cinquante milles pour venir faire du tai-chi avec nous. En plus, il arrive toujours les mains pleines : des œufs, du sirop d'érable ou des cornets.\n\nTout le monde aime WillJohn et WillJohn aime tout le monde. Si un nouveau ou une nouvelle se présente à une pratique, il va l'accueillir simplement.\n\nAvec WillJohn, j'ai le privilège de suivre le même cours d'Inès depuis des années. C'est d'ailleurs de la bouche de WillJohn que j'ai entendu les plus beaux compliments sur le travail d'Inès.\n\nEnsuite, on s'est mis au Kiriki en rigolant. Et puis, avec le travail du temps, WillJohn est devenu mon ami du chi — un ami spirituel, un maître de qui j'apprends sans fin.\n\n« Keep going », WillJohn. La voie, c'est le chemin sous nos pas, au rythme de notre respiration. Tantien !\n\nMerci de partager avec moi et tous les autres ton art de vivre, ta voie intérieure… Merci, WillJohn, d'être là — et voici un prix de présence, et un symbole des grands honneurs : hommage d'un jardinier."
+      },
+      {
+        "fichier": "amis/willjohn-samourai.jpg",
+        "legende": "Le samouraï de WillJohn",
+        "description": "L'une des deux statues que WillJohn m'a léguées un peu avant sa mort ; l'autre est le Zen Frog, dans mon jardin.\n\nJ'ai fait du tai-chi avec lui pendant vingt-cinq ans. Comme moi, il avait eu une jeunesse un peu folle, mais il avait complètement arrêté de consommer depuis de nombreuses années. Par le tai-chi et par cette exubérance, nous étions proches — en plus de notre petit côté artiste.\n\nDepuis que je l'ai connu, il a toujours porté une queue de cheval tressée."
+      }
+    ]
+  },
+  {
     "id": "album70",
     "type": "photo",
     "fichier": "galerie-album70.html",
@@ -309,7 +331,7 @@ const GALERIES = [
       { "fichier": "vie/serge-sangha.jpg", "legende": "Avec la sangha au Centre Zen de Montréal", "description": "" },
       { "fichier": "vie/serge-taichi-solo.jpg", "legende": "Posture de tai-chi", "description": "" },
       { "fichier": "vie/serge-taichi-groupe.jpg", "legende": "Groupe de tai-chi", "description": "" },
-      { "fichier": "vie/serge-meditation-jardin.jpg", "legende": "Méditation au jardin", "description": "" },
+      { "fichier": "vie/serge-meditation-jardin.jpg", "legende": "Méditation au jardin", "description": "Mon ami WillJohn m'avait légué, un peu avant sa mort, deux statues — dont celle-ci derrière moi, le Zen Frog.\n\nEn bon Québécois, j'imite le frog. FROG, une expression que les Anglais utilisaient pour désigner les Canadiens français. « I'm a frog, kiss me and I will turn into a prince », chantait Robert Charlebois." },
       { "fichier": "vie/serge-jardinier.jpg", "legende": "Le jardinier", "description": "" },
       { "fichier": "vie/serge-ete-jardin.jpg", "legende": "Un été au jardin", "description": "" },
       { "fichier": "vie/serge-jardin-communautaire.jpg", "legende": "Au jardin communautaire", "description": "" },
