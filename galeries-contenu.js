@@ -152,6 +152,11 @@ const GALERIES = [
         "description": "Un Noël à la maison, devant l'arbre. Marcel est debout derrière, Jean-Noël fait le clown au premier plan, et Denise se tient à gauche. À droite, Yvonne — la mère Noël — les regarde depuis son fauteuil."
       },
       {
+        "fichier": "Famille/YvonneNoel.jpg",
+        "legende": "Yvonne \u2014 portrait aux lumi\u00e8res de No\u00ebl",
+        "description": "Le m\u00eame No\u00ebl, mais elle seule cette fois. Les lumi\u00e8res de l'arbre se sont pos\u00e9es sur son visage et l'ont enti\u00e8rement recouvert d'\u00e9toiles.\n\nJ'ai travaill\u00e9 l'image longtemps apr\u00e8s, jusqu'\u00e0 ce que la lumi\u00e8re prenne toute la place. Il reste le demi-sourire \u2014 le m\u00eame que sur la photo du photographe, avant son mariage. En \u00e9cho \u00e0 \u00ab No\u00ebl \u2014 Yvonne, la m\u00e8re No\u00ebl \u00bb."
+      },
+      {
         "fichier": "Famille/SuzanneOuestAmericain.jpg",
         "legende": "Suzanne — « J'ai marché sous une pluie de beauté »",
         "description": "Ma sœur Suzanne dans l'Ouest américain — les hoodoos enneigés de Bryce Canyon et les parois ondulées d'un canyon en fente. Une randonneuse jusqu'au bout.\n\nLe titre est d'elle : « J'ai marché sous une pluie de beauté. »"
@@ -187,16 +192,41 @@ const GALERIES = [
     "id": "arbres-roches",
     "type": "creation",
     "fichier": "galerie-arbres-roches.html",
-    "etiquette": "Nature · Contemplation",
+    "etiquette": "Nature \u00b7 Contemplation",
     "titre": "Arbres & roches",
-    "sousTitre": "La permanence du minéral, la lenteur du végétal.",
-    "intro": "Ce qui dure — une contemplation photographique de la matière, du temps et de la présence.",
+    "sousTitre": "La permanence du min\u00e9ral, la lenteur du v\u00e9g\u00e9tal.",
+    "intro": "Ce qui dure \u2014 une contemplation photographique de la mati\u00e8re, du temps et de la pr\u00e9sence.",
     "vignette": "photos/Chene.jpg",
     "photos": [
       {
         "fichier": "photos/Chene.jpg",
-        "legende": "Le grand chêne",
-        "description": "Le chêne de notre jardin, planté bien avant notre arrivée. Témoin silencieux, il observe les saisons et les générations."
+        "legende": "Le grand ch\u00eane",
+        "description": "Le ch\u00eane de notre jardin, plant\u00e9 bien avant notre arriv\u00e9e. T\u00e9moin silencieux, il observe les saisons et les g\u00e9n\u00e9rations."
+      },
+      {
+        "fichier": "arbres/arbre-vie.jpg",
+        "legende": "L'arbre de vie",
+        "description": "Fin d'octobre, au bord de l'eau. La lumi\u00e8re rasante du soir remonte le long du tronc et fait appara\u00eetre chaque pli de l'\u00e9corce.\n\nCet arbre-l\u00e0 ne se contente pas de pousser vers le haut : il s'ouvre, il se donne de l'espace dans toutes les directions. Le sentier passe \u00e0 ses pieds et continue sans lui. On peut marcher longtemps \u00e0 c\u00f4t\u00e9 d'un tel arbre sans le voir."
+      },
+      {
+        "fichier": "arbres/arbre-prairies.jpg",
+        "legende": "L'arbre de la rivi\u00e8re des Prairies",
+        "description": "Le printemps commence \u00e0 peine \u2014 les bourgeons sont \u00e0 peine ouverts, l'arbre montre encore toute son architecture. Derri\u00e8re lui, le pont et la rivi\u00e8re.\n\nDeux mani\u00e8res de traverser l'eau : celle des hommes, en acier et en b\u00e9ton ; celle de l'arbre, immobile, qui traverse le temps."
+      },
+      {
+        "fichier": "arbres/arbre-dessin.jpg",
+        "legende": "Le r\u00e9seau des branches",
+        "description": "Un arbre d'hiver repris au trait. Sans feuilles, l'arbre ne cache plus rien : il montre sa structure enti\u00e8re, ce r\u00e9seau de branches qui se divise et se redivise jusqu'au plus fin.\n\nDes r\u00e9seaux dans des r\u00e9seaux. La m\u00eame figure revient partout \u2014 dans l'arbre, dans les racines, dans les poumons, dans les liens entre les vivants."
+      },
+      {
+        "fichier": "arbres/arbre-neige.jpg",
+        "legende": "Apr\u00e8s la neige",
+        "description": "Chaque branche porte sa ligne blanche, pos\u00e9e l\u00e0 sans effort. La for\u00eat enti\u00e8re est soulign\u00e9e.\n\nCela tiendra quelques heures, une journ\u00e9e peut-\u00eatre. Puis le vent, ou le soleil. C'est justement parce que \u00e7a ne dure pas qu'il faut s'arr\u00eater."
+      },
+      {
+        "fichier": "arbres/chevreuils-longueuil.jpg",
+        "legende": "Chevreuils \u2014 bois\u00e9 de Longueuil",
+        "description": "Deux chevreuils dans le bois\u00e9, l'hiver. L'un broute, l'autre a lev\u00e9 la t\u00eate : il m'a vu avant que je le voie.\n\nIls sont l\u00e0, \u00e0 quelques minutes des maisons et des rues. Le bois\u00e9 tient encore. Tant qu'il tient, ils restent."
       },
       {
         "fichier": "roches/Sunshine Tree.jpg",
