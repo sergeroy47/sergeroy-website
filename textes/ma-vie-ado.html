@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma vie d'ado — Serge Roy</title>
+  <meta name="description" content="Moniteur de terrain de jeu à quinze ans à Acton Vale : la gang d’ados, les étés à thème, le saut en hauteur — et la première incursion dans le monde des filles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    .suite {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--terre);
+    }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Mémoire</span>
+    <h1>Ma vie d'ado</h1>
+    <p class="article-sous-titre">Moniteur de terrain de jeu à Acton Vale</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; à partir de quinze ans</div>
+    <div class="separateur"></div>
+  </header>
+
+  <main class="article-corps">
+
+    <div class="intro-bloc">
+      Deuxième récit de la série. En cours d'écriture — la suite viendra.
+    </div>
+
+    <h2 class="partie-titre">Moniteur à quinze ans</h2>
+
+    <p>Ma vie d'ado, je pourrais la commencer vers quinze ans. Durant cet été, j'étais engagé comme moniteur pour un club d'ados aux loisirs d'Acton Vale. Un camp d'été, ou de jour — dans le temps, on appelait ça une colonie de vacances. Il y avait une section pour les plus jeunes, puis une section pour les ados qui avaient le même âge que moi, de quinze à dix-sept ans. C'était moi et mon ami Yvon Dumaine, un peu plus vieux que moi, qui organisions les activités quotidiennes.</p>
+
+    <p>Expliquons le contexte dans lequel ça se passait. C'était la paroisse qui avait un camp : elle engageait des jeunes du séminaire et des jeunes filles du couvent pour s'occuper des jeunes du village.</p>
+
+    <p>Moi-même, en tant que jeune, j'avais été là quelques fois. J'avoue que la plupart du temps ça ne m'intéressait pas beaucoup — moins que de partir seul avec mes amis à l'aventure. Mais je participais : c'était la façon la plus simple d'aller à la piscine municipale, parce que chaque après-midi la colonie de vacances y allait. C'était encore la même chose quand moi-même je suis arrivé à quinze ans.</p>
+
+    <p>Donc on avait des activités le matin, souvent des activités sportives. Comme je le dis souvent, Acton est une ville de baseball ; alors pour les jeunes du village, c'était le matin une partie de baseball qu'on organisait au stade. Notre base d'activités était dans une école primaire — l'école Labrecque, je pense — qui était au bout du village, tout près du stade de baseball. Le jour, on avait accès à ce stade qui, le soir, devenait le rendez-vous de tout le village pour les parties des Castors d'Acton, une des plus puissantes équipes de la région.</p>
+
+    <p>À un moment donné, c'est la municipalité qui a eu la responsabilité ; mais au début, c'était la paroisse qui organisait une colonie de vacances — les gars d'un bord, et les filles de l'autre, dans un local du couvent.</p>
+
+    <h2 class="partie-titre">La gang d'ados</h2>
+
+    <p>Mais la colonie organisait parfois des activités mixtes. La première année, notre premier été ensemble, les filles étaient au couvent ; les garçons les plus jeunes à l'école Ange-Gardien, où moi j'avais fait ma première année ; et le club d'ados à l'école Labrecque, avec le stade de baseball derrière. On avait donc des réunions ensemble, filles et gars, mais on ne se connaissait pas. Nous, les gars, on se connaissait parce qu'on venait tous du séminaire de Saint-Hyacinthe, tandis que les filles étaient recrutées au couvent des sœurs à Acton Vale. On ne se fréquentait pas ; je ne connaissais personne. Ma sœur Perle était la seule que je connaissais.</p>
+
+    <p>Nous étions des moniteurs de terrain de jeu. Mais dans le fond, ce groupe de jeunes garçons et de jeunes filles participait à des réunions communes, et tranquillement on est devenus une gang d'ados. C'est un peu comme ça que j'ai commencé à fréquenter les filles — parce qu'avant ça, au collège, on était juste entre gars : c'était vraiment une vie organisée par et pour les hommes.</p>
+
+    <p>C'était ma première incursion dans le monde des émotions et des non-dits, parce que tous et toutes, on accédait à des territoires inconnus. Nous étions à une époque où la morale et le contrôle de l'Église étaient très forts. Pas question de parler de nos sentiments, et encore moins de sexualité. On vivait ces dimensions en les vivant concrètement, sans avoir les moyens de les verbaliser et de les échanger.</p>
+
+    <h2 class="partie-titre">Moniteur en chef — et la bureaucratie</h2>
+
+    <p>J'ai fait deux ou trois ans comme moniteur d'ados, et une année on m'a demandé de devenir moniteur en chef. Je m'occupais du côté des garçons, autant des jeunes que du club d'ados. Je coordonnais le travail de cinq ou six moniteurs.</p>
+
+    <p>Puis une année, une grande révolution s'est produite : un nouveau responsable a été engagé à la ville comme directeur des loisirs. Lui avait suivi une formation dans laquelle l'animation était devenue le sujet de l'heure. La grande théorie se résumait à ceci : là où on avait besoin du travail de trois ou quatre moniteurs, un seul animateur pouvait faire la job. Pour un gestionnaire, c'était la solution miracle — on change le titre du poste et on coupe la main-d'œuvre par quatre.</p>
+
+    <p>D'un travail d'été pour occuper des étudiants et les rémunérer minimalement, c'était un début de bureaucratie. J'ai souvent été, dans mes emplois ou dans mes études, dans des situations où la bureaucratie se mettait en place sans avoir les moyens de ses ambitions : tout contrôler. C'étaient des espaces de liberté qui s'étiolaient.</p>
+
+    <p>Par exemple : la première année, le salaire maximum pour une semaine était de 5,85 $. Mais il y avait des critères très compliqués, ce qui faisait qu'on n'avait à peu près jamais 5,85 $ par semaine. C'était une époque où il n'y avait pas beaucoup d'argent et où on le distribuait très, très minutieusement — mais le réflexe bureaucratique se mettait en place. Même que ceux qui avaient été moniteurs de terrain de jeu avant nous, et qui avaient fait le travail bénévolement, nous traitaient de privilégiés. Ce travail était pourtant exigeant : à la fin de chaque été, je devais m'isoler seul dans le bois pour refaire mes forces avant de retourner aux études.</p>
+
+    <h2 class="partie-titre">Se construire dans l'action</h2>
+
+    <p>Mais c'était une parenthèse. Ce que je voulais surtout introduire, c'était notre vie d'ados. La première année, on avait peu d'activités ensemble ; la gang d'ados qu'on est devenue avec les années n'existait pas encore, elle était en construction. On la construisait en travaillant en équipe.</p>
+
+    <p>Pour moi, c'était toujours dans l'action que je m'exprimais le mieux, parce que j'avais de la difficulté à faire des activités parlantes. Je me suis toujours plus réalisé dans l'action que dans les discours ou les discussions. C'était plus facile de faire des choses avec d'autres, en discutant, en se mettant d'accord, que de s'asseoir et de faire des projets qui trouvent les bonnes solutions avant que les problèmes arrivent.</p>
+
+    <p>Ça, c'était un avantage d'être dans l'action : ça m'a aidé à rencontrer les autres gars avec qui je travaillais, parce qu'en même temps on faisait des projets.</p>
+
+    <h2 class="partie-titre">L'été des extraterrestres</h2>
+
+    <p>À chaque été, on avait comme un thème. Je me souviens d'un été où c'était le thème des extraterrestres. À chaque début de semaine, on rassemblait tout le monde — autant les garçons que les filles — dans une salle, et on leur faisait une mise en scène sur la venue des extraterrestres à Acton Vale.</p>
+
+    <p>Acton, c'était bien connu, il y avait une mine de cuivre laissée à l'abandon. La mine de cuivre est donc devenue le théâtre d'un débarquement d'extraterrestres qui avaient laissé des traces. Chaque début de semaine, on rassemblait les gars et les filles et on leur présentait des indices, des communications avec les extraterrestres. Une mise en scène qui durait tout l'été. Et les jeunes accrochaient, finissaient par croire à cette histoire à dormir debout. Même le chef de police — qui était un bon gars — s'était mis d'accord avec nous pour entrer dans le jeu, pour créer une espèce de suspense qui tienne lieu de scénario réaliste.</p>
+
+    <p>Chaque été, nous faisions plein de projets, et à la fin de l'été on faisait une exposition des travaux que les jeunes avaient réalisés. Nous faisions des montages, des décors. Le sous-sol de l'église se remplissait de paysages, de décors dans lesquels on présentait toutes sortes de shows. C'étaient vraiment des activités presque culturelles — mais c'était pour amuser, occuper les jeunes pendant l'été.</p>
+
+    <h2 class="partie-titre">Le sportif</h2>
+
+    <p>Moi, j'étais dans le club plus dirigé, le club d'ados, parce que j'étais un bon sportif et que les activités qu'on offrait étaient surtout sportives. J'ai parlé du baseball, mais on faisait aussi de l'athlétisme — au collège, je faisais de la course et du saut en hauteur, qui était ma spécialité.</p>
+
+    <p>J'avais même participé à un concours intercollégial qui avait lieu chaque année au collège Brébeuf, à Montréal. On y rassemblait les meilleurs ; je représentais mon collège au saut en hauteur. C'était toute cette expérience-là que j'amenais au terrain de jeu.</p>
+
+    <p>Mais on faisait aussi d'autres activités un peu plus artistiques ou artisanales : du théâtre, la confection de cerfs-volants. Le matin, il y avait toujours une partie de baseball. On formait plusieurs équipes qui compétitionnaient les unes contre les autres ; chaque jour, deux équipes de neuf joueurs s'affrontaient, pendant que les autres faisaient différentes activités. Puis l'après-midi, la grosse activité : on allait à la piscine. Et là, je me transformais en gardien de piscine.</p>
+
+    <p class="suite">Récit en cours d'écriture. La suite viendra — et avec elle <a href="ma-vie.html">les autres récits de la série</a>.</p>
+
+    <div class="lien-galerie">
+      <a href="../galerie-vie.html">Voir les photos de cette époque →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>
