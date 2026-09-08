@@ -89,9 +89,15 @@
     <div class="lightbox" id="lightbox">
       <button class="lightbox-fermer" id="lb-fermer">✕ Fermer</button>
       <button class="lightbox-nav lightbox-prev" id="lb-prev">&#8249;</button>
-      <img class="lightbox-img" id="lb-img" src="" alt="">
-      <div class="lightbox-legende" id="lb-legende"></div>
-      <div class="lightbox-description" id="lb-description"></div>
+      <div class="lightbox-corps" id="lb-corps">
+        <div class="lightbox-media">
+          <img class="lightbox-img" id="lb-img" src="" alt="">
+          <div class="lightbox-legende" id="lb-legende"></div>
+        </div>
+        <div class="lightbox-panneau" id="lb-panneau">
+          <div class="lightbox-description" id="lb-description"></div>
+        </div>
+      </div>
       <button class="lightbox-nav lightbox-next" id="lb-next">&#8250;</button>
     </div>
   `;
@@ -140,12 +146,17 @@
   const lbImg = document.getElementById('lb-img');
   const lbLeg = document.getElementById('lb-legende');
   const lbDesc = document.getElementById('lb-description');
+  const lbCorps = document.getElementById('lb-corps');
+  function majTexte(p) {
+    lbDesc.textContent = p.description || '';
+    lbCorps.classList.toggle('avec-texte', !!p.description);
+    lbDesc.scrollTop = 0;
+  }
 
   function ouvrirLightbox(i) {
     idx = i; lbImg.src = photos[i].fichier; lbImg.alt = photos[i].legende || '';
     lbLeg.textContent = photos[i].legende || '';
-    lbDesc.textContent = photos[i].description || '';
-    lbDesc.style.display = photos[i].description ? 'block' : 'none';
+    majTexte(photos[i]);
     lightbox.classList.add('actif');
     document.body.style.overflow = 'hidden';
   }
@@ -153,8 +164,7 @@
     idx = (idx + dir + photos.length) % photos.length;
     lbImg.src = photos[idx].fichier; lbImg.alt = photos[idx].legende || '';
     lbLeg.textContent = photos[idx].legende || '';
-    lbDesc.textContent = photos[idx].description || '';
-    lbDesc.style.display = photos[idx].description ? 'block' : 'none';
+    majTexte(photos[idx]);
   }
   function fermerLB() { lightbox.classList.remove('actif'); lbImg.src = ''; document.body.style.overflow = ''; }
 
