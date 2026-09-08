@@ -26,7 +26,7 @@ const CONTENU = {
       "Santé",
       "Trajectoire intellectuelle"
     ],
-    "photo": "portraits/SergeReveur.jpg"
+    "photo": "portraits/Serge2027.jpg"
   },
   "textes": [
     {
