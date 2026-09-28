@@ -97,7 +97,7 @@ const CONTENU = {
       "titre": "Des réseaux dans des réseaux INTEREXISTENCE",
       "extrait": "De la cybernétique à la contemplation — comment la technologie m'a conduit vers le silence...",
       "date": "2024",
-      "lien": "textes/Des_réseaux_dans_des_réseaux_INTEREXISTENCE_1.html"
+      "lien": "textes/Des_reseaux_dans_des_reseaux_INTEREXISTENCE.html"
     },
     {
       "categorie": "Nature",
