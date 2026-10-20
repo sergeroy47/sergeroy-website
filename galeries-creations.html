@@ -70,13 +70,20 @@
   <div class="footer-marque">SERGE ROY</div>
   <div class="footer-sous">Espace de mémoire, de création et de contemplation.</div>
 </footer>
-<script src="galeries-contenu.js?v=20260805a"></script>
+<script src="galeries-contenu.js?v=20261020a"></script>
 <script>
   function getGaleries() {
     try {
       const s = localStorage.getItem('serge-roy-galeries');
       if (!s) return GALERIES;
       const local = JSON.parse(s);
+      // Oct. 2026 : la galerie « Roches » a été réunie à « Arbres & roches »
+      if (local.some(g => g.id === 'roches') && typeof GALERIES !== 'undefined') {
+        const ref = GALERIES.find(g => g.id === 'arbres-roches');
+        const i = local.findIndex(g => g.id === 'arbres-roches');
+        if (ref && i >= 0) local[i] = JSON.parse(JSON.stringify(ref));
+        local.splice(local.findIndex(g => g.id === 'roches'), 1);
+      }
       // Fusionner les nouvelles photos depuis galeries-contenu.js
       GALERIES.forEach(ref => {
         let loc = local.find(g => g.id === ref.id);

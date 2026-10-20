@@ -19,6 +19,13 @@
       const s = localStorage.getItem('serge-roy-galeries');
       if (!s) return typeof GALERIES !== 'undefined' ? GALERIES : [];
       const local = JSON.parse(s);
+      // Oct. 2026 : la galerie « Roches » a été réunie à « Arbres & roches »
+      if (local.some(g => g.id === 'roches') && typeof GALERIES !== 'undefined') {
+        const ref = GALERIES.find(g => g.id === 'arbres-roches');
+        const i = local.findIndex(g => g.id === 'arbres-roches');
+        if (ref && i >= 0) local[i] = JSON.parse(JSON.stringify(ref));
+        local.splice(local.findIndex(g => g.id === 'roches'), 1);
+      }
       // Fusionner les photos depuis galeries-contenu.js si une galerie locale est vide
       if (typeof GALERIES !== 'undefined') {
         GALERIES.forEach(ref => {

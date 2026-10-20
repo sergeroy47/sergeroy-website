@@ -153,8 +153,8 @@ const GALERIES = [
       },
       {
         "fichier": "Famille/YvonneNoel.jpg",
-        "legende": "Yvonne \u2014 portrait aux lumi\u00e8res de No\u00ebl",
-        "description": "Le m\u00eame No\u00ebl, mais elle seule cette fois. Les lumi\u00e8res de l'arbre se sont pos\u00e9es sur son visage et l'ont enti\u00e8rement recouvert d'\u00e9toiles.\n\nJ'ai travaill\u00e9 l'image longtemps apr\u00e8s, jusqu'\u00e0 ce que la lumi\u00e8re prenne toute la place. Il reste le demi-sourire \u2014 le m\u00eame que sur la photo du photographe, avant son mariage. En \u00e9cho \u00e0 \u00ab No\u00ebl \u2014 Yvonne, la m\u00e8re No\u00ebl \u00bb."
+        "legende": "Yvonne — portrait aux lumières de Noël",
+        "description": "Le même Noël, mais elle seule cette fois. Les lumières de l'arbre se sont posées sur son visage et l'ont entièrement recouvert d'étoiles.\n\nJ'ai travaillé l'image longtemps après, jusqu'à ce que la lumière prenne toute la place. Il reste le demi-sourire — le même que sur la photo du photographe, avant son mariage. En écho à « Noël — Yvonne, la mère Noël »."
       },
       {
         "fichier": "Famille/SuzanneOuestAmericain.jpg",
@@ -192,45 +192,90 @@ const GALERIES = [
     "id": "arbres-roches",
     "type": "creation",
     "fichier": "galerie-arbres-roches.html",
-    "etiquette": "Nature \u00b7 Contemplation",
+    "etiquette": "Nature · Contemplation",
     "titre": "Arbres & roches",
-    "sousTitre": "La permanence du min\u00e9ral, la lenteur du v\u00e9g\u00e9tal.",
-    "intro": "Ce qui dure \u2014 une contemplation photographique de la mati\u00e8re, du temps et de la pr\u00e9sence.",
+    "sousTitre": "La permanence du minéral, la lenteur du végétal.",
+    "intro": "Ce qui dure — arbres, pierres et paysages : une contemplation photographique de la matière, du temps et de la présence.",
     "vignette": "photos/Chene.jpg",
     "photos": [
       {
         "fichier": "photos/Chene.jpg",
-        "legende": "Le grand ch\u00eane",
-        "description": "Le ch\u00eane de notre jardin, plant\u00e9 bien avant notre arriv\u00e9e. T\u00e9moin silencieux, il observe les saisons et les g\u00e9n\u00e9rations."
+        "legende": "Le grand chêne",
+        "description": "Le chêne de notre jardin, planté bien avant notre arrivée. Témoin silencieux, il observe les saisons et les générations."
       },
       {
         "fichier": "arbres/arbre-vie.jpg",
         "legende": "L'arbre de vie",
-        "description": "Fin d'octobre, au bord de l'eau. La lumi\u00e8re rasante du soir remonte le long du tronc et fait appara\u00eetre chaque pli de l'\u00e9corce.\n\nCet arbre-l\u00e0 ne se contente pas de pousser vers le haut : il s'ouvre, il se donne de l'espace dans toutes les directions. Le sentier passe \u00e0 ses pieds et continue sans lui. On peut marcher longtemps \u00e0 c\u00f4t\u00e9 d'un tel arbre sans le voir."
+        "description": "Fin d'octobre, au bord de l'eau. La lumière rasante du soir remonte le long du tronc et fait apparaître chaque pli de l'écorce.\n\nCet arbre-là ne se contente pas de pousser vers le haut : il s'ouvre, il se donne de l'espace dans toutes les directions. Le sentier passe à ses pieds et continue sans lui. On peut marcher longtemps à côté d'un tel arbre sans le voir."
       },
       {
         "fichier": "arbres/arbre-prairies.jpg",
-        "legende": "L'arbre de la rivi\u00e8re des Prairies",
-        "description": "Le printemps commence \u00e0 peine \u2014 les bourgeons sont \u00e0 peine ouverts, l'arbre montre encore toute son architecture. Derri\u00e8re lui, le pont et la rivi\u00e8re.\n\nDeux mani\u00e8res de traverser l'eau : celle des hommes, en acier et en b\u00e9ton ; celle de l'arbre, immobile, qui traverse le temps."
+        "legende": "L'arbre de la rivière des Prairies",
+        "description": "Le printemps commence à peine — les bourgeons sont à peine ouverts, l'arbre montre encore toute son architecture. Derrière lui, le pont et la rivière.\n\nDeux manières de traverser l'eau : celle des hommes, en acier et en béton ; celle de l'arbre, immobile, qui traverse le temps."
       },
       {
         "fichier": "arbres/arbre-dessin.jpg",
-        "legende": "Le r\u00e9seau des branches",
-        "description": "Un arbre d'hiver repris au trait. Sans feuilles, l'arbre ne cache plus rien : il montre sa structure enti\u00e8re, ce r\u00e9seau de branches qui se divise et se redivise jusqu'au plus fin.\n\nDes r\u00e9seaux dans des r\u00e9seaux. La m\u00eame figure revient partout \u2014 dans l'arbre, dans les racines, dans les poumons, dans les liens entre les vivants."
+        "legende": "Le réseau des branches",
+        "description": "Un arbre d'hiver repris au trait. Sans feuilles, l'arbre ne cache plus rien : il montre sa structure entière, ce réseau de branches qui se divise et se redivise jusqu'au plus fin.\n\nDes réseaux dans des réseaux. La même figure revient partout — dans l'arbre, dans les racines, dans les poumons, dans les liens entre les vivants."
       },
       {
         "fichier": "arbres/arbre-neige.jpg",
-        "legende": "Apr\u00e8s la neige",
-        "description": "Chaque branche porte sa ligne blanche, pos\u00e9e l\u00e0 sans effort. La for\u00eat enti\u00e8re est soulign\u00e9e.\n\nCela tiendra quelques heures, une journ\u00e9e peut-\u00eatre. Puis le vent, ou le soleil. C'est justement parce que \u00e7a ne dure pas qu'il faut s'arr\u00eater."
+        "legende": "Après la neige",
+        "description": "Chaque branche porte sa ligne blanche, posée là sans effort. La forêt entière est soulignée.\n\nCela tiendra quelques heures, une journée peut-être. Puis le vent, ou le soleil. C'est justement parce que ça ne dure pas qu'il faut s'arrêter."
       },
       {
         "fichier": "arbres/chevreuils-longueuil.jpg",
-        "legende": "Chevreuils \u2014 bois\u00e9 de Longueuil",
-        "description": "Deux chevreuils dans le bois\u00e9, l'hiver. L'un broute, l'autre a lev\u00e9 la t\u00eate : il m'a vu avant que je le voie.\n\nIls sont l\u00e0, \u00e0 quelques minutes des maisons et des rues. Le bois\u00e9 tient encore. Tant qu'il tient, ils restent."
+        "legende": "Chevreuils — boisé de Longueuil",
+        "description": "Deux chevreuils dans le boisé, l'hiver. L'un broute, l'autre a levé la tête : il m'a vu avant que je le voie.\n\nIls sont là, à quelques minutes des maisons et des rues. Le boisé tient encore. Tant qu'il tient, ils restent."
       },
       {
         "fichier": "roches/Sunshine Tree.jpg",
         "legende": "Arbre au soleil",
+        "description": ""
+      },
+      {
+        "fichier": "roches/Doubleroche.jpg",
+        "legende": "Double roche",
+        "description": ""
+      },
+      {
+        "fichier": "roches/EnsoSerpent1.jpg",
+        "legende": "Ensō serpent",
+        "description": ""
+      },
+      {
+        "fichier": "roches/Kuya Japon.jpg",
+        "legende": "Kuya, Japon",
+        "description": ""
+      },
+      {
+        "fichier": "roches/RocChinois.jpg",
+        "legende": "Roc chinois",
+        "description": ""
+      },
+      {
+        "fichier": "roches/RocheTrait.jpg",
+        "legende": "Roche trait",
+        "description": ""
+      },
+      {
+        "fichier": "roches/Rock.jpeg",
+        "legende": "Roche",
+        "description": ""
+      },
+      {
+        "fichier": "roches/RockRound.jpg",
+        "legende": "Roche ronde",
+        "description": ""
+      },
+      {
+        "fichier": "roches/Shih-t'ao.jpg",
+        "legende": "Shih-t'ao",
+        "description": ""
+      },
+      {
+        "fichier": "roches/Spring Melting.jpg",
+        "legende": "Fonte du printemps",
         "description": ""
       }
     ]
@@ -267,47 +312,211 @@ const GALERIES = [
     "intro": "Quarante et une pages de collages faits main, une par facette de ma vie — le poète, le jardinier, le pêcheur, le patineur, le comédien, l'ami de la science et de l'intuition.",
     "vignette": "album70/page-01.jpg",
     "photos": [
-      { "fichier": "album70/page-01.jpg", "legende": "70 ans à fleurir sa vie !", "description": "La page de titre de l'album que Colette, ma conjointe, m'a offert pour mes soixante-dix ans. Chaque page qui suit est un collage fait main, consacré à une facette de ma vie." },
-      { "fichier": "album70/page-02.jpg", "legende": "Le poète — rêver de créer", "description": "" },
-      { "fichier": "album70/page-03.jpg", "legende": "Au jardin", "description": "" },
-      { "fichier": "album70/page-04.jpg", "legende": "Son jardin", "description": "" },
-      { "fichier": "album70/page-05.jpg", "legende": "Taï-chi — l'énergie qui marche", "description": "" },
-      { "fichier": "album70/page-06.jpg", "legende": "Samouraï", "description": "" },
-      { "fichier": "album70/page-07.jpg", "legende": "Le chef cuisinier", "description": "" },
-      { "fichier": "album70/page-08.jpg", "legende": "Le pêcheur", "description": "" },
-      { "fichier": "album70/page-09.jpg", "legende": "La musique à l'oreille", "description": "L'artiste qui voit le monde autrement." },
-      { "fichier": "album70/page-10.jpg", "legende": "Le boulanger", "description": "" },
-      { "fichier": "album70/page-11.jpg", "legende": "Chaque jour sa pomme", "description": "" },
-      { "fichier": "album70/page-12.jpg", "legende": "Vélo, pas de char", "description": "" },
-      { "fichier": "album70/page-13.jpg", "legende": "Une forêt en soi", "description": "" },
-      { "fichier": "album70/page-14.jpg", "legende": "Garder l'équilibre", "description": "" },
-      { "fichier": "album70/page-15.jpg", "legende": "La glisse", "description": "" },
-      { "fichier": "album70/page-16.jpg", "legende": "Le patineur", "description": "" },
-      { "fichier": "album70/page-17.jpg", "legende": "Le cavalier et la bête", "description": "" },
-      { "fichier": "album70/page-18.jpg", "legende": "À cheval", "description": "" },
-      { "fichier": "album70/page-19.jpg", "legende": "La montagne", "description": "" },
-      { "fichier": "album70/page-20.jpg", "legende": "Bienvenue au jardin", "description": "" },
-      { "fichier": "album70/page-21.jpg", "legende": "L'œil organise", "description": "" },
-      { "fichier": "album70/page-22.jpg", "legende": "Le comédien", "description": "" },
-      { "fichier": "album70/page-23.jpg", "legende": "Jouer", "description": "" },
-      { "fichier": "album70/page-24.jpg", "legende": "Le vainqueur", "description": "" },
-      { "fichier": "album70/page-25.jpg", "legende": "Former l'enfant", "description": "" },
-      { "fichier": "album70/page-26.jpg", "legende": "La bean du Roy", "description": "Chaque année, le 6 janvier, pour la fête des Rois — en mémoire des Rois mages." },
-      { "fichier": "album70/page-27.jpg", "legende": "Le bonheur, c'est les autres", "description": "Inspiration, exploration." },
-      { "fichier": "album70/page-28.jpg", "legende": "L'ami de la science et de l'intuition", "description": "" },
-      { "fichier": "album70/page-29.jpg", "legende": "Pour un jardin écologique", "description": "" },
-      { "fichier": "album70/page-30.jpg", "legende": "Jardin école", "description": "" },
-      { "fichier": "album70/page-31.jpg", "legende": "Le visionnaire — les réseaux", "description": "" },
-      { "fichier": "album70/page-32.jpg", "legende": "Oui, pour la suite du monde", "description": "" },
-      { "fichier": "album70/page-33.jpg", "legende": "Unir la vie à la vie", "description": "" },
-      { "fichier": "album70/page-34.jpg", "legende": "Kamouraska dit Desjardins", "description": "" },
-      { "fichier": "album70/page-35.jpg", "legende": "Noémie", "description": "" },
-      { "fichier": "album70/page-36.jpg", "legende": "En famille", "description": "" },
-      { "fichier": "album70/page-37.jpg", "legende": "Surprendre sa blonde", "description": "" },
-      { "fichier": "album70/page-38.jpg", "legende": "Comme un écureuil enjoué !", "description": "Écureuil enjoué était mon totem chez les scouts." },
-      { "fichier": "album70/page-39.jpg", "legende": "Chez les anciens, 1978", "description": "" },
-      { "fichier": "album70/page-40.jpg", "legende": "L'ancien, 2017", "description": "" },
-      { "fichier": "album70/page-41.jpg", "legende": "Quand la sève monte", "description": "" }
+      {
+        "fichier": "album70/page-01.jpg",
+        "legende": "70 ans à fleurir sa vie !",
+        "description": "La page de titre de l'album que Colette, ma conjointe, m'a offert pour mes soixante-dix ans. Chaque page qui suit est un collage fait main, consacré à une facette de ma vie."
+      },
+      {
+        "fichier": "album70/page-02.jpg",
+        "legende": "Le poète — rêver de créer",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-03.jpg",
+        "legende": "Au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-04.jpg",
+        "legende": "Son jardin",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-05.jpg",
+        "legende": "Taï-chi — l'énergie qui marche",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-06.jpg",
+        "legende": "Samouraï",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-07.jpg",
+        "legende": "Le chef cuisinier",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-08.jpg",
+        "legende": "Le pêcheur",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-09.jpg",
+        "legende": "La musique à l'oreille",
+        "description": "L'artiste qui voit le monde autrement."
+      },
+      {
+        "fichier": "album70/page-10.jpg",
+        "legende": "Le boulanger",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-11.jpg",
+        "legende": "Chaque jour sa pomme",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-12.jpg",
+        "legende": "Vélo, pas de char",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-13.jpg",
+        "legende": "Une forêt en soi",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-14.jpg",
+        "legende": "Garder l'équilibre",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-15.jpg",
+        "legende": "La glisse",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-16.jpg",
+        "legende": "Le patineur",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-17.jpg",
+        "legende": "Le cavalier et la bête",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-18.jpg",
+        "legende": "À cheval",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-19.jpg",
+        "legende": "La montagne",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-20.jpg",
+        "legende": "Bienvenue au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-21.jpg",
+        "legende": "L'œil organise",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-22.jpg",
+        "legende": "Le comédien",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-23.jpg",
+        "legende": "Jouer",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-24.jpg",
+        "legende": "Le vainqueur",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-25.jpg",
+        "legende": "Former l'enfant",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-26.jpg",
+        "legende": "La bean du Roy",
+        "description": "Chaque année, le 6 janvier, pour la fête des Rois — en mémoire des Rois mages."
+      },
+      {
+        "fichier": "album70/page-27.jpg",
+        "legende": "Le bonheur, c'est les autres",
+        "description": "Inspiration, exploration."
+      },
+      {
+        "fichier": "album70/page-28.jpg",
+        "legende": "L'ami de la science et de l'intuition",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-29.jpg",
+        "legende": "Pour un jardin écologique",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-30.jpg",
+        "legende": "Jardin école",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-31.jpg",
+        "legende": "Le visionnaire — les réseaux",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-32.jpg",
+        "legende": "Oui, pour la suite du monde",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-33.jpg",
+        "legende": "Unir la vie à la vie",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-34.jpg",
+        "legende": "Kamouraska dit Desjardins",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-35.jpg",
+        "legende": "Noémie",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-36.jpg",
+        "legende": "En famille",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-37.jpg",
+        "legende": "Surprendre sa blonde",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-38.jpg",
+        "legende": "Comme un écureuil enjoué !",
+        "description": "Écureuil enjoué était mon totem chez les scouts."
+      },
+      {
+        "fichier": "album70/page-39.jpg",
+        "legende": "Chez les anciens, 1978",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-40.jpg",
+        "legende": "L'ancien, 2017",
+        "description": ""
+      },
+      {
+        "fichier": "album70/page-41.jpg",
+        "legende": "Quand la sève monte",
+        "description": ""
+      }
     ]
   },
   {
@@ -320,19 +529,71 @@ const GALERIES = [
     "intro": "Photos de classe, pensionnat, huit années au séminaire — les années de formation.",
     "vignette": "ecole/classe-primaire.jpg",
     "photos": [
-      { "fichier": "ecole/2e-annee.jpg", "legende": "2e année", "description": "Je suis dans la deuxième rangée, au milieu, avec le veston foncé." },
-      { "fichier": "ecole/classe-primaire.jpg", "legende": "3e année", "description": "" },
-      { "fichier": "ecole/4e-annee.jpg", "legende": "4e année", "description": "" },
-      { "fichier": "ecole/5e-annee-essa-1957.jpg", "legende": "5e année B — École secondaire Saint-André, 1957-58", "description": "Le tableau de la 5e année B à l'ESSA — l'École secondaire Saint-André d'Acton Vale — en 1957-58. Au centre, le professeur E. Guillaume et le directeur F. Gabriel, avec l'école elle-même en dessous. Mon portrait est identifié « S. Roy », dans la partie gauche." },
-      { "fichier": "ecole/corps-musical-2.jpg", "legende": "Le Corps musical d'Acton Vale", "description": "Au primaire, je participais au corps musical de mon école, avec mon ami Réal Laflamme. Nous étions participants avec d'autres jeunes, avec qui nous partagions un trophée — on le voit ici au centre, devant les tambours.\n\nJe suis à droite, à genoux, la main sur le trophée.\n\nCette expérience a eu des suites : plusieurs années plus tard, au séminaire, on m'a demandé de devenir tambour-major de l'harmonie lors d'un concours entre les collèges de la région. J'avoue que l'aventure avait été un peu traumatisante — je n'aimais pas être au premier plan." },
-      { "fichier": "ecole/corps-musical-1.jpg", "legende": "Avec Réal Laflamme et le trophée", "description": "Mon ami Réal Laflamme et moi en uniforme du corps musical, de chaque côté du trophée que nous avions remporté. Je suis à gauche." },
-      { "fichier": "ecole/elements-latins.jpg", "legende": "Éléments latins", "description": "Première année du cours classique au séminaire. Éléments latins, Syntaxe, Méthode, Versification, Belles-Lettres, Rhétorique, puis les deux années de Philosophie — c'était la nomenclature du collège classique." },
-      { "fichier": "ecole/syntaxe.jpg", "legende": "Syntaxe", "description": "" },
-      { "fichier": "ecole/methode.jpg", "legende": "Méthode", "description": "" },
-      { "fichier": "ecole/versification.jpg", "legende": "Versification", "description": "" },
-      { "fichier": "ecole/belles-lettres.jpg", "legende": "Belles-lettres", "description": "Au centre, à l'arrière, le prêtre Jean-Paul Morin — le meilleur professeur de toutes mes études." },
-      { "fichier": "ecole/rhetorique.jpg", "legende": "Rhétorique", "description": "Le titulaire de ma classe, debout à l'arrière, était le premier homme noir qui entrait dans ma vie." },
-      { "fichier": "ecole/finissant-1969.jpg", "legende": "Finissant, 1969", "description": "Baccalauréat ès arts de l'Université de Montréal. Je n'ai pas de photos de mes deux années de Philosophie — celle-ci en tient lieu." }
+      {
+        "fichier": "ecole/2e-annee.jpg",
+        "legende": "2e année",
+        "description": "Je suis dans la deuxième rangée, au milieu, avec le veston foncé."
+      },
+      {
+        "fichier": "ecole/classe-primaire.jpg",
+        "legende": "3e année",
+        "description": ""
+      },
+      {
+        "fichier": "ecole/4e-annee.jpg",
+        "legende": "4e année",
+        "description": ""
+      },
+      {
+        "fichier": "ecole/5e-annee-essa-1957.jpg",
+        "legende": "5e année B — École secondaire Saint-André, 1957-58",
+        "description": "Le tableau de la 5e année B à l'ESSA — l'École secondaire Saint-André d'Acton Vale — en 1957-58. Au centre, le professeur E. Guillaume et le directeur F. Gabriel, avec l'école elle-même en dessous. Mon portrait est identifié « S. Roy », dans la partie gauche."
+      },
+      {
+        "fichier": "ecole/corps-musical-2.jpg",
+        "legende": "Le Corps musical d'Acton Vale",
+        "description": "Au primaire, je participais au corps musical de mon école, avec mon ami Réal Laflamme. Nous étions participants avec d'autres jeunes, avec qui nous partagions un trophée — on le voit ici au centre, devant les tambours.\n\nJe suis à droite, à genoux, la main sur le trophée.\n\nCette expérience a eu des suites : plusieurs années plus tard, au séminaire, on m'a demandé de devenir tambour-major de l'harmonie lors d'un concours entre les collèges de la région. J'avoue que l'aventure avait été un peu traumatisante — je n'aimais pas être au premier plan."
+      },
+      {
+        "fichier": "ecole/corps-musical-1.jpg",
+        "legende": "Avec Réal Laflamme et le trophée",
+        "description": "Mon ami Réal Laflamme et moi en uniforme du corps musical, de chaque côté du trophée que nous avions remporté. Je suis à gauche."
+      },
+      {
+        "fichier": "ecole/elements-latins.jpg",
+        "legende": "Éléments latins",
+        "description": "Première année du cours classique au séminaire. Éléments latins, Syntaxe, Méthode, Versification, Belles-Lettres, Rhétorique, puis les deux années de Philosophie — c'était la nomenclature du collège classique."
+      },
+      {
+        "fichier": "ecole/syntaxe.jpg",
+        "legende": "Syntaxe",
+        "description": ""
+      },
+      {
+        "fichier": "ecole/methode.jpg",
+        "legende": "Méthode",
+        "description": ""
+      },
+      {
+        "fichier": "ecole/versification.jpg",
+        "legende": "Versification",
+        "description": ""
+      },
+      {
+        "fichier": "ecole/belles-lettres.jpg",
+        "legende": "Belles-lettres",
+        "description": "Au centre, à l'arrière, le prêtre Jean-Paul Morin — le meilleur professeur de toutes mes études."
+      },
+      {
+        "fichier": "ecole/rhetorique.jpg",
+        "legende": "Rhétorique",
+        "description": "Le titulaire de ma classe, debout à l'arrière, était le premier homme noir qui entrait dans ma vie."
+      },
+      {
+        "fichier": "ecole/finissant-1969.jpg",
+        "legende": "Finissant, 1969",
+        "description": "Baccalauréat ès arts de l'Université de Montréal. Je n'ai pas de photos de mes deux années de Philosophie — celle-ci en tient lieu."
+      }
     ]
   },
   {
@@ -345,73 +606,236 @@ const GALERIES = [
     "intro": "Des instants de ma vie — enfance, famille, jardin, tai-chi et méditation — rassemblés au fil des années.",
     "vignette": "vie/serge-meditation-jardin.jpg",
     "photos": [
-      { "fichier": "vie/serge-bebe.jpg", "legende": "Bébé", "description": "" },
-      { "fichier": "vie/serge-bebe-2.jpg", "legende": "Bébé, dans la voiturette", "description": "" },
-      { "fichier": "vie/serge-enfant-portrait.jpg", "legende": "Portrait d'enfant", "description": "J'aime particulièrement cette photo de ma jeunesse. Ma mère devait être malade, car elle ne m'aurait jamais laissé aller à l'école pour prendre une photo avec cette allure. Mais c'est moi au naturel." },
-      { "fichier": "vie/serge-cheval.jpg", "legende": "À cheval", "description": "J'ai fait de l'équitation pendant cinq ans, durant les années 1980. Cette photo a été prise lors d'une randonnée avec le capitaine Janusz Wiazowski, au lac Brome." },
-      { "fichier": "vie/jal-cheval.jpg", "legende": "JAL à cheval dans le Témiscouata", "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages." },
-      { "fichier": "vie/serge-ski-nautique.jpg", "legende": "Ski nautique", "description": "" },
-      { "fichier": "vie/serge-ski-de-fond.jpg", "legende": "Ski de fond", "description": "" },
-      { "fichier": "vie/serge-animateur-cegep.jpg", "legende": "Animateur socioculturel au cégep Édouard-Montpetit", "description": "Mes années comme animateur socioculturel au cégep Édouard-Montpetit, à Longueuil." },
-      { "fichier": "vie/serge-hippie-plantes.jpg", "legende": "Mes années hippie", "description": "" },
-      { "fichier": "vie/serge-hippie-sourire.jpg", "legende": "Mes années hippie", "description": "" },
-      { "fichier": "vie/serge-colette.jpg", "legende": "Avec Colette", "description": "" },
-      { "fichier": "vie/serge-colette-2.jpg", "legende": "Avec Colette", "description": "" },
-      { "fichier": "vie/serge-famille-amis.jpg", "legende": "Kiriki avec Colette et WillJohn", "description": "" },
-      { "fichier": "vie/serge-sangha.jpg", "legende": "Avec la sangha au Centre Zen de Montréal", "description": "" },
-      { "fichier": "vie/serge-taichi-solo.jpg", "legende": "Posture de tai-chi", "description": "" },
-      { "fichier": "vie/serge-taichi-groupe.jpg", "legende": "Groupe de tai-chi", "description": "" },
-      { "fichier": "vie/serge-meditation-jardin.jpg", "legende": "Méditation au jardin", "description": "Mon ami WillJohn m'avait légué, un peu avant sa mort, deux statues — dont celle-ci derrière moi, le Zen Frog.\n\nEn bon Québécois, j'imite le frog. FROG, une expression que les Anglais utilisaient pour désigner les Canadiens français. « I'm a frog, kiss me and I will turn into a prince », chantait Robert Charlebois." },
-      { "fichier": "vie/serge-jardinier.jpg", "legende": "Le jardinier", "description": "" },
-      { "fichier": "vie/serge-ete-jardin.jpg", "legende": "Un été au jardin", "description": "" },
-      { "fichier": "vie/serge-jardin-communautaire.jpg", "legende": "Au jardin communautaire", "description": "" },
-      { "fichier": "vie/serge-taureau-encre.jpg", "legende": "Taureau à l'encre", "description": "Je suis un taureau\nEt tant que la Terre tournera\nJe tournerai avec elle\nJe ne cours pas les arènes\nOù chaque jour\nQuelques taureaux imbéciles\nSe laissent tuer\nPour le plaisir des sots\nEt la gloire d'un faiseur de miracles\nMa race broute les champs\nAvec ce regard mystérieux\nBienheureux peut-être\nSurpris de vous voir là\nPendant que vous pourriez\nÊtre ailleurs\nIl rumine des jours durant\nPour atteindre l'inaccessible\nEt de temps à autre\nIl raffole de la joie des femelles\nDe l'amour des femmes" },
-      { "fichier": "vie/serge-art.jpg", "legende": "Création", "description": "" },
-      { "fichier": "vie/serge-brome.jpg", "legende": "Au lac Brome", "description": "" },
-      { "fichier": "vie/serge-kamouraska.jpg", "legende": "À Kamouraska", "description": "Kamouraska, le pays de mes ancêtres.\n\nMon père y est né, bien que sa famille ait habité Saint-Clément, un peu plus loin vers l'est, dans les terres derrière Trois-Pistoles.\n\nSur cette photo, je suis à la microbrasserie Tête d'Allumette, au bord du fleuve à Saint-André-de-Kamouraska — sur un terrain qui appartenait à un de mes lointains cousins Desjardins." },
-      { "fichier": "vie/serge-pecheur-boreal.jpg", "legende": "Pêcheur boréal", "description": "Mon beau-frère Gaston avait un chalet sur un terrain de la Couronne, dans la ZEC Nordique près des Escoumins — un chalet qu'il avait construit de ses propres mains, après avoir gagné un tirage pour la location à long terme du lot.\n\nPendant une dizaine d'années, nous y allions pour notre semaine de pêche annuelle, avec mon autre beau-frère Georges. Nous avions accès à différents lacs de la ZEC, tous avec la truite mouchetée indigène. Quel délice dans la poêle !\n\nComme le dit l'histoire : ce qui se passe au chalet reste au chalet." },
-      { "fichier": "vie/serge-spa.jpg", "legende": "Détente", "description": "" },
-      { "fichier": "vie/serge-60-ans.jpg", "legende": "60 ans", "description": "" },
-      { "fichier": "vie/serge-70-ans.jpg", "legende": "70 ans, rêveur — barbe et cheveux longs", "description": "Depuis que je peux, j'aime porter la barbe et les cheveux longs. Heureusement ma vie de jeune adulte a débuté à une période de libération. Quand j'étais jeune, tous les hommes de mon village portaient les cheveux courts et la barbe plus ou moins bien rasée.\n\nQuand j'ai eu un peu de pilosité, j'ai eu envie de laisser faire la nature. (C'est un pattern de ma vie.) Lors du début d'un filet de barbe, j'étais moniteur de terrain de jeu dans mon village. L'aumônier qui s'occupait du terrain de jeu me prit à part pour me dire que comme j'avais une fonction publique, la barbe n'était pas convenable. Sans doute plus près du préjugé que de la vérité. Ou simplement son opinion personnelle déguisée en vérité.\n\nMa barbe et les cheveux longs suivent souvent les saisons. Ils sont confortables l'hiver mais embarrassants et chauds l'été.\n\nMais à un moment donné durant les années 1980, les Yuppies ont pris la relève de l'ère Peace and Love et des hippies avec lesquels j'avais plus d'affinité. En ces temps, valait mieux montrer beau blanc — barbe taillée et coupe impeccable." },
-      { "fichier": "vie/serge-aujourdhui.jpg", "legende": "Aujourd'hui", "description": "" },
-      { "fichier": "vie/serge-freres.jpg", "legende": "Avec ses frères Jean-Noël et Marcel", "description": "" },
-      { "fichier": "vie/serge-bebe-neige.jpg", "legende": "Bébé, en hiver", "description": "" },
-      { "fichier": "vie/serge-gaspesie.jpg", "legende": "En Gaspésie", "description": "" },
-      { "fichier": "vie/serge-yvonne-mariette.jpg", "legende": "Avec sa mère Yvonne et sa sœur Mariette", "description": "" },
-      { "fichier": "vie/serge-colette-3.jpg", "legende": "Avec Colette", "description": "" },
-      { "fichier": "vie/serge-jean-francois.jpg", "legende": "Avec Jean-François", "description": "Quand notre ami Jean-François nous a appris qu'il avait un cancer des poumons incurable et intraitable, nous avons organisé une rencontre d'adieu. C'est à cette occasion qu'il m'a offert un vieux jean jacket qu'il avait usé à la corde et qu'il avait rapiécé avec les morceaux des robes de sa femme Monique et de sa fille Alice." },
-      { "fichier": "vie/serge-liam.jpg", "legende": "Avec Liam", "description": "" },
-      { "fichier": "vie/serge-noemie.jpg", "legende": "Avec Noémie", "description": "" },
-      { "fichier": "vie/serge-bureau.jpg", "legende": "À son bureau", "description": "" },
-      { "fichier": "vie/serge-brome-2.jpg", "legende": "Au lac Brome", "description": "" },
-      { "fichier": "vie/serge-bord-de-mer.jpg", "legende": "Au bord de la mer", "description": "" },
-      { "fichier": "vie/serge-foulard.jpg", "legende": "Portrait au foulard", "description": "" },
-      { "fichier": "vie/serge-chapeau.jpg", "legende": "Au chapeau de paille", "description": "" },
-      { "fichier": "vie/serge-barbe.jpg", "legende": "Portrait, barbe au vent", "description": "" },
-      { "fichier": "vie/serge-portrait-hiver.jpg", "legende": "Portrait d'hiver", "description": "" },
-      { "fichier": "vie/serge-sourire.jpg", "legende": "Sourire", "description": "" },
-      { "fichier": "vie/serge-pere-noel.jpg", "legende": "En père Noël", "description": "" }
-    ]
-  },
-  {
-    "id": "roches",
-    "type": "creation",
-    "fichier": "galerie-roches.html",
-    "etiquette": "Nature · Contemplation",
-    "titre": "Roches",
-    "sousTitre": "La permanence du minéral.",
-    "intro": "Pierres, roches et paysages — une contemplation de la matière et du temps.",
-    "vignette": "roches/Doubleroche.jpg",
-    "photos": [
-      { "fichier": "roches/Doubleroche.jpg", "legende": "Double roche", "description": "" },
-      { "fichier": "roches/EnsoSerpent1.jpg", "legende": "Ensō serpent", "description": "" },
-      { "fichier": "roches/Kuya Japon.jpg", "legende": "Kuya, Japon", "description": "" },
-      { "fichier": "roches/RocChinois.jpg", "legende": "Roc chinois", "description": "" },
-      { "fichier": "roches/RocheTrait.jpg", "legende": "Roche trait", "description": "" },
-      { "fichier": "roches/Rock.jpeg", "legende": "Roche", "description": "" },
-      { "fichier": "roches/RockRound.jpg", "legende": "Roche ronde", "description": "" },
-      { "fichier": "roches/Shih-t'ao.jpg", "legende": "Shih-t'ao", "description": "" },
-      { "fichier": "roches/Spring Melting.jpg", "legende": "Fonte du printemps", "description": "" }
+      {
+        "fichier": "vie/serge-bebe.jpg",
+        "legende": "Bébé",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-bebe-2.jpg",
+        "legende": "Bébé, dans la voiturette",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-enfant-portrait.jpg",
+        "legende": "Portrait d'enfant",
+        "description": "J'aime particulièrement cette photo de ma jeunesse. Ma mère devait être malade, car elle ne m'aurait jamais laissé aller à l'école pour prendre une photo avec cette allure. Mais c'est moi au naturel."
+      },
+      {
+        "fichier": "vie/serge-cheval.jpg",
+        "legende": "À cheval",
+        "description": "J'ai fait de l'équitation pendant cinq ans, durant les années 1980. Cette photo a été prise lors d'une randonnée avec le capitaine Janusz Wiazowski, au lac Brome."
+      },
+      {
+        "fichier": "vie/jal-cheval.jpg",
+        "legende": "JAL à cheval dans le Témiscouata",
+        "description": "J'ai aussi pratiqué la selle western, entre autres à cheval au JAL — une sortie d'une semaine à parcourir d'un endroit à l'autre la jolie région du Témiscouata. C'était l'époque où le gouvernement voulait fermer les villages de ce coin du pays, mais où la population s'était mobilisée pour créer le JAL, un rassemblement de trois villages."
+      },
+      {
+        "fichier": "vie/serge-ski-nautique.jpg",
+        "legende": "Ski nautique",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-ski-de-fond.jpg",
+        "legende": "Ski de fond",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-animateur-cegep.jpg",
+        "legende": "Animateur socioculturel au cégep Édouard-Montpetit",
+        "description": "Mes années comme animateur socioculturel au cégep Édouard-Montpetit, à Longueuil."
+      },
+      {
+        "fichier": "vie/serge-hippie-plantes.jpg",
+        "legende": "Mes années hippie",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-hippie-sourire.jpg",
+        "legende": "Mes années hippie",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-colette.jpg",
+        "legende": "Avec Colette",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-colette-2.jpg",
+        "legende": "Avec Colette",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-famille-amis.jpg",
+        "legende": "Kiriki avec Colette et WillJohn",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-sangha.jpg",
+        "legende": "Avec la sangha au Centre Zen de Montréal",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-taichi-solo.jpg",
+        "legende": "Posture de tai-chi",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-taichi-groupe.jpg",
+        "legende": "Groupe de tai-chi",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-meditation-jardin.jpg",
+        "legende": "Méditation au jardin",
+        "description": "Mon ami WillJohn m'avait légué, un peu avant sa mort, deux statues — dont celle-ci derrière moi, le Zen Frog.\n\nEn bon Québécois, j'imite le frog. FROG, une expression que les Anglais utilisaient pour désigner les Canadiens français. « I'm a frog, kiss me and I will turn into a prince », chantait Robert Charlebois."
+      },
+      {
+        "fichier": "vie/serge-jardinier.jpg",
+        "legende": "Le jardinier",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-ete-jardin.jpg",
+        "legende": "Un été au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-jardin-communautaire.jpg",
+        "legende": "Au jardin communautaire",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-taureau-encre.jpg",
+        "legende": "Taureau à l'encre",
+        "description": "Je suis un taureau\nEt tant que la Terre tournera\nJe tournerai avec elle\nJe ne cours pas les arènes\nOù chaque jour\nQuelques taureaux imbéciles\nSe laissent tuer\nPour le plaisir des sots\nEt la gloire d'un faiseur de miracles\nMa race broute les champs\nAvec ce regard mystérieux\nBienheureux peut-être\nSurpris de vous voir là\nPendant que vous pourriez\nÊtre ailleurs\nIl rumine des jours durant\nPour atteindre l'inaccessible\nEt de temps à autre\nIl raffole de la joie des femelles\nDe l'amour des femmes"
+      },
+      {
+        "fichier": "vie/serge-art.jpg",
+        "legende": "Création",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-brome.jpg",
+        "legende": "Au lac Brome",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-kamouraska.jpg",
+        "legende": "À Kamouraska",
+        "description": "Kamouraska, le pays de mes ancêtres.\n\nMon père y est né, bien que sa famille ait habité Saint-Clément, un peu plus loin vers l'est, dans les terres derrière Trois-Pistoles.\n\nSur cette photo, je suis à la microbrasserie Tête d'Allumette, au bord du fleuve à Saint-André-de-Kamouraska — sur un terrain qui appartenait à un de mes lointains cousins Desjardins."
+      },
+      {
+        "fichier": "vie/serge-pecheur-boreal.jpg",
+        "legende": "Pêcheur boréal",
+        "description": "Mon beau-frère Gaston avait un chalet sur un terrain de la Couronne, dans la ZEC Nordique près des Escoumins — un chalet qu'il avait construit de ses propres mains, après avoir gagné un tirage pour la location à long terme du lot.\n\nPendant une dizaine d'années, nous y allions pour notre semaine de pêche annuelle, avec mon autre beau-frère Georges. Nous avions accès à différents lacs de la ZEC, tous avec la truite mouchetée indigène. Quel délice dans la poêle !\n\nComme le dit l'histoire : ce qui se passe au chalet reste au chalet."
+      },
+      {
+        "fichier": "vie/serge-spa.jpg",
+        "legende": "Détente",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-60-ans.jpg",
+        "legende": "60 ans",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-70-ans.jpg",
+        "legende": "70 ans, rêveur — barbe et cheveux longs",
+        "description": "Depuis que je peux, j'aime porter la barbe et les cheveux longs. Heureusement ma vie de jeune adulte a débuté à une période de libération. Quand j'étais jeune, tous les hommes de mon village portaient les cheveux courts et la barbe plus ou moins bien rasée.\n\nQuand j'ai eu un peu de pilosité, j'ai eu envie de laisser faire la nature. (C'est un pattern de ma vie.) Lors du début d'un filet de barbe, j'étais moniteur de terrain de jeu dans mon village. L'aumônier qui s'occupait du terrain de jeu me prit à part pour me dire que comme j'avais une fonction publique, la barbe n'était pas convenable. Sans doute plus près du préjugé que de la vérité. Ou simplement son opinion personnelle déguisée en vérité.\n\nMa barbe et les cheveux longs suivent souvent les saisons. Ils sont confortables l'hiver mais embarrassants et chauds l'été.\n\nMais à un moment donné durant les années 1980, les Yuppies ont pris la relève de l'ère Peace and Love et des hippies avec lesquels j'avais plus d'affinité. En ces temps, valait mieux montrer beau blanc — barbe taillée et coupe impeccable."
+      },
+      {
+        "fichier": "vie/serge-aujourdhui.jpg",
+        "legende": "Aujourd'hui",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-freres.jpg",
+        "legende": "Avec ses frères Jean-Noël et Marcel",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-bebe-neige.jpg",
+        "legende": "Bébé, en hiver",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-gaspesie.jpg",
+        "legende": "En Gaspésie",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-yvonne-mariette.jpg",
+        "legende": "Avec sa mère Yvonne et sa sœur Mariette",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-colette-3.jpg",
+        "legende": "Avec Colette",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-jean-francois.jpg",
+        "legende": "Avec Jean-François",
+        "description": "Quand notre ami Jean-François nous a appris qu'il avait un cancer des poumons incurable et intraitable, nous avons organisé une rencontre d'adieu. C'est à cette occasion qu'il m'a offert un vieux jean jacket qu'il avait usé à la corde et qu'il avait rapiécé avec les morceaux des robes de sa femme Monique et de sa fille Alice."
+      },
+      {
+        "fichier": "vie/serge-liam.jpg",
+        "legende": "Avec Liam",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-noemie.jpg",
+        "legende": "Avec Noémie",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-bureau.jpg",
+        "legende": "À son bureau",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-brome-2.jpg",
+        "legende": "Au lac Brome",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-bord-de-mer.jpg",
+        "legende": "Au bord de la mer",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-foulard.jpg",
+        "legende": "Portrait au foulard",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-chapeau.jpg",
+        "legende": "Au chapeau de paille",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-barbe.jpg",
+        "legende": "Portrait, barbe au vent",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-portrait-hiver.jpg",
+        "legende": "Portrait d'hiver",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-sourire.jpg",
+        "legende": "Sourire",
+        "description": ""
+      },
+      {
+        "fichier": "vie/serge-pere-noel.jpg",
+        "legende": "En père Noël",
+        "description": ""
+      }
     ]
   }
 ];
