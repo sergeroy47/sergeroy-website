@@ -542,7 +542,7 @@ const GALERIES = [
       {
         "fichier": "ecole/4e-annee.jpg",
         "legende": "4e année",
-        "description": ""
+        "description": "Toujours à l'École Saint-André d'Acton Vale, chez les Frères du Sacré-Cœur — cette fois dehors, devant l'école. Le directeur, frère Gabriel, est l'un des deux frères qui encadrent la classe. Je suis dans la première rangée, troisième à partir de la droite : veston de tweed clair et cravate pâle.\n\nMes deux bons amis sont encore sur la photo : Réal Laflamme, au bout de la première rangée, et Robert Charest, deuxième rangée, quatrième à partir de la droite."
       },
       {
         "fichier": "ecole/5e-annee-essa-1957.jpg",
