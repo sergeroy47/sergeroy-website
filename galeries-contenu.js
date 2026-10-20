@@ -572,7 +572,7 @@ const GALERIES = [
       {
         "fichier": "ecole/methode.jpg",
         "legende": "Méthode",
-        "description": ""
+        "description": "Troisième année du cours classique, toujours au Séminaire de Saint-Hyacinthe. Je suis dans la première rangée, troisième à partir de la gauche."
       },
       {
         "fichier": "ecole/versification.jpg",
