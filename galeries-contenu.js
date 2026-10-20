@@ -567,7 +567,7 @@ const GALERIES = [
       {
         "fichier": "ecole/syntaxe.jpg",
         "legende": "Syntaxe",
-        "description": ""
+        "description": "Deuxième année du cours classique, au Séminaire de Saint-Hyacinthe — après les Éléments latins. Je suis à l'extrémité droite de la photo, au bout des deuxième et troisième rangées."
       },
       {
         "fichier": "ecole/methode.jpg",
