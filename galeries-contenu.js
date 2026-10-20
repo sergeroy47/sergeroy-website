@@ -577,7 +577,7 @@ const GALERIES = [
       {
         "fichier": "ecole/versification.jpg",
         "legende": "Versification",
-        "description": ""
+        "description": "Quatrième année du cours classique, au Séminaire de Saint-Hyacinthe. Le prêtre, debout à l'arrière, est l'abbé Gaudreault. Je suis dans la troisième rangée, troisième à partir de la droite."
       },
       {
         "fichier": "ecole/belles-lettres.jpg",
