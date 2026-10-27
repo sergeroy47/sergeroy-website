@@ -44,6 +44,13 @@ const CONTENU = {
       "lien": "textes/ma-vie.html"
     },
     {
+      "categorie": "Récits autobiographiques",
+      "titre": "Pourquoi je n'ai pas fait de cinéma",
+      "extrait": "Caméraman d'un film tourné avec des patients d'un hôpital psychiatrique, j'ai baissé l'objectif au moment où une femme confiait sa douleur. Les monteurs en ont tiré la finale du film — et moi, la fin de ma carrière au cinéma.",
+      "date": "1972",
+      "lien": "textes/pourquoi-pas-le-cinema.html"
+    },
+    {
       "categorie": "Mémoire familiale",
       "titre": "La fin tragique d'Antoine Roy",
       "extrait": "Notre premier ancêtre en Amérique : soldat du régiment de Carignan, tonnelier plutôt que défricheur, assassiné à Lachine par un mari jaloux. De son fils unique descendent les Roy et les Desjardins d'Amérique.",
