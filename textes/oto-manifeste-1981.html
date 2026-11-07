@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1991/OTO — le manifeste de 1981 — Serge Roy</title>
+  <meta name="description" content="1991/OTO, Organisation Tentaculaire Originale : le manifeste écrit par Serge Roy en 1981 pour lancer un réseau de création par la poste. Une fiction qui imaginait déjà des créateurs reliés par ordinateur et téléphone.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .photo-poete {
+      max-width: 900px; margin: 0 auto 3.5rem;
+      padding: 0 2rem;
+      position: relative; z-index: 1;
+    }
+    .photo-poete img {
+      width: 100%; height: auto; display: block;
+      box-shadow: 0 12px 40px rgba(28,26,20,0.25);
+    }
+    .photo-poete figcaption {
+      font-size: 0.85rem; font-style: italic;
+      color: var(--terre); text-align: center;
+      margin-top: 0.9rem; line-height: 1.5;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+      position: relative; z-index: 1;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+    .intro-bloc p:last-child { margin-bottom: 0; }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    .citation-preface {
+      margin: 1.5rem 0 1.5rem 1.5rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+    .citation-preface span {
+      display: block; font-style: normal;
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .devise {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic;
+      color: var(--mousse);
+      margin: 2rem 0;
+    }
+
+    .notes-preface {
+      font-size: 0.85rem; color: var(--terre);
+      border-top: 1px solid rgba(107,92,69,0.2);
+      padding-top: 1rem; margin-top: 2rem;
+    }
+    .notes-preface p { margin-bottom: 0.4rem; }
+
+    /* Les poèmes gardent la mise en page en escalier de la machine à écrire */
+    .poeme {
+      white-space: pre-wrap;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0 0 1rem;
+      color: #2a261d;
+    }
+    .poeme-titre {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.15em; color: var(--terre);
+      margin: 0 0 1rem;
+    }
+
+    .ornement {
+      text-align: center; color: var(--or);
+      font-size: 1.1rem; letter-spacing: 0.6em;
+      margin: 2.8rem 0;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 2.5rem; }
+      .photo-poete { padding: 0 1.2rem; margin-bottom: 2.5rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+      .poeme { font-size: 0.74rem; }
+    }
+
+    /* --- 1991/OTO : les quatre époques du manifeste --- */
+    .photo-couverture { max-width: 620px; }
+    .photo-groupe { margin: 3.5rem 0 0; }
+    .photo-groupe img { width: 100%; height: auto; display: block; box-shadow: 0 12px 40px rgba(28,26,20,0.25); }
+    .photo-groupe figcaption { font-size: 0.85rem; font-style: italic; color: var(--terre); text-align: center; margin-top: 0.9rem; line-height: 1.5; }
+    .intro-bloc a { color: var(--mousse); }
+
+    .garde { text-align: center; margin: 1rem 0 2rem; font-family: 'Courier Prime', 'Courier New', monospace; }
+    .garde-frise { color: var(--or); letter-spacing: 0.15em; font-size: 0.8rem; margin: 0; overflow-wrap: anywhere; }
+    .garde-titre { font-size: 1.05rem; letter-spacing: 0.18em; margin: 0.6rem 0; color: var(--encre); }
+
+    .nb { font-size: 0.92rem; color: var(--terre); border-left: 2px solid var(--or); padding-left: 1.2rem; margin-bottom: 3rem; }
+    .nb p { margin-bottom: 0.6rem; }
+    .nb ul { list-style: none; }
+    .nb li { margin: 0.3rem 0; }
+
+    /* 1970-1980 : la gestation — machine à écrire */
+    .ep-gestation { font-family: 'Courier Prime', 'Courier New', monospace; font-size: 0.92rem; line-height: 1.8; }
+    /* 1981 : le réel — caractère d'imprimerie */
+    .ep-reel { font-family: 'EB Garamond', Georgia, serif; }
+    /* 1982-1990 : la prospective — italique */
+    .ep-prospective { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.12rem; }
+    /* 1991 : le bilan — capitales */
+    .ep-bilan { font-family: 'EB Garamond', Georgia, serif; font-variant: small-caps; letter-spacing: 0.03em; }
+    .nb .ep-gestation, .nb .ep-reel, .nb .ep-prospective, .nb .ep-bilan { font-size: inherit; }
+
+    div.ep-gestation, div.ep-reel, div.ep-prospective, div.ep-bilan { margin-bottom: 2.2rem; }
+    div.ep-gestation + div, div.ep-reel + div, div.ep-prospective + div, div.ep-bilan + div { padding-top: 1.2rem; border-top: 1px dotted rgba(107,92,69,0.3); }
+
+    .replique { text-align: center; }
+    .question-1991 { font-size: 1.15rem; color: var(--mousse); }
+    .retrait { padding-left: 2rem; }
+    .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.1; font-size: 0.8em; margin: 0 0.2em; }
+    .fraction span:first-child { border-bottom: 1px solid currentColor; }
+
+    .poeme-bilan { white-space: pre-wrap; font-family: 'EB Garamond', Georgia, serif; font-variant: normal; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.9rem; line-height: 1.8; margin: 1.5rem 0 0; }
+    .ep-gestation .poeme { margin-top: 0.5rem; }
+    .signature + .photo-groupe { margin-top: 3rem; }
+
+    @media (max-width: 640px) {
+      .ep-gestation { font-size: 0.8rem; }
+      .poeme-bilan { font-size: 0.78rem; }
+      .retrait { padding-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Trajectoire intellectuelle</span>
+    <h1>1991/OTO</h1>
+    <p class="article-sous-titre">Organisation Tentaculaire Originale — le manifeste de 1981</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Écrit en 1981, comme si l'on était en 1991</div>
+    <div class="separateur"></div>
+  </header>
+
+  <figure class="photo-poete photo-couverture">
+    <img src="oto/oto-couverture.jpg" alt="Couverture du manifeste : le sigle OTO argenté et le titre Organisation Tentaculaire Originale en lettres de papier de couleur découpées et collées" loading="lazy">
+    <figcaption>La couverture du manifeste : un collage en lettres de papier découpées.</figcaption>
+  </figure>
+
+  <main class="article-corps">
+    <div class="intro-bloc">
+      <p>En 1981, avec des amis artistes, nous avons lancé OTO : un réseau de création par la poste. J'ai écrit ce manifeste pour le lancement. C'est un texte de fiction : écrit en 1981, il fait comme si dix ans avaient passé, et il raconte le bilan d'OTO en 1991. Il imaginait des créateurs reliés par des ordinateurs et le téléphone — on n'appelait pas encore ça Internet.</p>
+      <p>Dans la réalité, OTO postal a vécu deux ans : une dizaine d'envois à une vingtaine de personnes qui interagissaient. Avec nos moyens artisanaux, le projet est devenu trop lourd et s'est éteint. Il n'est jamais devenu le réseau d'ordinateurs rêvé. Ce rêve, je l'ai poursuivi autrement, tout au long de ma carrière : la Télé-université, les hypermédias, Internet.</p>
+      <p>Le manifeste reprend aussi quelques vers de mon recueil <a href="pretextes.html">PRé/TEXTES</a>. Les quatre époques du texte sont marquées par des caractères différents, comme dans l'original.</p>
+    </div>
+
+    <div class="garde">
+      <p class="garde-frise">1991, 1991, 1991, 1991, 1991</p>
+      <p class="garde-titre">CECI EST UN TEXTE DE FICTION</p>
+      <p class="garde-frise">1991991991991991991991991991</p>
+    </div>
+
+    <div class="nb">
+      <p>N.B. Ce texte écrit en 1991, se déroule dans le temps, de 1970 à 1991 ; pour éviter toute équivoque temporelle, nous avons utilisé quatre caractères différents pour démarquer chaque période :</p>
+      <ul>
+        <li><span class="ep-gestation">1970-1980 — période de gestation</span></li>
+        <li><span class="ep-reel">1981 — lancement du projet (le réel)</span></li>
+        <li><span class="ep-prospective">1982-1990 — période de fonctionnement (prospective)</span></li>
+        <li><span class="ep-bilan">1991 — présent anticipé (bilan)</span></li>
+      </ul>
+    </div>
+
+    <div class="ep-bilan">
+      <p>1991, après dix ans de fonctionnement d'OTO, il est important et intéressant pour nous tous qui avons créé et fait vivre OTO de revoir le chemin parcouru.</p>
+      <p>Où en étions-nous, quand le projet a commencé, que cherchions-nous à réaliser, par quelles voies sommes-nous passés pour réaliser ce rêve ? Nos réponses à ces questions devraient dégager les jalons du futur ; inventorier nos acquis pour sauter plus loin et plus haut.</p>
+      <p>Quelle est la façon qui nous convient le mieux pour nous exprimer, créer, communiquer : vivre ? Cette question que nous nous posions, voilà dix ans, est toujours demeurée le coeur de notre démarche. Donc pas de surprise que nous nous la reposions, en ce jour de notre dixième anniversaire, non par nostalgie mais bien pour améliorer OTO, pour l'assujettir à nos dernières découvertes. Inutile d'insister, mais disons tout de même que nous ne répondons jamais une fois pour toutes à une question et que nous devrons toujours confronter nos réponses avec de nouvelles expériences. Tous sont à la recherche de cet idéal, avec plus ou moins de lucidité et de courage ; espérons que nos imparfaites consciences amalgamées formeront une conscience supérieure pour forcer l'avenir à être de notre côté.</p>
+    </div>
+
+    <div class="ep-gestation">
+      <p>Au temps de rêve des années 1970, nous nous sommes gavé(e)s, nous avons profité des bienfaits de cette période de vaches grasses. Les gens intelligents étaient, alors, florissants ; on vantait leur intelligence et eux la vendaient en échange d'un salaire.</p>
+      <p class="replique">— Mais à quoi sert d'être intelligent, si on ne se sert pas de sa TÊTE ? —</p>
+      <p>Puis, sans avertissement, la conjoncture s'est modifiée et, comme la cigale, nous nous sommes fait prendre les culottes baissées. Ce qui, hier, faisait notre affaire, nous conduisait, aujourd'hui, dans un cul-de-sac. Il fallait réagir, modifier nos comportements.</p>
+      <p>Qu'avons-nous fait, puisqu'alors, travailler pour gagner sa vie devenait insuffisant et que, de plus, nous nous sentions capables d'influer sur l'avenir, capables de mettre nos talents à l'épreuve pour changer le monde, tout en vivant pleinement notre quotidien ?</p>
+      <p>« PENSER » Pendant que nous cherchions des solutions, plusieurs riaient de nous, les idéalistes, les poètes ; les gens ne semblaient pas comprendre qu'avant de réaliser des « affaires pas toutes faites d'avance » il faut chercher, réfléchir ; tout se prépare, il faut y mettre le temps, l'énergie, ce que ne permet pas toujours le travail de 9 à 5 « mais nous n'avons pas le choix »…</p>
+      <p>Vers 1980, nous avons cru à ce choix possible, nous avons voulu ouvrir de nouveaux sentiers ; nous avons cherché longtemps, élaboré, bâti des tas de projets, jamais réalisés parce que nous mettions la charrue devant les boeufs. Nous construisions des châteaux en Espagne, alors que nous rêvions d'auberges espagnoles. Tout le matériel prenait le dessus sur l'essentiel : <u>NOTRE GOÛT DE CRÉER ET DE LE TRANSMETTRE À D'AUTRES</u>, de le partager. Nos projets nous coûtaient toujours des fortunes, demandaient plein d'organisation. <u>Il nous fallait une forme éclatée, aux possibilités multiples, pouvant facilement s'ouvrir à d'autres initiatives ou à d'autres personnes désireuses de cheminer avec nous.</u></p>
+      <p>Notre mode de pensée est prisonnier de celui de notre époque. On nous a enseigné à penser carré, avec des angles pointus ; nous voulions penser plus rondement, sans à-coup, tout en souplesse. Tant que nous avons pensé carré, nos organisations étaient très contraignantes, énergivores, elles ne laissaient plus place à notre créativité quotidienne, celle que nous nous étions bâtie depuis quelques années et que nous défendions contre tous les assauts d'une société productiviste et conformiste.</p>
+      <p>La création, la marginalisation développent la solitude, d'où le besoin de créer des solidarités, UN COMPAGNONNAGE D'ESPRIT ET DE CONSCIENCE. Des échanges dans tous les sens. Nous devions être les catalyseurs de cette démarche à portes ouvertes. Un échange multidirectionnel, multidisciplinaire, de nos envies de changer le monde, de le transformer.</p>
+      <p>Combien de fois, durant les années 1970, n'avons-nous pas entendu cette merveilleuse phrase, à la fois pleine d'espoir et de détresse : « C'est drôle comme nous sommes nombreux à penser la même chose mais nous n'arrivons jamais à nous réunir », nous restons tous dans notre coin à ruminer nos idéaux, nos beaux rêves. De la souplesse… de la souplesse d'esprit : il nous faut apprendre à danser dans nos têtes sur notre propre musique ; pas devenir super individualiste, non il faut garder contact avec les autres, tout en affirmant nos caractéristiques propres.</p>
+    </div>
+
+    <div class="ep-reel">
+      <p>En 1981, lorsqu'enfin <span class="fraction"><span>1991</span><span>OTO</span></span> est né, ce merveilleux projet tout simple qui tentait de rejoindre un éventail de monde disposé, à différents niveaux, à embarquer dans ce petit trip qui risquait de devenir « ben le fun » à la longue. Une organisation peu onéreuse, qui permettait d'utiliser nos propres moyens, notre propre matériel, qui n'exigeait pas de locaux, et enfin qui ne demandait pas l'adhésion d'un grand nombre d'individus pour démarrer ni une implication dévorante. Pas d'obstacle, des délais courts pour que le projet ne se perde pas dans le temps. Aux choses concrètes, vite créons notre réseau par la poste.</p>
+      <p>C'est à ce moment que nous avons proposé à nos ami(e)s de leur faire parvenir, par la poste, nos créations moyennant un léger coût : 15,00 $. Car nous étions pauvres et nous pouvions difficilement financer seuls ce projet. Nous avions conscience que ce montant était appréciable mais qu'il ne ruinerait personne. Nous vendions nos talents de créateurs, pas pour en tirer profit ou en vivre ; nous voulions simplement partager nos acquis sans nous ruiner. Du travail bénévole… Chacun allait recevoir durant l'année trois envois composés d'oeuvres diverses : poèmes, photos, photocopies couleur, etc.</p>
+    </div>
+
+    <div class="ep-prospective">
+      <p>Le projet fit sensation… nos amis y participèrent en très grand nombre. Et toutes sortes de résultats inattendus se concrétisèrent : la roche que nous avions lancée à l'eau produisit des ondes multiples. Il faut dire que nos envois contenaient des trucs pour favoriser l'interaction dans le réseau.</p>
+      <p>Après un bout de temps, certaines personnes se sont greffées au noyau et la provenance des oeuvres s'est diversifiée ; les trouvailles jaillissaient de partout. Le réseau s'agrandissait, les interactions se renforçaient, des projets naissaient, se greffaient ou se détachaient ; qu'importe, les contacts étaient établis, les moteurs étaient en marche, nous n'étions pas obligés de prendre tous la même direction, l'univers est vaste et les intérêts multiformes ; laissons-nous guider par nos intuitions, nos consciences.</p>
+      <p>Un des projets qui découla du premier fut l'établissement d'un lieu de créativité, où s'articulaient tous les aspects de la personne et de l'univers. Tout le monde venait partager ses idées, les réaliser de façon concrète avec les autres aussi intéressés qu'eux. Nous avions lancé l'invitation à tous ceux et toutes celles qui se croyaient seul(e)s à penser comme ils pensaient. En étant inventifs dans les moyens, nous avons pu réaliser nos aspirations et inspirations. Puis un jour, nous avons eu notre premier ordinateur qui facilita encore plus les interactions et qui nous permit d'être plus systématiques dans la confrontation de nos démarches. Les recherches se sont précisées, les participants se sont découvert plus d'affinités et se sont regroupés autour de certaines idées, de certains projets pour pousser collectivement leur intuition personnelle. Ensuite nous avons établi un réseau d'ordinateurs avec ceux qui le désiraient : en 1984, six ordinateurs étaient en communication grâce au téléphone, six ans plus tard nous étions 3 000, plus 800 autres qui ne possédaient pas leurs ordinateurs personnels.</p>
+    </div>
+
+    <div class="ep-bilan">
+      <p>3 800 personnes ne pèsent pas lourd dans la balance, nous sommes noyés dans la masse. Il faut admettre, malgré nos beaux idéaux, que le monde d'aujourd'hui n'est pas très différent de ce qu'il était voilà dix ans. Pourtant nous sommes heureux de partager nos résultats avec 3 800 personnes, alors qu'au début, nous travaillions tous, isolément, chacun dans nos cuisines. Et le temps, bien qu'il ne soit pas pressé, travaille pour nous, nos recherches commencent à être diffusées plus largement. Peut-être que les générations futures pourront jouir de nos efforts et de notre plaisir quotidien. Non, nous n'avons pas atteint la sérénité parfaite, ni la sagesse, ni le bonheur, mais nous avons cheminé vers ces sommets, nous avons amélioré nos performances</p>
+<div class="poeme-bilan">et nous n'arrêterons
+que pour laisser nos places
+à d'autres qui iront plus avant
+qui s'approcheront plus près
+de ce que nous avions entrevu
+                         rêvé
+                         aimé
+
+de chaque jour prendre la peine
+pour que force travailleuse se
+                         déchaîne
+faire le pain qui nourrit
+tisser les liens qui unissent à
+                    même les luttes
+mener nos têtes douteuses
+aux gestes mobilisants</div>
+    </div>
+
+    <div class="ep-gestation">
+      <p>En 1981, nous avions crié :</p>
+<div class="poeme">   « qui a tué notre vive folie ?
+   qui a volé la sagesse du mieux ?
+             l'ardeur de la révolution ?
+   nous réveillerons-nous
+   que pour périr définitivement
+   disparaître à jamais
+   d'un paradis dont nous avions perdu
+                              le secret ?
+
+      Allons à la recherche des individus
+                                 maîtres
+      de ceux-là qui ont tué l'esclave
+                           en chacun d'eux
+      pour combattre ces maîtres qui
+                    nourrissent l'esclave
+                    en chacun des autres »</div>
+    </div>
+
+    <div class="ep-bilan">
+      <p class="question-1991">Quelle est notre réponse en 1991 ?</p>
+      <p>Nous cheminons toujours, nos créations se sont améliorées et nous sommes de ceux qui se sont tirés de la fameuse impasse de 1984 ; la créativité et l'échange étant des voies de renouveau, sinon de salut pour l'espèce humaine.</p>
+      <p>À l'an 2001, alors…</p>
+      <p class="retrait">… peut-être fêterons-nous ensemble notre vingtième anniversaire dans une super <u>odyssée de l'espace</u>…</p>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Manifeste du lancement d'OTO, 1981</div>
+    </div>
+
+    <figure class="photo-groupe">
+      <img src="oto/oto-groupe-miroirs.jpg" alt="À Rock-Forest, en Estrie, huit personnes assises dehors, en automne, autour de tables où sont posés des miroirs qui reflètent leurs visages ; à gauche, une caméra sur trépied ; des poules au premier plan" loading="lazy">
+      <figcaption>La dernière page du manifeste : les complices d'OTO, un jour d'automne à Rock-Forest, en Estrie, où j'habitais avec ma conjointe Colette. Autour des tables, des miroirs reflètent leurs visages.</figcaption>
+    </figure>
+
+    <div class="lien-galerie">
+      <a href="ma-vie-numerique.html">La suite du rêve : Ma vie numérique →</a>
+      <a href="pretextes.html">Les poèmes cités : PRé/TEXTES →</a>
+      <a href="Multimedia_et_reseaux_conviviaux.html">Quinze ans plus tard : le mémoire de 1996 →</a>
+    </div>
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>

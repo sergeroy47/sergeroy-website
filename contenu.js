@@ -101,6 +101,13 @@ const CONTENU = {
     },
     {
       "categorie": "Trajectoire intellectuelle",
+      "titre": "1991/OTO — le manifeste de 1981",
+      "extrait": "Organisation Tentaculaire Originale : un réseau de création par la poste. Écrit en 1981 comme si l'on était en 1991, le manifeste imaginait déjà des créateurs reliés par ordinateur et téléphone — avant Internet.",
+      "date": "1981",
+      "lien": "textes/oto-manifeste-1981.html"
+    },
+    {
+      "categorie": "Trajectoire intellectuelle",
       "titre": "Multimédia et réseaux pour une communication conviviale",
       "extrait": "Résumé de ma thèse de maîtrise (1996) — une vision de la technologie au service de l'épanouissement humain.",
       "date": "1996 / 2024",
