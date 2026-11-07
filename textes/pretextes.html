@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRé/TEXTES — Serge Roy</title>
+  <meta name="description" content="PRé/TEXTES : les poèmes de jeunesse de Serge Roy, tapés à la machine dans les années 1970 et offerts à ses amis. Avec la photo du poète écrivant à la chandelle, par Serge Choinière.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .photo-poete {
+      max-width: 900px; margin: 0 auto 3.5rem;
+      padding: 0 2rem;
+      position: relative; z-index: 1;
+    }
+    .photo-poete img {
+      width: 100%; height: auto; display: block;
+      box-shadow: 0 12px 40px rgba(28,26,20,0.25);
+    }
+    .photo-poete figcaption {
+      font-size: 0.85rem; font-style: italic;
+      color: var(--terre); text-align: center;
+      margin-top: 0.9rem; line-height: 1.5;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+      position: relative; z-index: 1;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+    .intro-bloc p:last-child { margin-bottom: 0; }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    .citation-preface {
+      margin: 1.5rem 0 1.5rem 1.5rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+    .citation-preface span {
+      display: block; font-style: normal;
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+
+    .devise {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic;
+      color: var(--mousse);
+      margin: 2rem 0;
+    }
+
+    .notes-preface {
+      font-size: 0.85rem; color: var(--terre);
+      border-top: 1px solid rgba(107,92,69,0.2);
+      padding-top: 1rem; margin-top: 2rem;
+    }
+    .notes-preface p { margin-bottom: 0.4rem; }
+
+    /* Les poèmes gardent la mise en page en escalier de la machine à écrire */
+    .poeme {
+      white-space: pre-wrap;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0 0 1rem;
+      color: #2a261d;
+    }
+    .poeme-titre {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.15em; color: var(--terre);
+      margin: 0 0 1rem;
+    }
+
+    .ornement {
+      text-align: center; color: var(--or);
+      font-size: 1.1rem; letter-spacing: 0.6em;
+      margin: 2.8rem 0;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 2.5rem; }
+      .photo-poete { padding: 0 1.2rem; margin-bottom: 2.5rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+      .poeme { font-size: 0.74rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="article-entete">
+    <span class="article-categorie">Création artistique</span>
+    <h1>PRé/TEXTES</h1>
+    <p class="article-sous-titre">Poèmes des années 70</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Tapés à la machine dans les années 1970</div>
+    <div class="separateur"></div>
+  </header>
+
+  <figure class="photo-poete">
+    <img src="pretextes/poete-a-la-chandelle.jpg" alt="Le jeune Serge Roy, barbu, écrit la nuit dans un cahier, éclairé par deux chandelles posées sur la table" loading="lazy">
+    <figcaption>Écrire à la chandelle, dans un camping au Québec, en 1976.<br>Photo : Serge Choinière.</figcaption>
+  </figure>
+
+  <main class="article-corps">
+    <div class="intro-bloc">
+      <p>Dans les années 70, j'écrivais beaucoup, souvent la nuit. J'ai tapé ces poèmes à la machine et je les ai réunis dans un petit cahier que j'ai offert à mes amis, sous le titre <em>PRé/TEXTES</em>.</p>
+      <p>La photo a été prise par mon ami Serge Choinière, avec qui je travaillais au Cégep Édouard-Montpetit. Il étudiait alors pour devenir photographe. Ce n'était pas une mise en scène : dans un camping au Québec, j'écrivais vraiment à la chandelle.</p>
+      <p>Les poèmes sont reproduits tels que je les ai tapés, avec leur mise en page en escalier et leurs tournures de l'époque. J'ai appliqué les corrections que j'avais faites au crayon, et corrigé l'orthographe sans toucher aux mots.</p>
+    </div>
+
+    <h2 class="partie-titre">PRé/TEXTES*</h2>
+
+    <p>Avant le texte, la mise en forme définitive, éclatent les grands élans spontanés, jetés sur papier, au gré des jours. Il y a unité dans le fond avant d'atteindre la structure, cette unité logique qui parachève l'oeuvre pour devenir : recueil, roman, pièce de théâtre etc…</p>
+
+    <p>Pourtant, à ce moment-ci, le prétexte me semble le plus important ; je le jette à la face de mes amis.</p>
+
+    <div class="citation-preface">« Ceux qui vivent, ce sont ceux qui luttent » **<span>— Victor Hugo</span></div>
+    <div class="citation-preface">« Pourquoi chercher un chemin si ce n'est pour le montrer à mes frères » **<span>— Goethe</span></div>
+
+    <p>Voici donc des bribes, des extraits d'oeuvres plus longues. Étant un poète écologique, ma devise est :</p>
+
+    <p class="devise">« Épurez, épurez, afin de ne pas sacrifier nos arbres en vaines paroles. »</p>
+
+    <p>Produire beaucoup, publier peu, ne pas ajouter à l'amas déjà monstrueux de l'insignifiance ni à la somme des invendus pourrissant dans la cave d'éditeurs.</p>
+
+    <p>Sans prétention, avec amour, pour le plaisir<br>Être beau et grand.</p>
+
+    <div class="notes-preface">
+      <p>* Prétexte à un cadeau en ces jours qui font que les années passent.</p>
+      <p>** Vieilles pensées d'un autre monde qui n'a pas beaucoup changé.</p>
+    </div>
+
+    <h2 class="partie-titre">Les poèmes</h2>
+
+<div class="poeme">le goût d'écrire
+    rien
+  simplement le besoin
+      d'extirper
+    ce trop plein
+             indéchiffrable</div>
+
+<div class="poeme">le crayon patauge
+       sur le papier
+         une sensation
+          un mouvement
+  le concerto
+        en 24 mots
+pour plume et orchestre
+le petit Bach
+       dans son sofa
+joue de la cueillère
+attendant
+           l'éclair de génie
+que le livreur
+     lui monte
+son piano à queue</div>
+
+<div class="poeme">Hendrix
+      dans son tombeau
+tout en tirant sa poffe
+crie à tue-tête
+« mort où est ta victoire »
+dans ta tombe
+           répond la neuvième de Beethoven</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">tout en proclamant
+              l'inexorable existence
+                à sens unique
+bornée
+   de cadres
+          trop restrictifs
+pour l'énergie démentielle
+              du simple homme
+              de la rue</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Je suis un taureau
+Et tant que la Terre
+        tournera
+Je tournerai avec elle
+Je ne cours pas les arènes
+Où chaque jour
+Quelques taureaux imbéciles
+Se laissent tuer
+Pour le plaisir des sots
+Et la gloire d'un faiseur de miracles
+Ma race broute les champs
+Avec ce regard mystérieux
+Bienheureux peut-être
+Surpris de vous voir là
+Pendant que vous pourriez
+Être ailleurs
+Il rumine des jours durant
+Pour atteindre l'inaccessible
+Et de temps à autre
+Il raffole de la joie
+            des femelles
+De l'amour des femmes</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Du bois
+Et des grands espaces
+Montait le silence
+Nécessaire à la vie
+S'inscrivaient sur des pages blanches
+Les silences torturés
+D'un être affamé
+De mon tiers monde
+J'ai décroché le téléphone
+Pour endormir ma conscience
+Et non pour répondre aux appels pressants
+De ma faim d'absolu
+Qui ne s'écrit plus
+Sur des blocs-notes
+Blancs jaunes roses
+Les mots se noient
+Oubliant de s'inscrire
+Car du bois
+Et des grands espaces
+Montaient le silence</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">              Le pourquoi
+D'un « je ne sais pas »
+              La raison
+D'un « parce que »
+          d'un « il faut »
+La folie-raison
+De vivre au milieu
+          en situation
+          en arrière
+          au sommet
+Des tours de Babel
+Écrire le non sens
+Dire la virgule
+Véhiculez la folie
+Autour d'un point d'interrogation
+Vivre à jamais
+Entre deux couvertures</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Le jour monte
+Dans la Matapédia
+L'eau coure plus vite
+Que le monstre d'acier
+Habité
+Par des peuples endormis
+La forêt s'éveille
+Au passage de l'engin
+Et de sa suite
+De quelques maisons
+Pointe la lumière
+Reflet du soleil
+Venu dire bonjour
+À l'homme debout
+Cambré dans le petit matin
+Attendant le jour
+De pieds fermes
+Pour accomplir l'oeuvre de sa main
+Que son coeur alimente
+En ce pays sauvage
+            abrupte
+Alors que s'approche la mer
+Et les terres d'une province inconnue
+Le Québécois insiste
+Pour faire surgir la vie</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Ja Ja nous venons t'écouter
+Ze Ze Ze le jour s'endort
+nous entrons au règne de l'électricité
+au contrebas d'une scène nocturne
+                    un joueur se joue des tours
+il note les sons
+   harmonise son esprit
+sans bruit crescendo
+          JAZZ stand up
+               pousse le son
+               ouvre la porte
+le piano monte
+la bass descend
+        on se croise dans l'escalier
+        on s'accorde sur la même note
+        et l'on part
+                 AFRIQUE NOIRE
+                 des tam-tams répandent le bruit
+                 d'une tribu réunie aux célébrations
+                                        saxonnes
+AMÉRIQUE BARIOLÉE
+vibre les pitons enchaînés par le rythme moderne
+la trompette murmure le thème
+          à bouche que veux-tu
+          au terme d'une grande envolée
+                     l'AFRIQUE se déchaîne
+le tiers monde se révolte au paroxysme de la note six
+un octave sur le dos
+un boutté sur la cravate
+perdu au piano de vos rêves les plus beaux
+la jeunesse entend l'appel du peuple entier
+            le survivre de la race
+          TAM-TAM
+musique sauvage endiablée
+    frappe à nos pieds
+cri du coeur à la raison déréglée
+la démesure devient la mesure
+la nuit noire enfonce le jour blanc
+les peuples se marient
+            MUSIQUE TRICONTINENTALE
+            de racines fécondes    JAZZ JAZZ</div>
+
+    <div class="ornement">· · ·</div>
+
+<p class="poeme-titre">JAZZE RIMBAUD</p>
+<div class="poeme">l'étoile a pleuré rose au coeur de tes oreilles
+              le jazz se joue là dans le
+dérèglement de tous les sens
+Ô suprême clairon plein de strideurs étranges
+              LOVE SUPREME
+crache toujours vers l'azur noir
+     mille octaves enflés
+absolument moderne
+              lumière altérée la fôme exténuée
+              le mouvement égaré
+l'homme se joue
+      se prouve les évidences
+      cascadant l'action des stupides hoquets
+amasse les strideurs au coeur du clairon sourd
+ô flot abracadabrantesque
+                  la noire alchimie
+                  rimant au milieu des ombres fantastiques</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Jazz blanc, jazz noir
+tes doigts s'allongent sur un piano
+des coeurs s'étendent sur des guitares
+la musique redescend du ciel
+                  pour saluer les Hommes
+        oh jazzman
+                  ta noirceur éclaire nos vies
+tu contrebasses au contretemps des silences
+ta vie quotidienne pendue au bout de tes cordes
+tu t'accordes à dire
+                  que l'harmonie n'a pas de main
+                  pour jouer toute seule
+jeux sonores
+battements de coeurs
+                  sur les tambours sauvages
+          MUSIQUE MUSIQUE
+          MORE MUSIC
+duo quatre
+des notes intermittentes
+          repoussent plus loin le silence
+                        tout près du mur du son
+ton canard se pend aux poutres
+              bondit sur la brique
+                  juste à côté de la clôture
+                  après la fermeture
+          jazz is come back disait le journal
+ton sax en or joue de la musique blanche
+                  pour les oreilles d'un chien noir
+ta tête sur tes épaules
+     crie à tes doigts
+        quel trou boucher
+ton coeur manque de chien
+ta peau manque de couleur
+              JAZZ NOIR JAZZ BLANC</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">          Vision bloquée
+  Espoir    Espérance en écueil
+Changement, du temps qui passe
+le facile, l'habituel remplace le meilleur
+          LE PLUS QUE PLUS
+UN monde qui perdure, dont on se contente, s'accommode
+          Nos forces d'Hommes
+          s'annihilent dans un quotidien harassant
+                              travailleur
+
+Qu'un but, le soir qui tombe
+          le repos du guerrier bien payé
+          QUI A TUÉ NOTRE VIVE FOLIE ?
+          Qui a VOLÉ
+                  la sagesse du MIEUX ?
+                  l'ardeur de la révolution ?
+Les dieux sont-ils revenus reprendre leurs biens ?
+     La vie ne vaut-elle
+                  QUE POUR MOURIR
+                              dans une auto sport
+          Prométhée enchaîné à la mécanique
+                    ou embourgeoisé dans un fauteuil roulant
+        MOURIR POUR SI PEU
+Nous ouvrons nos tombes, croyant y découvrir
+          la boîte de Pandore, le salut éternel
+Mais l'on n'y trouve que la mort
+          Engraisser et mourir
+          Le slogan de la consommation
+                            nous irait-il comme le bijou
+                                  d'un roi
+Nous ne creusons même plus nos tombes
+          Nous les achetons
+Comme nous croyons possible de tout acheter
+          RAPPORTS MARCHANDS
+          à sens unique
+Où a-t-il foutu le camp lui aussi (le sens)
+          Non SENS
+          VIE DE VENDUS
+au camp des poires piquées par les vers</div>
+
+<div class="poeme">Les vers du poète
+Nous réveillerons-nous que pour périr définitivement
+                        disparaître à jamais
+      D'UN PARADIS dont nous avions perdu le secret
+Ou peut-être, l'avions-nous vendu contre un bonheur à rabais
+        L'espace vital
+        la nature, la vie
+                    qu'avons-nous reçu en retour
+          ET HOPS
+            trois quatre claques
+              sur la gueule
+              deux trois coups de pied
+              dans le cul
+Pour défoncer la réalité donnée
+Pour revenir de ce mauvais rêve
+Pour péter la baloune du réel oppresseur
+          Laissons nos autos à la porte
+          Passons du rapport marchand à la vie amoureuse
+          De la consommation à la création
+Abattons nos bourreaux
+        nos maîtres/esclaves
+Débordons le ca-dre
+Coulons le bateau qu'on nous a monté
+Faisons sauter les barrières
+          les barreaux
+                    posés à nos espoirs
+                        à nos folies
+          SAUVONS NOS PEAUX
+          CRÉONS LA VIE</div>
+
+<div class="poeme">          recommencer
+           laisser ici reprendre là
+          hésitation devant l'incertitude
+      désillusion, illusion à renouveler
+    se rabattre les trappes
+redorer son blason paé en dedans
+jouer à l'aveugle le temps d'un silence
+pour inventer le cri délivrant
+          le ah ak CALISS
+                    qui révolutionne le cerveau
+                    qui dégage les avenues du possible
+terrorisme : faire sauter les horizons bloqués
+          abstraire la substance du tas d'ordures
+              l'encombrement du trop
+              le trop inutile distrayant
+              le dénuement libérateur
+              la joie du simple
+les mots simplettes
+singe-pet
+cacahouettes
+              ÉCRIRE L'IMPOSSIBLE
+              libérer libérer
+              l'esprit l'amour
+sauter éclatement spatio-temporel
+              des limites incertaines
+                        indiscernables
+le pétard mouillé de nos énergies créatrices
+              libération de nos peurs
+                        de nos angoisses
+              atteindre l'inaccessible
+              engager nos quotidiens
+              poser les gestes à longue portée
+                              À COURAGE MULTIPLICATEUR
+          le sens donné
+          l'évidence nous encarcane
+le tel quel engendre le répétitif, le déjà vu
+          Ni vu ni connu
+          le futur s'abreuve au renouveau
+oubliez le ménage, laissez là vos vieilles idées, ne mettez pas d'ordre
+dans vos théories déchues, laissez le balai pour le manteau</div>
+
+<div class="poeme">construire, échafauder
+attention ressources limitées
+ménagez vos ardeurs
+mettez-y plus de coeur
+              que d'argent
+Mme la Terre se meurt
+        de vos châteaux en Espagne
+        de vos buildings empiriques
+                              en des univers new-yorkais
+l'abri en un pays international
+        entièrement beau bon et vrai
+          HUMANISME VERRAT</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Les nuits perdurent
+au-delà des petits matins clairs
+la souffrance s'engouffre
+              en des horizons absents
+le coeur blesse
+        l'âme chavire
+nos absolues
+    s'effritent en cristal frileux
+aimer amour
+    pour tout dire vivre
+s'enracine au quotidien
+en angoisses nuageuses
+    porter un coup à l'habitude
+    échouer sur des rivages oppresseurs
+à naviguer sans cap
+le sextant désiré fait fi
+            des mutineries marines
+  perdre pied faire une culbute
+        outrepasser les limites
+  que l'on pose à nos vies
+désarçonné du cheval de mes certitudes
+          coûte que coûte
+          de hue à dia
+juguler le tracas
+embarrasser l'ailleurs
+        à perdre haleine
+        tomber d'amour
+          aux genoux
+              de la vie
+cul cul sac
+  à ne point rompre
+  crainte furtive
+          d'une époque malsaine
+  aux aguets
+      des tendres miettes
+qui d'une table sans faim
+    jette son festin
+d'indigestion vague
+barbelée de dents équivoques
+broient l'ardeur rancunière
+d'une portée mal aimée
+ne poussez pas la porte
+l'absurde faisant face au ridicule
+    l'imbécillité se fait jour
+en crépuscules froideurs
+à ne point rompre
+    le cul se projette à sang
+la limite vaginale du plaisir
+enjoint la vie
+        à résister à sa propre déchéance
+    à mourir un peu toujours
+on finit par tourner en rond
+          longtemps
+    cul-de-sac à double sens
+      buter le cul à la renverse
+    dégénérer en clowneries piteuses
+        les airs bienfaiteurs
+          de l'apparat transparent
+au source du souffle
+du premier mouvement
+tendre sa corde
+  à perdre haleine
+  attendre le dépassement
+      de la lumière qui jaillit
+    d'un nulle part moqueur
+je rêve à peine
+de l'instant où le rideau tombera
+      de mes yeux hagards
+  laissant le regard
+        en lettres mortes
+  posé son rire taquin
+  à l'insignifiance du jour
+    je te tais
+        en souffrances souterraines</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">le silence seul guérit la bêtise humaine
+    et la mort porte en elle
+      lueur d'espoir
+    aux culs-de-sac successifs
+      d'une folie s'arc-boutant
+    « aux sanglots longs de l'automne »
+        aux prises avec des intérieurs fragiles
+        et des décors mouvants
+        l'âme ballotte
+          aux étranges tourments
+de chaque jour suivre la peine
+pour que force travailleuse
+    se déchaîne
+faire le pain qui nourrit
+  tisser les liens qui unissent
+    à même les luttes
+  mener nos têtes douteuses
+    aux gestes mobilisants</div>
+
+    <div class="ornement">· · ·</div>
+
+<div class="poeme">Tout doit être vendu
+  à défaut d'être acheté
+ talent énergie démesure
+à vil prix afin d'augmenter le profit
+              catalogue étalage
+argent sonnant contre intelligence sonore
+on dit que les choses meurent
+    elles ne meurent pas
+              on les tue
+je n'existe plus
+              ou est-ce le monde tout autour
+              qui se détériore en spirales nucléiques
+les atomes s'estompent
+    le sens tombe
+        en troublantes caresses
+  la gravité est une loi de la Nature
+  la gravité est une loi de la Nature
+        le verbiage de l'ennui
+        s'incruste dans la nuit
+          déchirant la vie de sa contenance
+              de sa rancoeur
+          démystifiez et sagesse et folie
+            réveillez-vous le combat
+              est engagé
+            sainteté de terrien
+    infini t'es si mal
+          du verbe endormi
+          réveillez le combat
+dans la rue
+    dans tes murs
+  l'alerte donnée
+je suis ni d'un pays
+    ni d'une vie
+je suis d'une existence
+ falsifiée au rebours d'une courbe collective
+  je regrette à merveille
+  ce que les autres
+  vivent avec joie
+ à demeure je meure
+  sans équivoque et sans droit
+
+la beauté en robe du soir
+  flirte l'artiste saoul
+    devant tant de splendeur
+il s'étonne de la laideur
+    encarcanée
+      au coeur de l'Homme
+quand tu te lèves en pleine nuit pour écrire
+pour coucher les mots sur le papier
+    alors tu peux retourner
+      dormir
+les phrases tranchantes
+      acerbes tirées droit droit droit dans le flanc
+  attention à l'attaque cinglante
+        des mots
+la Terre se meurt sous le
+  poids de l'avoir toujours plus
+garée en des
+    parnasses maussades
+  la morne veilleuse
+    de l'amour endormi
+          aux champs
+    s'enorgueillit
+      aux ailes fragiles
+      des génies terreux
+  si j'étais parfait
+c'est que le monde aurait changé
+et j'en ferais partie sans doute avec vous
+  enfant t'es si mal
+          dans ta peau
+  enfantez si mal femmes
+  la peau enfle    de souffrance
+      sous le poids de la vie
+    l'enfant jeté dans le monde
+      expulsé de sa tanière
+      cherche l'air
+        l'air de la tendresse
+      enfant t'as si mal dans ta peau
+  que tes yeux flottent
+        sur des déluges rageurs
+
+infini t'es si mal dans une vie
+infinitésimal
+    t'as si mal défini tes envies
+  le tout petit enfant fait
+  ses dents contre la société
+  il veut vomir tous ces coeurs
+          funestes
+  les changer en crapauds galeux
+    enfant t'es si mal
+        dans ton berceau
+    enfant t'as si mal dans ta peau
+quatre yeux flottent sur les eaux
+  portrait de femme et enfant
+    hanarchant la douleur
+   si la sonorité
+    prend le dessus sur le sens
+      le rythme sur la logique
+  à l'envers c'est l'hiver
+        à tire-d'aile
+  ma ficelle attise le feu
+        de l'étincelle
+  ma carcasse frileuse
+  en des vies sans chaleur
+      les atomes s'estompent
+      le sens tombe
+    en caresses tourbillonnantes
+la gravité est une loi de la Nature
+la gravité est une loi de la Nature
+ enfant l'infiniment grand dans ton cerveau
+      aux mots citoyens
+ébranlez la foi des montagnes
+   démystifiez l'écrit
+ l'écriture technique apprise
+        dès l'enfance
+  et sagesse et folie
+  l'alerte sonnée
+   nous écrivons
+  pour nous actualiser
+  pour établir une vision du monde
+
+à travers cris et mots
+  à la grandeur de nos forces d'hommes
+    de femmes d'enfants
+  qui voulont nous inscrire
+    au coeur du changement
+nous nous acharnons
+  à désacraliser l'oeuvre de génie
+  pour le rendre
+    à dimension humaine
+  nous ne gagnons pas notre vie
+  nous y perdons notre temps
+      joyeusement
+    la sainteté me monte aux lèvres
+    le gosier sec
+  elle déboule en chapelets ininterrompus
+      de rengaines dévotes de voeux pieux
+    de belles et bonnes intentions
+        sérieux straight plate
+    sauvez le monde et nous avec
+à quoi bon sauver son âme
+  si l'on vient qu'à perdre l'univers
+    sainteté de terrien
+  besoins tenus en laisse
+    à leur minimum vital
+nous nous installons
+  à l'intérieur d'une existence
+et nous voulons y établir
+        nos croyances
+      mettre à profit nos acquis
+la gravité est une loi de la Nature
+    enfant t'as si mal dans ta peau
+    la morne veilleuse
+        de l'amour endormi
+      dans sa rancoeur
+    la beauté en robe du soir
+      s'étonne de la laideur
+    pour toujours
+      beauté amour bonheur
+      des mots des maux de coeur
+
+existe-t-il un paradis pour ces mots
+    mes énergies sont rassis
+      en des univers furibonds
+      qui se détériorent
+        en spirales nucléiques
+    que tes yeux flottent
+      en rétroactions anonymes
+        le quidam critique
+    de qui on a jamais de réponse
+        la jouissance solitaire
+            de tout acabit
+mais nul ne peut vivre isolé
+  ainsi l'homme ainsi l'écrivain
+        là n'est pas l'essentiel
+jetez-les à bout portant
+      aux yeux de tous
+      le combat est engagé
+dans la rue dans tes murs
+        l'alerte donnée
+quand tu te lèves dans la nuit
+    pour écrire
+alors tu peux aller dormir
+  enfant t'es si mal dans ton berceau
+    si mal à fleur de peau
+  la morne veilleuse flirte l'artiste saoul
+  encarcané au coeur de l'Homme
+   pour toujours déchirant la vie
+  s'incruste dans la nuit
+    le verbiage de l'ennui
+    et sagesse et folie
+    de vos tiroirs
+      sortez les chefs-d'oeuvre
+révolutionnez l'écrit
+    je n'existe plus
+ou est-ce le monde tout autour
+qui se détériore
+  au temps où l'on a appris
+      que être et avoir
+    n'étaient pas verbes de mise
+ne faisaient pas image
+ni ne disaient assez précisément
+ce que nos cerveaux
+auraient dû comprendre depuis longtemps
+    écrire simple
+      n'est d'aucune convenance
+        dans l'univers de la connaissance
+      oublier être et avoir
+      dire l'image pour la vie
+        aux yeux de tous accélérez le dire
+      aux mots citoyens
+la Terre se meurt
+sous le poids de l'avoir toujours plus
+      ma vie s'ancre hors de toute futilité
+    dans les rues
+      dans vos tiroirs
+réveillez le combat du verbe
+            endormi est engagé
+  et nous devons
+  après les peintres du dimanche
+  être les écrivants
+      du jeu dit du plaisir inscrit
+      de la jouissance décrite
+        de la semaine travailleuse
+        acabit unissez-vous
+        vive le poète de papier
+démystifiez l'écrit l'écriture
+technique apprise dès l'enfance
+empêtrée dans l'église
+      sacro-sainte de l'art
+    seul l'officiel peut dire
+  mais il ne dit que ce qu'il veut
+pour nous faire accéder aux révélés du pouvoir
+    nous avons le devoir de dire
+            le dire mal peut-être
+            car à ne pas dire
+    on ne dit jamais bien
+vive les poètes de papier
+
+le sens a foutu le camp
+  l'officiel nous paralyse
+et sagesse et folie
+    projetons au grand jour
+    l'expression d'un peuple en gestation
+      sortir du secret de l'intimité
+      malgré le doute qui étrangle
+peut-être étranglera-t-il aussi
+l'oppresseur qui nous guette
+      à bas les règles
+      inventons nos vies
+    poursuivons-la dans tous les sens
+        pour le plaisir</div>
+
+    <div class="lien-galerie">
+      <a href="ma-vie-numerique.html">Ces vers en 1981, dans le manifeste OTO : Ma vie numérique →</a>
+      <a href="ma-vie.html">Tous les récits : Ma vie →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Poèmes tapés à la machine dans les années 1970</div>
+    </div>
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>
