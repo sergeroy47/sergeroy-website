@@ -51,6 +51,13 @@ const CONTENU = {
       "lien": "textes/pourquoi-pas-le-cinema.html"
     },
     {
+      "categorie": "Création artistique",
+      "titre": "PRé/TEXTES",
+      "extrait": "Les poèmes de ma jeunesse, tapés à la machine et offerts à mes amis — avec la photo que Serge Choinière a prise de moi, écrivant à la chandelle dans un camping au Québec.",
+      "date": "Années 1970",
+      "lien": "textes/pretextes.html"
+    },
+    {
       "categorie": "Mémoire familiale",
       "titre": "La fin tragique d'Antoine Roy",
       "extrait": "Notre premier ancêtre en Amérique : soldat du régiment de Carignan, tonnelier plutôt que défricheur, assassiné à Lachine par un mari jaloux. De son fils unique descendent les Roy et les Desjardins d'Amérique.",
