@@ -31,8 +31,8 @@ const CONTENU = {
   "textes": [
     {
       "categorie": "Vie spirituelle",
-      "titre": "80 ans de silence",
-      "extrait": "« Je longe les murs et préfère passer inaperçu. Mais après toutes ces années, je désire me révéler. » Pourquoi un silencieux se raconte — et ce qu'il espère offrir en le faisant.",
+      "titre": "Élans de jeunesse",
+      "extrait": "« I am a dreamer. » J'aimais surtout imaginer, moins concrétiser. En arrière-scène, j'ai prolongé ces élans de jeunesse dans ma vie de tous les jours — et pourquoi un silencieux se raconte, à 80 ans.",
       "date": "2026",
       "lien": "textes/recueil.html#silence"
     },
