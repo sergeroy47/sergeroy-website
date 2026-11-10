@@ -51,6 +51,13 @@ const CONTENU = {
       "lien": "textes/pourquoi-pas-le-cinema.html"
     },
     {
+      "categorie": "Récits autobiographiques",
+      "titre": "La tradition de bons buveurs",
+      "extrait": "« Nos gènes ont baigné dans l'alcool. » De Rosaire et des oncles d'Acton Vale au Montréal de 1969, du Chat Noir au Cégep Édouard-Montpetit — puis la décision de vivre autrement, et le zen pour vivre avec l'ambiguïté.",
+      "date": "1950–2026",
+      "lien": "textes/la-tradition-de-bons-buveurs.html"
+    },
+    {
       "categorie": "Création artistique",
       "titre": "PRé/TEXTES",
       "extrait": "Les poèmes de ma jeunesse, tapés à la machine et offerts à mes amis — avec la photo que Serge Choinière a prise de moi, écrivant à la chandelle dans un camping au Québec.",

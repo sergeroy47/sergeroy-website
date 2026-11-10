@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La tradition de bons buveurs — Serge Roy</title>
+  <meta name="description" content="La tradition de bons buveurs : de Rosaire et des oncles d’Acton Vale au Montréal de 1969, puis la décision de vivre autrement — avec le zen et l’ambiguïté. Un récit de Serge Roy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+
+    .ouverture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-style: italic; font-weight: 300;
+      color: var(--terre); text-align: center;
+      margin: 0 0 3rem;
+    }
+    .grande-partie { text-align: center; margin: 5rem 0 2.5rem; }
+    .grande-partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 300;
+      color: var(--encre);
+    }
+    .collage { margin: 3rem auto; max-width: 480px; text-align: center; }
+    .collage img { width: 100%; height: auto; display: block; box-shadow: 0 6px 24px rgba(28,26,20,0.15); }
+    .collage figcaption {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1rem; color: var(--terre); margin-top: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+  <header class="article-entete">
+    <span class="article-categorie">Récits autobiographiques</span>
+    <h1>La tradition de bons buveurs</h1>
+    <p class="article-sous-titre">et la décision de vivre autrement</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Dicté en juillet 2026, complété en novembre 2026</div>
+    <div class="separateur"></div>
+  </header>
+  <main class="article-corps">
+    <p class="ouverture">Nos gènes ont baigné dans l’alcool.</p>
+
+    <h2 class="partie-titre">Rosaire et les oncles</h2>
+
+    <p><a href="famille-rosaire-yvonne.html">Rosaire</a> était un travailleur discipliné. La semaine, pas question de boire ; mais le vendredi soir et le samedi, c’était un bon coup, chaque semaine.</p>
+
+    <p>Mes oncles aussi étaient de bons buveurs. Mon oncle Jos était sans limite — un buveur dévergondé. Mon oncle Jean, un alcoolique discipliné, mais qui aimait le fort, alors que ses frères étaient tous des buveurs de bière. Mon oncle Réal, lui, après chaque jour de travail à l’Acton Shoes, s’arrêtait à la taverne de l’hôtel Windsor, près de chez lui. Un de mes amis, qui avait été waiter à cet endroit, me racontait que lorsqu’il voyait Réal changer après la première gorgée de sa grosse bière, ça lui donnait le goût de devenir alcoolique.</p>
+
+    <p>Ces hommes réservés se transformaient dès les premières gorgées. Mais ils n’étaient pas toujours agréables, d’autant que leurs habitudes étaient tenaces et régulières.</p>
+
+    <h2 class="partie-titre">Le vendredi soir à la maison</h2>
+
+    <p>Ainsi, le vendredi soir, Rosaire devenait sentimental, jasant, collant — alors que nous, on voulait juste se sauver. Et que dire d’Yvonne, qui en plus devait se défendre de ses avances pas très subtiles. Yvonne ne buvait presque jamais, et jamais pour perdre la carte. Disons que pour elle, ce fut le calvaire de sa vie. Moi non plus, je n’appréciais pas : il m’a fallu plusieurs années avant de saisir qui était cet homme, Rosaire. Pour moi, enfant, plus près de ma mère que de mon père, ce fut aussi un petit calvaire.</p>
+
+    <p>Ce n’est que beaucoup plus tard que je compris un peu l’homme — puisque la tradition de bons buveurs est passée à la génération suivante.</p>
+
+    <h2 class="partie-titre">La génération suivante — Montréal, 1969</h2>
+
+    <p>Comme j’étais sportif, j’ai attendu un peu plus longtemps avant de me lancer, moi aussi, dans mon amour de l’alcool — même si, au collège, j’avais déjà des amis qui s’envoyaient en l’air. C’est surtout en arrivant à Montréal, en 1969, que j’ai découvert toute une autre vie, celle que le collège m’avait cachée dans une petite ville, très catholique et conventionnelle.</p>
+
+    <p>À Montréal, en 1967, il y avait eu l’Exposition universelle, qui avait réveillé la ville dans un contexte où Montréal s’ouvrait sur l’international : des gens de partout venaient nous présenter leur gastronomie, et des habitudes de vie très différentes. Ça avait eu un effet retentissant sur toute la population. En même temps, Montréal vivait l’effervescence de mai 1968 en France, ainsi que la vague psychédélique californienne. Le milieu culturel et les artistes prenaient le devant de la scène. La Révolution tranquille, au plan politique, avait aussi balayé la Grande Noirceur de l’époque de Duplessis. Pour un petit Québécois, j’étais dans le vent avec de bonnes rafales.</p>
+
+    <p>Donc j’arrive à Montréal, dans ce contexte, et je découvre une vie que je n’avais pas connue dans mon village d’Acton Vale, tout entier organisé autour de l’église. Ni au collège de Saint-Hyacinthe, qui était un séminaire : j’ai vécu dans un monde très fermé. Ma conception du monde, ma vision du monde, c’était la vision catholique du temps — une vision avec des œillères, comme les chevaux.</p>
+
+    <h2 class="partie-titre">L'UQAM, première année</h2>
+
+    <p>Mais quand j’arrive à Montréal, par les hasards de la vie, j’arrive dans un milieu tout neuf : c’est la première année de l’Université du Québec à Montréal. Je suis arrivé là comme par défaut, en études littéraires. Mais tous les profs, comme dans toutes les nouvelles universités, étaient des profs d’anciens collèges devenus profs d’université — et qui prenaient ça très au sérieux. Je me suis aperçu que, même si j’aimais la littérature, ce programme ne me convenait pas du tout. Heureusement, dans ce contexte, il y avait des jeunes venus du même milieu que moi.</p>
+
+    <h2 class="partie-titre">Développement culturel — la marmite</h2>
+
+    <p>Dans cette nouvelle lucarne, il y avait aussi de jeunes profs qui avaient une vision complètement différente de ce que devait être une université. Dans le programme officiel de littérature, il y avait une option qui s’appelait « développement culturel » — en fait, une espèce de laboratoire de travaux pratiques : du théâtre, du cinéma, différentes autres choses. Moi qui avais suivi au collège un cours de cinéma, j’arrive là, je choisis développement culturel, et je tombe dans une marmite en pleine ébullition.</p>
+
+    <p>Les profs, mais aussi tous ces jeunes étudiants comme moi, voulaient faire la révolution. On était dans un moment de révolution — et la révolution, c’était vraiment une révolution culturelle. D’ailleurs, cette option au sein du département de littérature s’est développée l’année suivante en prenant une bifurcation : trois nouveaux modules sont nés : l’animation culturelle, l’information culturelle — qui deviendra communication — et la recherche culturelle.</p>
+
+    <h2 class="partie-titre">Deux jeunes à Montréal</h2>
+
+    <p>Donc c’est ça : quand j’arrive à l’université, j’arrive aussi à Montréal. Je découvre une ville qui était, elle aussi, en pleine ébullition. Il y avait beaucoup de bars, il y avait les partys d’étudiants. La première année, je n’étais pas encore avec Diane ; mais la deuxième année, avec elle, on a pris un logement proche de l’université, dans le parc La Fontaine, l’ancienne école normale. On restait sur la rue Papineau, et je traversais le parc pour aller à l’université, qui était l’ancienne école normale. Voilà deux jeunes qui arrivent à Montréal et on découvre une nouvelle vie.</p>
+
+    <h2 class="partie-titre">Le Chat Noir</h2>
+
+    <p>La vie dans les bars, on ne connaissait pas ça, Diane et moi. Moi, j’étais un bon buveur, et j’avais des amis qui étaient de bons buveurs, alors on se rencontrait souvent dans des bars. À un moment donné, il y en a un qui est devenu notre lieu de rencontre : ça s’appelait le Chat Noir, sur la rue Sherbrooke, près de l’École des beaux-arts. On y a pris des coups, des fois même l’après-midi ; et le soir, il y avait le cinq à sept — on pouvait se payer plusieurs bières, ça ne coûtait pas grand-chose. La soirée se terminait toujours par de la danse. L’alcool, la danse, tout ça nous mettait dans une atmosphère — pas débile, pour ainsi dire, mais délirante.</p>
+
+    <p>C’est dans ce contexte-là qu’on a vécu aussi notre vie de couple. On apprenait à vivre, mais en même temps on découvrait une vie qu’on n’avait jamais connue. Ça a fait une vie de couple un peu turbulente : il y avait une passion entre nous, mais en même temps il y avait des ouvertures qui nous dépassaient. On ne voulait rien manquer, donc on vivait une vie à l’emporte-pièce.</p>
+
+    <h2 class="partie-titre">L'amour libre et ses limites</h2>
+
+    <p>C’était le temps de l’amour libre, en plus. Diane, c’est une belle femme, donc elle faisait de l’effet en masse ; pis moi, ben, j’étais dans la fête comme tout le monde. Mais ça faisait une vie un peu difficile : bien qu’on soit pour l’amour libre, émotivement on n’était pas prêts — on était encore de jeunes adultes sans expérience. Ça faisait une vie intense, mais parfois dure sur le plan émotif. Plusieurs fois, on est partis chacun de notre côté, puis on revenait. À un moment donné, on est revenus pour de bon, et on a décidé de faire un enfant ensemble — ce qui a donné Noémie. Mais là, on parle de <a href="kamouraska-1974.html">1974</a> : je fais un gros saut dans le temps.</p>
+
+    <h2 class="partie-titre">Le poète révolté</h2>
+
+    <p>Dans l’ivresse, je devenais le poète révolté. Sous l’effet de l’alcool, j’écrivais souvent, beaucoup. Pis mon père disait : « Jamais un buveur d’eau n’a écrit un poème. » Donc nous, on était des artistes quand on avait pris un petit coup.</p>
+
+    <p>En même temps, à l’université, c’était un milieu culturel : j’étais entouré de gens qui, même par leur provenance, étaient plus artistiques, plus culturels. Mais moi, ce n’était pas mon univers — comme je le disais, plus jeune, j’étais un sportif. Donc j’arrivais, shooté dans un autre univers, et je me découvrais des talents que je ne me connaissais pas. Et j’avais un certain plaisir à découvrir d’autres personnes qui avaient ces talents, et à les mettre en pratique de façon très concrète. Parce que j’avais un peu abandonné le côté théorique de la littérature pour la pratique.</p>
+
+    <h2 class="partie-titre">Animation culturelle — le médium du cinéma</h2>
+
+    <p>La deuxième année à l’université, le petit projet de développement culturel — qui n’était au départ qu’une option — a pris beaucoup d’ampleur, cette année-là et l’année suivante. Trois programmes ont été créés, et moi j’ai choisi animation culturelle, qui était le plus effervescent. Comme j’avais déjà fait de l’animation sur les terrains de jeux, j’avais un petit bout de chemin de franchi. Mais c’était tout un nouveau domaine. Ça s’appelait animation culturelle, mais le social y était très important — c’était plutôt une éducation socioculturelle, avec très peu de cours magistraux : c’était quasiment rien que des formes de travail en groupe. Et chacun avait son médium.</p>
+
+    <p>Nous, on était en cinéma. Pis dans ce temps-là, c’était aussi le début du vidéo — le <a href="ma-vie-numerique.html">Portapak de Sony</a> : fini les grosses caméras. C’était la première fois qu’il y avait un petit système, avec une grosse valise qui contenait le ruban pour enregistrer, et une caméra à l’épaule. On pouvait faire beaucoup de choses qui étaient quasiment impossibles avant. Et en plus, on pouvait voir tout de suite le résultat de ce que ça donnait.</p>
+
+    <h2 class="partie-titre">Perspectives Jeunesse — le projet à Prévost</h2>
+
+    <p>On vivait avec le Portapak, on filmait du social — mais on fumait aussi : des cigarettes et des joints. À cette époque-là, le gouvernement du Canada, pour occuper sa jeunesse — comme s’il ne voulait pas en perdre le contrôle —, avait créé des programmes : Perspectives Jeunesse, pis un autre dont je ne me souviens plus le nom, dans lesquels on pouvait proposer au gouvernement des projets de création, d’animation. Il y en avait beaucoup, des projets, à Montréal, et j’ai travaillé là-dedans.</p>
+
+    <p>Nous, notre projet, c’était de faire un film d’animation — mais pas de l’animation de dessins animés : de l’animation culturelle et sociale. On voulait faire ça dans une prison, mais la prison avait refusé notre projet ; on l’avait donc déplacé dans un centre de santé mentale, Prévost, à Montréal. On est arrivés sur place avec le projet de faire écrire un scénario par des gens qui étaient en milieu fermé, qui avaient des problèmes de santé mentale — dépression, toutes sortes de choses. Moi, je ne connaissais rien — toute l’équipe ne connaissait rien — à la santé mentale. Mais l’institut Prévost, c’était un centre de santé mentale avant-gardiste, avec psychiatres et tout, et c’est eux qui avaient accepté notre projet.</p>
+
+    <p>Le projet, c’était de permettre aux patients de l’hôpital de créer un projet à partir de leur histoire. Et comme c’était le temps du vidéo, on tournait tout en temps réel avec le Portapak, pour bâtir un scénario. Après peut-être un mois et demi, le scénario était prêt, et on a tourné le film en 16 mm. À ce moment-là, moi, mon travail, c’était plutôt d’être le cameraman — le directeur photo, comme on dit.</p>
+
+    <p>Ça a été une expérience extraordinaire, autant au niveau de l’écriture — parce que les gens se révélaient — qu’au niveau des aventures. Parce que dans ce temps-là, il y avait beaucoup de traitements par électrochocs. Des fois, nos plus fervents participants avaient un traitement d’électrochocs, pis là, tout d’un coup, ils perdaient complètement le fil d’où on en était. Il fallait reprendre : ces gens-là disparaissaient du décor, parce qu’ils avaient complètement perdu la mémoire. C’était une aventure — mais en même temps, ça a donné quelque chose : un film, « <a href="pourquoi-pas-le-cinema.html">Un rêve d’habitude</a> » (1972), dirigé par mon ami Jean-Claude Coulbois, un Français qui était au Québec depuis un an seulement. Durant l’année universitaire suivante, il a travaillé le montage. Et un film de 44 minutes a surgi avec un petit rayonnement, dont au moins une diffusion à Radio-Québec.</p>
+
+    <h2 class="partie-titre">Le Cégep Édouard-Montpetit</h2>
+
+    <p>Mais mon histoire d’une bonne famille de buveurs a bifurqué un peu. J’ai passé les années 69 à 76 à Montréal, d’abord comme étudiant à l’UQAM et ensuite dans ma première vraie job au Cégep Édouard-Montpetit à Longueuil. Le Cégep était aussi un milieu en changement. J’arrivais dans une institution où la bureaucratie n’avait pas encore bien assis sa domination et où les jeunes étudiants débordaient de projets et d’audace. Un milieu de grande liberté, et avec des moyens. Mon rôle en tant qu’animateur socioculturel était d’offrir des ateliers et des activités qui les nourrissent. Comme je venais du milieu de l’audiovisuel, j’offrais des ateliers de cinéma, de télévision, et j’encadrais la radio étudiante. Mais les étudiants avaient leurs propres initiatives. Ces étudiants, d’ailleurs, étaient plus âgés que ceux d’aujourd’hui : plusieurs près de la vingtaine. Le Cégep devait durer deux ans en principe, mais plusieurs, aimant ce milieu libre aux possibilités multiples, prolongeaient leur séjour.</p>
+
+    <p>Ainsi, il y avait un comité d’action politique : des étudiants progressistes et activistes que je devais encadrer. Mais je faisais surtout le lien entre leurs projets et les ressources du Cégep. J’étais donc souvent pris entre les souhaits des étudiants et les exigences de l’administration.</p>
+
+    <p>Une petite histoire pour illustrer. Il y avait une grève à l’usine United Aircraft — devenue Pratt &amp; Whitney —, le plus gros employeur de la ville de Longueuil. Les étudiants du comité d’action politique soutenaient les syndiqués et collaboraient à leur plan d’action. À un moment donné, le syndicat a besoin d’un grand local pour tenir son assemblée générale, durant laquelle doit avoir lieu un vote crucial sur la poursuite de la grève. La cafétéria devient le lieu idéal. Il y avait une règle non écrite : si les étudiants s’occupaient de l’ensemble des besoins logistiques — mise en place, ménage, etc. —, on pouvait leur prêter gratuitement un local du cégep, pourvu que ça réponde à un apprentissage pédagogique. Pour des membres d’un comité politique, rien de plus pédagogique qu’une assemblée syndicale : la démocratie en action. On organise le tout, un peu en catimini. L’assemblée a lieu, les étudiants accomplissent parfaitement leur devoir. Tout va pour le mieux.</p>
+
+    <p>Mais voilà que le C.A. du collège se tient quelques jours plus tard et, par hasard, un des membres du C.A. est un cadre de United Aircraft, qui se plaint que le Cégep a offert gratuitement un local au syndicat. Mon patron, le directeur des services aux étudiants, lui aussi membre du conseil d’administration, débarque dans mon bureau le lendemain matin, en furie. Car, administrativement, c’est lui le responsable hiérarchique de cette décision, dont il n’était pas très au courant. Quand je lui explique ma vision des choses pour l’apprentissage des étudiants, il est loin d’être convaincu. C’est sa tête contre la mienne. Menace de renvoi ; une enquête est demandée par le C.A. Mais les professeurs et les étudiants membres du C.A. réussissent à noyauter le comité d’enquête. Après quelques semaines, je suis blanchi et je sauve ma job. Ouf !</p>
+
+    <p>Le service d’animation faisait partie des Services aux étudiants, auxquels j’appartenais. Nous étions, nous aussi, une gang autour de la vingtaine qui occupait, pour la plupart, son premier emploi professionnel. La plupart en couple, et souvent en train de fonder une famille. Mais jeunes, un peu frondeurs et souvent en party : la vie était belle dans notre collège, qui ne s’était pas encore acclimaté à cette vie nouvelle, un peu plus tumultueuse.</p>
+
+    <div class="grande-partie">
+      <div class="separateur"></div>
+      <h2 class="grande-partie-titre">Vivre autrement</h2>
+    </div>
+
+    <h2 class="partie-titre">L'ivresse quotidienne</h2>
+
+    <p>Quand j’arrive à Montréal, en 1969, j’arrive dans une ville de party. C’était l’époque où tout était possible. Dans cette atmosphère, j’ai renoué avec ma nature ancestrale, qui avait baigné dans l’alcool. Jusque-là je n’avais bu qu’un petit peu ; mais dans ma vingtaine, j’ai vraiment touché à mon délire éthylique. Je buvais beaucoup, et souvent jusqu’à perdre la carte. On festoyait pour toutes sortes de raisons — mais souvent, on n’avait même pas besoin de raison pour festoyer.</p>
+
+    <p>Boire beaucoup presque tous les jours, ça a un gros effet sur le système — juste le système digestif qui accumule l’alcool. À un moment donné, on ne fait plus la différence : cet état-là revient jour après jour. La plupart du temps, on buvait le soir jusqu’à la tombée de la nuit, jusqu’au last call ; et le lendemain matin, on était encore dans cet état, un peu éberlués. Ça grugeait beaucoup d’énergie, ça affectait le métabolisme. Mais comme j’avais été un sportif dans ma jeunesse, j’avais toujours quelque chose en arrière qui me rappelait les bons moments d’être en forme. Et c’est comme ça que, tranquillement, vers la fin de ma trentaine, tout s’est mis en place pour que je décide d’arrêter de boire.</p>
+
+    <h2 class="partie-titre">Le premier arrêt — les citoyens de l'Avenir</h2>
+
+    <p>La première fois que j’ai arrêté, c’était vers la fin de 1978-79, quand j’étais au centre de plein air de l’Avenir — il s’appelait « centre de plein air des citoyens de l’avenir », parce qu’on recevait beaucoup d’immigrants. Une base de plein air avec une vocation d’intégration des immigrants, ce qui, dans ce temps-là, était quasiment avant-gardiste. À un moment donné, je suis devenu comme le responsable des lieux. L’équipe avec laquelle je travaillais depuis déjà trois ou quatre ans comptait aussi des bons buveurs : on se ramassait souvent à la brasserie de l’hôtel de l’Avenir, où il y avait une table de pool. Mais ce mode de vie ne convenait plus à mes responsabilités — en plus d’avoir toujours beaucoup d’effets sur mon corps, mon cœur. J’ai arrêté, fin 1978-79, pendant peut-être un an. C’était intermittent — pas toujours la ligne droite.</p>
+
+    <h2 class="partie-titre">Les cycles</h2>
+
+    <p>Quand je me suis inscrit au cégep de Sherbrooke en informatique, je ne buvais pas ; j’étais très sérieux. Mais dans mon groupe, j’avais deux inconnus qui sont devenus de grands amis et une amie commune : tous des bons buveurs, qui passaient beaucoup de temps dans les brasseries, les tavernes et les terrasses. De temps en temps j’allais avec eux partager des bons moments, et à un moment donné — je ne me souviens plus comment — je me suis remis à boire.</p>
+
+    <p>Depuis ce temps-là, c’est comme des périodes : j’arrête trois-quatre mois, je reprends ; souvent c’était un mois, deux mois ; et souvent une année complète sans boire, où je buvais juste un peu autour de ma fête et autour de Noël. C’est même peut-être encore un peu comme ça aujourd’hui. Mais le taï-chi, puis le zen, sont venus équilibrer ça. C’est peut-être même un peu pour ça, dans le fond, que je me suis mis au zen : pour gérer cette habitude-là, prendre une espèce de recul. Encore aujourd’hui, il y a des périodes où je ne bois pas du tout, et des périodes — autour de ma fête, autour de Noël — où je me permets de revenir à la nature de mes ancêtres.</p>
+
+    <h2 class="partie-titre">La famille qui ralentit</h2>
+
+    <p>Il y a aussi le contexte amoureux : ma première femme, Diane, buvait aussi, puis elle aimait bien perdre un peu la carte ; tandis que ma conjointe Colette venait d’une famille très sobre — ça a teinté ma vie. Alors que dans ma famille immédiate, on buvait tous. Mon frère le plus vieux, lui, ne supportait pas ça : il devenait vite malade. Mais la plupart de mes sœurs, un de mes jeunes frères aussi : des bons buveurs. Quand on se rencontrait, on aimait bien boire. Mes beaux-frères en plus étaient des bons buveurs. Deux de mes sœurs, avec leurs maris, faisaient des rencontres à chaque fin de semaine — et c’étaient les caisses de 24 qui rentraient.</p>
+
+    <p>C’est vers la fin de la soixantaine, 70 ans, que tranquillement les choses ont changé : moi j’allais arrêter de boire, mes sœurs ont commencé à y penser aussi — des fois leur médecin leur disait « peut-être que vous devriez arrêter ». Mon frère qui buvait beaucoup a eu des problèmes de santé, un peu à cause de l’alcool. Donc on s’est tous mis à réfléchir à notre consommation, puis à faire des partys sans alcool. Il y a seulement une de mes sœurs, très disciplinée, qui a continué de boire — mais sans jamais être dans l’abus. C’est aussi le contexte qui dessine : comme on est plusieurs à poursuivre la même aventure, on s’influence les uns les autres.</p>
+
+    <h2 class="partie-titre">Les deux amis</h2>
+
+    <p>Mes deux grands amis, eux, me voyaient arrêter puis recommencer ; on se voyait moins souvent, parce qu’eux continuaient le même modus vivendi. Moi, j’ai mes petites périodes où je recommence à boire, donc on se revoit à ce moment-là — autour de nos fêtes, au printemps ; autrement, c’est plutôt des relations à distance. L’un d’eux est venu travailler avec moi, et à un moment donné il est devenu plus discipliné. L’autre, c’est le buveur débridé — il se définit lui-même comme un « polytoxicomane fonctionnel ». Pour lui, il n’y a pas de possibilité d’arrêter de boire : c’est comme une béquille dont il ne pense pas pouvoir se défaire, un soutien psychologique. Et c’est avec lui, dans le fond, que je m’entends le mieux. On a une relation régulière, par textos, par téléphone ; en juin encore, je suis allé le retrouver dans son voisinage. Notre mode de vie, quand on buvait ensemble, c’était surtout l’été : on se ramassait dans les parcs, on se trouvait un coin tranquille, puis on trinquait tous les deux. À Montréal, il y avait de très bons lieux pour vivre ces moments-là : autour du Mont-Royal, sur le bord du fleuve. De joyeuses rencontres alcoolisées, disons ça comme ça.</p>
+
+    <figure class="collage">
+      <img src="../collages/J%27Ai%20soif.jpg" alt="Collage « J’ai soif » : une rivière bleue et jaune entre deux rivages de pierres turquoise. Inscriptions : « Là où la rivière est profonde », « entre deux rivages un chemin fluide et mouvant », « J’ai soif », « l’eau coule en silence »." loading="lazy">
+      <figcaption>« J’ai soif » — collage Poésie-Secours</figcaption>
+    </figure>
+
+    <h2 class="partie-titre">Vivre avec l'ambiguïté</h2>
+
+    <p>C’était une bonne excuse, dans le fond, de dire : j’ai ça dans le sang, donc je ne peux pas essayer de mettre juste un couvercle là-dessus et oublier. Bien que ça pourrait peut-être régler une partie de ma vie… En même temps, plus je cherche à atteindre l’illumination — mais comme on dit, il ne faut pas avoir d’attente, il ne faut pas vouloir atteindre la sagesse, il ne faut pas vouloir atteindre l’illumination : il faut retrouver sa vraie nature. Et une partie de ma vraie nature, c’est ça.</p>
+
+    <p>Le deuxième des Quatre Vœux dit : « Les passions, aveugles et sans fin, je fais vœu de m’en libérer. » Donc : ce n’est pas une réalité, mais c’est toujours là. Je vis avec cette ambiguïté dans ma vie.</p>
+
+    <h2 class="partie-titre">Épilogue — Saint-Liboire de Torrieux !</h2>
+
+    <p>« Saint-Liboire de Torrieux ! » — c’était le patois de mon père, son juron à lui. Il le prononçait tout le temps : c’était un des gags préférés de notre famille.</p>
+
+    <p>Dans le fond, pauvre Rosaire, bon buveur, y connaissait pas ça, la bière.</p>
+
+    <p>Je me souviens d’avoir eu une conversation avec lui, ce qui était rare entre deux silencieux.</p>
+
+    <p>— Tu bois pour le goût ou pour l’effet ?</p>
+
+    <p>Bien sûr, on était tous les deux pour l’effet.</p>
+
+    <p>Mais Rosaire a seulement connu la Laurentide, la Dow, la Molson, les bières industrielles du temps — finalement toutes des bières qui se ressemblaient.</p>
+
+    <p>Aujourd’hui, après quelques bières de chez nous, je reconnais l’effet recherché, mais j’avoue que c’est aussi le goût qui me ramène au frigo. À Montréal d’abord, et ensuite dans toute la province de Québec, il y a eu l’apparition de plusieurs microbrasseries artisanales qui nous ont dévoilé des saveurs de bière — oh, combien délicieuses ! À la bonne vôtre !</p>
+
+    <div class="lien-galerie">
+      <a href="pourquoi-pas-le-cinema.html">Le tournage de Prévost : Pourquoi je n’ai pas fait de cinéma →</a>
+      <a href="famille-rosaire-yvonne.html">Rosaire et Yvonne : Cultiver la vie, apprivoiser la mort →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Dicté les 10 et 12 juillet 2026, complété le 10 novembre 2026</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>
