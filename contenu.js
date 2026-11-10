@@ -45,6 +45,13 @@ const CONTENU = {
     },
     {
       "categorie": "Récits autobiographiques",
+      "titre": "La vie en réseau",
+      "extrait": "Ma vie n'est pas une ligne droite, mais un réseau. La carte de tous mes textes, reliés par leurs passerelles, leurs personnes et leurs thèmes : suivez Rosaire, Diane, le zen ou le Portapak d'un texte à l'autre.",
+      "date": "La carte",
+      "lien": "textes/la-vie-en-reseau.html"
+    },
+    {
+      "categorie": "Récits autobiographiques",
       "titre": "Pourquoi je n'ai pas fait de cinéma",
       "extrait": "Caméraman d'un film tourné avec des patients d'un hôpital psychiatrique, j'ai baissé l'objectif au moment où une femme confiait sa douleur. Les monteurs en ont tiré la finale du film — et moi, la fin de ma carrière au cinéma.",
       "date": "1972",

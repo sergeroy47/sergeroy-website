@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La vie en réseau — Serge Roy</title>
+  <meta name="description" content="La vie en réseau : la carte des textes de Serge Roy, reliés par leurs passerelles, leurs personnes et leurs thèmes, autour de six dimensions de vie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 0.12em; color: var(--terre); text-decoration: none; }
+    .nav-retour { font-size: 0.9rem; letter-spacing: 0.08em; color: var(--encre); text-decoration: none; text-transform: uppercase; opacity: 0.65; }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .entete { max-width: 760px; margin: 0 auto; padding: 8rem 2rem 1.5rem; text-align: center; }
+    .categorie { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--or); display: block; margin-bottom: 1.2rem; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 300; line-height: 1.1; margin-bottom: 0.4em; }
+    .intro { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--terre); }
+    .separateur { width: 60px; height: 1px; background: var(--or); margin: 1.8rem auto 0; }
+
+    .fils { max-width: 980px; margin: 1.5rem auto 0.5rem; padding: 0 1.5rem; text-align: center; }
+    .fils-titre { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--terre); margin-bottom: 0.6rem; }
+    .fil {
+      font-family: 'EB Garamond', serif; font-size: 0.95rem;
+      background: transparent; color: var(--mousse);
+      border: 1px solid rgba(90,110,74,0.45); border-radius: 999px;
+      padding: 0.2rem 0.9rem; margin: 0.2rem; cursor: pointer;
+    }
+    .fil:hover { background: rgba(90,110,74,0.08); }
+    .fil.actif { background: var(--mousse); color: var(--parchemin); border-color: var(--mousse); }
+    .fil-info { min-height: 1.6em; font-style: italic; color: var(--terre); font-size: 0.95rem; margin-top: 0.4rem; }
+
+    .carte-boite { max-width: 1100px; margin: 0 auto; padding: 0 1rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .carte-boite svg { display: block; width: 100%; min-width: 820px; height: auto; }
+    .glisser { display: none; text-align: center; font-size: 0.85rem; color: var(--terre); font-style: italic; }
+
+    .zone { fill: rgba(143,166,126,0.07); stroke: rgba(107,92,69,0.12); stroke-width: 1; }
+    .zone-nom { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 3px; fill: var(--or); text-anchor: middle; }
+    .zone-vide .zone { fill: rgba(184,144,58,0.05); stroke: rgba(184,144,58,0.35); stroke-dasharray: 5 5; }
+
+    .lien { stroke: var(--mousse); stroke-width: 1.6; opacity: 0.45; fill: none; transition: opacity 0.25s; }
+    .noeud { cursor: pointer; transition: opacity 0.25s; }
+    .noeud circle { fill: var(--mousse); stroke: var(--parchemin); stroke-width: 3; transition: r 0.2s; }
+    .noeud text { font-family: 'EB Garamond', serif; font-size: 15px; fill: var(--encre); text-anchor: middle; paint-order: stroke; stroke: var(--parchemin); stroke-width: 4px; stroke-linejoin: round; }
+    .noeud .annee { font-size: 11.5px; fill: var(--terre); font-style: italic; }
+    .noeud:hover circle, .noeud:focus circle { fill: var(--or); }
+    .noeud:hover text.titre, .noeud:focus text.titre { fill: var(--mousse); }
+    .noeud:focus { outline: none; }
+    .noeud.centre circle { fill: var(--or); }
+    .noeud.centre .titre { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; }
+    .chantier { cursor: default; }
+    .chantier circle { fill: var(--parchemin); stroke: var(--or); stroke-width: 1.6; stroke-dasharray: 3 3; }
+    .chantier text { font-family: 'EB Garamond', serif; font-size: 14px; fill: var(--terre); font-style: italic; text-anchor: middle; }
+
+    svg.filtre .noeud, svg.filtre .chantier { opacity: 0.18; }
+    svg.filtre .lien { opacity: 0.08; }
+    svg.filtre .noeud.allume { opacity: 1; }
+    svg.filtre .noeud.allume circle { fill: var(--or); }
+    svg.filtre .lien.allume { opacity: 0.8; stroke: var(--or); }
+
+    .legende { max-width: 720px; margin: 2rem auto 0; padding: 0 2rem; }
+    .legende-bloc { background: var(--lin); border-left: 3px solid var(--mousse); padding: 1.3rem 1.8rem; color: var(--terre); font-size: 1rem; }
+    .legende-bloc p + p { margin-top: 0.7rem; }
+    .pastille { display: inline-block; width: 11px; height: 11px; border-radius: 50%; vertical-align: middle; margin-right: 0.3rem; }
+    .pastille.pleine { background: var(--mousse); }
+    .pastille.vide { border: 1.5px dashed var(--or); }
+
+    .liste { max-width: 720px; margin: 3rem auto 5rem; padding: 0 2rem; }
+    .liste h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--mousse); margin-bottom: 1rem; }
+    .liste h3 { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or); margin: 1.6rem 0 0.4rem; font-weight: 400; }
+    .liste ul { list-style: none; }
+    .liste li { padding: 0.15rem 0; }
+    .liste a { color: var(--mousse); text-decoration-color: rgba(90,110,74,0.4); text-underline-offset: 3px; }
+    .liste a:hover { color: var(--or); }
+    .liste .a-venir { color: var(--terre); font-style: italic; opacity: 0.8; }
+
+    .nav-bas { background: var(--lin); text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(107,92,69,0.15); }
+    .nav-bas a { display: inline-block; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 0.75rem 2rem; border: 1px solid var(--terre); color: var(--terre); margin: 0.3rem; }
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+    footer { background: var(--encre); text-align: center; padding: 2.5rem; }
+    .footer-marque { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.2em; color: var(--or); }
+
+    @media (max-width: 760px) {
+      nav { padding: 1rem 1.2rem; }
+      .entete { padding: 7rem 1.2rem 1rem; }
+      .glisser { display: block; }
+      .legende, .liste { padding: 0 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+
+  <header class="entete">
+    <span class="categorie">Qui suis-je ?</span>
+    <h1>La vie en réseau</h1>
+    <p class="intro">Ma vie n'est pas une ligne droite, mais un réseau d'éléments qui se tiennent. Voici mes textes, reliés par leurs passerelles, leurs personnes et leurs thèmes. On peut les lire dans l'ordre qu'on veut.</p>
+    <div class="separateur"></div>
+  </header>
+
+  <div class="fils">
+    <div class="fils-titre">Suivre un fil</div>
+    <div id="boutons-fils"></div>
+    <div class="fil-info" id="fil-info" aria-live="polite">Choisissez une personne ou un thème pour allumer les textes où ils vivent.</div>
+  </div>
+
+  <p class="glisser">← Glissez la carte pour la parcourir →</p>
+  <div class="carte-boite">
+    <svg id="carte" viewBox="0 0 1000 720" role="img" aria-label="Carte du réseau des textes de Serge Roy, en six dimensions de vie"></svg>
+  </div>
+
+  <div class="legende">
+    <div class="legende-bloc">
+      <p><span class="pastille pleine"></span> Un texte publié : cliquez pour le lire. &nbsp; <span class="pastille vide"></span> Un texte encore à venir.</p>
+      <p>Les fils verts sont les passerelles entre les textes : en les suivant, on lit ma vie autrement qu'en ligne droite. Les nœuds encore seuls et les cercles en pointillés me disent ce qu'il reste à écrire, ou à relier.</p>
+    </div>
+  </div>
+
+  <section class="liste" id="liste">
+    <h2>Les textes, par dimension de vie</h2>
+  </section>
+
+  <div class="nav-bas">
+    <a href="recueil.html">Le recueil complet</a>
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script>
+(function () {
+  // ── Les six dimensions de vie ──────────────────────────────
+  const ZONES = [
+    { id: 'famille',     nom: 'FAMILLE',                    cx: 200, cy: 200, rx: 185, ry: 165, nx: 200, ny: 30 },
+    { id: 'creation',    nom: 'CRÉATION ARTISTIQUE',        cx: 500, cy: 115, rx: 135, ry: 95,  nx: 500, ny: 22 },
+    { id: 'trajectoire', nom: 'TRAJECTOIRE INTELLECTUELLE', cx: 805, cy: 200, rx: 185, ry: 165, nx: 805, ny: 30 },
+    { id: 'spirituelle', nom: 'VIE SPIRITUELLE',            cx: 790, cy: 545, rx: 170, ry: 125, nx: 790, ny: 690 },
+    { id: 'nature',      nom: 'NATURE',                     cx: 500, cy: 610, rx: 120, ry: 85,  nx: 500, ny: 710 },
+    { id: 'sante',       nom: 'SANTÉ',                      cx: 210, cy: 545, rx: 170, ry: 125, nx: 210, ny: 690 }
+  ];
+
+  // ── Les textes (x, y = position sur la carte) ──────────────
+  const TEXTES = [
+    { id: 'elans',       titre: 'Élans de jeunesse',        annee: 'Qui suis-je ?',  zone: 'spirituelle', lien: 'recueil.html#silence', x: 500, y: 365, centre: true },
+    { id: 'antoine',     titre: "La fin tragique d'Antoine Roy", annee: '1665–1684', zone: 'famille', lien: 'antoine-roy-la-fin-tragique.html', x: 120, y: 95 },
+    { id: 'kamouraska',  titre: 'Kamouraska, 1974',         annee: 'les 300 ans',    zone: 'famille', lien: 'kamouraska-1974.html', x: 290, y: 85 },
+    { id: 'rosaire',     titre: 'Cultiver la vie',          annee: 'Rosaire et Yvonne', zone: 'famille', lien: 'famille-rosaire-yvonne.html', x: 175, y: 190 },
+    { id: 'lemay',       titre: 'La rue Lemay',             annee: 'Acton Vale',     zone: 'famille', lien: 'rue-lemay-andre-fournier.html', x: 75, y: 265 },
+    { id: 'tigus',       titre: 'Ti-Gus',                   annee: 'mes sœurs, mes 40 ans', zone: 'famille', lien: 'mes-soeurs-40-ans.html', x: 320, y: 180 },
+    { id: 'etudiant',    titre: "Ma vie d'étudiant",        annee: '1953–1969',      zone: 'famille', lien: 'ma-vie-etudiant.html', x: 205, y: 300 },
+    { id: 'ado',         titre: "Ma vie d'ado",             annee: 'quinze ans',     zone: 'famille', lien: 'ma-vie-ado.html', x: 330, y: 268 },
+    { id: 'buveurs',     titre: 'La tradition de bons buveurs', annee: 'et vivre autrement', zone: 'sante', lien: 'la-tradition-de-bons-buveurs.html', x: 300, y: 425 },
+    { id: 'pretextes',   titre: 'PRé/TEXTES',               annee: 'années 1970',    zone: 'creation', lien: 'pretextes.html', x: 425, y: 75 },
+    { id: 'poesie',      titre: 'Poésie-Secours',           annee: 'collages',       zone: 'creation', lien: '../index.html#collages', x: 585, y: 75 },
+    { id: 'cinema',      titre: 'Pourquoi pas le cinéma',   annee: '1972',           zone: 'creation', lien: 'pourquoi-pas-le-cinema.html', x: 505, y: 165 },
+    { id: 'oto',         titre: '1991/OTO',                 annee: 'le manifeste de 1981', zone: 'trajectoire', lien: 'oto-manifeste-1981.html', x: 700, y: 85 },
+    { id: 'numerique',   titre: 'Ma vie numérique',         annee: '1972–2026',      zone: 'trajectoire', lien: 'ma-vie-numerique.html', x: 700, y: 205 },
+    { id: 'multimedia',  titre: 'Réseaux conviviaux',       annee: 'le mémoire de 1996', zone: 'trajectoire', lien: 'Multimedia_et_reseaux_conviviaux.html', x: 880, y: 105 },
+    { id: 'convergence', titre: 'CONVERGENCE',              annee: 'pièce en six actes', zone: 'trajectoire', lien: 'CONVERGENCE_piece_theatre.html', x: 905, y: 245 },
+    { id: 'interexistence', titre: 'INTEREXISTENCE',        annee: 'des réseaux dans des réseaux', zone: 'trajectoire', lien: 'Des_reseaux_dans_des_reseaux_INTEREXISTENCE.html', x: 790, y: 330 },
+    { id: 'respiration', titre: 'Pratique et Respiration',  annee: 'Taïchi',         zone: 'spirituelle', lien: 'pratique-et-respiration.html', x: 800, y: 530 },
+    { id: 'jardin',      titre: 'Le jardin comme méditation', annee: 'Longueuil',    zone: 'nature', lien: 'recueil.html#jardin', x: 500, y: 600 }
+  ];
+
+  // ── Textes à venir (déjà annoncés sur la page « Ma vie ») ───
+  const CHANTIERS = [
+    { titre: 'Ma vie amoureuse',      x: 90,  y: 345, zone: 'famille' },
+    { titre: 'Ma vie sportive',       x: 130, y: 520, zone: 'sante' },
+    { titre: 'Ma vie professionnelle', x: 640, y: 300, zone: 'trajectoire' },
+    { titre: 'à écrire…',             x: 250, y: 600, zone: 'sante' }
+  ];
+
+  // ── Les passerelles réelles entre les textes ───────────────
+  const LIENS = [
+    ['antoine', 'kamouraska'], ['kamouraska', 'buveurs'], ['rosaire', 'buveurs'], ['rosaire', 'lemay'],
+    ['etudiant', 'ado'], ['buveurs', 'cinema'], ['buveurs', 'numerique'], ['buveurs', 'poesie'],
+    ['numerique', 'cinema'], ['numerique', 'pretextes'], ['numerique', 'oto'], ['oto', 'pretextes'],
+    ['oto', 'multimedia'], ['numerique', 'multimedia'], ['numerique', 'convergence'], ['numerique', 'interexistence'],
+    ['multimedia', 'convergence'], ['multimedia', 'interexistence'], ['convergence', 'interexistence']
+  ];
+
+  // ── Les fils : personnes et thèmes ─────────────────────────
+  const FILS = [
+    { nom: 'Rosaire',       textes: ['rosaire', 'buveurs', 'tigus', 'lemay'] },
+    { nom: 'Yvonne',        textes: ['rosaire', 'buveurs', 'tigus', 'lemay'] },
+    { nom: 'Diane',         textes: ['kamouraska', 'buveurs', 'rosaire', 'tigus'] },
+    { nom: 'Noémie',        textes: ['kamouraska', 'buveurs', 'rosaire'] },
+    { nom: 'Colette',       textes: ['buveurs', 'rosaire', 'oto', 'convergence'] },
+    { nom: 'Antoine Roy',   textes: ['antoine', 'kamouraska'] },
+    { nom: 'Acton Vale',    textes: ['rosaire', 'lemay', 'etudiant', 'ado', 'buveurs'] },
+    { nom: 'Le zen',        textes: ['elans', 'respiration', 'interexistence', 'convergence', 'buveurs'] },
+    { nom: 'Le Portapak, 1972', textes: ['numerique', 'buveurs', 'multimedia', 'interexistence', 'convergence'] },
+    { nom: 'Illich et la convivialité', textes: ['multimedia', 'interexistence', 'numerique', 'convergence'] },
+    { nom: 'Prévost, 1972', textes: ['cinema', 'buveurs'] }
+  ];
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('carte');
+  const parId = Object.fromEntries(TEXTES.map(t => [t.id, t]));
+  const el = (nom, attrs, parent) => {
+    const e = document.createElementNS(NS, nom);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(e);
+    return e;
+  };
+
+  // Zones
+  ZONES.forEach(z => {
+    const g = el('g', { class: 'zone-groupe' + (z.vide ? ' zone-vide' : '') });
+    el('ellipse', { class: 'zone', cx: z.cx, cy: z.cy, rx: z.rx, ry: z.ry }, g);
+    el('text', { class: 'zone-nom', x: z.nx, y: z.ny }, g).textContent = z.nom;
+  });
+
+  // Fils (courbes douces)
+  const lignes = LIENS.map(([a, b]) => {
+    const A = parId[a], B = parId[b];
+    const mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+    const dx = B.x - A.x, dy = B.y - A.y;
+    const cx = mx - dy * 0.12, cy = my + dx * 0.12;
+    const p = el('path', { class: 'lien', d: `M ${A.x} ${A.y} Q ${cx} ${cy} ${B.x} ${B.y}` });
+    p.dataset.a = a; p.dataset.b = b;
+    return p;
+  });
+
+  // Chantiers
+  CHANTIERS.forEach(c => {
+    const g = el('g', { class: 'chantier' });
+    el('circle', { cx: c.x, cy: c.y, r: 7 }, g);
+    el('text', { x: c.x, y: c.y + 24 }, g).textContent = c.titre;
+    el('title', {}, g).textContent = 'À venir';
+  });
+
+  // Textes
+  const noeuds = {};
+  TEXTES.forEach(t => {
+    const a = el('a', { class: 'noeud' + (t.centre ? ' centre' : ''), href: t.lien, tabindex: 0 });
+    el('circle', { cx: t.x, cy: t.y, r: t.centre ? 11 : 8 }, a);
+    el('text', { class: 'titre', x: t.x, y: t.y + (t.centre ? 34 : 26) }, a).textContent = t.titre;
+    el('text', { class: 'annee', x: t.x, y: t.y + (t.centre ? 52 : 42) }, a).textContent = t.annee;
+    el('title', {}, a).textContent = t.titre + ' — lire le texte';
+    noeuds[t.id] = a;
+  });
+
+  // Boutons de fils
+  const boite = document.getElementById('boutons-fils');
+  const info = document.getElementById('fil-info');
+  const msgDefaut = info.textContent;
+  let actif = null;
+  FILS.forEach(f => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'fil';
+    b.textContent = f.nom;
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => {
+      const deja = actif === b;
+      boite.querySelectorAll('.fil').forEach(x => { x.classList.remove('actif'); x.setAttribute('aria-pressed', 'false'); });
+      Object.values(noeuds).forEach(n => n.classList.remove('allume'));
+      lignes.forEach(l => l.classList.remove('allume'));
+      if (deja) { actif = null; svg.classList.remove('filtre'); info.textContent = msgDefaut; return; }
+      actif = b;
+      b.classList.add('actif'); b.setAttribute('aria-pressed', 'true');
+      svg.classList.add('filtre');
+      const set = new Set(f.textes);
+      f.textes.forEach(id => noeuds[id] && noeuds[id].classList.add('allume'));
+      lignes.forEach(l => { if (set.has(l.dataset.a) && set.has(l.dataset.b)) l.classList.add('allume'); });
+      info.textContent = f.nom + ' : ' + f.textes.map(id => parId[id].titre).join(' · ');
+    });
+    boite.appendChild(b);
+  });
+
+  // Liste par dimension (lisible partout, même sur téléphone)
+  const liste = document.getElementById('liste');
+  const NOMS = { famille: 'Famille', creation: 'Création artistique', trajectoire: 'Trajectoire intellectuelle', spirituelle: 'Vie spirituelle', nature: 'Nature', sante: 'Santé' };
+  ['famille', 'sante', 'creation', 'trajectoire', 'spirituelle', 'nature'].forEach(z => {
+    const h = document.createElement('h3'); h.textContent = NOMS[z]; liste.appendChild(h);
+    const ul = document.createElement('ul');
+    TEXTES.filter(t => t.zone === z).forEach(t => {
+      const li = document.createElement('li');
+      const a = document.createElement('a'); a.href = t.lien; a.textContent = t.titre;
+      li.appendChild(a);
+      li.appendChild(document.createTextNode(' — ' + t.annee));
+      ul.appendChild(li);
+    });
+    CHANTIERS.filter(c => c.zone === z && c.titre !== 'à écrire…').forEach(c => {
+      const li = document.createElement('li'); li.className = 'a-venir'; li.textContent = c.titre + ' — à venir'; ul.appendChild(li);
+    });
+    liste.appendChild(ul);
+  });
+})();
+</script>
+</body>
+</html>
