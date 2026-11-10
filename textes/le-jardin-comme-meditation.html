@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le jardin comme méditation — Serge Roy</title>
+  <meta name="description" content="« Qui suis-je ? » Le chêne est dans le jardin : le kōan qu’Albert Low donna à Serge Roy, et le chêne de son jardin de Longueuil, à travers les saisons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+
+    .ouverture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-style: italic; font-weight: 300;
+      color: var(--terre); text-align: center;
+      margin: 0 0 3rem;
+    }
+    .grande-partie { text-align: center; margin: 5rem 0 2.5rem; }
+    .grande-partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 300;
+      color: var(--encre);
+    }
+    .collage { margin: 3rem auto; max-width: 480px; text-align: center; }
+    .photo { margin: 2.8rem -2rem; text-align: center; }
+    .photo img { width: 100%; height: auto; display: block; }
+    .photo.portrait { max-width: 460px; margin-left: auto; margin-right: auto; }
+    .photo figcaption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--terre); margin-top: 0.7rem; }
+    .liste-questions { margin: 0 0 1.4rem 1.2rem; }
+    .liste-questions li { margin-bottom: 0.4rem; }
+    .finale { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; text-align: center; color: var(--mousse); margin: 3rem 0 1rem; }
+    @media (max-width: 640px) { .photo { margin-left: -1.2rem; margin-right: -1.2rem; } }
+    .collage img { width: 100%; height: auto; display: block; box-shadow: 0 6px 24px rgba(28,26,20,0.15); }
+    .collage figcaption {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1rem; color: var(--terre); margin-top: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+  <header class="article-entete">
+    <span class="article-categorie">Nature &amp; Vie spirituelle</span>
+    <h1>Le jardin comme méditation</h1>
+    <p class="article-sous-titre">« Qui suis-je ? » Le chêne est dans le jardin.</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Février 2026</div>
+    <div class="separateur"></div>
+  </header>
+  <main class="article-corps">
+    <figure class="photo">
+      <img src="jardin-meditation/chene-printemps.jpg" alt="Le grand chêne du jardin vu d’en dessous au printemps, ses deux troncs sous un feuillage vert tendre" loading="lazy">
+      <figcaption>Le chêne au printemps</figcaption>
+    </figure>
+
+    <p><a href="pratique-et-respiration.html">Maître Low</a>, au dokusan suivant mon acceptation comme étudiant, m’a dit qu’il ne voulait pas que je discute mon koan, « <a href="recueil.html#silence">Qui suis-je ?</a> », mais plutôt que je le lui montre.</p>
+
+    <p>Pour me donner un exemple, il me proposa la réponse de Joshu au « Qui suis-je ? ». Joshu répondit : « Le chénier est dans le jardin. »</p>
+
+    <p>— Quoi ? ai-je demandé.</p>
+
+    <p>— Le chénier est dans le jardin… l’arbre est dans le jardin.</p>
+
+    <p>M. Low avait nommé le chêne d’un nouveau nom. En reprenant « L’arbre est dans le jardin », il manifestait son incertitude face à un mot d’une langue qu’il ne maîtrisait pas parfaitement. Ainsi il avait fait preuve de créativité sans le vouloir. Mais c’était bien dans cette direction qu’il voulait que je cherche une réponse à la question « Qui suis-je ? ».</p>
+
+    <p>Ce qu’il ne savait pas non plus, c’est qu’un chêne est la pièce maîtresse de mon jardin. Pour moi, le jardinier, son exemple avait une résonance toute particulière.</p>
+
+    <p>Mais en revenant chez moi, quelle ne fut pas ma surprise de découvrir, dans un livre écrit par M. Low, que la réponse de Joshu ne correspond pas à la question « Qui suis-je ? », mais plutôt à la question « Quel est le sens de la venue en Chine de Bodhidharma ? ».</p>
+
+    <p>Est-ce que mon maître essayait de me tromper ou de me déboussoler ?</p>
+
+    <p>De me débosseler certainement, me tromper non, car chaque koan nous ramène à la question « Qui suis-je ? », avait-il dit durant un teisho de la sesshin.</p>
+
+    <figure class="photo">
+      <img src="jardin-meditation/chene-lune.jpg" alt="Le chêne en hiver, la nuit, ses branches nues sur un ciel bleu profond, la lune visible entre les branches" loading="lazy">
+      <figcaption>La lune, comme mon maître, éclaire le chêne dans mon jardin.</figcaption>
+    </figure>
+
+    <h2 class="partie-titre">Les trois questions</h2>
+
+    <p>D’ailleurs, avant de me proposer ce premier koan, M. Low m’a dit : « Pour devenir mon étudiant, tu dois répondre à trois questions. »</p>
+
+    <ul class="liste-questions">
+      <li>Désires-tu vraiment et profondément connaître qui tu es ?</li>
+      <li>Es-tu prêt à payer le prix pour connaître ta vraie nature ?</li>
+      <li>Me donneras-tu le bénéfice du doute quand je confronterai ton point de vue ?</li>
+    </ul>
+
+    <blockquote>« Pour Joshu, ce qui est en jeu, c’est l’immédiateté de l’arbre. Sa réponse n’est pas sans rappeler les iris de Van Gogh ou les pommes de Cézanne. Pour connaître les iris comme Van Gogh les connaissait ou les pommes comme Cézanne les connaissait, il faut être les iris, il faut être les pommes. Dans le Zen, on dit qu’il faut s’asseoir en méditation comme un chêne, avec ses racines profondément enfouies dans le sol et ses branches perdues dans le ciel immuable, tout d’un bloc, totalement un. Qui s’assoit ainsi n’aura aucune difficulté avec le chêne dans le jardin de Joshu. »<br>— Albert Low, <em>Je ne suis pas un humain</em>, 1996, p. 238</blockquote>
+
+    <h2 class="partie-titre">Le chêne libéré</h2>
+
+    <p>Quand nous sommes arrivés, ma conjointe et moi, nous avons pris un terrain de banlieue conventionnel pour le transformer en un petit coin de campagne, en une forêt miniature. Nous sommes devenus des fermiers urbains à échelle réduite. Le jardin est un boisé, un environnement, un paysage.</p>
+
+    <p>Un grand chêne, épargné par les constructeurs, était pris au collet d’un besoin de platitude d’un terrain droit, bien au-dessus du niveau du sol original. Comme un rare témoin de la forêt qui a précédé nos bungalows, la place d’honneur lui revenait pour la suite du monde. Nous avons donc <a href="../galerie-jardin.html">dégagé cet arbre</a>, ce qui a donné au terrain une perspective nouvelle.</p>
+
+    <p>En redonnant à cet arbre son espace vital et de meilleures conditions de croissance, nous avons redessiné la cour pour en faire un prolongement de la forêt du parc régional, et depuis ce temps, il en profite à plein, ayant triplé sa structure à double tronc. Deux troncs qui s’entrelacent et s’étreignent.</p>
+
+    <figure class="photo">
+      <img src="jardin-meditation/chene-automne.jpg" alt="Le chêne en automne vu d’en dessous, ses deux troncs entrelacés sous un feuillage roux et doré" loading="lazy">
+      <figcaption>Deux troncs qui s’entrelacent et s’étreignent.</figcaption>
+    </figure>
+
+    <h2 class="partie-titre">Le gland</h2>
+
+    <blockquote>« This theory states that each individual holds the potential for their unique possibilities inside themselves already, much as an acorn holds the pattern for an oak, invisible within itself. »<br>— James Hillman, <em>The acorn theory of the soul</em></blockquote>
+
+    <p>Comme le gland du chêne, qui concentre en lui un grand arbre, nous possédons tous la nature du Bouddha, rien à enlever, rien à rajouter.</p>
+
+    <figure class="photo portrait">
+      <img src="jardin-meditation/chene-ete-gland.jpg" alt="Le chêne en été, feuillage vert dense, avec un gros gland posé au premier plan" loading="lazy">
+      <figcaption>L’été, et le gland.</figcaption>
+    </figure>
+
+    <p class="finale">Le chêne dans le jardin, jamais le même à travers les saisons, ni le jour ni la nuit…</p>
+
+    <p class="finale">Ma nature d’arbre, ma nature de bouddha.</p>
+
+    <div class="lien-galerie">
+      <a href="../galerie-jardin.html">Le jardin en photos, de 1993 à aujourd’hui →</a>
+      <a href="famille-rosaire-yvonne.html">L’héritage de mon père : Cultiver la vie →</a>
+      <a href="pratique-et-respiration.html">La pratique : Pratique et Respiration →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Longueuil, février 2026 — d’après un premier texte de 2016</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>
