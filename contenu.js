@@ -142,6 +142,13 @@ const CONTENU = {
       "lien": "textes/le-jardin-comme-meditation.html"
     },
     {
+      "categorie": "Nature",
+      "titre": "Jardiner comme mon père",
+      "extrait": "« C'est encore mon père qui jardine. » Le jardin rectiligne de Rosaire à Acton Vale, mon jardin buissonnant à Longueuil, et ce qui passe de l'un à l'autre : l'héritage, l'apprentissage, la patience.",
+      "date": "2026",
+      "lien": "textes/jardiner-comme-mon-pere.html"
+    },
+    {
       "categorie": "Vie spirituelle & Santé",
       "titre": "Pratique et Respiration",
       "extrait": "La respiration est cette corde qui nous amène au fond du puits intérieur… Une méditation en deux parties sur le Taïchi, la respiration et l'intelligence du corps.",

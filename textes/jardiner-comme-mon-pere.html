@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jardiner comme mon père — Serge Roy</title>
+  <meta name="description" content="Jardiner comme mon père : le jardin de Rosaire à Acton Vale, celui de Serge Roy à Longueuil, et ce qui passe de l’un à l’autre. « C’est encore mon père qui jardine. »">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --encre: #1c1a14;
+      --terre: #6b5c45;
+      --mousse: #5a6e4a;
+      --sage: #8fa67e;
+      --lin: #f2ead8;
+      --parchemin: #faf6ee;
+      --or: #b8903a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchemin);
+      color: var(--encre);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 3rem;
+      background: rgba(250,246,238,0.93);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(107,92,69,0.15);
+    }
+    .nav-marque {
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.12em; color: var(--terre); text-decoration: none;
+    }
+    .nav-retour {
+      font-family: 'EB Garamond', serif; font-size: 0.9rem;
+      letter-spacing: 0.08em; color: var(--encre); text-decoration: none;
+      text-transform: uppercase; opacity: 0.65; transition: opacity 0.2s;
+    }
+    .nav-retour:hover { opacity: 1; color: var(--mousse); }
+    .nav-retour::before { content: '← '; }
+
+    .article-entete {
+      max-width: 720px; margin: 0 auto;
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .article-categorie {
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--or); display: block; margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+      color: var(--encre); margin-bottom: 0.4em;
+    }
+
+    .article-sous-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; font-weight: 300;
+      color: var(--terre); margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem; letter-spacing: 0.08em;
+      color: var(--terre); opacity: 0.7;
+    }
+
+    .separateur {
+      width: 60px; height: 1px;
+      background: var(--or);
+      margin: 2rem auto;
+    }
+
+    .article-corps {
+      max-width: 680px; margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .intro-bloc {
+      background: var(--lin);
+      border-left: 3px solid var(--mousse);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      font-style: italic;
+      color: var(--terre);
+    }
+
+    .partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 400;
+      color: var(--mousse);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(90,110,74,0.25);
+    }
+    .partie-titre:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+
+    p { margin-bottom: 1.4rem; }
+
+    .article-corps p a {
+      color: var(--mousse);
+      text-decoration-color: rgba(90,110,74,0.4);
+      text-underline-offset: 3px;
+    }
+    .article-corps p a:hover { color: var(--or); }
+
+    blockquote {
+      border-left: 2px solid var(--or);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--terre);
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(107,92,69,0.2);
+    }
+
+    .signature-nom {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: var(--encre);
+    }
+
+    .signature-date {
+      font-size: 0.85rem; color: var(--terre); opacity: 0.7;
+      letter-spacing: 0.05em; margin-top: 0.3rem;
+    }
+
+    .lien-galerie {
+      text-align: center;
+      margin: 3.5rem 0 1rem;
+    }
+    .lien-galerie a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--mousse); color: var(--mousse);
+      transition: all 0.3s;
+      margin: 0.4rem;
+    }
+    .lien-galerie a:hover { background: var(--mousse); color: var(--parchemin); }
+
+    .nav-bas {
+      background: var(--lin);
+      text-align: center; padding: 3rem 2rem;
+      border-top: 1px solid rgba(107,92,69,0.15);
+    }
+
+    .nav-bas a {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--terre); color: var(--terre);
+      transition: all 0.3s;
+    }
+
+    .nav-bas a:hover { background: var(--terre); color: var(--parchemin); }
+
+    footer {
+      background: var(--encre); color: var(--lin);
+      text-align: center; padding: 2.5rem;
+    }
+    .footer-marque {
+      font-family: 'Cinzel', serif; font-size: 1rem;
+      letter-spacing: 0.2em; color: var(--or);
+    }
+
+
+    .ouverture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem; font-style: italic; font-weight: 300;
+      color: var(--terre); text-align: center;
+      margin: 0 0 3rem;
+    }
+    .grande-partie { text-align: center; margin: 5rem 0 2.5rem; }
+    .grande-partie-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 300;
+      color: var(--encre);
+    }
+    .collage { margin: 3rem auto; max-width: 480px; text-align: center; }
+    .photo { margin: 2.8rem -2rem; text-align: center; }
+    .photo img { width: 100%; height: auto; display: block; }
+    .photo.portrait { max-width: 460px; margin-left: auto; margin-right: auto; }
+    .photo figcaption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--terre); margin-top: 0.7rem; }
+    .ouverture-section { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--terre); margin-top: -0.6rem; }
+    .liste-questions { margin: 0 0 1.4rem 1.2rem; }
+    .liste-questions li { margin-bottom: 0.4rem; }
+    .finale { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; text-align: center; color: var(--mousse); margin: 3rem 0 1rem; }
+    @media (max-width: 640px) { .photo { margin-left: -1.2rem; margin-right: -1.2rem; } }
+    .collage img { width: 100%; height: auto; display: block; box-shadow: 0 6px 24px rgba(28,26,20,0.15); }
+    .collage figcaption {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1rem; color: var(--terre); margin-top: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .article-entete { padding: 7rem 1.2rem 3rem; }
+      .article-corps { padding: 0 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-marque">SERGE ROY</a>
+    <a href="../index.html#textes" class="nav-retour">Tous les textes</a>
+  </nav>
+  <header class="article-entete">
+    <span class="article-categorie">Nature &amp; Mémoire familiale</span>
+    <h1>Jardiner comme mon père</h1>
+    <p class="article-sous-titre">Le jardin, carrefour d’apprentissage et d’héritage</p>
+    <div class="article-meta">Serge Roy &nbsp;·&nbsp; Février 2026</div>
+    <div class="separateur"></div>
+  </header>
+  <main class="article-corps">
+    <h2 class="partie-titre">L’héritage</h2>
+
+    <p>J’ai toujours vécu avec les plantes.  <a href="famille-rosaire-yvonne.html">Mon père</a> jardinait pour nourrir sa famille, jusqu’à ce qu’il découvre le plaisir de jardiner. Le labeur se transformait en plaisir. C’est ainsi, qu’il a su vraiment prendre plaisir à la vie. Découvrir le plaisir d’être de la nature.  Pour moi, ce fut la plus grande découverte de ma vie, voir un père industrieux et bourru se transformer en homme de nature heureux.</p>
+
+    <p>Ce faisant, je ne percevais rien de ça. Je travaillais parfois avec mon père dans son jardin, particulièrement lors des grandes corvées saisonnières, comme l’arrachage des cotons de blé-d’inde à la fin de l’été. Dans ces périodes de travail, le voisinage avec mon père n’était jamais particulièrement agréable, car il devait tout me montrer, moi qui ne savais rien. Mais, dans son univers, la pédagogie n’avait pas encore été inventée.</p>
+
+    <p>C’était plus agréable d’aller dans la nature avec Rosaire quand il n’y avait pas de labeur à accomplir. Nous y chassions souvent le petit gibier pour nourrir la famille. Que de lièvres avons-nous bouffé dans nos hivers froids ? Dans l’esprit de l’époque, nourrir la famille était la préoccupation principale.</p>
+
+    <p>Travailler à l’Acton Shoe, son gagne-pain, était pour lui une tâche qui permettait à sa femme et ses neuf enfants de vivre simplement. Le travail à l’usine n’était pas un lieu d’épanouissement…</p>
+
+    <figure class="photo portrait">
+      <img src="../Famille/CultivezLaVie/RosaireEscabeauMais.jpg" alt="Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds" loading="lazy">
+      <figcaption>Rosaire monté sur un escabeau pour atteindre le sommet de son plant de maïs de huit pieds.</figcaption>
+    </figure>
+
+    <blockquote>Le jardin, voilà le lieu de l’épanouissement.</blockquote>
+
+    <p>C’est la révélation que mon père m’a laissée. J’en parle, aujourd’hui, comme si tout cela semblait tout à fait naturel. Mon père avait semé en moi cet élan, mais il m’a fallu le découvrir par moi-même.  Entre le jardin condimentaire de mon père, tout à fait rectiligne, où nous nettoyions à la terre à chaque automne, et mon jardin buissonnant de beauté et de liberté, il y a tout un monde, une génération. Une nouvelle approche.</p>
+
+    <p>Oui, mon père faisait pousser des légumes dans son jardin. Mais ces légumes arrivaient dans les mains de ma mère dans la cuisine.</p>
+
+    <p>Et ma mère Yvonne était une bonne cuisinière.</p>
+
+    <p>Oui, la cuisine traditionnelle québécoise, mais avec du talent et du goût. Ce qui nous a permis de bien manger et d’avoir beaucoup de légumes dans nos assiettes. C’est possiblement pourquoi j’ai une bonne santé et de bonnes habitudes alimentaires. C’est pourquoi aussi j’ai fait pousser des légumes toute ma vie d’adulte.</p>
+
+    <p>Mon frère Jean-Noël se remémore aussi des souvenirs du jardin de Rosaire et des façons simples de manger les produits du jardin.</p>
+
+    <p>« Un plant d’asperges qu’on ne pouvait manger, parce que c’était la plante favorite de maman.</p>
+
+    <p>Un bouquet d’échalote qui montrait sa superbe à l’extrémité de la plate-bande d’aussi loin que je me souvienne.</p>
+
+    <p>Un tas de compost qui avalait tous les résidus du jardin et nous récompensait avec une récolte de vers sur demande.</p>
+
+    <p>Une ligne de rosier sauvage souvenir de ses origines.</p>
+
+    <p>De la rhubarbe juteuse qui était défendue bec et ongle.</p>
+
+    <p>J’ai moi aussi participé et bénéficié de cet amour pour son lopin de terre. (Souper avec tomates, concombres, radis, salade et une tranche de pain beurré assis sur les marches du perron arrière). Aujourd’hui je remets un peu de mon héritage. »</p>
+
+    <p>Ma sœur <a href="mes-soeurs-40-ans.html">Mariette</a> se remémore aussi l’amour de la nature de son père : « Je me souviens quand nous marchions avec Rosaire, il prenait le temps d’arrêter et de remercier Dieu pour tant de beauté. Dans les jours où l’on vit cela aussi est un grand héritage. La nature est là, c’est à nous d’en faire partie. »</p>
+
+    <p>Il faut dire aussi qu’Yvonne jouait un rôle important dans le jardin. Elle avait ses coins à elle. Comme le plant d’asperges dont parle Jean-Noël et sa plate-bande de fleurs. Mais elle avait dû au départ jouer un rôle essentiel dans cette idée de créer un jardin. Car une mère est d’abord une pourvoyeuse et ce n’est pas certain que Rosaire avait eu spontanément cette vocation de jardinier. Je crois que pour lui ce fut une découverte. Car personne dans sa famille nombreuse, ne jardinait excepté lui.</p>
+
+    <p>Ce jardin qui devint son royaume était sans doute avant tout, au début, une autre corvée transformée en cadeau de la vie !</p>
+
+    <h2 class="partie-titre">On ne finit jamais d’apprendre</h2>
+
+    <p class="ouverture-section"><em>La vie, c’est apprendre ou à laisser.</em></p>
+
+    <p>Le jardin est un lieu privilégié pour mettre à l’épreuve cette maxime pédagogique. La nature est un maître exigeant, mais indulgent, qui nous donne sans cesse à voir et à comprendre sans nous pointer du doigt.</p>
+
+    <p>Le jardin est un lieu où apprendre par le faire prend un sens très vivant ; un projet dans lequel on met à l’essai nos connaissances et nos compétences tout en constatant quotidiennement le résultat de nos efforts ; un processus cyclique dans lequel la correction des erreurs est possible et permet une amélioration continue. On découvre sa propre nature tout en collaborant aux lois de la nature. Nous ne sommes pas parfaits, mais nous sommes guidés par un feed-back incessant qui nous motive à continuer, de nos mains, à parfaire l’œuvre. Nous nous inscrivons dans la nature des choses, dans l’avenir de notre vaisseau spatial, Terre.</p>
+
+    <p>Non, non, ce n’est pas une journée pédagogique sur l’avenir des jardins et de notre planète ; le jardinage n’est pas qu’une philosophie, c’est une activité de plein air dans laquelle le corps prend tout sens : nous avons les mains sales, les souliers boueux ; nous travaillons avec et dans la matière. Mais nous marchons aussi «pieds nus dans l’aube» pour le plaisir d’exister dans un univers dont nous sommes et qui est nôtre. Ce jardin est un gymnase personnel, sans tapis roulant, ni autre moteur que la force que j’y déploie. Au mieux de ma forme, le travail est un plaisir, si je me laisse aller, le travail devient une corvée.</p>
+
+    <h2 class="partie-titre">Notre jardin à Longueuil</h2>
+
+    <p>Depuis plus de dix ans, je cultive un petit terrain de banlieue à Longueuil. D’un gazon mur à mur, au départ, le terrain s’est transformé en forêt miniature, prolongement du parc régional situé tout près. Graduellement, l’ajout de plantes indigènes, le plus souvent comestibles, quelques fois médicinales, ont été privilégiées. Des petits fruits de toutes sortes, sources agréables de vitamines et de nutriments essentiels à la santé viennent compléter le paysage.  L’horticulture écologique, c’est-à-dire en accord avec la nature, marie plantes condimentaires et beauté pour créer un aménagement qui nourrit le corps et l’esprit.</p>
+
+    <p>Quand nous sommes arrivés, ma conjointe et moi, nous avons pris un terrain de banlieue conventionnel pour le transformer en un petit coin de campagne, en une forêt miniature. Nous sommes devenus des fermiers urbains à échelle réduite. Un <a href="le-jardin-comme-meditation.html">grand chêne</a>, épargné par les constructeurs, était pris au collet d’un besoin de platitude d’un terrain droit, bien au-dessus du niveau du sol original. Comme un rare témoin de la forêt qui a précédé nos bungalows, la place d’honneur lui revenait pour la suite du monde. Nous avons donc dégagé cet arbre, ce qui a donné au terrain une perspective nouvelle.  En redonnant à cet arbre, son espace vital et de meilleures conditions de croissance, nous en avons reconfiguré l’espace pour en faire un prolongement de la forêt du parc régional.</p>
+
+    <figure class="photo">
+      <img src="../photos/jardintravauxPrint93.jpg" alt="Un tracteur jaune retire le gazon du terrain de Longueuil au printemps 1993; à droite, le jeune chêne" loading="lazy">
+      <figcaption>Printemps 1993 : un tracteur vient retirer le gazon. À droite, le jeune chêne.</figcaption>
+    </figure>
+
+    <h2 class="partie-titre">L’esprit du jardin</h2>
+
+    <p>Ce jardin témoigne de mon approche de la culture, Bio, parce que la vie est avant tout ce que l’on désire prolonger.</p>
+
+    <p>Dix ans plus tard, je ne cultive presque plus, j’entretiens un petit royaume, qui a sa vie propre. Cette vie n’est pas sous mon contrôle, elle a sa destinée ; d’intervenant, je me suis transformé en collaborateur pour le simple plaisir de participer à la beauté du monde et aux bienfaits de la nature.</p>
+
+    <p>Le jardin est un espace de création ; quel plaisir de créer avec des éléments vivants qui redessinent, au gré de leur vitalité, ce que vous avez imaginé ! Et ici, pas besoin de logiciels compliqués ; les algorithmes sont intégrés dans la nature, les fractales sont comprises à la plantation.  Un jardin est un lieu d’apprentissage valorisant et motivant, car nous avons, chaque jour, au gré des saisons, le résultat de notre travail devant les yeux. Tous nos autres sens y participent, en plus de développer notre sens de l’observation et notre compréhension rationnelle des lois de la nature, donc de notre propre nature. L’observation, voilà une qualité méconnue de tout jardinier sympathique aux méthodes douces d’intervention. Le plaisir est dans la forme, au sens physiologique et esthétique du terme.</p>
+
+    <p>La nature nous renvoie une image de nous-mêmes, qu’il nous faut sans cesse améliorer. Bien sûr, ce jardin ne répond pas aux canons esthétiques du terrain de banlieue bien ordonné et aux lignes droites bien tracées. Il correspond à mon image et à ma compréhension de la nature qui va rarement d’un point à un autre, sans divaguer.</p>
+
+    <p>Quelle joie de s’éveiller aux chants, des oiseaux plus nombreux, chaque année et aux gazouillements de la fontaine, qui rythment la vie du jardin.</p>
+
+    <figure class="photo">
+      <img src="../photos/Colettejardin.jpg" alt="Colette écrit et peint à la table du jardin, entourée d’iris violets et d’arbres matures" loading="lazy">
+      <figcaption>Colette à la table du jardin, devenu espace de méditation et de création.</figcaption>
+    </figure>
+
+    <h2 class="partie-titre">Cycles et patience</h2>
+
+    <p>Un coin de ma cour sert de boucle de rétroaction : là où une partie de ce que le jardin a produit retourne à la terre, recyclée en matière organique pour nourrir à nouveau le cycle. Le compostage me rappelle constamment que rien ne se perd dans la nature. Il est surprenant de constater la générosité d’un petit espace. Le jardin m’a appris la patience. Observer d’abord le terrain dans ses transformations lentes, comprendre comment la lumière voyage au fil des saisons, voir où l’eau se rassemble au printemps. Les grands gestes viennent d’abord — ceux qui façonnent le relief et donnent structure au rêve. Mais même ces interventions majeures se font en dialogue avec ce qui est déjà là.</p>
+
+    <p>Les arbres croissent année après année, certains deviennent des géants qui redessinent l’ombre et la lumière. Il faut imaginer le jardin, non pas tel qu’il est, mais tel qu’il deviendra — visualiser l’été dans sa plénitude, l’automne dépouillé et l’hiver qui révèle ses structures. Les conifères et les persistants deviennent alors des présences essentielles, gardiens du jardin endormi.  J’ai appris à privilégier les vivaces qui reviennent fidèlement, tout en laissant quelques espaces aux annuelles — ces surprises éphémères qui apportent leur légèreté. Les roches deviennent des ancres visuelles quand la végétation se retire. Un petit bassin d’eau ajoute son chant aux gazouillements du jardin.</p>
+
+    <p>Au fil des années, j’ai découvert que la diversité crée l’équilibre. Un jardin riche en variété trouve sa propre régulation, développe ses propres défenses, devient un petit écosystème qui s’autorégule. Le jardinier peut alors se retirer un peu, observer, accompagner plutôt que diriger.</p>
+
+    <h2 class="partie-titre">Transmission</h2>
+
+    <p class="finale">Malgré toutes ces différences,<br>c’est encore mon père qui jardine.</p>
+
+    <p>Mon jardin, une part de l’œuvre de ma vie, est un <a href="Multimedia_et_reseaux_conviviaux.html">réseau convivial</a> comme je l’avais imaginé avec des moyens technologiques. Mais la vie est le réseau le plus énergétique et convivial que je connaisse, et je suis heureux d’en faire partie.</p>
+
+    <p>Mon jardin me sert maintenant de toile de fond ou de tapisserie pour mes nouveaux collages : <a href="../index.html#collages"><em>Paysages choisis</em></a>.</p>
+
+    <div class="lien-galerie">
+      <a href="le-jardin-comme-meditation.html">Le chêne de mon jardin : Le jardin comme méditation →</a>
+      <a href="famille-rosaire-yvonne.html">Rosaire et Yvonne : Cultiver la vie →</a>
+      <a href="../galerie-jardin.html">Le jardin en photos →</a>
+    </div>
+
+    <div class="signature">
+      <div class="signature-nom">Serge Roy</div>
+      <div class="signature-date">Longueuil, février 2026 — d’après « J’ai toujours jardiné » (2015). Aussi <a href="../index.html#videos" style="color:inherit">en vidéo sur ce site</a>.</div>
+    </div>
+
+  </main>
+
+  <div class="nav-bas">
+    <a href="../index.html#textes">← Retour aux textes</a>
+  </div>
+
+  <footer>
+    <div class="footer-marque">SERGE ROY</div>
+  </footer>
+
+<script src="../outils-lecture.js?v=20260719a" defer></script>
+</body>
+</html>
