@@ -137,9 +137,9 @@ const CONTENU = {
     {
       "categorie": "Nature",
       "titre": "Le jardin comme méditation",
-      "extrait": "Réflexions sur quarante ans de jardinage écologique, héritage de mon père et transmission à ma descendance.",
-      "date": "2023",
-      "lien": "textes/recueil.html#jardin"
+      "extrait": "« Qui suis-je ? » Le chêne est dans le jardin. Le koan que m'a donné mon maître zen, Albert Low, et le chêne de mon jardin de Longueuil, à travers les saisons.",
+      "date": "2026",
+      "lien": "textes/le-jardin-comme-meditation.html"
     },
     {
       "categorie": "Vie spirituelle & Santé",
