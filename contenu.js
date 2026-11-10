@@ -136,6 +136,13 @@ const CONTENU = {
     },
     {
       "categorie": "Nature",
+      "titre": "Ma vie, un jardin !",
+      "extrait": "Reportage. À Longueuil, derrière un bungalow comme les autres, un homme cultive depuis plus de trente ans une forêt miniature autour d'un chêne qu'il a sauvé. D'Acton Vale à Longueuil, du potager de Rosaire au kōan d'Albert Low.",
+      "date": "1950–2026",
+      "lien": "textes/ma-vie-un-jardin.html"
+    },
+    {
+      "categorie": "Nature",
       "titre": "Le jardin comme méditation",
       "extrait": "« Qui suis-je ? » Le chêne est dans le jardin. Le koan que m'a donné mon maître zen, Albert Low, et le chêne de mon jardin de Longueuil, à travers les saisons.",
       "date": "2026",

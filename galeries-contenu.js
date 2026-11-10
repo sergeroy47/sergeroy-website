@@ -11,7 +11,7 @@ const GALERIES = [
     "etiquette": "Nature · Mémoire",
     "titre": "Le jardin",
     "sousTitre": "Trente ans de jardinage écologique à Longueuil.",
-    "intro": "De la terre de Caïn au jardin vivant — une histoire de patience, d'écoute et de transmission.",
+    "intro": "De la terre de Caïn au jardin vivant — une histoire de patience, d'écoute et de transmission. <a href=\"textes/ma-vie-un-jardin.html\" style=\"color:#5a6e4a\">Lire le reportage « Ma vie, un jardin ! » →</a>",
     "vignette": "photos/Colettejardin.jpg",
     "photos": [
       {
