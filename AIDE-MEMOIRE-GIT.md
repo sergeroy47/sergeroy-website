@@ -9,7 +9,7 @@ git commit -m "Description de ce que j'ai changé"
 git push
 ```
 
-Le site se met à jour sur https://sergeroy47.github.io/sergeroy-website en 2-5 minutes.
+Le site se met à jour sur https://sergeroy.ca en 2-5 minutes.
 
 ---
 
@@ -42,6 +42,6 @@ git push
 
 ## Liens importants
 
-- Site en ligne : https://sergeroy47.github.io/sergeroy-website
+- Site en ligne : https://sergeroy.ca
 - Dépôt GitHub : https://github.com/sergeroy47/sergeroy-website
-- Administration : https://sergeroy47.github.io/sergeroy-website/admin.html
+- Administration : https://sergeroy.ca/admin.html

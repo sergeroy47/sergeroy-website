@@ -100,7 +100,7 @@ if git push > /dev/null 2>&1; then
   echo "  ✓ C'est publié !"
   echo ""
   echo "  Le site sera en ligne dans 2 à 5 minutes :"
-  echo "  https://sergeroy47.github.io/sergeroy-website"
+  echo "  https://sergeroy.ca"
 else
   echo ""
   echo "  ⚠ La publication a échoué."

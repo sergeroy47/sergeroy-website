@@ -2,7 +2,7 @@
 
 Site web personnel de Serge Roy, éducateur, contemplatif et créateur, basé à Longueuil, Québec.
 
-🌐 **Site en ligne :** [sergeroy47.github.io/sergeroy-website](https://sergeroy47.github.io/sergeroy-website)
+🌐 **Site en ligne :** [sergeroy.ca](https://sergeroy.ca)
 
 ---
 

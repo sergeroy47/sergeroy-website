@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://sergeroy47.github.io/sergeroy-website/sitemap.xml
+Sitemap: https://sergeroy.ca/sitemap.xml
