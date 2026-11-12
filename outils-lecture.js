@@ -89,7 +89,7 @@
       ? "🎧 Listen to this text — in Serge's own voice"
       : '🎧 Écouter ce texte — dans la voix de Serge';
     etiquette.style.cssText =
-      'font-family:\'Cinzel\',serif;font-size:0.7rem;letter-spacing:0.18em;' +
+      'font-family:\'Cinzel\',serif;font-size:0.82rem;letter-spacing:0.18em;' +
       'text-transform:uppercase;color:#b8903a;margin-bottom:0.7rem;';
 
     var lecteur = document.createElement('audio');

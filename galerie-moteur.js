@@ -109,6 +109,14 @@
     </div>
   `;
 
+  // ── Vignettes : vie/Été 2020.jpeg → vignettes/vie/Ete_2020.jpg ──
+  function cheminVignette(f) {
+    if (!f || /^(https?:|data:|blob:|\/)/.test(f) || f.indexOf('..') !== -1) return f;
+    const propre = f.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^A-Za-z0-9._\/-]/g, '_').replace(/\.[A-Za-z0-9]+$/, '');
+    return 'vignettes/' + propre + '.jpg';
+  }
+
   // ── Remplir la mosaïque ─────────────────────────────────────
   if (photos.length > 0) {
     const mosaique = document.getElementById('mosaique');
@@ -122,16 +130,24 @@
       // une case vide (Safari surtout) : on charge d'emblée les premières,
       // et on réessaie une fois si une image échoue.
       const differe = i >= 16 ? ' loading="lazy"' : '';
+      // La mosaïque affiche une vignette légère (dossier vignettes/) ;
+      // la photo pleine grandeur ne se charge qu'à l'agrandissement.
+      // S'il n'existe pas de vignette (photo ajoutée récemment), on
+      // retombe automatiquement sur la photo d'origine.
+      const vignette = cheminVignette(p.fichier);
       bloc.innerHTML = `
-        <img src="${p.fichier}" alt="${p.legende || ''}"${differe}>
+        <img src="${vignette}" alt="${p.legende || ''}"${differe}>
         <div class="photo-legende-voile">
           <div class="photo-legende-texte">${p.legende || ''}</div>
           ${indice}
         </div>`;
       const img = bloc.querySelector('img');
+      let essais = 0;
       img.addEventListener('error', function reessayer() {
-        img.removeEventListener('error', reessayer);
+        essais++;
         img.removeAttribute('loading');
+        if (essais === 1 && vignette !== p.fichier) { img.src = p.fichier; return; }
+        img.removeEventListener('error', reessayer);
         img.src = p.fichier + (p.fichier.includes('?') ? '&' : '?') + 'r=1';
       });
       img.addEventListener('click', e => { e.stopPropagation(); ouvrirLightbox(i); });
