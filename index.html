@@ -397,6 +397,12 @@
     .lb-fleche{top:auto;bottom:16px;transform:none;}
     .lightbox-desc{font-size:17px;}
   }
+  /* ═══ BOUCLE SILENCIEUSE — pause contemplative avant le contact ═══ */
+  #boucle{background:var(--papier);padding:100px 0 110px;text-align:center;}
+  .boucle{margin:0 auto;width:min(86vw,560px);color:var(--encre);}
+  .boucle canvas{display:block;width:100%;aspect-ratio:1/1;}
+  .boucle figcaption{margin-top:26px;font-family:var(--italic);font-style:italic;font-size:clamp(21px,2vw,25px);line-height:1.45;color:var(--terre);}
+  @media (max-width:760px){#boucle{padding:70px 0 76px;}}
 </style>
 </head>
 <body>
@@ -592,6 +598,16 @@
   </div>
 </section>
 
+<!-- ══ BOUCLE SILENCIEUSE ══ -->
+<section id="boucle" aria-label="Boucle silencieuse">
+  <div class="wrap">
+    <figure class="boucle">
+      <canvas data-boucle role="img" aria-label="Boucle silencieuse : un cercle ouvert, tracé de 1 440 traits fins, avec un point vermillon dans l'intervalle"></canvas>
+      <figcaption>Ce qui revient n'est jamais tout à fait ce qui est parti.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="wrap">
@@ -679,6 +695,190 @@
 </div>
 
 <script src="contenu.js?v=20261110e"></script>
+<script>
+/*
+ * Boucle silencieuse — animation canvas
+ * 1 440 traits, 1 intervalle, 1 point vermillon.
+ *
+ * Utilisation :
+ *   <canvas data-boucle role="img" aria-label="Boucle silencieuse : un cercle ouvert fait de 1 440 traits"></canvas>
+ *   puis charger ce fichier avec une balise script (attribut defer) en fin de page.
+ *
+ * Options (attributs facultatifs sur le <canvas>) :
+ *   data-accent="#c43a24"   couleur du point
+ *   data-reperes="non"      masque les cercles de référence et les graduations
+ *   data-duree="7"          durée du tracé initial, en secondes
+ *
+ * La couleur des traits suit la propriété CSS `color` du canvas,
+ * donc l'anneau s'adapte tout seul à un fond clair ou sombre.
+ */
+(function () {
+  "use strict";
+
+  var N = 1440;
+  var TAU = Math.PI * 2;
+  var GAP_C = (-52 * Math.PI) / 180;   // centre de l'intervalle (en haut à droite)
+  var GAP_W = (13 * Math.PI) / 180;    // largeur de l'intervalle
+  var ARC = TAU - GAP_W;
+  var A0 = GAP_C + GAP_W / 2;
+
+  function init(canvas) {
+    var ctx = canvas.getContext("2d");
+    var accent = canvas.getAttribute("data-accent") || "#c43a24";
+    var reperes = canvas.getAttribute("data-reperes") !== "non";
+    var duree = parseFloat(canvas.getAttribute("data-duree")) || 7;
+    var calme = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var size = 0, dpr = 1, ink = "#221f1c";
+    var visible = false, raf = null, t0 = null, tPause = 0;
+
+    function mesure() {
+      var rect = canvas.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+      size = Math.max(120, Math.min(rect.width, rect.height || rect.width));
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round((rect.height || rect.width) * dpr);
+      ink = getComputedStyle(canvas).color || ink;
+    }
+
+    function dessine(t) {
+      // t : secondes écoulées depuis le début du tracé
+      var w = canvas.width / dpr, h = canvas.height / dpr;
+      var cx = w / 2, cy = h / 2;
+      var R = size * 0.355;            // rayon moyen de l'anneau
+      var u = R / 760;                 // unité : la planche d'origine avait R = 760
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      ctx.lineCap = "butt";
+
+      // progression du geste initial (0 → 1), avec ralentissement final
+      var q = calme ? 1 : Math.min(1, t / duree);
+      q = 1 - Math.pow(1 - q, 2.2);
+      // les repères apparaissent doucement
+      var fondu = calme ? 1 : Math.min(1, t / 1.6);
+
+      if (reperes) {
+        ctx.strokeStyle = ink;
+        ctx.lineWidth = Math.max(0.5, u * 1);
+        ctx.globalAlpha = 0.2 * fondu;
+        [250, 400, 550].forEach(function (r) {
+          ctx.beginPath(); ctx.arc(cx, cy, r * u, 0, TAU); ctx.stroke();
+        });
+        ctx.globalAlpha = 0.28 * fondu;
+        ctx.beginPath(); ctx.arc(cx, cy, 1010 * u, 0, TAU); ctx.stroke();
+
+        for (var k = 0; k < 360; k += (size < 420 ? 5 : 1)) {
+          var ak = (k * Math.PI) / 180;
+          var ln = k % 30 === 0 ? 26 : k % 5 === 0 ? 15 : 7;
+          ctx.globalAlpha = (k % 30 === 0 ? 0.6 : 0.34) * fondu;
+          ctx.beginPath();
+          ctx.moveTo(cx + 1010 * u * Math.cos(ak), cy + 1010 * u * Math.sin(ak));
+          ctx.lineTo(cx + (1010 + ln) * u * Math.cos(ak), cy + (1010 + ln) * u * Math.sin(ak));
+          ctx.stroke();
+        }
+        // petite croix au centre
+        ctx.globalAlpha = 0.55 * fondu;
+        ctx.beginPath();
+        ctx.moveTo(cx - 16 * u, cy); ctx.lineTo(cx + 16 * u, cy);
+        ctx.moveTo(cx, cy - 16 * u); ctx.lineTo(cx, cy + 16 * u);
+        ctx.stroke();
+      }
+
+      // l'anneau : accumulation patiente de traits radiaux
+      // le signal se module lentement lui-même (ondulation très douce)
+      var ph1 = calme ? 0 : t * 0.16;
+      var ph2 = calme ? 0 : -t * 0.11;
+      var ph3 = calme ? 0 : t * 0.23;
+      var souffle = calme ? 0 : Math.sin(t * 0.35) * 0.04;
+
+      ctx.strokeStyle = ink;
+      ctx.lineWidth = Math.max(0.6, u * 1.25);
+      var front = q * N;               // nombre de traits déjà posés
+      var dernier = Math.min(N, Math.ceil(front));
+
+      for (var i = 0; i < dernier; i++) {
+        var p = (i + 0.5) / N;
+        var a = A0 + ARC * p;
+        var bord = Math.min(1, (Math.min(p, 1 - p) * ARC) / ((5 * Math.PI) / 180));
+        var press = 0.30 + 0.70 * Math.pow(1 - p, 1.25);
+        var sig = 0.50 + souffle
+          + 0.26 * Math.sin(9 * a + 0.6 + ph1)
+          + 0.16 * Math.sin(23 * a + 1.9 + ph2)
+          + 0.08 * Math.sin(61 * a + ph3);
+        var half = (22 + 118 * press * (0.45 + 0.55 * sig)) * u;
+        var off = 10 * u * Math.sin(3 * a + 0.4 + ph1 * 0.5) * press;
+        var ton = (0.55 + 0.45 * press) * (0.55 + 0.45 * bord);
+        // le trait qui vient d'être posé s'installe en douceur
+        var frais = Math.min(1, (front - i) / 40);
+        var ca = Math.cos(a), sa = Math.sin(a);
+        ctx.globalAlpha = Math.min(1, ton) * frais;
+        ctx.beginPath();
+        ctx.moveTo(cx + (R + off - half * frais) * ca, cy + (R + off - half * frais) * sa);
+        ctx.lineTo(cx + (R + off + half * frais) * ca, cy + (R + off + half * frais) * sa);
+        ctx.stroke();
+      }
+
+      // le point vermillon, tenu dans l'intervalle : il ne bouge jamais
+      var pointAlpha = calme ? 1 : Math.max(0, Math.min(1, (t - duree * 0.9) / 1.2));
+      if (pointAlpha > 0) {
+        ctx.globalAlpha = pointAlpha;
+        ctx.fillStyle = accent;
+        ctx.beginPath();
+        ctx.arc(cx + R * Math.cos(GAP_C), cy + R * Math.sin(GAP_C), Math.max(2.5, 15 * u), 0, TAU);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function boucle(now) {
+      if (t0 === null) t0 = now - tPause * 1000;
+      var t = (now - t0) / 1000;
+      tPause = t;
+      dessine(t);
+      raf = visible ? requestAnimationFrame(boucle) : null;
+    }
+
+    function demarre() {
+      if (calme) { dessine(0); return; }
+      if (raf === null) { t0 = null; raf = requestAnimationFrame(boucle); }
+    }
+
+    function arrete() {
+      if (raf !== null) { cancelAnimationFrame(raf); raf = null; }
+    }
+
+    mesure();
+    if (calme) dessine(0);
+
+    // l'animation ne tourne que lorsque l'anneau est à l'écran
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (visible) demarre(); else arrete();
+      }, { threshold: 0.15 }).observe(canvas);
+    } else {
+      visible = true; demarre();
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) arrete(); else if (visible) demarre();
+    });
+
+    var redim = function () { mesure(); if (calme || raf === null) dessine(calme ? 0 : tPause); };
+    if ("ResizeObserver" in window) new ResizeObserver(redim).observe(canvas);
+    else window.addEventListener("resize", redim);
+  }
+
+  function tout() {
+    var liste = document.querySelectorAll("canvas[data-boucle]");
+    for (var i = 0; i < liste.length; i++) init(liste[i]);
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", tout);
+  else tout();
+})();
+</script>
 <script>
   // ── DONNÉES ────────────────────────────────────────────
   // Même fusion contenu.js + sauvegarde de l'admin que l'ancienne interface.
