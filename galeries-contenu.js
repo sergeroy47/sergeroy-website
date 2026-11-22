@@ -349,8 +349,8 @@ const GALERIES = [
     "etiquette": "Zen · Création",
     "titre": "Art Zen",
     "sousTitre": "Calligraphies, bouddhas, poissons et pêcheurs.",
-    "intro": "Des calligraphies à l'encre, les bouddhas de la maison et du jardin, Bodhidharma, Dōgen le pêcheur, des collages — un carnet d'images nées de la pratique zen.",
-    "vignette": "artzen/dogen-pecheur.jpg",
+    "intro": "Des calligraphies à l'encre, les bouddhas de la maison et du jardin, Bodhidharma, le pêcheur de lune, des collages — un carnet d'images nées de la pratique zen.",
+    "vignette": "artzen/pecheur-de-lune.jpg",
     "photos": [
       {
         "fichier": "artzen/calligraphie-1.jpg",
@@ -408,16 +408,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "artzen/poisson-vague.jpg",
-        "legende": "Le poisson sur la vague",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/poisson-variation.jpg",
-        "legende": "Le poisson, autre version",
-        "description": ""
-      },
-      {
         "fichier": "artzen/poisson-bronze.jpg",
         "legende": "Poisson de bronze",
         "description": ""
@@ -425,21 +415,6 @@ const GALERIES = [
       {
         "fichier": "artzen/koi.jpg",
         "legende": "Le koï",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/dogen-pecheur.jpg",
-        "legende": "Dōgen, le pêcheur",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/pecheur-ocre.jpg",
-        "legende": "Le pêcheur, ocre et rose",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/pecheur-terre.jpg",
-        "legende": "Le pêcheur, couleur de terre",
         "description": ""
       },
       {
@@ -603,11 +578,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "artzen/cercle-citation.jpg",
-        "legende": "Le cercle, avec sa citation",
-        "description": ""
-      },
-      {
         "fichier": "artzen/enso-rouge.jpg",
         "legende": "Ensō rouge",
         "description": ""
@@ -659,23 +629,23 @@ const GALERIES = [
       },
       {
         "fichier": "artzen/portrait-bibliotheque.jpg",
-        "legende": "Portrait devant la bibliothèque",
-        "description": ""
+        "legende": "Monsieur Lowe, mon premier maître zen",
+        "description": "Monsieur Lowe a été mon premier maître zen, de 2010 jusqu'à sa mort en 2016."
       },
       {
         "fichier": "artzen/portrait-robe.jpg",
-        "legende": "Portrait en robe, noir et blanc",
-        "description": ""
+        "legende": "Jeff Shore",
+        "description": "Jeff Shore est un maître zen américain qui vit au Japon depuis vingt-cinq ans. Pendant quatre ans, il a présidé nos retraites."
       },
       {
         "fichier": "artzen/rencontre-ecran.jpg",
-        "legende": "Rencontre à l'écran",
-        "description": ""
+        "legende": "Jeanne d'Arc et Louis",
+        "description": "Un couple de ma communauté zen. Louis dirige maintenant nos retraites, et c'est lui qui me reçoit en dokusan."
       },
       {
         "fichier": "artzen/portrait-mur.jpg",
-        "legende": "Portrait au mur de brique",
-        "description": ""
+        "legende": "Anne",
+        "description": "Une cousine lointaine, retrouvée grâce au zen, et chef cuisinière durant nos retraites zen."
       }
     ]
   },
