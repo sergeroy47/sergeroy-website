@@ -45,6 +45,36 @@ const GALERIES = [
         "description": "Au début, il y avait un potager au centre du jardin. Au fil des années, il s'est dissipé parce que les arbres font beaucoup d'ombre et que les légumes aiment le soleil.\nJ'ai créé un lieu dont je ne connaissais pas l'existence. Quand je regarde mon jardin, je vois la croissance de plantes dont j'ai favorisé l'existence, d'autres que j'ai plantées moi-même. Mais ce que je regarde dépasse de loin ma vision de départ. Laissez la vie s'occuper du reste…"
       },
       {
+        "fichier": "photos/jardin2003-crocus.jpg",
+        "legende": "Crocus — mai 2003",
+        "description": "Les premiers crocus percent à travers les feuilles mortes de l'automne. Au jardin, le printemps commence par eux."
+      },
+      {
+        "fichier": "photos/jardin2003-gloire-des-neiges.jpg",
+        "legende": "Gloires-des-neiges — mai 2003",
+        "description": "Petites étoiles bleues parmi les premières pousses, au tout début du printemps."
+      },
+      {
+        "fichier": "photos/jardin2003-pommetier.jpg",
+        "legende": "Fleurs de pommetier — mai 2003",
+        "description": "Les fleurs blanches du pommetier, près de la porte rouge."
+      },
+      {
+        "fichier": "photos/jardin2003-muguet.jpg",
+        "legende": "Muguet et ancolies — mai 2003",
+        "description": "Un bouquet du jardin dans la maison : le muguet et les ancolies rouges."
+      },
+      {
+        "fichier": "photos/jardin2003-sanguinaire.jpg",
+        "legende": "Sanguinaires — mai 2003",
+        "description": "Une fleur sauvage du sous-bois, installée au pied des arbres, parmi les glands du chêne."
+      },
+      {
+        "fichier": "photos/jardin2003-rhododendron.jpg",
+        "legende": "Rhododendron en fleurs — mai 2003",
+        "description": "Le rhododendron en pleine floraison, à la fin du printemps."
+      },
+      {
         "fichier": "photos/Colettejardin.jpg",
         "legende": "Espace de méditation et de création",
         "description": "Colette écrit, peint à la table du jardin. Les iris violets en fleur, les arbres matures qui dessinent un écrin de verdure — le jardin est devenu un véritable espace de vie créatrice."
