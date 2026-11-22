@@ -354,8 +354,8 @@ const GALERIES = [
     "photos": [
       {
         "fichier": "artzen/calligraphie-1.jpg",
-        "legende": "Calligraphie",
-        "description": ""
+        "legende": "Pleine conscience",
+        "description": "Calligraphie personnelle."
       },
       {
         "fichier": "artzen/etre.jpg",
@@ -553,19 +553,14 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "artzen/fleurs-poissons-encre-2.jpg",
-        "legende": "Fleurs et poissons à l'encre, autre cadrage",
-        "description": ""
-      },
-      {
         "fichier": "artzen/fleurs-poissons-couleur.jpg",
         "legende": "Fleurs et poissons, en couleur",
         "description": ""
       },
       {
         "fichier": "artzen/cadeau-jeff.jpg",
-        "legende": "Le cadeau de Jeff",
-        "description": ""
+        "legende": "Dokusan",
+        "description": "Œuvre d'après « Landscape of Four Seasons » de Sesshū, une carte postale que m'a donnée Jeff Shore le 5 mai 2018, à la fin d'un sesshin zen."
       },
       {
         "fichier": "artzen/arbre-couchant.jpg",
@@ -598,18 +593,13 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "artzen/collage-oeil-variation.jpg",
-        "legende": "Collage à l'œil, variation",
-        "description": ""
-      },
-      {
         "fichier": "artzen/collage-cosmique.jpg",
         "legende": "Collage cosmique",
         "description": ""
       },
       {
         "fichier": "artzen/superposition.jpg",
-        "legende": "Superposition",
+        "legende": "Bouddha et traces d'ego",
         "description": ""
       },
       {
