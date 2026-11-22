@@ -343,6 +343,283 @@ const GALERIES = [
     ]
   },
   {
+    "id": "artzen",
+    "type": "creation",
+    "fichier": "galerie-art-zen.html",
+    "etiquette": "Zen · Création",
+    "titre": "Art Zen",
+    "sousTitre": "Calligraphies, bouddhas, poissons et pêcheurs.",
+    "intro": "Des calligraphies à l'encre, les bouddhas de la maison et du jardin, Bodhidharma, Dōgen le pêcheur, des collages — un carnet d'images nées de la pratique zen.",
+    "vignette": "artzen/dogen-pecheur.jpg",
+    "photos": [
+      {
+        "fichier": "artzen/calligraphie-1.jpg",
+        "legende": "Calligraphie",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/etre.jpg",
+        "legende": "Être — 有",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/calligraphie-couleur.jpg",
+        "legende": "Calligraphie, encre et couleur",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/calligraphie-encre.jpg",
+        "legende": "Calligraphie à l'encre",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/calligraphie-variation.jpg",
+        "legende": "Calligraphie, variation en couleur",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/calligraphie-trait-rouge.jpg",
+        "legende": "Calligraphie et trait rouge",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/you.jpg",
+        "legende": "有 — être",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bodhidharma-encre.jpg",
+        "legende": "Bodhidharma à l'encre",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bodhidharma-regard.jpg",
+        "legende": "Bodhidharma, le regard",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bodhidharma-poisson.jpg",
+        "legende": "Bodhidharma et le poisson",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/poisson-vague.jpg",
+        "legende": "Le poisson sur la vague",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/poisson-variation.jpg",
+        "legende": "Le poisson, autre version",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/poisson-bronze.jpg",
+        "legende": "Poisson de bronze",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/dogen-pecheur.jpg",
+        "legende": "Dōgen, le pêcheur",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/pecheur-ocre.jpg",
+        "legende": "Le pêcheur, ocre et rose",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/pecheur-terre.jpg",
+        "legende": "Le pêcheur, couleur de terre",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/pecheur-de-lune.jpg",
+        "legende": "Le pêcheur de lune",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-branches.jpg",
+        "legende": "Bouddha dans les branches",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-visage.jpg",
+        "legende": "Visage de Bouddha",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-automne.jpg",
+        "legende": "Bouddha dans l'automne",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-ville.jpg",
+        "legende": "Bouddha en ville",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-jardin-lumiere.jpg",
+        "legende": "Bouddha doré au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-pierre.jpg",
+        "legende": "Bouddha de pierre au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/autel.jpg",
+        "legende": "L'autel",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-bois.jpg",
+        "legende": "Bouddha de bois",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddha-peint.jpg",
+        "legende": "Bouddha de bois, version peinte",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/manjushri.jpg",
+        "legende": "Manjushri sur son lion",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/manjushri-niche.jpg",
+        "legende": "Manjushri dans la niche ronde",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/niche-ronde.jpg",
+        "legende": "La petite niche ronde",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/autel-niche.jpg",
+        "legende": "L'autel et la niche",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bol-chantant.jpg",
+        "legende": "Le bol chantant",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/gong.jpg",
+        "legende": "Le gong",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/moine-blanc.jpg",
+        "legende": "Le moine en blanc",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/bouddhas-magasin.jpg",
+        "legende": "Bouddhas en magasin",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/meditant-noel.jpg",
+        "legende": "Le petit méditant de Noël",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/arbre-noel.jpg",
+        "legende": "Arbre de Noël à l'encre",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/visages-estampes.jpg",
+        "legende": "Visages d'estampes",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/paysage-estampe.jpg",
+        "legende": "Paysage d'estampe",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/paysage-estampe-variation.jpg",
+        "legende": "Paysage d'estampe, variation",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/montagnes-pin.jpg",
+        "legende": "Montagnes et pin",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/cadeau-jeff.jpg",
+        "legende": "Le cadeau de Jeff",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/arbre-couchant.jpg",
+        "legende": "Arbre au couchant",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/cercle.jpg",
+        "legende": "Le cercle",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/enso-rouge.jpg",
+        "legende": "Ensō rouge",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/cercles.jpg",
+        "legende": "Cercles",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/eclaboussures.jpg",
+        "legende": "Éclaboussures",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/collage-oeil.jpg",
+        "legende": "Collage à l'œil",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/collage-oeil-variation.jpg",
+        "legende": "Collage à l'œil, variation",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/collage-cosmique.jpg",
+        "legende": "Collage cosmique",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/superposition.jpg",
+        "legende": "Superposition",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/loup.jpg",
+        "legende": "Le loup",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/pouvoir-magique.jpg",
+        "legende": "Pouvoir magique",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/eau-silence.jpg",
+        "legende": "L'eau coule en silence",
+        "description": ""
+      }
+    ]
+  },
+  {
     "id": "amis",
     "type": "photo",
     "fichier": "galerie-amis.html",
