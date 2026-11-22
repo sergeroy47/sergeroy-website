@@ -219,6 +219,248 @@ const GALERIES = [
     ]
   },
   {
+    "id": "noemie40",
+    "type": "photo",
+    "fichier": "galerie-noemie.html",
+    "etiquette": "Famille · Noémie",
+    "titre": "Quarante ans de vie de Noémie",
+    "sousTitre": "L'album des quarante ans de ma fille.",
+    "intro": "Un album réuni pour les quarante ans de ma fille Noémie, en 2014 : de la petite enfance à l'âge adulte, en photos, en montages et en portraits retravaillés.",
+    "vignette": "noemie/30-ans.jpg",
+    "photos": [
+      {
+        "fichier": "noemie/maison.jpg",
+        "legende": "La maison natale",
+        "description": "La maison où Noémie est née, rue Saint-Denis à Montréal, face au carré Saint-Louis."
+      },
+      {
+        "fichier": "noemie/bebe.jpg",
+        "legende": "Bébé",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/bebe-dodo.jpg",
+        "legende": "Le sommeil du bébé",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/bebe-assise.jpg",
+        "legende": "Assise, les doigts dans la bouche",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/sur-epaule.jpg",
+        "legende": "La tête sur une épaule",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/un-an.jpg",
+        "legende": "Un an",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/jeux-salon.jpg",
+        "legende": "Jeux au salon",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/deux-ans.jpg",
+        "legende": "Deux ans",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/manege.jpg",
+        "legende": "Devant le manège",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/regard.jpg",
+        "legende": "Le regard",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/huit-ans.jpg",
+        "legende": "Huit ans",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/huit-ans-rayures.jpg",
+        "legende": "Huit ans, en rayures",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/huit-ans-rayures-2.jpg",
+        "legende": "Huit ans, en rayures, autre tirage",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/couverture.jpg",
+        "legende": "Sous la couverture",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/couverture-2.jpg",
+        "legende": "Sous la couverture, autre pose",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/bord-eau.jpg",
+        "legende": "Au bord de l'eau",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/dans-eau.jpg",
+        "legende": "Les pieds dans l'eau",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/lac.jpg",
+        "legende": "Dans le lac",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/chandail-rouge.jpg",
+        "legende": "Le chandail rouge",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/cheval.jpg",
+        "legende": "À cheval",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/saut.jpg",
+        "legende": "Le saut d'obstacle",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/dessin.jpg",
+        "legende": "En train de dessiner",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/collage.jpg",
+        "legende": "Portrait en collage",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/serigraphie.jpg",
+        "legende": "Portrait en sérigraphie",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/serigraphie-sable.jpg",
+        "legende": "Le portrait sur le sable",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/portrait-bleu.jpg",
+        "legende": "Portrait sur fond bleu",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/yeux.jpg",
+        "legende": "Les yeux",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/branches.jpg",
+        "legende": "Dans les branches",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/deux-portraits.jpg",
+        "legende": "Deux portraits",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/foulard.jpg",
+        "legende": "Le foulard rouge",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/portrait-gris.jpg",
+        "legende": "Portrait en gris",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/portrait-dore.jpg",
+        "legende": "Portrait doré",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/profil-violet.jpg",
+        "legende": "Profil sur fond violet",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/profil.jpg",
+        "legende": "De profil",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/feuilles.jpg",
+        "legende": "Dans les feuilles",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/feuilles-2.jpg",
+        "legende": "Dans les feuilles, autre version",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/roche.jpg",
+        "legende": "La roche",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/neige.jpg",
+        "legende": "Dans la neige",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/bonne-annee-2005.jpg",
+        "legende": "Bonne et heureuse année 2005",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/perce.jpg",
+        "legende": "Percé",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/je-t-en-prie.jpg",
+        "legende": "Je t'en prie, Noémie",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/18-30-ans.jpg",
+        "legende": "De 18 à 30 ans",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/18-30-ans-2.jpg",
+        "legende": "De 18 à 30 ans, montage",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/30-ans.jpg",
+        "legende": "Trente ans",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/mariage.jpg",
+        "legende": "Le mariage de Noémie et Charles-Laurent",
+        "description": "Noémie, Charles-Laurent et moi, au centre, en complet pâle."
+      },
+      {
+        "fichier": "noemie/jardin-mariage.jpg",
+        "legende": "Noémie, Charles-Laurent et Liam, le jour du mariage",
+        "description": ""
+      }
+    ]
+  },
+  {
     "id": "arbres-roches",
     "type": "creation",
     "fichier": "galerie-arbres-roches.html",
