@@ -311,6 +311,38 @@ const GALERIES = [
     ]
   },
   {
+    "id": "givre",
+    "type": "creation",
+    "fichier": "galerie-jardin-de-givre.html",
+    "etiquette": "Hiver · Contemplation",
+    "titre": "Jardin de givre",
+    "sousTitre": "Un matin de mars 2003, à la fenêtre.",
+    "intro": "Un matin d'hiver, le soleil levant traverse le givre de la fenêtre et fait pousser un jardin de glace. Le titre vient d'un vers d'Émile Nelligan, dans son poème « Soir d'hiver ».",
+    "vignette": "givre/givre-2-plumes.jpg",
+    "photos": [
+      {
+        "fichier": "givre/givre-1-fenetre.jpg",
+        "legende": "La fenêtre au soleil levant",
+        "description": "Un matin de mars 2003. Le soleil levant traverse le givre de la fenêtre : de grandes plumes de glace s'allument, et les plantes de la maison se découpent devant."
+      },
+      {
+        "fichier": "givre/givre-2-plumes.jpg",
+        "legende": "Plumes de givre",
+        "description": "De près, le givre dessine des palmes, des fougères, des plumes — tout un jardin poussé en une nuit sur la vitre."
+      },
+      {
+        "fichier": "givre/givre-3-palmes.jpg",
+        "legende": "Palmes dorées",
+        "description": "La lumière dorée du matin glisse entre les feuilles de glace."
+      },
+      {
+        "fichier": "givre/givre-4-silhouettes.jpg",
+        "legende": "Le jardin de dedans, le jardin de dehors",
+        "description": "Les plantes de la maison ne sont plus que des silhouettes ; derrière elles, la fougère de glace s'illumine dans la lumière du matin."
+      }
+    ]
+  },
+  {
     "id": "amis",
     "type": "photo",
     "fichier": "galerie-amis.html",
