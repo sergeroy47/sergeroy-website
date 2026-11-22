@@ -289,11 +289,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "noemie/huit-ans-rayures-2.jpg",
-        "legende": "Huit ans, en rayures, autre tirage",
-        "description": ""
-      },
-      {
         "fichier": "noemie/couverture.jpg",
         "legende": "Sous la couverture",
         "description": ""
