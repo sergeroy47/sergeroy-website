@@ -223,9 +223,9 @@ const GALERIES = [
     "type": "photo",
     "fichier": "galerie-noemie.html",
     "etiquette": "Famille · Noémie",
-    "titre": "Quarante ans de vie de Noémie",
-    "sousTitre": "L'album des quarante ans de ma fille.",
-    "intro": "Un album réuni pour les quarante ans de ma fille Noémie, en 2014 : de la petite enfance à l'âge adulte, en photos, en montages et en portraits retravaillés.",
+    "titre": "Noémie en photos",
+    "sousTitre": "De la petite enfance à aujourd'hui.",
+    "intro": "Ma fille Noémie, de sa naissance rue Saint-Denis jusqu'à son mariage : des photos, des montages et des portraits retravaillés, d'abord réunis pour ses quarante ans, en 2014.",
     "vignette": "noemie/30-ans.jpg",
     "photos": [
       {
@@ -239,6 +239,21 @@ const GALERIES = [
         "description": ""
       },
       {
+        "fichier": "noemie/bebe-rayures.jpg",
+        "legende": "Bébé, sur la couverture rayée",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/dans-les-bras.jpg",
+        "legende": "Dans les bras de Diane, sa mère",
+        "description": "Bébé Noémie et sa mère, Diane."
+      },
+      {
+        "fichier": "noemie/dans-les-bras-dessin.jpg",
+        "legende": "Dans les bras de Diane, version dessinée",
+        "description": "Bébé Noémie et sa mère, Diane, en portrait retravaillé."
+      },
+      {
         "fichier": "noemie/bebe-dodo.jpg",
         "legende": "Le sommeil du bébé",
         "description": ""
@@ -250,8 +265,8 @@ const GALERIES = [
       },
       {
         "fichier": "noemie/sur-epaule.jpg",
-        "legende": "La tête sur une épaule",
-        "description": ""
+        "legende": "Sur l'épaule de Gisèle",
+        "description": "Bébé Noémie, la tête posée sur l'épaule de sa grand-mère Gisèle."
       },
       {
         "fichier": "noemie/un-an.jpg",
@@ -267,6 +282,11 @@ const GALERIES = [
         "fichier": "noemie/deux-ans.jpg",
         "legende": "Deux ans",
         "description": ""
+      },
+      {
+        "fichier": "noemie/jouer-ensemble.jpg",
+        "legende": "Jouer avec papa",
+        "description": "Noémie et moi."
       },
       {
         "fichier": "noemie/manege.jpg",
@@ -426,6 +446,41 @@ const GALERIES = [
       {
         "fichier": "noemie/je-t-en-prie.jpg",
         "legende": "Je t'en prie, Noémie",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/cuisine-2004.jpg",
+        "legende": "Dans la cuisine, 2004",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/noel-2005.jpg",
+        "legende": "Noël 2005, avec Charles-Laurent",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/noel-2005-2.jpg",
+        "legende": "Noémie et Charles-Laurent, Noël 2005",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/france-2006.jpg",
+        "legende": "En France, 2006",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/ete-2007.jpg",
+        "legende": "L'été 2007",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/ete-2012.jpg",
+        "legende": "L'été 2012",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/avec-liam.jpg",
+        "legende": "Avec Liam, 2013",
         "description": ""
       },
       {
