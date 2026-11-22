@@ -388,6 +388,11 @@ const GALERIES = [
         "description": ""
       },
       {
+        "fichier": "artzen/page-sumi.jpg",
+        "legende": "L'encre sumi — une page lue",
+        "description": ""
+      },
+      {
         "fichier": "artzen/bodhidharma-encre.jpg",
         "legende": "Bodhidharma à l'encre",
         "description": ""
@@ -415,6 +420,11 @@ const GALERIES = [
       {
         "fichier": "artzen/poisson-bronze.jpg",
         "legende": "Poisson de bronze",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/koi.jpg",
+        "legende": "Le koï",
         "description": ""
       },
       {
@@ -528,6 +538,11 @@ const GALERIES = [
         "description": ""
       },
       {
+        "fichier": "artzen/page-nembutsu.jpg",
+        "legende": "Le nembutsu — une page lue",
+        "description": ""
+      },
+      {
         "fichier": "artzen/arbre-noel.jpg",
         "legende": "Arbre de Noël à l'encre",
         "description": ""
@@ -535,6 +550,11 @@ const GALERIES = [
       {
         "fichier": "artzen/visages-estampes.jpg",
         "legende": "Visages d'estampes",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/fresque-chinoise.jpg",
+        "legende": "Fresque chinoise",
         "description": ""
       },
       {
@@ -553,6 +573,21 @@ const GALERIES = [
         "description": ""
       },
       {
+        "fichier": "artzen/fleurs-poissons-encre.jpg",
+        "legende": "Fleurs et poissons à l'encre",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/fleurs-poissons-encre-2.jpg",
+        "legende": "Fleurs et poissons à l'encre, autre cadrage",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/fleurs-poissons-couleur.jpg",
+        "legende": "Fleurs et poissons, en couleur",
+        "description": ""
+      },
+      {
         "fichier": "artzen/cadeau-jeff.jpg",
         "legende": "Le cadeau de Jeff",
         "description": ""
@@ -565,6 +600,11 @@ const GALERIES = [
       {
         "fichier": "artzen/cercle.jpg",
         "legende": "Le cercle",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/cercle-citation.jpg",
+        "legende": "Le cercle, avec sa citation",
         "description": ""
       },
       {
@@ -615,6 +655,26 @@ const GALERIES = [
       {
         "fichier": "artzen/eau-silence.jpg",
         "legende": "L'eau coule en silence",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/portrait-bibliotheque.jpg",
+        "legende": "Portrait devant la bibliothèque",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/portrait-robe.jpg",
+        "legende": "Portrait en robe, noir et blanc",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/rencontre-ecran.jpg",
+        "legende": "Rencontre à l'écran",
+        "description": ""
+      },
+      {
+        "fichier": "artzen/portrait-mur.jpg",
+        "legende": "Portrait au mur de brique",
         "description": ""
       }
     ]
