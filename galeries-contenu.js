@@ -518,7 +518,7 @@ const GALERIES = [
     "titre": "Liam en photos",
     "sousTitre": "Du bébé au jeune homme.",
     "intro": "Mon petit-fils Liam, de ses premiers mois à ses dix-sept ans : quelques moments choisis, et deux portraits retravaillés.",
-    "vignette": "liam/liam-12.jpg",
+    "vignette": "liam/liam-31.jpg",
     "photos": [
       {
         "fichier": "liam/liam-01.jpg",
@@ -623,6 +623,86 @@ const GALERIES = [
       {
         "fichier": "liam/liam-21.jpg",
         "legende": "Le complet",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-22.jpg",
+        "legende": "Les premiers jours, dans les bras",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-23.jpg",
+        "legende": "Mon premier Noël",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-24.jpg",
+        "legende": "La marinière",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-25.jpg",
+        "legende": "Le chapeau bleu",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-26.jpg",
+        "legende": "À table",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-27.jpg",
+        "legende": "Avec grand-papa, la médaille au cou",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-28.jpg",
+        "legende": "Éclat de rire",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-29.jpg",
+        "legende": "Chemise et cravate",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-30.jpg",
+        "legende": "Le coton ouaté",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-31.jpg",
+        "legende": "Le foulard bleu",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-32.jpg",
+        "legende": "Au jardin, en maillot de soccer",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-33.jpg",
+        "legende": "Le cadre avec les doigts",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-34.jpg",
+        "legende": "Un grand rire",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-35.jpg",
+        "legende": "De profil",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-36.jpg",
+        "legende": "Bain de boue à la plage",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-37.jpg",
+        "legende": "Finissant",
         "description": ""
       }
     ]
