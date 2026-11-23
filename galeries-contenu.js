@@ -656,11 +656,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "liam/liam-28.jpg",
-        "legende": "Éclat de rire",
-        "description": ""
-      },
-      {
         "fichier": "liam/liam-29.jpg",
         "legende": "Chemise et cravate",
         "description": ""
