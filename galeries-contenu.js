@@ -655,36 +655,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "artzen/calligraphie-couleur.jpg",
-        "legende": "Calligraphie, encre et couleur",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/calligraphie-encre.jpg",
-        "legende": "Calligraphie à l'encre",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/calligraphie-variation.jpg",
-        "legende": "Calligraphie, variation en couleur",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/calligraphie-trait-rouge.jpg",
-        "legende": "Calligraphie et trait rouge",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/you.jpg",
-        "legende": "有 — être",
-        "description": ""
-      },
-      {
-        "fichier": "artzen/page-sumi.jpg",
-        "legende": "L'encre sumi — une page lue",
-        "description": ""
-      },
-      {
         "fichier": "artzen/bodhidharma-encre.jpg",
         "legende": "Bodhidharma à l'encre",
         "description": ""
