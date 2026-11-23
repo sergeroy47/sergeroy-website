@@ -45,6 +45,31 @@ for f in contenu.js galeries-contenu.js; do
 done
 
 # ── 2. Vérifier qu'il y a bien quelque chose à publier ──
+#    Cas particulier : des changements déjà enregistrés (par Claude)
+#    mais pas encore envoyés en ligne → on les envoie.
+if [ -z "$(git status --porcelain)" ] && [ -n "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then
+  echo "  Changements déjà enregistrés, en attente d'envoi :"
+  git log origin/main..HEAD --format='     · %s'
+  echo ""
+  echo "  Publication en cours…"
+  if git push > /dev/null 2>&1; then
+    echo ""
+    echo "  ✓ C'est publié !"
+    echo ""
+    echo "  Le site sera en ligne dans 2 à 5 minutes :"
+    echo "  https://sergeroy.ca"
+  else
+    echo ""
+    echo "  ⚠ La publication a échoué."
+    echo "    Vérifiez votre connexion Internet, puis réessayez."
+    echo "    Si le problème persiste, demandez à Claude."
+  fi
+  echo ""
+  echo "Appuyez sur une touche pour fermer."
+  read -n 1
+  exit 0
+fi
+
 if [ -z "$(git status --porcelain)" ]; then
   echo "  Rien de nouveau à publier — le site est déjà à jour."
   echo ""
