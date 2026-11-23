@@ -511,6 +511,123 @@ const GALERIES = [
     ]
   },
   {
+    "id": "liam",
+    "type": "photo",
+    "fichier": "galerie-liam.html",
+    "etiquette": "Famille · Liam",
+    "titre": "Liam en photos",
+    "sousTitre": "Du bébé au jeune homme.",
+    "intro": "Mon petit-fils Liam, de ses premiers mois à ses dix-sept ans : quelques moments choisis, et deux portraits retravaillés.",
+    "vignette": "liam/liam-12.jpg",
+    "photos": [
+      {
+        "fichier": "liam/liam-01.jpg",
+        "legende": "Les premiers mois",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-02.jpg",
+        "legende": "Bébé, entouré de jouets",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-03.jpg",
+        "legende": "Petit garçon",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-04.jpg",
+        "legende": "Astronaute",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-05.jpg",
+        "legende": "Un grand sourire",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-06.jpg",
+        "legende": "L'arbre",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-07.jpg",
+        "legende": "La tour de Lego",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-08.jpg",
+        "legende": "Portrait d'automne",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-09.jpg",
+        "legende": "Au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-10.jpg",
+        "legende": "Sur la planche",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-11.jpg",
+        "legende": "Le soccer",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-12.jpg",
+        "legende": "Portrait",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-13.jpg",
+        "legende": "Sourire",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-14.jpg",
+        "legende": "Le regard",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-15.jpg",
+        "legende": "La médaille",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-16.jpg",
+        "legende": "En bleu et blanc, au jardin",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-17.jpg",
+        "legende": "Portrait d'hiver",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-18.jpg",
+        "legende": "Art de rue — portrait retravaillé",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-19.jpg",
+        "legende": "Croquis au fusain — portrait retravaillé",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-20.jpg",
+        "legende": "Avec le ballon",
+        "description": ""
+      },
+      {
+        "fichier": "liam/liam-21.jpg",
+        "legende": "Le complet",
+        "description": ""
+      }
+    ]
+  },
+  {
     "id": "arbres-roches",
     "type": "creation",
     "fichier": "galerie-arbres-roches.html",
