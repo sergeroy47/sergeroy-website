@@ -489,11 +489,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "noemie/18-30-ans-2.jpg",
-        "legende": "De 18 à 30 ans, montage",
-        "description": ""
-      },
-      {
         "fichier": "noemie/30-ans.jpg",
         "legende": "Trente ans",
         "description": ""
