@@ -419,11 +419,6 @@ const GALERIES = [
         "description": ""
       },
       {
-        "fichier": "noemie/feuilles-2.jpg",
-        "legende": "Dans les feuilles, autre version",
-        "description": ""
-      },
-      {
         "fichier": "noemie/roche.jpg",
         "legende": "La roche",
         "description": ""
