@@ -507,6 +507,16 @@ const GALERIES = [
         "fichier": "noemie/jardin-mariage.jpg",
         "legende": "Noémie, Charles-Laurent et Liam, le jour du mariage",
         "description": ""
+      },
+      {
+        "fichier": "noemie/anniversaire-2026.jpg",
+        "legende": "Anniversaire de Noémie, novembre 2026",
+        "description": ""
+      },
+      {
+        "fichier": "noemie/anniversaire-2026-illustre.jpg",
+        "legende": "On souffle les bougies — portrait retravaillé",
+        "description": ""
       }
     ]
   },
