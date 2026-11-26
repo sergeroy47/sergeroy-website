@@ -441,7 +441,7 @@ const GALERIES = [
       {
         "fichier": "noemie/perce.jpg",
         "legende": "Percé",
-        "description": ""
+        "description": "Noémie se promène sur la plage de Forillon, en Gaspésie, dans le ventre de sa mère."
       },
       {
         "fichier": "noemie/je-t-en-prie.jpg",
